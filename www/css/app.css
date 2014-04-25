@@ -16,6 +16,7 @@ body {
 /**************************************************************** PAGE *********************************************/
 .page {
     position:absolute;height:100%;width:100%;text-align: center;
+    zoom:100%;
 }
 
 .start-page-background {
@@ -39,17 +40,20 @@ body {
 
 @media screen and (min-width:300px) {
     .start-page-zoom {
-        zoom:28%;
+        zoom:29%;
     }
 }
 @media screen and (min-width:700px) {
     .start-page-zoom {
-        zoom:55%;
+        zoom:57%;
     }
 }
-@media screen and (min-width:2000px) {
+@media screen and (min-width:11500px) {
     .start-page-zoom {
         zoom:100%;
+    }
+    .page {
+        zoom:150%;
     }
 }
 
