@@ -48,49 +48,38 @@ body {
 }
 .start-page-background {
     position: absolute;
-    width: 1024px;
-    height: 1024px;
+    width: 100%;
+    height: 100%;
     bottom: 0px;
-    left:50%;
-    margin-left: -512px;
+    left: 0px;
 }
 .start-page-header-bg {
     position: absolute;
-    width: 262px; /* 1080 */
-    height: 200px; /* 822 */
-    top: 0px;
+    width: 1080px;
+    height: 822px;
+    bottom: 1080px;
     left:50%;
-    margin-left: -131px;
+    margin-left: -540px;
 }
-
 
 .main-page {
     background-color:#afa;
 }
 
-@media screen and (min-width:100px) , (min-height:100px) {
+@media screen and (min-width:300px) {
     .scaleApp {
-        zoom:70%;
+        zoom:20%;
     }
 }
 
-@media screen and (min-width:1024px) , (min-height:1024px) {
+@media screen and (min-width:1000px) {
     .scaleApp {
-        zoom:120%;
-    }
-    .start-page-background {
-        width: 2048px;
-        height: 2048px;
-        margin-left: -1024px;
+        zoom:100%;
     }
 }
-@media screen and (min-width:2048px) and (min-height:2048px) {
+@media screen and (min-width:2000px) {
     .scaleApp {
         zoom:140%;
-    }
-    .start-page-background {
-        width: 100%;
-        height: 100%;
     }
 }
 
@@ -102,8 +91,8 @@ body {
 }
 .start-page-menu {
     background-color: #30b457;
-    width: 131px;
-    height: 131px;
+    width: 540px;
+    height: 540px;
 }
 .start-page-menu:hover {
     background-color: #59a04f;
@@ -112,43 +101,37 @@ body {
     background-image: url(../img/start-page-nearme-button.png);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 131px 131px;
-    border-right: 1px solid #FFF;
-    top:200px;
+    bottom:540px;
     left:50%;
-    margin-left: -131px;
+    margin-left: -540px;
 }
 .start-page-menu-plantrip {
     background-image: url(../img/start-page-plantrip-button.png);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 131px 131px;
-    border-bottom: 1px solid #FFF;
-    top:200px;
+    border-left: 1px solid #FFF;
+    bottom:540px;
     left:50%;
     margin-left: 0px;
 }
 .start-page-menu-about {
-    height: 132px;
     background-image: url(../img/start-page-about-button.png);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 131px 131px;
     border-top: 1px solid #FFF;
-    top:330px;
+    bottom:0px;
     left:50%;
-    margin-left: -131px;
+    margin-left: -540px;
 }
 .start-page-menu-settings {
-    width: 132px;
     background-image: url(../img/start-page-settings-button.png);
     background-position: center center;
     background-repeat: no-repeat;
-    background-size: 131px 131px;
     border-left: 1px solid #FFF;
-    top:331px;
+    border-top: 1px solid #FFF;
+    bottom:0px;
     left:50%;
-    margin-left: -1px;
+    margin-left: 0px;
 }
 
 .main-page-menupanel-button {
