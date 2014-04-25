@@ -68,7 +68,7 @@ body {
 
 @media screen and (min-width:300px) {
     .scaleApp {
-        zoom:20%;
+        zoom:30%;
     }
 }
 
@@ -79,7 +79,7 @@ body {
 }
 @media screen and (min-width:2000px) {
     .scaleApp {
-        zoom:140%;
+        zoom:180%;
     }
 }
 
