@@ -1,27 +1,23 @@
 * {
-    /*-webkit-tap-highlight-color: rgba(0,0,0,0); *//* make transparent link selection, adjust last value opacity 0 to 1.0 */
+    -webkit-tap-highlight-color: rgba(0,0,0,0);  /*make transparent link selection, adjust last value opacity 0 to 1.0*/
 }
 
 body {
     -webkit-touch-callout: none;                /* prevent callout to copy image, etc when tap to hold */
     -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
     -webkit-user-select: none;                  /* prevent copy paste, to allow, change 'none' to 'text' */
-    /*height:100%;*/
+    width:100%;
+    height:100%;
     margin:0px;
     padding:0px;
-    /*text-transform:uppercase;*/
-    /*width:100%;*/
 }
 
 
 /**************************************************************** PAGE *********************************************/
-.scaleApp {
-    /*zoom:100%;*/
-}
-
 .page {
     position:absolute;height:100%;width:100%;text-align: center;
 }
+
 .start-page-background {
     position: absolute;
     width: 100%;
@@ -37,25 +33,23 @@ body {
     left:50%;
     margin-left: -540px;
 }
-
-.main-page {
-    background-color:#afa;
+.start-page-zoom {
+    zoom:100%;
 }
 
 @media screen and (min-width:300px) {
-    .scaleApp {
-        /*zoom:28%;*/
+    .start-page-zoom {
+        zoom:27%;
     }
 }
-
 @media screen and (min-width:1000px) {
-    .scaleApp {
-        /*zoom:100%;*/
+    .start-page-zoom {
+        zoom:40%;
     }
 }
 @media screen and (min-width:2000px) {
-    .scaleApp {
-        /*zoom:180%;*/
+    .start-page-zoom {
+        zoom:100%;
     }
 }
 
@@ -65,6 +59,7 @@ body {
     position:absolute;
     cursor: pointer;
 }
+
 .start-page-menu {
     background-color: #30b457;
     width: 540px;
@@ -117,9 +112,4 @@ body {
 
 
 /**************************************************************** PANEL *********************************************/
-.panel {
-    position:absolute;background-color:#f99;
-}
-.unvisible-panel {
-    top:200px;height:10%;width:10%;
-}
+

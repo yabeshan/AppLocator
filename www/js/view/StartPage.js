@@ -6,6 +6,7 @@ Ext.define('App.view.StartPage' ,{
     id:'StartPage',
 
     config: {
+        cls:'start-page-zoom',
         items:[
             {
                 html: '<div class="page"><img src="img/start-page-app-bg.jpg" class="start-page-background"></div>'
