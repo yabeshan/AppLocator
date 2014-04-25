@@ -11,7 +11,7 @@ var appInit = function() {
         ],
 
         views: [
-            'StartPage', 'MainPage', 'PlanTripPage', 'AboutPage', 'SettingsPage'
+            'StartPage', 'MainPage', 'PlanTripPage', 'AboutPage', 'SettingsPage', 'SharePage'
         ],
 
         launch: function() {
@@ -23,7 +23,7 @@ var appInit = function() {
                 activeItem: 1,
                 cls:'scaleApp',
                 items: [ {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'planTripPage'},
-                    {xtype:'aboutPage'}, {xtype:'settingsPage'} ]
+                    {xtype:'aboutPage'}, {xtype:'settingsPage'}, {xtype:'sharePage'} ]
             });
 
         }

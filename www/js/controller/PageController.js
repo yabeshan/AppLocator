@@ -21,6 +21,9 @@ Ext.define('App.controller.PageController', {
             case 4:
                 nextPageCmp = Ext.getCmp('SettingsPage');
                 break;
+            case 5:
+                nextPageCmp = Ext.getCmp('SharePage');
+                break;
         }
         nextPageCmp.update();
 

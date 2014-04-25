@@ -22,10 +22,17 @@ Ext.define('App.view.MenuPanel' ,{
             },{
                 id:'menuList',
                 html: '<div class="main-page-menu-panel">'
-                    + '<div id="homeBtn" class="button main-page-menupanel-button">Logo</div>'
-                    + '<div id="planTripBtn" class="button main-page-menupanel-button">Plan a Trip</div>'
-                    + '<div id="aboutBtn" class="button main-page-menupanel-button">About</div>'
-                    + '<div id="settingsBtn" class="button main-page-menupanel-button">Settings</div>'
+                    + '<div id="homeBtn" class="button main-page-menupanel-button main-page-menupanel-logo"></div>'
+
+                    + '<div id="mapviewBtn" class="button main-page-menupanel-button main-page-menupanel-mapview"></div>'
+                    + '<div id="aerialBtn" class="button main-page-menupanel-button main-page-menupanel-aerialview"></div>'
+                    + '<div id="trafficBtn" class="button main-page-menupanel-button main-page-menupanel-traffic"></div>'
+
+                    + '<div id="planTripBtn" class="button main-page-menupanel-button main-page-menupanel-tripplanner"></div>'
+                    + '<div id="shareBtn" class="button main-page-menupanel-button main-page-menupanel-share"></div>'
+
+                    + '<div id="settingsBtn" class="button main-page-menupanel-button main-page-menupanel-settings"></div>'
+                    + '<div id="aboutBtn" class="button main-page-menupanel-button main-page-menupanel-about"></div>'
                     + '</div>',
 
                 listeners: {
@@ -47,6 +54,9 @@ Ext.define('App.view.MenuPanel' ,{
                                 case "settingsBtn":
                                     id = 4;
                                     break;
+                                case "shareBtn":
+                                    id = 5;
+                                    break;
                             }
                             App.app.dispatch({
                                 controller:'PageController',
@@ -62,7 +72,7 @@ Ext.define('App.view.MenuPanel' ,{
     },
 
     initialize: function() {
-        Ext.getCmp('menuPanel').closeMenu();
+//        Ext.getCmp('menuPanel').closeMenu();
     },
     update:function(){
 

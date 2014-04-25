@@ -111,10 +111,52 @@ body {
 
 .main-page-menupanel-button {
     position: relative;
-    margin-top:5px; width:100%; height:50px; background-color:#30b457;
+    width:100%; height:50px; background-color:#30b457;
+    background-position: left top;
+    background-repeat: no-repeat;
 }
 .main-page-menupanel-button:hover {
     background-color:#59a04f;
+}
+.main-page-menupanel-logo {
+    background-image: url(../img/main-page-menupanel-logo.png);
+    height: 224px;
+    margin-bottom: 35px;
+}
+.main-page-menupanel-mapview {
+    background-image: url(../img/main-page-menupanel-mapview.png);
+    height: 170px;
+    margin-bottom: 6px;
+}
+.main-page-menupanel-aerialview {
+    background-image: url(../img/main-page-menupanel-aerialview.png);
+    height: 170px;
+    margin-bottom: 6px;
+}
+.main-page-menupanel-traffic {
+    background-image: url(../img/main-page-menupanel-traffic.png);
+    height: 170px;
+    margin-bottom: 35px;
+}
+.main-page-menupanel-tripplanner {
+    background-image: url(../img/main-page-menupanel-tripplanner.png);
+    height: 195px;
+    margin-bottom: 6px;
+}
+.main-page-menupanel-share {
+    background-image: url(../img/main-page-menupanel-share.png);
+    height: 173px;
+    margin-bottom: 35px;
+}
+.main-page-menupanel-settings {
+    background-image: url(../img/main-page-menupanel-settings.png);
+    height: 181px;
+    margin-bottom: 6px;
+}
+.main-page-menupanel-about {
+    background-image: url(../img/main-page-menupanel-about.png);
+    height: 176px;
+    margin-bottom: 35px;
 }
 
 /**************************************************************** PANEL *********************************************/
@@ -123,17 +165,17 @@ body {
 }
 
 .main-page-menu-panel {
-    position: absolute; top: 0px; bottom: 0px; background-color: #18a147; width: 800px; height: 100%;
+    position: absolute; top: 0px; bottom: 0px; background-color: #18a147; width: 880px; height: 100%;
     zoom:100%;
 }
 
 @media screen and (min-width:300px) {
     .main-page-menu-panel {
-        zoom: 50%;
+        zoom: 30%;
     }
 }
 @media screen and (min-width:700px) {
     .main-page-menu-panel {
-        zoom: 100%;
+        zoom: 30%;
     }
 }
