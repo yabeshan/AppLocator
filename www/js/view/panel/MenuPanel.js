@@ -9,7 +9,19 @@ Ext.define('App.view.MenuPanel' ,{
     config: {
         items:[
             {
-                html: '<div style="position: absolute; background-color: rgba(100,240,100,.5); width: 400px; height: 70%;top:60px">'
+                id:'modalBG',
+                html:'<div class="main-page-menu-popup-panel"></div>',
+                listeners: {
+                    tap: {
+                        fn: function( e, node ) {
+                            Ext.getCmp('menuPanel').closeMenu();
+                        },
+                        element: 'element'
+                    }
+                }
+            },{
+                id:'menuList',
+                html: '<div class="main-page-menu-panel">'
                     + '<div id="homeBtn" class="button main-page-menupanel-button">Logo</div>'
                     + '<div id="planTripBtn" class="button main-page-menupanel-button">Plan a Trip</div>'
                     + '<div id="aboutBtn" class="button main-page-menupanel-button">About</div>'
@@ -19,6 +31,7 @@ Ext.define('App.view.MenuPanel' ,{
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
+                            Ext.getCmp('menuPanel').closeMenu();
                             var id, direction='left';
                             switch (node.id) {
                                 case "homeBtn":
@@ -48,10 +61,19 @@ Ext.define('App.view.MenuPanel' ,{
         ]
     },
 
-    initialize: function() {},
+    initialize: function() {
+        Ext.getCmp('menuPanel').closeMenu();
+    },
     update:function(){
-//        Ext.getCmp('MainPagePanel').hide();
-//        Ext.getCmp('MainPagePanel').show();
+
+    },
+    openMenu: function() {
+        Ext.getCmp('modalBG').show();
+        Ext.getCmp('menuList').show();
+    },
+    closeMenu: function() {
+        Ext.getCmp('modalBG').hide();
+        Ext.getCmp('menuList').hide();
     }
 
 });
