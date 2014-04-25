@@ -1,7 +1,7 @@
 
 
 
-
+/*
 Ext.define('App.view.MainPage' ,{
     extend: 'Ext.Container',
     alias : 'widget.mainPage',
@@ -69,9 +69,9 @@ document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){
     setTimeout( onDeviceReady, 1000 );
 };
+*/
 
 
-/*
 var appInit = function() {
     if (initflag==true) return;
 
@@ -92,7 +92,7 @@ var appInit = function() {
                 id:'panelHolder',
                 fullscreen: true,
                 layout: 'card',
-                activeItem: 0,
+                activeItem: 3,
                 cls:'scaleApp',
                 items: [ {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'planTripPage'},
                     {xtype:'aboutPage'}, {xtype:'settingsPage'} ]
@@ -113,5 +113,3 @@ document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){
     setTimeout( onDeviceReady, 1000 );
 };
-
-    */
