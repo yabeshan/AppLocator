@@ -28,7 +28,7 @@ Ext.define('App.view.MainPage' ,{
                     }
                 }]
             },{
-                html: '<div class="page"><br><br>Page content 222</div>'
+                html: '<div class="page"><br><br>Page content 333</div>'
             }
         ]
     }
