@@ -22,6 +22,7 @@ var appInit = function() {
                 fullscreen: true,
                 layout: 'card',
                 activeItem: 0,
+                cls:'scaleApp',
                 items: [ {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'planTripPage'},
                     {xtype:'aboutPage'}, {xtype:'settingsPage'} ]
             });
