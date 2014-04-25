@@ -21,7 +21,7 @@ var appInit = function() {
                 id:'panelHolder',
                 fullscreen: true,
                 layout: 'card',
-                activeItem: 1,
+                activeItem: 0,
                 items: [ {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'planTripPage'},
                     {xtype:'aboutPage'}, {xtype:'settingsPage'} ]
             });
