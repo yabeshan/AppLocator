@@ -39,12 +39,12 @@ body {
 
 @media screen and (min-width:300px) {
     .start-page-zoom {
-        zoom:27%;
+        zoom:28%;
     }
 }
-@media screen and (min-width:1000px) {
+@media screen and (min-width:700px) {
     .start-page-zoom {
-        zoom:40%;
+        zoom:55%;
     }
 }
 @media screen and (min-width:2000px) {
