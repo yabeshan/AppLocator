@@ -159,6 +159,76 @@ body {
     margin-bottom: 35px;
 }
 
+.main-page-toolbar-menu {
+    background-image: url(../img/main-page-toolbar-menu.png);
+    background-size: 83px 40px;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 100px;
+}
+.main-page-toolbar-locateme {
+    background-image: url(../img/main-page-toolbar-locateme.png);
+    background-size: 113px 40px;
+    background-position: right center;
+    background-repeat: no-repeat;
+    height: 40px;
+    width: 130px;
+    right:0px;
+}
+
+.main-page-bottom-toolbar {
+    position: absolute;
+    background-color: #FFF;
+    background-size: 57px 36px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 88px;
+    height: 50px;
+    cursor: pointer;
+}
+.main-page-bottom-toolbar:hover {
+    background-color: #f1f2f2;
+}
+.main-page-toolbar-lng {
+    background-image: url(../img/main-page-toolbar-lng.png);
+    left: 50%;
+    margin-left: -132px;
+}
+.main-page-toolbar-cng {
+    background-image: url(../img/main-page-toolbar-cng.png);
+    left: 50%;
+    margin-left: -44px;
+}
+.main-page-toolbar-both {
+    background-image: url(../img/main-page-toolbar-both.png);
+    left: 50%;
+    margin-left: 44px;
+}
+
+.main-page-changeinfo-bottom-arrow {
+    background-image: url(../img/main-page-moreinfo-bottom-arrow.png);
+    background-size: 80px 57px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 57px;
+}
+.main-page-changeinfo-bottom-arrow:hover {
+    background-color: #CCC;
+}
+
+.main-page-changeinfo-top-arrow {
+    background-image: url(../img/main-page-moreinfo-top-arrow.png);
+    background-size: 80px 57px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 57px;
+}
+.main-page-changeinfo-top-arrow:hover {
+    background-color: #CCC;
+}
+
 /**************************************************************** PANEL *********************************************/
 .main-page-menu-popup-panel {
     position: absolute; width: 100%; height: 100%; background-color: rgba(255,255,255,.5);
@@ -178,4 +248,9 @@ body {
     .main-page-menu-panel {
         zoom: 50%;
     }
+}
+
+.main-page-changeinfo-panel {
+    position:absolute; background-color:#FFF; width:270px; height: 400px;bottom:50px;left:50%;
+    margin-left: -135px;
 }

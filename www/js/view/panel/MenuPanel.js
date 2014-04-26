@@ -72,7 +72,7 @@ Ext.define('App.view.MenuPanel' ,{
     },
 
     initialize: function() {
-//        Ext.getCmp('menuPanel').closeMenu();
+        Ext.getCmp('menuPanel').closeMenu();
     },
     update:function(){
 
