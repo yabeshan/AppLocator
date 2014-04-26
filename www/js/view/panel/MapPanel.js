@@ -8,7 +8,7 @@ Ext.define('MyApp.view.MyMap', {
             center: new google.maps.LatLng (34.0522,-118.2437),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI:true,
-            zoom: 10
+            zoom: 12
         }
     },
     gMap:null,
