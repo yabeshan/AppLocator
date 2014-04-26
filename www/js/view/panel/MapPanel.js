@@ -6,10 +6,16 @@ Ext.define('App.view.MapPanel' ,{
     id:'mapPanel',
 
     config: {
+
         items:[
+//            {
+//                html: '<div style="position: absolute; background-color: rgba(240,100,100,.5); width: 100%; height: 100%;">'
+//                    + '<div style="position: absolute; top:40%; left: 40%">Map Panel</div></div>'
+//            }
             {
-                html: '<div style="position: absolute; background-color: rgba(240,100,100,.5); width: 100%; height: 100%;">'
-                    + '<div style="position: absolute; top:40%; left: 40%">Map Panel</div></div>'
+                xtype: 'map',
+                style:'position:absolute;width:100%;height:100%',
+                useCurrentLocation: true
             }
         ]
     },
