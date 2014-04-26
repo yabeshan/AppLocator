@@ -1,5 +1,65 @@
+Ext.define('MyApp.view.MyMap', {
+    extend: 'Ext.Map',
+    alias : 'widget.mapPanel',
+    id:'mapPanel',
+
+    config: {
+        mapOptions: {
+            center: new google.maps.LatLng (34.0522,-118.2437),
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI:true,
+            zoom: 10
+        }
+    },
+    gMap:null,
+    initialize: function() {
+        this.gMap = this.getMap();
+
+        var marker = new google.maps.Marker({
+            map: this.gMap,
+            animation: google.maps.Animation.DROP,
+            icon: 'img/map-point-green.png',
+            position: new google.maps.LatLng (34.0522,-118.2437)
+        });
+        var marker = new google.maps.Marker({
+            map: this.gMap,
+            animation: google.maps.Animation.DROP,
+            icon: 'img/map-point-double.png',
+            position: new google.maps.LatLng (34.0022,-118.1037)
+        });
+        var marker = new google.maps.Marker({
+            map: this.gMap,
+            animation: google.maps.Animation.DROP,
+            icon: 'img/map-point-grey.png',
+            position: new google.maps.LatLng (34.1002,-118.3437)
+        });
+        var marker = new google.maps.Marker({
+            map: this.gMap,
+            animation: google.maps.Animation.DROP,
+            icon: 'img/map-point-blue.png',
+            position: new google.maps.LatLng (34.1022,-118.105)
+        });
+    },
+    trafficLayer:null,
+    changeTraffic: function() {
+        if (this.trafficLayer == null) {
+            this.trafficLayer = new google.maps.TrafficLayer();
+        }
+
+        if (this.trafficLayer.getMap()==null) {
+            this.trafficLayer.setMap(this.gMap);
+        } else {
+            this.trafficLayer.setMap(null);
+        }
+
+    },
+    changeType: function( val ) {
+        this.gMap.setMapTypeId( val );
+    }
+});
 
 
+/*
 Ext.define('App.view.MapPanel' ,{
     extend: 'Ext.Container',
     alias : 'widget.mapPanel',
@@ -8,22 +68,38 @@ Ext.define('App.view.MapPanel' ,{
     config: {
 
         items:[
-//            {
-//                html: '<div style="position: absolute; background-color: rgba(240,100,100,.5); width: 100%; height: 100%;">'
-//                    + '<div style="position: absolute; top:40%; left: 40%">Map Panel</div></div>'
-//            }
             {
                 xtype: 'map',
                 style:'position:absolute;width:100%;height:100%',
-                useCurrentLocation: true
+                id:'mapHolder',
+                useCurrentLocation: true,
+                mapOptions: {
+                    center: new google.maps.LatLng(17.22, 78.28),
+//                    mapTypeId: google.maps.MapTypeId.SATELLITE,
+//                    mapTypeId: google.maps.MapTypeId.HYBRID,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    disableDefaultUI:true,
+                    zoom: 14
+                }
             }
         ]
     },
 
-    initialize: function() {},
+    initialize: function() {
+        Ext.getCmp('mapHolder').mapOptions = {
+            center: new google.maps.LatLng(17.22, 78.28)
+        };
+//        alert(  );
+//        Ext.getCmp('mapHolder').setMapTypeId(google.maps.MapTypeId.HYBRID);
+    },
     update:function(){
 //        Ext.getCmp('MainPagePanel').hide();
 //        Ext.getCmp('MainPagePanel').show();
+    },
+    changeType: function( val ) {
+//        alert( Ext.getCmp('mapHolder').mapOptions );
     }
 
 });
+
+    */

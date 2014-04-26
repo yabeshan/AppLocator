@@ -57,6 +57,15 @@ Ext.define('App.view.MenuPanel' ,{
                                 case "shareBtn":
                                     id = 5;
                                     break;
+                                case "trafficBtn":
+                                    Ext.getCmp('mapPanel').changeTraffic();
+                                    break;
+                                case "mapviewBtn":
+                                    Ext.getCmp('mapPanel').changeType( google.maps.MapTypeId.ROADMAP );
+                                    break;
+                                case "aerialBtn":
+                                    Ext.getCmp('mapPanel').changeType( google.maps.MapTypeId.HYBRID );
+                                    break;
                             }
                             App.app.dispatch({
                                 controller:'PageController',
