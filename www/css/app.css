@@ -236,8 +236,9 @@ body {
 }
 
 .main-page-changeinfo-panel {
-    position:absolute; background-color:#FFF; width:270px; height: 400px;bottom:50px;left:50%;
-    margin-left: -135px; zoom:100%;
+    /*position:absolute; background-color:#FFF; width:270px; height: 400px;bottom:50px;left:50%;*/
+    /*margin-left: -135px; */
+    zoom:100%;
 }
 
 .menu-zoom {
@@ -251,7 +252,7 @@ body {
 }
 @media screen and (min-width:450px) {
     .menu-zoom {
-        zoom: 35%;
+        zoom: 37%;
     }
 }
 @media screen and (min-width:1000px) {
@@ -259,8 +260,9 @@ body {
         zoom: 44%;
     }
     .main-page-changeinfo-panel {
-        position:absolute; background-color:#FFF; width:270px; height: 400px;bottom:30px;left:50%;
-        margin-left: -135px; zoom:200%;
+        /*position:absolute; background-color:#FFF; width:270px; height: 400px;bottom:30px;left:50%;*/
+        /*margin-left: -135px; */
+        zoom:200%;
     }
 }
 
