@@ -92,11 +92,9 @@ Ext.define('App.view.ChangeInfoPanel' ,{
     config: {
         items:[
             {
-//                html:'<div style="background-color: #090;width:1000px;height: 2000px">1111111111</div>'
-//                cls:'main-page-changeinfo-panel',
-//                html:'<div style="background-color: #900;width:500px;height: 200px">1111111111</div>'
+                cls:'main-page-changeinfo-panel',
                 xtype:'popup1Panel'
-            }/*,{
+            },{
                 cls:'main-page-changeinfo-panel',
                 xtype:'popup2Panel'
             },{
@@ -116,7 +114,7 @@ Ext.define('App.view.ChangeInfoPanel' ,{
                         element: 'element'
                     }
                 }
-            }*/
+            }
         ]
     },
 
@@ -128,16 +126,16 @@ Ext.define('App.view.ChangeInfoPanel' ,{
 
     },
     showPopup1: function() {
-//        Ext.getCmp('popup1Panel').show();
+        Ext.getCmp('popup1Panel').show();
     },
     showPopup2: function() {
-//        Ext.getCmp('popup2Panel').show();
+        Ext.getCmp('popup2Panel').show();
     },
     hidePopup1: function() {
-//        Ext.getCmp('popup1Panel').hide();
+        Ext.getCmp('popup1Panel').hide();
     },
     hidePopup2: function() {
-//        Ext.getCmp('popup2Panel').hide();
+        Ext.getCmp('popup2Panel').hide();
     }
 
 });
