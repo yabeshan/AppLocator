@@ -233,30 +233,33 @@ body {
 
 .main-page-menu-panel {
     position: absolute; top: 0px; bottom: 0px; background-color: #18a147; width: 880px; height: 100%;
-    zoom:100%;
 }
 
 .main-page-changeinfo-panel {
     position:absolute; background-color:#FFF; width:270px; height: 400px;bottom:50px;left:50%;
-    margin-left: -135px; zoom: 100%;
+    margin-left: -135px;
+}
+
+.menu-zoom {
+    zoom:100%;
 }
 
 @media screen and (min-width:300px) {
-    .main-page-menu-panel {
-        zoom: 30%;
+    .menu-zoom {
+        zoom: 10%;
     }
 }
 @media screen and (min-width:700px) {
-    .main-page-menu-panel {
-        zoom: 50%;
+    .menu-zoom {
+        zoom: 10%;
     }
 }
 @media screen and (min-width:1000px) {
-    .main-page-menu-panel {
-        zoom: 80%;
+    .menu-zoom {
+        zoom: 10%;
     }
     .main-page-changeinfo-panel {
-        zoom: 300%;
+        /*zoom: 300%;*/
     }
 }
 
