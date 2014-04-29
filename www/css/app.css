@@ -50,7 +50,7 @@ body {
 }
 @media screen and (min-width:1000px) {
     .start-page-zoom {
-        zoom:85%;
+        zoom:80%;
     }
 }
 
@@ -253,10 +253,10 @@ body {
 }
 @media screen and (min-width:1000px) {
     .main-page-menu-panel {
-        zoom: 100%;
+        zoom: 80%;
     }
     .main-page-changeinfo-panel {
-        zoom: 200%;
+        zoom: 300%;
     }
 }
 
