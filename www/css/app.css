@@ -236,8 +236,8 @@ body {
 }
 
 .main-page-changeinfo-panel {
-    /*position:absolute; background-color:#FFF; width:270px; height: 400px;bottom:50px;left:50%;*/
-    /*margin-left: -135px;*/
+    position:absolute; background-color:#FFF; width:270px; height: 400px;bottom:50px;left:50%;
+    margin-left: -135px; zoom:100%;
 }
 
 .menu-zoom {
@@ -263,6 +263,9 @@ body {
     }
     .info-zoom {
         zoom:300%;
+    }
+    .main-page-changeinfo-panel {
+        bottom:0px;zoom:500%;
     }
 }
 

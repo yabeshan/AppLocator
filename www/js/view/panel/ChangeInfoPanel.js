@@ -1,4 +1,4 @@
-/*
+
 Ext.define('App.view.Popup1Panel' ,{
     extend: 'Ext.Container',
     alias : 'widget.popup1Panel',
@@ -75,7 +75,9 @@ Ext.define('App.view.Popup2Panel' ,{
         }]
     }
 });
-*/
+
+
+
 Ext.define('App.view.ChangeInfoPanel' ,{
     extend: 'Ext.Container',
     alias : 'widget.changeInfoPanel',
@@ -85,12 +87,11 @@ Ext.define('App.view.ChangeInfoPanel' ,{
         items:[
             {
                 cls:'main-page-changeinfo-panel',
-                html:'<div style="background-color: #900;width:500px;height: 200px">1111111111</div>'
-//                xtype:'popup1Panel'
-            }/*,{
+//                html:'<div style="background-color: #900;width:500px;height: 200px">1111111111</div>'
+                xtype:'popup1Panel'
+            },{
                 cls:'main-page-changeinfo-panel',
-                html:'222'
-//                xtype:'popup2Panel'
+                xtype:'popup2Panel'
             },{
                 style:'position:absolute;background:#FFF;bottom:0px;height:50px;width:100%;',
                 title:'',
@@ -108,7 +109,7 @@ Ext.define('App.view.ChangeInfoPanel' ,{
                         element: 'element'
                     }
                 }
-            }*/
+            }
         ]
     },
 
@@ -120,16 +121,16 @@ Ext.define('App.view.ChangeInfoPanel' ,{
 
     },
     showPopup1: function() {
-//        Ext.getCmp('popup1Panel').show();
+        Ext.getCmp('popup1Panel').show();
     },
     showPopup2: function() {
-//        Ext.getCmp('popup2Panel').show();
+        Ext.getCmp('popup2Panel').show();
     },
     hidePopup1: function() {
-//        Ext.getCmp('popup1Panel').hide();
+        Ext.getCmp('popup1Panel').hide();
     },
     hidePopup2: function() {
-//        Ext.getCmp('popup2Panel').hide();
+        Ext.getCmp('popup2Panel').hide();
     }
 
 });
