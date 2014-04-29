@@ -9,92 +9,11 @@ Ext.define('App.view.TestPanel' ,{
     config: {
         items:[
             {
-                id:'modalBG2',
-                html:'<div class="main-page-menu-popup-panel"></div>',
-                listeners: {
-                    tap: {
-                        fn: function( e, node ) {
-                            Ext.getCmp('menuPanel').closeMenu();
-                        },
-                        element: 'element'
-                    }
-                }
-            },{
                 id:'menuList2',
                 cls:'info-zoom',
-                html: '<div class="main-page-menu-panel">'
-                    + '<div id="homeBtn" class="button main-page-menupanel-button main-page-menupanel-logo"></div>'
-
-                    + '<div id="mapviewBtn" class="button main-page-menupanel-button main-page-menupanel-mapview"></div>'
-                    + '<div id="aerialBtn" class="button main-page-menupanel-button main-page-menupanel-aerialview"></div>'
-                    + '<div id="trafficBtn" class="button main-page-menupanel-button main-page-menupanel-traffic"></div>'
-
-                    + '<div id="planTripBtn" class="button main-page-menupanel-button main-page-menupanel-tripplanner"></div>'
-                    + '<div id="shareBtn" class="button main-page-menupanel-button main-page-menupanel-share"></div>'
-
-                    + '<div id="settingsBtn" class="button main-page-menupanel-button main-page-menupanel-settings"></div>'
-                    + '<div id="aboutBtn" class="button main-page-menupanel-button main-page-menupanel-about"></div>'
-                    + '</div>',
-
-                listeners: {
-                    tap: {
-                        fn: function( e, node ) {
-                            Ext.getCmp('menuPanel').closeMenu();
-                            var id, direction='left';
-                            switch (node.id) {
-                                case "homeBtn":
-                                    id = 0;
-                                    direction='right';
-                                    break;
-                                case "planTripBtn":
-                                    id = 2;
-                                    break;
-                                case "aboutBtn":
-                                    id = 3;
-                                    break;
-                                case "settingsBtn":
-                                    id = 4;
-                                    break;
-                                case "shareBtn":
-                                    id = 5;
-                                    break;
-                                case "trafficBtn":
-                                    Ext.getCmp('mapPanel').changeTraffic();
-                                    break;
-                                case "mapviewBtn":
-                                    Ext.getCmp('mapPanel').changeType( google.maps.MapTypeId.ROADMAP );
-                                    break;
-                                case "aerialBtn":
-                                    Ext.getCmp('mapPanel').changeType( google.maps.MapTypeId.HYBRID );
-                                    break;
-                            }
-                            App.app.dispatch({
-                                controller:'PageController',
-                                action:'goPage',
-                                args:[{nextPage:id, direction:direction}]
-                            });
-                        },
-                        element: 'element'
-                    }
-                }
+                html:'<div style="background-color: #900;width:1000px;height: 2000px">1111111111</div>'
             }
         ]
-    },
-
-    initialize: function() {
-//        Ext.getCmp('menuPanel').closeMenu();
-//        setTimeout( Ext.getCmp('menuPanel').openMenu, 1000);
-    },
-    update:function(){
-
-    },
-    openMenu: function() {
-        Ext.getCmp('modalBG2').show();
-        Ext.getCmp('menuList2').show();
-    },
-    closeMenu: function() {
-        Ext.getCmp('modalBG2').hide();
-        Ext.getCmp('menuList2').hide();
     }
 
 });
