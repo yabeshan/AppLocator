@@ -1,4 +1,4 @@
-
+/*
 Ext.define('App.view.Popup1Panel' ,{
     extend: 'Ext.Container',
     alias : 'widget.popup1Panel',
@@ -75,7 +75,7 @@ Ext.define('App.view.Popup2Panel' ,{
         }]
     }
 });
-
+*/
 Ext.define('App.view.ChangeInfoPanel' ,{
     extend: 'Ext.Container',
     alias : 'widget.changeInfoPanel',
@@ -87,7 +87,7 @@ Ext.define('App.view.ChangeInfoPanel' ,{
                 cls:'main-page-changeinfo-panel',
                 html:'<div style="background-color: #900;width:500px;height: 200px">1111111111</div>'
 //                xtype:'popup1Panel'
-            },{
+            }/*,{
                 cls:'main-page-changeinfo-panel',
                 html:'222'
 //                xtype:'popup2Panel'
@@ -108,7 +108,7 @@ Ext.define('App.view.ChangeInfoPanel' ,{
                         element: 'element'
                     }
                 }
-            }
+            }*/
         ]
     },
 
