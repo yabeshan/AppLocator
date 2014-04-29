@@ -262,19 +262,9 @@ body {
 .info-zoom {
     zoom:100%;
 }
-@media screen and (min-width:300px) {
-    .info-zoom {
-        zoom: 302%;
-    }
-}
-@media screen and (min-width:450px) {
-    .info-zoom {
-        zoom: 301%;
-    }
-}
 @media screen and (min-width:1000px) {
     .info-zoom {
-        zoom: 300%;
+        zoom: 200%;
     }
 }
 
