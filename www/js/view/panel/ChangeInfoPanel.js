@@ -9,6 +9,7 @@ Ext.define('App.view.Popup1Panel' ,{
 
     config: {
         items:[{
+            cls:'info-zoom',
             html:'<div style="background-color: #f1f2f2;height: 36px;width:100%">'
                 + '<img id="defaultsBtn" src="img/main-page-moreinfo-defaults.png" style="width:102px;height:36px;float:left" />'
                 + '<img id="checkBtn" src="img/main-page-moreinfo-check.png" style="width:36px;height:36px;float:right" /></div>',
@@ -23,9 +24,11 @@ Ext.define('App.view.Popup1Panel' ,{
                 }
             }
         },{
+            cls:'info-zoom',
             html:'<div style="background-color: #FFF;height:309px;width:100%">'
                 + '<img src="img/main-page-moreinfo-popup1.png" style="width:270px;height:299px;" /></div>'
         },{
+            cls:'info-zoom',
             html:'<div class="main-page-changeinfo-bottom-arrow"></div>',
             listeners: {
                 tap: {
@@ -89,7 +92,6 @@ Ext.define('App.view.ChangeInfoPanel' ,{
     config: {
         items:[
             {
-                cls:'info-zoom',
 //                html:'<div style="background-color: #090;width:1000px;height: 2000px">1111111111</div>'
 //                cls:'main-page-changeinfo-panel',
 //                html:'<div style="background-color: #900;width:500px;height: 200px">1111111111</div>'
