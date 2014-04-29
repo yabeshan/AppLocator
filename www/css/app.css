@@ -243,7 +243,7 @@ body {
 .menu-zoom {
     zoom:100%;
 }
-.info-zoom {
+.menu-zoomer {
     zoom:100%;
 }
 
@@ -251,17 +251,23 @@ body {
     .menu-zoom {
         zoom: 20%;
     }
+    .menu-zoomer {
+        zoom:10%;
+    }
 }
 @media screen and (min-width:450px) {
     .menu-zoom {
         zoom: 37%;
+    }
+    .menu-zoomer {
+        zoom:10%;
     }
 }
 @media screen and (min-width:1000px) {
     .menu-zoom {
         zoom: 44%;
     }
-    .info-zoom {
+    .menu-zoomer {
         zoom:10%;
     }
 }

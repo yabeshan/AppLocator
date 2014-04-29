@@ -21,7 +21,7 @@ Ext.define('App.view.TestPanel' ,{
                 }
             },{
                 id:'menuList2',
-                cls:'menu-zoom',
+                cls:'menu-zoomer',
                 html: '<div class="main-page-menu-panel">'
                     + '<div id="homeBtn" class="button main-page-menupanel-button main-page-menupanel-logo"></div>'
 
