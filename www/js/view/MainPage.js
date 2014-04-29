@@ -39,7 +39,7 @@ Ext.define('App.view.MainPage' ,{
                 }
             },{
                 cls:'info-zoom',
-                html:'<div style="background-color: #900;width: 500px;height: 200px">222222</div>'
+                html:'<div style="position:absolute;top:40px;left:40px;background-color: #900;width: 500px;height: 200px">222222</div>'
 //                xtype: 'changeInfoPanel'
             },{
                 xtype: 'menuPanel'

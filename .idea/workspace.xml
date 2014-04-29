@@ -135,9 +135,9 @@
       <file leaf-file-name="MainPage.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/view/MainPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="41" column="83" selection-start="1498" selection-end="1498" vertical-scroll-proportion="0.5221239" vertical-offset="402" max-vertical-offset="1037">
+            <state line="41" column="67" selection-start="1482" selection-end="1482" vertical-scroll-proportion="0.5221239" vertical-offset="402" max-vertical-offset="1037">
               <folding>
-                <marker date="1398811218031" expanded="true" signature="1449:1493" placeholder="..." />
+                <marker date="1398811473265" expanded="true" signature="1449:1535" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -525,7 +525,7 @@
       <workItem from="1398358345031" duration="21873000" />
       <workItem from="1398413937796" duration="49571000" />
       <workItem from="1398677567218" duration="172000" />
-      <workItem from="1398788373703" duration="10589000" />
+      <workItem from="1398788373703" duration="10844000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -623,7 +623,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="111700000" />
+    <option name="totallyTimeSpent" value="111955000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -761,7 +761,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="13" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="1003">
           <folding>
-            <marker date="1398811218031" expanded="true" signature="1449:1493" placeholder="..." />
+            <marker date="1398811473265" expanded="true" signature="1449:1535" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -833,7 +833,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="11" column="13" selection-start="207" selection-end="207" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003">
           <folding>
-            <marker date="1398811218031" expanded="true" signature="1449:1493" placeholder="..." />
+            <marker date="1398811473265" expanded="true" signature="1449:1535" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1040,9 +1040,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/view/MainPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="83" selection-start="1498" selection-end="1498" vertical-scroll-proportion="0.5221239" vertical-offset="402" max-vertical-offset="1037">
+        <state line="41" column="67" selection-start="1482" selection-end="1482" vertical-scroll-proportion="0.5221239" vertical-offset="402" max-vertical-offset="1037">
           <folding>
-            <marker date="1398811218031" expanded="true" signature="1449:1493" placeholder="..." />
+            <marker date="1398811473265" expanded="true" signature="1449:1535" placeholder="..." />
           </folding>
         </state>
       </provider>
