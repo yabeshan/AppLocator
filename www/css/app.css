@@ -243,32 +243,38 @@ body {
 .menu-zoom {
     zoom:100%;
 }
-.menu-zoomer {
-    zoom:100%;
-}
-
 @media screen and (min-width:300px) {
     .menu-zoom {
         zoom: 20%;
-    }
-    .menu-zoomer {
-        zoom:10%;
     }
 }
 @media screen and (min-width:450px) {
     .menu-zoom {
         zoom: 37%;
     }
-    .menu-zoomer {
-        zoom:10%;
-    }
 }
 @media screen and (min-width:1000px) {
     .menu-zoom {
         zoom: 44%;
     }
-    .menu-zoomer {
-        zoom:10%;
+}
+
+.info-zoom {
+    zoom:100%;
+}
+@media screen and (min-width:300px) {
+    .info-zoom {
+        zoom: 10%;
+    }
+}
+@media screen and (min-width:450px) {
+    .info-zoom {
+        zoom: 11%;
+    }
+}
+@media screen and (min-width:1000px) {
+    .info-zoom {
+        zoom: 12%;
     }
 }
 
