@@ -243,23 +243,16 @@ body {
 .menu-zoom {
     zoom:100%;
 }
+.info-zoom {
+    zoom:100%;
+}
 
-@media screen and (min-width:300px) {
-    .menu-zoom {
-        zoom: 10%;
-    }
-}
-@media screen and (min-width:700px) {
-    .menu-zoom {
-        zoom: 10%;
-    }
-}
 @media screen and (min-width:1000px) {
     .menu-zoom {
-        zoom: 10%;
+        zoom: 80%;
     }
-    .main-page-changeinfo-panel {
-        /*zoom: 300%;*/
+    .info-zoom {
+        zoom: 300%;
     }
 }
 
