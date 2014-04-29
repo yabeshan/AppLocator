@@ -38,8 +38,7 @@ Ext.define('App.view.MainPage' ,{
                     }
                 }
             },{
-                xtype: 'testPanel'
-//                xtype: 'changeInfoPanel'
+                xtype: 'changeInfoPanel'
             },{
                 xtype: 'menuPanel'
             }
