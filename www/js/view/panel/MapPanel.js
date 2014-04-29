@@ -1,3 +1,5 @@
+
+/*
 Ext.define('MyApp.view.MyMap', {
     extend: 'Ext.Map',
     alias : 'widget.mapPanel',
@@ -58,8 +60,8 @@ Ext.define('MyApp.view.MyMap', {
     }
 });
 
+*/
 
-/*
 Ext.define('App.view.MapPanel' ,{
     extend: 'Ext.Container',
     alias : 'widget.mapPanel',
@@ -69,37 +71,9 @@ Ext.define('App.view.MapPanel' ,{
 
         items:[
             {
-                xtype: 'map',
-                style:'position:absolute;width:100%;height:100%',
-                id:'mapHolder',
-                useCurrentLocation: true,
-                mapOptions: {
-                    center: new google.maps.LatLng(17.22, 78.28),
-//                    mapTypeId: google.maps.MapTypeId.SATELLITE,
-//                    mapTypeId: google.maps.MapTypeId.HYBRID,
-                    mapTypeId: google.maps.MapTypeId.ROADMAP,
-                    disableDefaultUI:true,
-                    zoom: 14
-                }
+                html:'<div style="position: absolute;top:50%;left:50%;margin-left: -60px">MAP DISABLED</div>'
             }
         ]
-    },
-
-    initialize: function() {
-        Ext.getCmp('mapHolder').mapOptions = {
-            center: new google.maps.LatLng(17.22, 78.28)
-        };
-//        alert(  );
-//        Ext.getCmp('mapHolder').setMapTypeId(google.maps.MapTypeId.HYBRID);
-    },
-    update:function(){
-//        Ext.getCmp('MainPagePanel').hide();
-//        Ext.getCmp('MainPagePanel').show();
-    },
-    changeType: function( val ) {
-//        alert( Ext.getCmp('mapHolder').mapOptions );
     }
-
 });
 
-    */
