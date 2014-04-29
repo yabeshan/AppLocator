@@ -90,10 +90,10 @@ Ext.define('App.view.ChangeInfoPanel' ,{
         items:[
             {
                 cls:'info-zoom',
-                html:'<div style="background-color: #090;width:1000px;height: 2000px">1111111111</div>'
+//                html:'<div style="background-color: #090;width:1000px;height: 2000px">1111111111</div>'
 //                cls:'main-page-changeinfo-panel',
 //                html:'<div style="background-color: #900;width:500px;height: 200px">1111111111</div>'
-//                xtype:'popup1Panel'
+                xtype:'popup1Panel'
             }/*,{
                 cls:'main-page-changeinfo-panel',
                 xtype:'popup2Panel'
