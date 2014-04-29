@@ -39,7 +39,20 @@ Ext.define('App.view.MainPage' ,{
                 }
             },{
                 cls:'info-zoom',
-                html:'<div style="position:absolute;top:40px;left:40px;background-color: #900;width: 500px;height: 200px">222222</div>'
+                html: '<div class="main-page-menu-panel">'
+                    + '<div id="homeBtn" class="button main-page-menupanel-button main-page-menupanel-logo"></div>'
+
+                    + '<div id="mapviewBtn" class="button main-page-menupanel-button main-page-menupanel-mapview"></div>'
+                    + '<div id="aerialBtn" class="button main-page-menupanel-button main-page-menupanel-aerialview"></div>'
+                    + '<div id="trafficBtn" class="button main-page-menupanel-button main-page-menupanel-traffic"></div>'
+
+                    + '<div id="planTripBtn" class="button main-page-menupanel-button main-page-menupanel-tripplanner"></div>'
+                    + '<div id="shareBtn" class="button main-page-menupanel-button main-page-menupanel-share"></div>'
+
+                    + '<div id="settingsBtn" class="button main-page-menupanel-button main-page-menupanel-settings"></div>'
+                    + '<div id="aboutBtn" class="button main-page-menupanel-button main-page-menupanel-about"></div>'
+                    + '</div>'
+//                html:'<div style="position:absolute;top:40px;left:40px;background-color: #900;width: 500px;height: 200px">222222</div>'
 //                xtype: 'changeInfoPanel'
             },{
                 xtype: 'menuPanel'
