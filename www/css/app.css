@@ -262,10 +262,7 @@ body {
         zoom: 44%;
     }
     .info-zoom {
-        zoom:300%;
-    }
-    .main-page-changeinfo-panel {
-        bottom:0px;zoom:500%;
+        zoom:500%;
     }
 }
 
