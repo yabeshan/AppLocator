@@ -244,25 +244,25 @@ body {
     zoom:100%;
 }
 .info-zoom {
-    zoom:100%;
+    zoom:10%;
 }
 
 @media screen and (min-width:300px) {
     .menu-zoom {
-        zoom: 10%;
+        zoom: 20%;
     }
 }
 @media screen and (min-width:450px) {
     .menu-zoom {
-        zoom: 20%;
+        zoom: 30%;
     }
 }
 @media screen and (min-width:1000px) {
     .menu-zoom {
-        zoom: 30%;
+        zoom: 40%;
     }
     .info-zoom {
-        zoom: 200% !important;
+        /*zoom: 200% !important;*/
     }
 }
 
