@@ -264,12 +264,12 @@ body {
 }
 @media screen and (min-width:300px) {
     .info-zoom {
-        zoom: 10%;
+        zoom: 302%;
     }
 }
 @media screen and (min-width:450px) {
     .info-zoom {
-        zoom: 11%;
+        zoom: 301%;
     }
 }
 @media screen and (min-width:1000px) {
