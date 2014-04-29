@@ -247,19 +247,19 @@ body {
     zoom:100%;
 }
 
+@media screen and (min-width:300px) {
+    .menu-zoom {
+        zoom: 10%;
+    }
+}
+@media screen and (min-width:450px) {
+    .menu-zoom {
+        zoom: 10%;
+    }
+}
 @media screen and (min-width:1000px) {
     .menu-zoom {
         zoom: 20%;
-    }
-}
-@media screen and (min-width:1000px) {
-    .menu-zoom {
-        zoom: 30%;
-    }
-}
-@media screen and (min-width:1000px) {
-    .menu-zoom {
-        zoom: 50%;
     }
     .info-zoom {
         zoom: 200%;

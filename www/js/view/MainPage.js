@@ -38,8 +38,9 @@ Ext.define('App.view.MainPage' ,{
                     }
                 }
             },{
-                xtype: 'changeInfoPanel',
-                cls:'info-zoom'
+                cls:'info-zoom',
+                xtype: 'changeInfoPanel'
+
             },{
                 xtype: 'menuPanel'
             }
