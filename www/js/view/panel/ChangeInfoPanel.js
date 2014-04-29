@@ -84,7 +84,7 @@ Ext.define('App.view.ChangeInfoPanel' ,{
     config: {
         items:[
             {
-                cls:'info-zoom',
+                cls:'main-page-changeinfo-panel',
                 xtype:'popup1Panel'
             },{
                 cls:'main-page-changeinfo-panel',

@@ -71,7 +71,7 @@ Ext.define('App.view.MapPanel' ,{
 
         items:[
             {
-                html:'<div style="position: absolute;top:50%;left:50%;margin-left: -60px">MAP DISABLED 222</div>'
+                html:'<div style="position: absolute;top:50%;left:50%;margin-left: -60px">MAP DISABLED 333</div>'
             }
         ]
     }
