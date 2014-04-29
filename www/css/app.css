@@ -45,15 +45,12 @@ body {
 }
 @media screen and (min-width:700px) {
     .start-page-zoom {
-        zoom:57%;
+        zoom:56%;
     }
 }
-@media screen and (min-width:1500px) {
+@media screen and (min-width:1000px) {
     .start-page-zoom {
-        zoom:100%;
-    }
-    .page {
-        zoom:150%;
+        zoom:85%;
     }
 }
 
@@ -239,6 +236,11 @@ body {
     zoom:100%;
 }
 
+.main-page-changeinfo-panel {
+    position:absolute; background-color:#FFF; width:270px; height: 400px;bottom:50px;left:50%;
+    margin-left: -135px; zoom: 100%;
+}
+
 @media screen and (min-width:300px) {
     .main-page-menu-panel {
         zoom: 30%;
@@ -249,8 +251,12 @@ body {
         zoom: 50%;
     }
 }
-
-.main-page-changeinfo-panel {
-    position:absolute; background-color:#FFF; width:270px; height: 400px;bottom:50px;left:50%;
-    margin-left: -135px;
+@media screen and (min-width:1000px) {
+    .main-page-menu-panel {
+        zoom: 100%;
+    }
+    .main-page-changeinfo-panel {
+        zoom: 200%;
+    }
 }
+
