@@ -272,7 +272,7 @@ body {
         zoom: 99%;
     }
 }
-@media screen and (min-width:1000px) {
+@media screen and (min-width:500px) and (min-resolution: 260dpi) {
     .info-zoom {
         zoom: 200%;
     }
