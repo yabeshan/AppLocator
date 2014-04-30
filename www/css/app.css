@@ -203,6 +203,7 @@ body {
 }
 
 .main-page-changeinfo-bottom-arrow {
+    background-color: #FFF;
     background-image: url(../img/main-page-moreinfo-bottom-arrow.png);
     background-size: 80px 57px;
     background-position: center center;
@@ -235,11 +236,6 @@ body {
     position: absolute; top: 0px; bottom: 0px; background-color: #18a147; width: 880px; height: 100%;
 }
 
-.main-page-changeinfo-panel {
-    position:absolute; background-color:#FFF; width:270px; height: 400px;bottom:50px;left:50%;
-    margin-left: -135px; zoom:100%;
-}
-
 .menu-zoom {
     zoom:100%;
 }
@@ -259,12 +255,23 @@ body {
     }
 }
 
+
+
+.main-page-changeinfo-panel {
+    position:absolute; background-color:#FFF;
+    width:270px; height:400px;bottom:50px;
+    left:50%;margin-left: -135px;
+}
+
 .info-zoom {
     zoom:100%;
 }
 @media screen and (min-width:500px) and (-webkit-min-device-pixel-ratio: 2.0) {
     .info-zoom {
         zoom: 200%;
+    }
+    .main-page-changeinfo-panel {
+        width:540px;margin-left: -270px;bottom:455px;
     }
 }
 
