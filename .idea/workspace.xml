@@ -96,7 +96,7 @@
       <file leaf-file-name="app.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="261" column="12" selection-start="6641" selection-end="6641" vertical-scroll-proportion="0.5277778" vertical-offset="4152" max-vertical-offset="4692">
+            <state line="263" column="1" selection-start="6658" selection-end="6658" vertical-scroll-proportion="0.27592593" vertical-offset="4322" max-vertical-offset="4862">
               <folding />
             </state>
           </provider>
@@ -143,9 +143,9 @@
       <file leaf-file-name="MapPanel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/view/panel/MapPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="106" selection-start="2111" selection-end="2111" vertical-scroll-proportion="0.0" vertical-offset="827" max-vertical-offset="1445">
+            <state line="73" column="102" selection-start="2107" selection-end="2107" vertical-scroll-proportion="0.0" vertical-offset="827" max-vertical-offset="1445">
               <folding>
-                <marker date="1398810920859" expanded="true" signature="2039:2093" placeholder="..." />
+                <marker date="1398816135203" expanded="true" signature="2039:2093" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -188,8 +188,8 @@
         <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/js/view/panel/MenuPanel.js" />
-        <option value="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" />
         <option value="$PROJECT_DIR$/www/js/view/MainPage.js" />
+        <option value="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" />
         <option value="$PROJECT_DIR$/www/js/view/panel/ChangeInfoPanel.js" />
         <option value="$PROJECT_DIR$/www/css/app.css" />
       </list>
@@ -522,7 +522,7 @@
       <workItem from="1398358345031" duration="21873000" />
       <workItem from="1398413937796" duration="49571000" />
       <workItem from="1398677567218" duration="172000" />
-      <workItem from="1398788373703" duration="15340000" />
+      <workItem from="1398788373703" duration="15654000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -620,7 +620,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116451000" />
+    <option name="totallyTimeSpent" value="116765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -736,7 +736,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="20" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1870">
           <folding>
-            <marker date="1398810920859" expanded="true" signature="2039:2093" placeholder="..." />
+            <marker date="1398816135203" expanded="true" signature="2039:2093" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -805,7 +805,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="20" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1870">
           <folding>
-            <marker date="1398810920859" expanded="true" signature="2039:2093" placeholder="..." />
+            <marker date="1398816135203" expanded="true" signature="2039:2093" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -968,9 +968,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/view/panel/MapPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="106" selection-start="2111" selection-end="2111" vertical-scroll-proportion="0.0" vertical-offset="827" max-vertical-offset="1445">
+        <state line="73" column="102" selection-start="2107" selection-end="2107" vertical-scroll-proportion="0.0" vertical-offset="827" max-vertical-offset="1445">
           <folding>
-            <marker date="1398810920859" expanded="true" signature="2039:2093" placeholder="..." />
+            <marker date="1398816135203" expanded="true" signature="2039:2093" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1002,7 +1002,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="261" column="12" selection-start="6641" selection-end="6641" vertical-scroll-proportion="0.5277778" vertical-offset="4152" max-vertical-offset="4692">
+        <state line="263" column="1" selection-start="6658" selection-end="6658" vertical-scroll-proportion="0.27592593" vertical-offset="4322" max-vertical-offset="4862">
           <folding />
         </state>
       </provider>
