@@ -262,16 +262,6 @@ body {
 .info-zoom {
     zoom:100%;
 }
-@media screen and (min-width:300px) {
-    .info-zoom {
-        zoom: 98%;
-    }
-}
-@media screen and (min-width:450px) {
-    .info-zoom {
-        zoom: 99%;
-    }
-}
 @media screen and (min-width:500px) and (-webkit-min-device-pixel-ratio: 2.0) {
     .info-zoom {
         zoom: 200%;
