@@ -69,7 +69,7 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="24" column="12" selection-start="1116" selection-end="1116" vertical-scroll-proportion="-6.5" vertical-offset="239" max-vertical-offset="1105">
+            <state line="25" column="8" selection-start="1300" selection-end="1388" vertical-scroll-proportion="-7.1538463" vertical-offset="239" max-vertical-offset="1105">
               <folding />
             </state>
           </provider>
@@ -96,7 +96,16 @@
       <file leaf-file-name="app.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="274" column="60" selection-start="6883" selection-end="6883" vertical-scroll-proportion="0.6537037" vertical-offset="4305" max-vertical-offset="4862">
+            <state line="274" column="41" selection-start="6864" selection-end="6864" vertical-scroll-proportion="0.63893807" vertical-offset="4297" max-vertical-offset="4862">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="test.html" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/test.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="16" column="9" selection-start="964" selection-end="1001" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="629">
               <folding />
             </state>
           </provider>
@@ -136,17 +145,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state line="41" column="13" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.0" vertical-offset="438" max-vertical-offset="1003">
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MapPanel.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/view/panel/MapPanel.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="73" column="102" selection-start="2107" selection-end="2107" vertical-scroll-proportion="0.0" vertical-offset="827" max-vertical-offset="1445">
-              <folding>
-                <marker date="1398816135203" expanded="true" signature="2039:2093" placeholder="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -191,6 +189,7 @@
         <option value="$PROJECT_DIR$/www/js/view/MainPage.js" />
         <option value="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" />
         <option value="$PROJECT_DIR$/www/js/view/panel/ChangeInfoPanel.js" />
+        <option value="$PROJECT_DIR$/www/test.html" />
         <option value="$PROJECT_DIR$/www/css/app.css" />
       </list>
     </option>
@@ -522,7 +521,7 @@
       <workItem from="1398358345031" duration="21873000" />
       <workItem from="1398413937796" duration="49571000" />
       <workItem from="1398677567218" duration="172000" />
-      <workItem from="1398788373703" duration="16891000" />
+      <workItem from="1398788373703" duration="19028000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -620,7 +619,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="118002000" />
+    <option name="totallyTimeSpent" value="120139000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -736,7 +735,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="20" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1870">
           <folding>
-            <marker date="1398816135203" expanded="true" signature="2039:2093" placeholder="..." />
+            <marker date="1398816135203" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -805,7 +804,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="10" column="20" selection-start="316" selection-end="316" vertical-scroll-proportion="0.0" vertical-offset="170" max-vertical-offset="1870">
           <folding>
-            <marker date="1398816135203" expanded="true" signature="2039:2093" placeholder="..." />
+            <marker date="1398816135203" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -931,13 +930,6 @@
         <state line="12" column="33" selection-start="302" selection-end="302" vertical-scroll-proportion="0.36106196" vertical-offset="0" max-vertical-offset="565" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="12" selection-start="1116" selection-end="1116" vertical-scroll-proportion="-6.5" vertical-offset="239" max-vertical-offset="1105">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="29" selection-start="490" selection-end="490" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="901">
@@ -966,22 +958,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/view/panel/MapPanel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="73" column="102" selection-start="2107" selection-end="2107" vertical-scroll-proportion="0.0" vertical-offset="827" max-vertical-offset="1445">
-          <folding>
-            <marker date="1398816135203" expanded="true" signature="2039:2093" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/view/MainPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="41" column="13" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.0" vertical-offset="438" max-vertical-offset="1003">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/view/panel/ChangeInfoPanel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="138" column="5" selection-start="4648" selection-end="4648" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2499">
@@ -1000,9 +976,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/view/panel/MapPanel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="73" column="102" selection-start="2107" selection-end="2107" vertical-scroll-proportion="0.7610294" vertical-offset="827" max-vertical-offset="1445">
+          <folding>
+            <marker date="1398816135203" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/view/MainPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="41" column="13" selection-start="1436" selection-end="1436" vertical-scroll-proportion="0.0" vertical-offset="438" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="25" column="8" selection-start="1300" selection-end="1388" vertical-scroll-proportion="-7.1538463" vertical-offset="239" max-vertical-offset="1105">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/test.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="9" selection-start="964" selection-end="1001" vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="629">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="274" column="60" selection-start="6883" selection-end="6883" vertical-scroll-proportion="0.6537037" vertical-offset="4305" max-vertical-offset="4862">
+        <state line="274" column="41" selection-start="6864" selection-end="6864" vertical-scroll-proportion="0.63893807" vertical-offset="4297" max-vertical-offset="4862">
           <folding />
         </state>
       </provider>
