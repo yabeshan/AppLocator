@@ -7,6 +7,15 @@ Ext.define('App.view.SearchPanel' ,{
     id:'SearchPanel',
 
     config: {
+
+        fullscreen: true,
+        layout: 'vbox',
+        items: [{
+            flex: 1,
+            xtype: 'mainPanel'
+        }]
+
+        /*
         layout:'vbox',
         items:[
             {
@@ -34,14 +43,14 @@ Ext.define('App.view.SearchPanel' ,{
                 width:  '100%',
                 height: '100%',
                 itemTpl: [
-                    '{name}  {continent} {region}'
+                    '{id}  {name} {status}'
                 ],
-                store: 'StationStore'
+                emptyText: 'No Matching Countries'
             }
-        ]
+        ]*/
     },
     initialize: function(me, eOpts) {
-        this.hideSearchResult();
+//        this.hideSearchResult();
     },
     showSearchResult: function() {
         Ext.getCmp('searchList').show();

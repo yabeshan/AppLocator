@@ -1,5 +1,5 @@
 
-
+/*
 Ext.define('App.view.MapPanel', {
     extend: 'Ext.Map',
     alias : 'widget.mapPanel',
@@ -61,8 +61,8 @@ Ext.define('App.view.MapPanel', {
         this.gMap.setMapTypeId( val );
     }
 });
+*/
 
-/*
 Ext.define('App.view.MapPanel' ,{
     extend: 'Ext.Container',
     alias : 'widget.mapPanel',
@@ -78,4 +78,3 @@ Ext.define('App.view.MapPanel' ,{
     }
 });
 
- */

@@ -1,5 +1,5 @@
 
-Ext.define('MyApp.controller.SearchDemo', {
+Ext.define('App.controller.SearchDemo', {
     extend : 'Ext.app.Controller',
 
     config: {
@@ -58,7 +58,7 @@ Ext.define('MyApp.controller.SearchDemo', {
 
 });
 
-Ext.define('MyApp.view.MainPanel', {
+Ext.define('App.view.MainPanel', {
     extend: 'Ext.dataview.List',
     alias : 'widget.mainPanel',
 
@@ -92,16 +92,16 @@ Ext.define('MyApp.view.MainPanel', {
     }
 });
 
-Ext.define('MyApp.store.Countries', {
+Ext.define('App.store.Countries', {
     extend: 'Ext.data.Store',
 
     config: {
-        model: 'MyApp.model.Country',
+        model: 'App.model.Country',
         autoLoad: true,
 
         proxy: {
             type: 'ajax',
-            url: 'http://www.7id.biz/data/stations.json',
+            url: 'stations.json',
             reader: {
                 type: 'json',
                 totalProperty: 'totalCount',
@@ -112,7 +112,7 @@ Ext.define('MyApp.store.Countries', {
     }
 });
 
-Ext.define('MyApp.model.Country', {
+Ext.define('App.model.Country', {
     extend: 'Ext.data.Model',
     config: {
         fields: [
@@ -126,7 +126,7 @@ Ext.define('MyApp.model.Country', {
     }
 });
 
-
+/*
 Ext.Loader.setConfig({
     enabled: true
 });
@@ -156,13 +156,13 @@ Ext.application({
     }
 
 });
+*/
 
 
 
 
 
 
-/*
 var appInit = function() {
     if (initflag==true) return;
 
@@ -170,7 +170,7 @@ var appInit = function() {
         name: 'App',
 
         controllers: [
-            'PageController', 'StationController'
+            'PageController', 'StationController', 'SearchDemo'
         ],
 
         views: [
@@ -185,8 +185,10 @@ var appInit = function() {
                 layout: 'card',
                 activeItem: 1,
                 cls:'scaleApp',
-                items: [ {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'planTripPage'},
-                    {xtype:'aboutPage'}, {xtype:'settingsPage'}, {xtype:'sharePage'} ]
+                items: [
+                    {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'planTripPage'},
+                    {xtype:'aboutPage'}, {xtype:'settingsPage'}, {xtype:'sharePage'}
+                ]
             });
 
         }
@@ -204,4 +206,3 @@ document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){
     setTimeout( onDeviceReady, 1000 );
 };
-*/
