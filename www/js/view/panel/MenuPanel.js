@@ -1,6 +1,4 @@
 
-
-
 Ext.define('App.view.MenuPanel' ,{
     extend: 'Ext.Container',
     alias : 'widget.menuPanel',
@@ -84,14 +82,13 @@ Ext.define('App.view.MenuPanel' ,{
     initialize: function() {
         Ext.getCmp('menuPanel').closeMenu();
     },
-    update:function(){
-
-    },
     openMenu: function() {
+        Ext.getCmp('menuPanel').setZIndex(10);
         Ext.getCmp('modalBG').show();
         Ext.getCmp('menuList').show();
     },
     closeMenu: function() {
+        Ext.getCmp('menuPanel').setZIndex(0);
         Ext.getCmp('modalBG').hide();
         Ext.getCmp('menuList').hide();
     }

@@ -1,11 +1,13 @@
 
-/*
-Ext.define('MyApp.view.MyMap', {
+
+Ext.define('App.view.MapPanel', {
     extend: 'Ext.Map',
     alias : 'widget.mapPanel',
     id:'mapPanel',
 
     config: {
+        width:'100%',
+        height:'100%',
         mapOptions: {
             center: new google.maps.LatLng (34.0522,-118.2437),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -60,8 +62,7 @@ Ext.define('MyApp.view.MyMap', {
     }
 });
 
-*/
-
+/*
 Ext.define('App.view.MapPanel' ,{
     extend: 'Ext.Container',
     alias : 'widget.mapPanel',
@@ -71,9 +72,10 @@ Ext.define('App.view.MapPanel' ,{
 
         items:[
             {
-                html:'<div style="position: absolute;top:50%;left:50%;margin-left: -60px">MAP DISABLED</div>'
+                html:'<div style="position: absolute;top:50%;left:50%;margin-left: -60px;">MAP DISABLED</div>'
             }
         ]
     }
 });
 
+ */

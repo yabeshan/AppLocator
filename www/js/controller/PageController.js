@@ -3,35 +3,35 @@
 Ext.define('App.controller.PageController', {
     extend: 'Ext.app.Controller',
 
+    nextPageCmp:null,
     goPage: function( data ) {
-        var nextPageCmp;
         switch(data.nextPage) {
             case 0:
-                nextPageCmp = Ext.getCmp('StartPage');
+                this.nextPageCmp = Ext.getCmp('StartPage');
                 break;
             case 1:
-                nextPageCmp = Ext.getCmp('MainPage');
+                this.nextPageCmp = Ext.getCmp('MainPage');
                 break;
             case 2:
-                nextPageCmp = Ext.getCmp('PlanTripPage');
+                this.nextPageCmp = Ext.getCmp('PlanTripPage');
                 break;
             case 3:
-                nextPageCmp = Ext.getCmp('AboutPage');
+                this.nextPageCmp = Ext.getCmp('AboutPage');
                 break;
             case 4:
-                nextPageCmp = Ext.getCmp('SettingsPage');
+                this.nextPageCmp = Ext.getCmp('SettingsPage');
                 break;
             case 5:
-                nextPageCmp = Ext.getCmp('SharePage');
+                this.nextPageCmp = Ext.getCmp('SharePage');
                 break;
         }
-        nextPageCmp.update();
+        this.nextPageCmp.update();
 
         var panelHolder = Ext.getCmp('panelHolder');
         panelHolder.getLayout().setAnimation({
             type: 'slide', duration: 300, direction: data.direction
         });
-        panelHolder.setActiveItem( nextPageCmp );
+        panelHolder.setActiveItem( this.nextPageCmp );
     }
 });
 

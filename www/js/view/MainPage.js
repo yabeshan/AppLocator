@@ -1,5 +1,4 @@
 
-
 Ext.define('App.view.MainPage' ,{
     extend: 'Ext.Container',
     alias : 'widget.mainPage',
@@ -8,19 +7,31 @@ Ext.define('App.view.MainPage' ,{
     config: {
         items:[
             {
-                xtype: 'mapPanel'
+                width:  '100%',
+                top:    '40px',
+                bottom: '50px',
+                zIndex: 1,
+                id:     'mapHolder'
             },{
-                xtype: 'searchPanel'
+                width:  '100%',
+                top:    '50px',
+                bottom: '110px',
+                zIndex: 2,
+                xtype:  'searchPanel'
             },{
-                style:'position:absolute;top:0px;height:40px;width:100%;background:#30b457',
-                title:'',
+                width:'100%',
+                height:'40px',
+                top:'0px',
+                zIndex: 3,
+                style:'background:#30b457',
+
                 html: '<div id="menuBtn" class="button start-page-menu main-page-toolbar-menu"></div>'
                     + '<div id="locateBtn" class="button start-page-menu main-page-toolbar-locateme"></div>',
                 listeners: {
                     swipe: {
                         fn: function( e, node ) {
                             if (node.id=="menuBtn" && e.direction=="right") {
-                                alert("swipe menu");
+                                Ext.getCmp('menuPanel').openMenu();
                             }
                         },
                         element: 'innerElement'
@@ -38,17 +49,29 @@ Ext.define('App.view.MainPage' ,{
                     }
                 }
             },{
+                width:  '100%',
+                height: '50px',
+                bottom: '0px',
+                zIndex: 4,
                 xtype: 'changeInfoPanel'
             },{
-                xtype: 'menuPanel'
+                width:  '100%',
+                height: '100%',
+                zIndex: 10,
+                xtype:  'menuPanel'
             }
         ]
     },
 
-    initialize: function() {},
+    initialize: function() {
+//        this.update();
+    },
+    mapContent:null,
     update:function(){
-//        Ext.getCmp('MainPagePanel').hide();
-//        Ext.getCmp('MainPagePanel').show();
+        if (this.mapContent == null) {
+            this.mapContent = Ext.create('App.view.MapPanel');
+            Ext.getCmp("mapHolder").add( this.mapContent );
+        }
     }
 
 });

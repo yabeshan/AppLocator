@@ -1,5 +1,4 @@
 
-
 var appInit = function() {
     if (initflag==true) return;
 
@@ -7,7 +6,7 @@ var appInit = function() {
         name: 'App',
 
         controllers: [
-            'PageController'
+            'PageController', 'StationController'
         ],
 
         views: [
@@ -26,10 +25,6 @@ var appInit = function() {
                     {xtype:'aboutPage'}, {xtype:'settingsPage'}, {xtype:'sharePage'} ]
             });
 
-//            Ext.Viewport.add({
-//                xtype: 'map',
-//                useCurrentLocation: true
-//            });
         }
     });
 };
