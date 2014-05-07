@@ -67,7 +67,7 @@ Ext.define('App.view.MainPage' ,{
     },
 
     initialize: function() {
-        this.update();
+//        this.update();
     },
     mapContent:null,
     update:function(){

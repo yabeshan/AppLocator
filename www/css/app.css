@@ -293,6 +293,11 @@ input::-webkit-input-placeholder {
     color: #30b457; font-weight: normal !important;
 }
 
+.placeholder{
+    background-color: rgba(255,255,255,0);
+    color: #30b457; font-weight: normal !important;
+}
+
 .searchfield-stations {
     background-color: rgba(255,255,255,0);
     background-image: url(../img/main-page-toolbar-search-text.png);
