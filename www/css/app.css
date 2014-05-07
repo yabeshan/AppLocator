@@ -275,3 +275,30 @@ body {
     }
 }
 
+
+
+/*************************************** SEARCH FIELD *****************************************/
+.x-field-search .x-field-input:before {
+    content:'' !important;
+}
+
+.x-input-search {
+    background-color: rgba(255,255,255,0);
+    margin-left: 5px !important;
+    color: #000; font-weight: bold;
+}
+
+input::-webkit-input-placeholder {
+    background-color: rgba(255,255,255,0);
+    color: #30b457; font-weight: normal !important;
+}
+
+.searchfield-stations {
+    background-color: rgba(255,255,255,0);
+    background-image: url(../img/main-page-toolbar-search-text.png);
+    background-size: 289px 52px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    width: 289px;
+    height: 52px;
+}

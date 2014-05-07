@@ -9,15 +9,18 @@ Ext.define('App.view.MainPage' ,{
             {
                 width:  '100%',
                 top:    '40px',
-                bottom: '50px',
+                bottom: '40px',
                 zIndex: 1,
                 id:     'mapHolder'
             },{
-                width:  '100%',
                 top:    '50px',
-                bottom: '110px',
+                style:'left:50%; margin-left:-172px;',
+                id:'searchHolder',
                 zIndex: 2,
-                xtype:  'searchPanel'
+                items: [{
+                    flex: 1,
+                    xtype: 'searchPanel'
+                }]
             },{
                 width:'100%',
                 height:'40px',
