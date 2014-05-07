@@ -69,7 +69,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="57" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.4810606" vertical-offset="171" max-vertical-offset="1139">
+            <state line="25" column="132" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.4810606" vertical-offset="171" max-vertical-offset="1139">
               <folding />
             </state>
           </provider>
@@ -587,7 +587,7 @@
       <workItem from="1399309087484" duration="23216000" />
       <workItem from="1399371031656" duration="5511000" />
       <workItem from="1399378443109" duration="26224000" />
-      <workItem from="1399457904234" duration="2766000" />
+      <workItem from="1399457904234" duration="2997000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -685,7 +685,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181098000" />
+    <option name="totallyTimeSpent" value="181329000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -1096,7 +1096,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="57" selection-start="1349" selection-end="1349" vertical-scroll-proportion="0.4810606" vertical-offset="171" max-vertical-offset="1139">
+        <state line="25" column="132" selection-start="1424" selection-end="1424" vertical-scroll-proportion="0.4810606" vertical-offset="171" max-vertical-offset="1139">
           <folding />
         </state>
       </provider>
