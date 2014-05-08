@@ -27,7 +27,7 @@ var appInit = function() {
                     {xtype:'aboutPage'}, {xtype:'settingsPage'}, {xtype:'sharePage'}
                 ]
             });
-
+            setTimeout(hideSplash, 2000);
         }
     });
 };

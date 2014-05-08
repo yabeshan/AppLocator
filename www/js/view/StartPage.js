@@ -9,7 +9,7 @@ Ext.define('App.view.StartPage' ,{
         cls:'start-page-zoom',
         items:[
             {
-                html: '<div class="page"><img src="img/start-page-app-bg.jpg" class="start-page-background"></div>'
+                html: '<div class="page"><img src="img/start-page-app-bg-mini.jpg" class="start-page-background"></div>'
             },{
                 html: '<div class="page"><img src="img/start-page-header-bg.jpg" class="start-page-header-bg"></div>'
             },{
