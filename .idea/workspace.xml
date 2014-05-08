@@ -2,17 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-ipad-landscape-2x.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-ipad-landscape-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-ipad-landscape.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-ipad-landscape.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-ipad-portrait-2x.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-ipad-portrait-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-ipad-portrait.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-ipad-portrait.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-landscape-2x.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-landscape-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-landscape.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-landscape.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-portrait-2x.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-portrait-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-portrait-568h-2x.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-portrait-568h-2x.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-portrait.png" afterPath="$PROJECT_DIR$/www/res/screen/ios/screen-iphone-portrait.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/StartPage.js" afterPath="$PROJECT_DIR$/www/js/view/StartPage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/config.xml" afterPath="$PROJECT_DIR$/www/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
     </list>
     <ignored path="AppLocator.iws" />
@@ -80,7 +71,16 @@
       <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="21" selection-start="1732" selection-end="1744" vertical-scroll-proportion="-9.769231" vertical-offset="307" max-vertical-offset="1275">
+            <state line="31" column="0" selection-start="1628" selection-end="1628" vertical-scroll-proportion="-9.115385" vertical-offset="290" max-vertical-offset="1156">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="20" column="57" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1751">
               <folding />
             </state>
           </provider>
@@ -106,10 +106,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="29" column="41" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="867">
+            <state line="52" column="1" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.93982303" vertical-offset="353" max-vertical-offset="986">
               <folding />
             </state>
           </provider>
@@ -133,19 +133,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StartPage.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="StartPage.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/view/StartPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="77" selection-start="271" selection-end="271" vertical-scroll-proportion="0.33333334" vertical-offset="7" max-vertical-offset="1462">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainPage.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/www/js/view/MainPage.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="70" column="6" selection-start="2188" selection-end="2188" vertical-scroll-proportion="0.0" vertical-offset="663" max-vertical-offset="1445">
+            <state line="11" column="77" selection-start="271" selection-end="271" vertical-scroll-proportion="-7.2" vertical-offset="7" max-vertical-offset="1462">
               <folding />
             </state>
           </provider>
@@ -203,10 +194,10 @@
         <option value="$PROJECT_DIR$/www/css/app.css" />
         <option value="$PROJECT_DIR$/www/js/view/panel/ChangeInfoPanel.js" />
         <option value="$PROJECT_DIR$/www/js/model/Station.js" />
+        <option value="$PROJECT_DIR$/www/js/view/StartPage.js" />
         <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
-        <option value="$PROJECT_DIR$/www/js/view/StartPage.js" />
       </list>
     </option>
   </component>
@@ -582,7 +573,7 @@
       <workItem from="1399371031656" duration="5511000" />
       <workItem from="1399378443109" duration="26224000" />
       <workItem from="1399457904234" duration="3593000" />
-      <workItem from="1399556265968" duration="4377000" />
+      <workItem from="1399556265968" duration="5198000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -680,7 +671,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="186302000" />
+    <option name="totallyTimeSpent" value="187123000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -1099,27 +1090,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="10" selection-start="300" selection-end="315" vertical-scroll-proportion="0.0" vertical-offset="4" max-vertical-offset="1751">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="21" selection-start="1732" selection-end="1744" vertical-scroll-proportion="-9.769231" vertical-offset="307" max-vertical-offset="1275">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="29" column="41" selection-start="815" selection-end="815" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="867">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="23" selection-start="771" selection-end="771" vertical-scroll-proportion="-7.88" vertical-offset="177" max-vertical-offset="5338">
@@ -1129,7 +1099,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/view/StartPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="77" selection-start="271" selection-end="271" vertical-scroll-proportion="0.33333334" vertical-offset="7" max-vertical-offset="1462">
+        <state line="11" column="77" selection-start="271" selection-end="271" vertical-scroll-proportion="-7.2" vertical-offset="7" max-vertical-offset="1462">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="57" selection-start="640" selection-end="640" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1751">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="0" selection-start="1628" selection-end="1628" vertical-scroll-proportion="-9.115385" vertical-offset="290" max-vertical-offset="1156">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="1" selection-start="1228" selection-end="1228" vertical-scroll-proportion="0.93982303" vertical-offset="353" max-vertical-offset="986">
           <folding />
         </state>
       </provider>

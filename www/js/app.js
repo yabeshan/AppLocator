@@ -34,6 +34,8 @@ var appInit = function() {
 
 var initflag = false;
 var onDeviceReady = function() {
+    navigator.splashscreen.show();
+
     appInit();
     initflag = true;
     window.onload = function(){};
@@ -43,3 +45,9 @@ document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){
     setTimeout( onDeviceReady, 1000 );
 };
+
+function hideSplash() {
+    alert(111);
+    navigator.splashscreen.hide();
+    alert(222);
+}
