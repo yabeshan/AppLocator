@@ -18,7 +18,7 @@ Ext.define('App.view.SearchPanel', {
                         placeHolder: 'search by address, city or zip',
                         itemId: 'searchBox'
                     },{
-                        html:'<img id="searchBtn" src="img/main-page-toolbar-search-btn.png" style="width:55px;height:52px;">',
+                        html:'<img id="searchBtn" src="img/main-page-toolbar-search-btn.png" style="width:44px;height:52px;">',
                         listeners: {
                             tap: {
                                 fn: function( e, node ) {

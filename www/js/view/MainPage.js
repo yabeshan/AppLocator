@@ -14,7 +14,7 @@ Ext.define('App.view.MainPage' ,{
                 id:     'mapHolder'
             },{
                 top:    '50px',
-                style:'left:50%; margin-left:-172px;',
+                style:'left:50%; margin-left:-166px;',
                 id:'searchHolder',
                 zIndex: 2,
                 items: [{
@@ -70,11 +70,14 @@ Ext.define('App.view.MainPage' ,{
 //        this.update();
     },
     mapContent:null,
-    update:function(){
+    addMap: function() {
         if (this.mapContent == null) {
             this.mapContent = Ext.create('App.view.MapPanel');
             Ext.getCmp("mapHolder").add( this.mapContent );
         }
+    },
+    update:function(){
+        setTimeout( Ext.getCmp("MainPage").addMap, 2000);
     }
 
 });
