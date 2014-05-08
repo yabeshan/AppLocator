@@ -6,10 +6,10 @@
         id        = "com.yabeshan.applocator"
         version   = "0.1.2">
 
-    <name>AppLocator</name>
+    <name>Station Locator</name>
 
     <description>
-        AppLocator
+        Station Locator
     </description>
 
     <!--

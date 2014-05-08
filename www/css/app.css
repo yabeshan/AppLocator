@@ -189,17 +189,17 @@ body {
 .main-page-toolbar-lng {
     background-image: url(../img/main-page-toolbar-lng.png);
     left: 50%;
-    margin-left: -132px;
+    margin-left: -88px;
 }
 .main-page-toolbar-cng {
     background-image: url(../img/main-page-toolbar-cng.png);
     left: 50%;
-    margin-left: -44px;
+    margin-left: 0px;
 }
 .main-page-toolbar-both {
     background-image: url(../img/main-page-toolbar-both.png);
     left: 50%;
-    margin-left: 44px;
+    margin-left: 0px;
 }
 
 .main-page-changeinfo-bottom-arrow {

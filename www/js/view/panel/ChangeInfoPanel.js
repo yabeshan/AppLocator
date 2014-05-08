@@ -104,8 +104,8 @@ Ext.define('App.view.ChangeInfoPanel' ,{
                 style:'position:absolute;background:#FFF;bottom:0px;height:50px;width:100%;',
                 title:'',
                 html: '<div id="lngBtn" class="main-page-bottom-toolbar main-page-toolbar-lng"></div>'
-                    + '<div id="cngBtn" class="main-page-bottom-toolbar main-page-toolbar-cng"></div>'
-                    + '<div id="bothBtn" class="main-page-bottom-toolbar main-page-toolbar-both"></div>',
+//                    + '<div id="cngBtn" class="main-page-bottom-toolbar main-page-toolbar-cng"></div>'
+                    + '<div id="cngBtn" class="main-page-bottom-toolbar main-page-toolbar-cng"></div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
