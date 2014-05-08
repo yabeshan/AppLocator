@@ -72,7 +72,12 @@ Ext.define('App.view.StartPage' ,{
         ]
     },
 
-    initialize: function() {},
+    initialize: function() {
+
+    },
+    show: function() {
+        setTimeout(hideSplash, 2000);
+    },
     update:function(){
 //        Ext.getCmp('MainPagePanel').hide();
 //        Ext.getCmp('MainPagePanel').show();
