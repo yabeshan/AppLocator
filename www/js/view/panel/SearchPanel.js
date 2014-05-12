@@ -32,7 +32,7 @@ Ext.define('App.view.SearchPanel', {
             },{
                 id:'searchList',
                 xtype:  'list',
-                style:"background-color: rgba(255,255,255,.8);font-size:70%",
+                style:"background-color: rgba(255,255,255,.8);font-size:65%",
                 store : 'StationStore',
                 itemTpl:  '<div><b>{name}</b>,  {country}</div>'
                          +'<div>{zip}, {state}, {city}, {address}</div>',
