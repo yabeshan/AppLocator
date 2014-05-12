@@ -34,7 +34,11 @@ var appInit = function() {
 
 var initflag = false;
 var onDeviceReady = function() {
-//    navigator.splashscreen.show();
+    try {
+        navigator.splashscreen.show();
+    }
+    catch(err) {}
+    
     appInit();
     initflag = true;
     window.onload = function(){};
