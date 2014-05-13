@@ -31,8 +31,8 @@ var appInit = function() {
 
             if (navigator && navigator.geolocation)
             {
-                navigator.geolocation.getCurrentPosition(function(){
-                    alert("position");
+                navigator.geolocation.getCurrentPosition(function(position){
+                    alert("position = "+ position);
 //                    var lat=position.coords.latitude;
 //                    var longi=position.coords.longitude;
 //                    alert("latitude is: "+ lat+ " longitude is: "+ longi);
