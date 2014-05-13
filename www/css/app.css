@@ -313,20 +313,20 @@ input::-webkit-input-placeholder {
 }
 
 
-.SFB-logo1:link {
-    background:none;border: none;
-    border-radius:0 !important;
-    width:200px;height:200px;
-    background-image:url("../img/main-page-toolbar-both.png");
-    background-position: -100px -100px;
-}
-.SFB-logo1:active {
-    background:none;border: none;
-    border-radius:0 !important;
-    width:200px;height:200px;
-    background-image:url("../img/main-page-toolbar-both.png");
-    background-position: -100px -100px;
-}
+/*.SFB-logo1:link {*/
+    /*background:none;border: none;*/
+    /*border-radius:0 !important;*/
+    /*width:200px;height:200px;*/
+    /*background-image:url("../img/main-page-toolbar-both.png");*/
+    /*background-position: -100px -100px;*/
+/*}*/
+/*.SFB-logo1:active {*/
+    /*background:none;border: none;*/
+    /*border-radius:0 !important;*/
+    /*width:200px;height:200px;*/
+    /*background-image:url("../img/main-page-toolbar-both.png");*/
+    /*background-position: -100px -100px;*/
+/*}*/
 .SFB-logo1:hover {
     background:none;border: none;
     border-radius:0 !important;

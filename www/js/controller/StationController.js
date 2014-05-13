@@ -19,13 +19,13 @@ Ext.define('App.controller.StationController', {
                 focus: 'onFocusSearch'
             },
             'searchPanel list' : {
-                itemtap : 'qwe'
+                itemtap : 'addMarker'
             }
         }
 
     },
 
-    qwe: function( view, idx, t, model, e, eOpts) {
+    addMarker: function( view, idx, t, model, e, eOpts) {
         Ext.getCmp('mapPanel').addMarker( model, true )
     },
 

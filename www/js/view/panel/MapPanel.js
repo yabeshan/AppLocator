@@ -58,7 +58,7 @@ Ext.define('App.view.MapPanel', {
 
                 var centerCoord = new google.maps.LatLng ( lat, lon );
                 Ext.getCmp('mapPanel').setMapCenter( centerCoord );
-                Ext.getCmp('mapPanel').setMapOptions( {'zoom': 10} );
+                Ext.getCmp('mapPanel').setMapOptions( {'zoom': 12} );
 
             }, function(error){
                 alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
