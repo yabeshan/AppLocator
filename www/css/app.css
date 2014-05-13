@@ -274,6 +274,14 @@ body {
         width:540px;margin-left: -270px;bottom:455px;
     }
 }
+@media screen and (min-width:700px) and (min-height:1000px) {
+    .info-zoom {
+        zoom: 200%;
+    }
+    .main-page-changeinfo-panel {
+        width:540px;margin-left: -270px;bottom:455px;
+    }
+}
 
 
 
@@ -314,7 +322,7 @@ input::-webkit-input-placeholder {
 
 
 
-.SFB-logo1 {
+.SFB-logo1, .SFB-logo1:hover {
     background:none;border: none;
     border-radius:0 !important;
     width:200px;height:200px;
@@ -324,11 +332,11 @@ input::-webkit-input-placeholder {
 }
 
 .SFB-logo1:hover {
-    background-color: rgba(255,0,0,.2);
+    background-color: rgba(255,0,0,.3);
 }
 
 
-.SFB-logo2 {
+.SFB-logo2,.SFB-logo2:hover {
     background:none;border: hidden;
     border-radius:0 !important;
     width:200px;height:200px;
@@ -337,9 +345,8 @@ input::-webkit-input-placeholder {
 }
 
 .SFB-logo2:hover {
-    background-color: rgba(255,0,0,.4);
+    background-color: rgba(255,0,0,.6);
 }
-
 
 
 

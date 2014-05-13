@@ -12,7 +12,7 @@ Ext.define('App.view.MapPanel', {
             center: new google.maps.LatLng (34.0522,-118.2437),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI:true,
-            zoom: 3
+            zoom: 10
         }
     },
 
@@ -83,8 +83,8 @@ Ext.define('App.view.MapPanel', {
             var icon = (fuel==0) ? 'img/map-point-blue.png' : ( (fuel==1) ? 'img/map-point-green.png' : 'img/map-point-double.png' );
             var marker = new google.maps.Marker({
                 map: this.gMap,
-                animation: google.maps.Animation.DROP,
-                icon: 'img/map-point-green.png',
+//                animation: google.maps.Animation.DROP,
+                icon: icon,//'img/map-point-green.png',
                 position: new google.maps.LatLng ( lat , lon )
             });
             this.markerArr[ model.get('id') ] = true;
