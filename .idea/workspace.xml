@@ -69,10 +69,10 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="64" column="81" selection-start="3026" selection-end="3026" vertical-scroll-proportion="-0.030303031" vertical-offset="1104" max-vertical-offset="1632">
+            <state line="56" column="5" selection-start="2512" selection-end="2512" vertical-scroll-proportion="0.4848485" vertical-offset="696" max-vertical-offset="1547">
               <folding>
-                <element signature="n#style#0;n#img#0;n#head#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -591,7 +591,7 @@
       <workItem from="1399457904234" duration="3593000" />
       <workItem from="1399556265968" duration="11456000" />
       <workItem from="1399930416546" duration="3697000" />
-      <workItem from="1399973387953" duration="5948000" />
+      <workItem from="1399973387953" duration="7212000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -689,7 +689,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="203026000" />
+    <option name="totallyTimeSpent" value="204290000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -779,8 +779,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="5" selection-start="1512" selection-end="1512" vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="1088">
           <folding>
-            <element signature="n#style#0;n#img#0;n#head#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -832,8 +832,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="33" column="5" selection-start="1512" selection-end="1512" vertical-scroll-proportion="0.0" vertical-offset="460" max-vertical-offset="1088">
           <folding>
-            <element signature="n#style#0;n#img#0;n#head#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -885,8 +885,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="66" selection-start="681" selection-end="681" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
           <folding>
-            <element signature="n#style#0;n#img#0;n#head#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -909,8 +909,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="19" column="59" selection-start="879" selection-end="879" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="493">
           <folding>
-            <element signature="n#style#0;n#img#0;n#head#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -926,8 +926,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="16" column="51" selection-start="734" selection-end="734" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="442">
           <folding>
-            <element signature="n#style#0;n#img#0;n#head#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -943,8 +943,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="70" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="408">
           <folding>
-            <element signature="n#style#0;n#img#0;n#head#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -960,8 +960,8 @@
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="70" selection-start="603" selection-end="603" vertical-scroll-proportion="0.0" vertical-offset="221" max-vertical-offset="408">
           <folding>
-            <element signature="n#style#0;n#img#0;n#head#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1083,10 +1083,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="64" column="81" selection-start="3026" selection-end="3026" vertical-scroll-proportion="-0.030303031" vertical-offset="1104" max-vertical-offset="1632">
+        <state line="56" column="5" selection-start="2512" selection-end="2512" vertical-scroll-proportion="0.4848485" vertical-offset="696" max-vertical-offset="1547">
           <folding>
-            <element signature="n#style#0;n#img#0;n#head#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>
