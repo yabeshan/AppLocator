@@ -20,7 +20,7 @@ var appInit = function() {
                 id:'panelHolder',
                 fullscreen: true,
                 layout: 'card',
-                activeItem: 2,
+                activeItem: 0,
                 cls:'scaleApp',
                 items: [
                     {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'planTripPage'},

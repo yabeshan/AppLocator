@@ -313,45 +313,22 @@ input::-webkit-input-placeholder {
 }
 
 
-/*.SFB-logo1:link {*/
-    /*background:none;border: none;*/
-    /*border-radius:0 !important;*/
-    /*width:200px;height:200px;*/
-    /*background-image:url("../img/main-page-toolbar-both.png");*/
-    /*background-position: -100px -100px;*/
-/*}*/
-/*.SFB-logo1:active {*/
-    /*background:none;border: none;*/
-    /*border-radius:0 !important;*/
-    /*width:200px;height:200px;*/
-    /*background-image:url("../img/main-page-toolbar-both.png");*/
-    /*background-position: -100px -100px;*/
-/*}*/
-.SFB-logo1:hover {
-    background:none;border: none;
-    border-radius:0 !important;
-    width:200px;height:200px;
-    background-image:url("../img/main-page-toolbar-both.png");
-    background-position: -100px -100px;
-}
+
 .SFB-logo1 {
     background:none;border: none;
     border-radius:0 !important;
     width:200px;height:200px;
+    background-color: rgba(0,0,0,0);
     background-image:url("../img/main-page-toolbar-both.png");
     background-position: -100px -100px;
 }
 
-/*.SFB-logo1, .SFB-logo1:active {*/
-    /*width:200px;height:200px;*/
-    /*background-color: rgba(0,0,0,0);*/
-/*}*/
-/*.SFB-logo1, .SFB-logo1:link {*/
-    /*width:200px;height:200px;*/
-    /*background-color: rgba(0,0,0,0);*/
-/*}*/
+.SFB-logo1:hover {
+    background-color: rgba(255,0,0,.2);
+}
 
-.SFB-logo2, .SFB-logo2:hover {
+
+.SFB-logo2 {
     background:none;border: hidden;
     border-radius:0 !important;
     width:200px;height:200px;
@@ -359,7 +336,9 @@ input::-webkit-input-placeholder {
     background-position: -100px -100px;
 }
 
-
+.SFB-logo2:hover {
+    background-color: rgba(255,0,0,.4);
+}
 
 
 

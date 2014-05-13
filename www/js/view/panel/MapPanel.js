@@ -12,7 +12,7 @@ Ext.define('App.view.MapPanel', {
             center: new google.maps.LatLng (34.0522,-118.2437),
             mapTypeId: google.maps.MapTypeId.ROADMAP,
             disableDefaultUI:true,
-            zoom: 10
+            zoom: 3
         }
     },
 
@@ -20,30 +20,8 @@ Ext.define('App.view.MapPanel', {
     initialize: function() {
         this.gMap = this.getMap();
 
-
-        var marker = new google.maps.Marker({
-            map: this.gMap,
-            animation: google.maps.Animation.DROP,
-            icon: 'img/map-point-green.png',
-            position: new google.maps.LatLng (34.067611,-118.447872)
-        });
-        var marker = new google.maps.Marker({
-            map: this.gMap,
-            animation: google.maps.Animation.DROP,
-            icon: 'img/map-point-double.png',
-            position: new google.maps.LatLng (34.060172,-118.236898)
-        });
-        var marker = new google.maps.Marker({
-            map: this.gMap,
-            animation: google.maps.Animation.DROP,
-            icon: 'img/map-point-grey.png',
-            position: new google.maps.LatLng (33.956294,-118.377032)
-        });
-        var marker = new google.maps.Marker({
-            map: this.gMap,
-            animation: google.maps.Animation.DROP,
-            icon: 'img/map-point-blue.png',
-            position: new google.maps.LatLng (34.023516,-118.03447)
+        Ext.getStore('StationStore').each(function(record,id){
+            Ext.getCmp("mapPanel").addMarker( record, false );
         });
 
         this.locateMe();
@@ -61,11 +39,11 @@ Ext.define('App.view.MapPanel', {
                 Ext.getCmp('mapPanel').setMapOptions( {'zoom': 12} );
 
             }, function(error){
-                alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
+//                alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
             }, { timeout: 10000 });
 
         } else{
-            alert("navigator.geolocation not supported");
+//            alert("navigator.geolocation not supported");
         }
     },
 
