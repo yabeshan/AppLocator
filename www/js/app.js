@@ -29,11 +29,10 @@ var appInit = function() {
             });
 
 
-
             if (navigator && navigator.geolocation)
             {
-                navigator.geolocation.getCurrentPosition(function(position){
-                    alert("position " + position );
+                navigator.geolocation.getCurrentPosition(function(){
+                    alert("position");
 //                    var lat=position.coords.latitude;
 //                    var longi=position.coords.longitude;
 //                    alert("latitude is: "+ lat+ " longitude is: "+ longi);
@@ -41,7 +40,8 @@ var appInit = function() {
                 }, function(error){
                     alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
 
-                }, { enableHighAccuracy:true });
+                }, { timeout: 10000 });
+
             } else{
                 alert("navigator.geolocation not supported");
             }
