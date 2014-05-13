@@ -331,10 +331,10 @@ input::-webkit-input-placeholder {
     background-color: #090;
 }
 .SFB-logo1, .SFB-logo1:link {
-    background-color: #009;
+    background:none;
 }
 .SFB-logo1, .SFB-logo1:active {
-    background-color: #900;
+    background:none;
 }
 .SFB-logo1, .SFB-logo1:focus {
     background-color: #090;
