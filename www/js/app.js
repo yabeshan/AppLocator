@@ -29,6 +29,7 @@ var appInit = function() {
             });
 
 
+
             if (navigator && navigator.geolocation)
             {
                 navigator.geolocation.getCurrentPosition(function(position){
@@ -39,8 +40,7 @@ var appInit = function() {
                 }, function(error){
                     alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
 
-                }, { timeout: 5000 });
-                alert("support");
+                }, { enableHighAccuracy:true });
             } else{
                 alert("navigator.geolocation not supported");
             }
