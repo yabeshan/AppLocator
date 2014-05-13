@@ -31,7 +31,7 @@ Ext.define('App.view.PlanTripPage' ,{
                 xtype:'button',
                 cls:'SFB-logo1',
                 ui:'plain',
-                style:'background-color:white'
+                style:'background-color:white',
                 listeners: {
                     tap: function() {
                         if (this.getCls()=='SFB-logo1') {
