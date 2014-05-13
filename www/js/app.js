@@ -1,5 +1,8 @@
 
+document.write('<script type="text/javascript" language="JavaScript" src="js/lib/gmap.js"></script>');
+document.write('<script type="text/javascript" language="JavaScript" src="js/lib/sencha-touch-all.js"></script>');
 
+/*
 var appInit = function() {
     if (initflag==true) return;
 
@@ -48,4 +51,6 @@ document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){
     setTimeout( onDeviceReady, 1000 );
 };
+
+*/
 
