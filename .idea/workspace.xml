@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" afterPath="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/PlanTripPage.js" afterPath="$PROJECT_DIR$/www/js/view/PlanTripPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/controller/StationController.js" afterPath="$PROJECT_DIR$/www/js/controller/StationController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/app.css" afterPath="$PROJECT_DIR$/www/css/app.css" />
     </list>
     <ignored path="AppLocator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -87,19 +84,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="StationController.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="StationController.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/controller/StationController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="6" column="19" selection-start="169" selection-end="169" vertical-scroll-proportion="0.17989418" vertical-offset="0" max-vertical-offset="1343">
+            <state line="6" column="19" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PlanTripPage.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="PlanTripPage.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/view/PlanTripPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="34" column="28" selection-start="1121" selection-end="1121" vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="1054">
+            <state line="34" column="28" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.3633157" vertical-offset="372" max-vertical-offset="1054">
               <folding />
             </state>
           </provider>
@@ -185,9 +182,9 @@
         <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/js/view/MainPage.js" />
         <option value="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" />
-        <option value="$PROJECT_DIR$/www/js/view/PlanTripPage.js" />
         <option value="$PROJECT_DIR$/www/css/app.css" />
         <option value="$PROJECT_DIR$/www/js/controller/StationController.js" />
+        <option value="$PROJECT_DIR$/www/js/view/PlanTripPage.js" />
       </list>
     </option>
   </component>
@@ -631,7 +628,7 @@
       <workItem from="1399457904234" duration="3593000" />
       <workItem from="1399556265968" duration="11456000" />
       <workItem from="1399930416546" duration="3697000" />
-      <workItem from="1399973387953" duration="24316000" />
+      <workItem from="1399973387953" duration="24687000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -729,7 +726,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221394000" />
+    <option name="totallyTimeSpent" value="221765000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -1097,13 +1094,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/view/PlanTripPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="34" column="28" selection-start="1121" selection-end="1121" vertical-scroll-proportion="0.0" vertical-offset="372" max-vertical-offset="1054">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="328" column="3" selection-start="7768" selection-end="8248" vertical-scroll-proportion="0.0" vertical-offset="5286" max-vertical-offset="6341">
@@ -1164,7 +1154,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controller/StationController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="19" selection-start="169" selection-end="169" vertical-scroll-proportion="0.17989418" vertical-offset="0" max-vertical-offset="1343">
+        <state line="6" column="19" selection-start="169" selection-end="169" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1343">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/js/view/PlanTripPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="28" selection-start="1119" selection-end="1119" vertical-scroll-proportion="0.3633157" vertical-offset="372" max-vertical-offset="1054">
           <folding />
         </state>
       </provider>
