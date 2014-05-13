@@ -307,3 +307,34 @@ input::-webkit-input-placeholder {
     width: 270px;
     height: 52px;
 }
+
+.search-filter-button {
+
+}
+
+/*.x-button .SFB-logo1 .SFB-logo2 {*/
+    /*border-radius:0 !important;*/
+/*}*/
+
+.SFB-logo1, .SFB-logo1:hover {
+    background:none;border: none;
+    border-radius:0 !important;
+    width:200px;height:200px;
+    background-image:url("../img/main-page-toolbar-both.png");
+    background-position: -100px -100px;
+}
+
+.SFB-logo2, .SFB-logo2:hover {
+    background:none;border: hidden;
+    border-radius:0 !important;
+    width:200px;height:200px;
+    background-image:url("../img/main-page-toolbar-cng.png");
+    background-position: -100px -100px;
+}
+
+
+
+
+
+
+

@@ -27,6 +27,22 @@ Ext.define('App.view.PlanTripPage' ,{
                 }]
             },{
                 html: '<div class="page"><br><br>Page content</div>'
+            },{
+                xtype:'button',
+                cls:'SFB-logo1',
+
+                listeners: {
+                    tap: function() {
+                        if (this.getCls()=='SFB-logo1') {
+                            this.removeCls('SFB-logo1');
+                            this.addCls('SFB-logo2');
+                        } else {
+                            this.removeCls('SFB-logo2');
+                            this.addCls('SFB-logo1');
+                        }
+
+                    }
+                }
             }
         ]
     },

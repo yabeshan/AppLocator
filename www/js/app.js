@@ -20,7 +20,7 @@ var appInit = function() {
                 id:'panelHolder',
                 fullscreen: true,
                 layout: 'card',
-                activeItem: 0,
+                activeItem: 2,
                 cls:'scaleApp',
                 items: [
                     {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'planTripPage'},
@@ -39,6 +39,22 @@ var onDeviceReady = function() {
     appInit();
     initflag = true;
     window.onload = function(){};
+
+    if (navigator && navigator.geolocation)
+    {
+        navigator.geolocation.getCurrentPosition(function(position){
+            var lat=position.coords.latitude;
+            var longi=position.coords.longitude;
+            alert("latitude is: "+ lat+ " longitude is: "+ longi);
+
+        }, function(error){
+            alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
+            
+        }, { enableHighAccuracy:true });
+        alert("support");
+    } else{
+        alert("navigator.geolocation not supported");
+    }
 };
 
 document.addEventListener('deviceready', onDeviceReady, false);
