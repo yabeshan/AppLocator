@@ -39,11 +39,11 @@ Ext.define('App.view.MapPanel', {
                 Ext.getCmp('mapPanel').setMapOptions( {'zoom': 12} );
 
             }, function(error){
-//                alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
+                alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
             }, { timeout: 10000 });
 
         } else{
-//            alert("navigator.geolocation not supported");
+            alert("navigator.geolocation not supported");
         }
     },
 

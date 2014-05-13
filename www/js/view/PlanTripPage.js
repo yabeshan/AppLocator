@@ -27,7 +27,7 @@ Ext.define('App.view.PlanTripPage' ,{
                 }]
             },{
                 html: '<div class="page"><br><br>Page content</div>'
-            },{
+            }/*,{
                 xtype:'button',
                 cls:'SFB-logo1',
                 listeners: {
@@ -42,7 +42,7 @@ Ext.define('App.view.PlanTripPage' ,{
 
                     }
                 }
-            }
+            }*/
         ]
     },
 
