@@ -28,23 +28,6 @@ var appInit = function() {
                 ]
             });
 
-
-            if (navigator && navigator.geolocation)
-            {
-                navigator.geolocation.getCurrentPosition(function(position){
-                    alert("position = "+ position);
-//                    var lat=position.coords.latitude;
-//                    var longi=position.coords.longitude;
-//                    alert("latitude is: "+ lat+ " longitude is: "+ longi);
-
-                }, function(error){
-                    alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
-
-                }, { timeout: 10000 });
-
-            } else{
-                alert("navigator.geolocation not supported");
-            }
         }
     });
 };
@@ -56,7 +39,6 @@ var onDeviceReady = function() {
     appInit();
     initflag = true;
     window.onload = function(){};
-
 };
 
 document.addEventListener('deviceready', onDeviceReady, false);

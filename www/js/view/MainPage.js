@@ -44,7 +44,7 @@ Ext.define('App.view.MainPage' ,{
                             if (node.id=="menuBtn") {
                                 Ext.getCmp('menuPanel').openMenu();
                             } else if (node.id=="locateBtn") {
-
+                                Ext.getCmp('mapPanel').locateMe();
                             }
 
                         },

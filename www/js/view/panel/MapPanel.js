@@ -20,6 +20,7 @@ Ext.define('App.view.MapPanel', {
     initialize: function() {
         this.gMap = this.getMap();
 
+
         var marker = new google.maps.Marker({
             map: this.gMap,
             animation: google.maps.Animation.DROP,
@@ -45,8 +46,29 @@ Ext.define('App.view.MapPanel', {
             position: new google.maps.LatLng (34.023516,-118.03447)
         });
 
-
+        this.locateMe();
     },
+
+    locateMe: function() {
+        if (navigator && navigator.geolocation)
+        {
+            navigator.geolocation.getCurrentPosition(function(position){
+                var lat=position.coords.latitude;
+                var lon=position.coords.longitude;
+
+                var centerCoord = new google.maps.LatLng ( lat, lon );
+                Ext.getCmp('mapPanel').setMapCenter( centerCoord );
+                Ext.getCmp('mapPanel').setMapOptions( {'zoom': 10} );
+
+            }, function(error){
+                alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
+            }, { timeout: 10000 });
+
+        } else{
+            alert("navigator.geolocation not supported");
+        }
+    },
+
     trafficLayer:null,
     changeTraffic: function() {
         if (this.trafficLayer == null) {
