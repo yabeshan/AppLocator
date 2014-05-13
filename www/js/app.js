@@ -28,6 +28,22 @@ var appInit = function() {
                 ]
             });
 
+
+            if (navigator && navigator.geolocation)
+            {
+                navigator.geolocation.getCurrentPosition(function(position){
+                    var lat=position.coords.latitude;
+                    var longi=position.coords.longitude;
+                    alert("latitude is: "+ lat+ " longitude is: "+ longi);
+
+                }, function(error){
+                    alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
+
+                }, { timeout: 5000 });
+                alert("support");
+            } else{
+                alert("navigator.geolocation not supported");
+            }
         }
     });
 };
@@ -40,21 +56,6 @@ var onDeviceReady = function() {
     initflag = true;
     window.onload = function(){};
 
-    if (navigator && navigator.geolocation)
-    {
-        navigator.geolocation.getCurrentPosition(function(position){
-            var lat=position.coords.latitude;
-            var longi=position.coords.longitude;
-            alert("latitude is: "+ lat+ " longitude is: "+ longi);
-
-        }, function(error){
-            alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
-            
-        }, { enableHighAccuracy:true });
-        alert("support");
-    } else{
-        alert("navigator.geolocation not supported");
-    }
 };
 
 document.addEventListener('deviceready', onDeviceReady, false);

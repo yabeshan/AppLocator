@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/PlanTripPage.js" afterPath="$PROJECT_DIR$/www/js/view/PlanTripPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/app.css" afterPath="$PROJECT_DIR$/www/css/app.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/config.xml" afterPath="$PROJECT_DIR$/www/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AppLocator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -82,7 +79,7 @@
       <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1819">
+            <state line="32" column="8" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1836">
               <folding />
             </state>
           </provider>
@@ -91,7 +88,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="51" column="12" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.7601411" vertical-offset="436" max-vertical-offset="1207">
+            <state line="45" column="13" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.8500882" vertical-offset="283" max-vertical-offset="1224">
               <folding />
             </state>
           </provider>
@@ -592,7 +589,7 @@
       <workItem from="1399457904234" duration="3593000" />
       <workItem from="1399556265968" duration="11456000" />
       <workItem from="1399930416546" duration="3697000" />
-      <workItem from="1399973387953" duration="16134000" />
+      <workItem from="1399973387953" duration="16849000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -690,7 +687,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="213212000" />
+    <option name="totallyTimeSpent" value="213927000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -1070,14 +1067,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="722" selection-end="722" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1819">
+        <state line="32" column="8" selection-start="1077" selection-end="1077" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1836">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="12" selection-start="1407" selection-end="1407" vertical-scroll-proportion="0.7601411" vertical-offset="436" max-vertical-offset="1207">
+        <state line="45" column="13" selection-start="1404" selection-end="1404" vertical-scroll-proportion="0.8500882" vertical-offset="283" max-vertical-offset="1224">
           <folding />
         </state>
       </provider>
