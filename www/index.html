@@ -30,43 +30,45 @@
 
         <title>Station Locator</title>
 
+
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript">
+
+            //        if (navigator && navigator.geolocation)
+            //        {
+            //            navigator.geolocation.getCurrentPosition( function(position){
+            //                var lat=position.coords.latitude;
+            //                var longi=position.coords.longitude;
+            //                alert("latitude is: "+ lat+ " longitude is: "+ longi);
+            //            }, function(error){
+            //                alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
+            //            }, { enableHighAccuracy:true });
+            //
+            //            alert("navigator.geolocation is supported");
+            //        } else{
+            //            alert("not supported");
+            //        }
+
+            /*
+             try {
+             navigator.splashscreen.show();
+             }
+             catch(err) {}
+             */
+        </script>
+
+        <img src="img/start-page-app-bg-mini.jpg" style="width: 100%; height: 100%" />
+
+        <script type="text/javascript"
+                src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAfTNWFYhoCfxMH3BbpYbQYsqdWXYW-yXc&sensor=true">
+        </script>
+        <script type="text/javascript" src="js/lib/sencha-touch-all.js"></script>
+
     </head>
     <body style="background-color:#900">
 
-    <script type="text/javascript" src="phonegap.js"></script>
-    <script type="text/javascript">
 
-//        if (navigator && navigator.geolocation)
-//        {
-//            navigator.geolocation.getCurrentPosition( function(position){
-//                var lat=position.coords.latitude;
-//                var longi=position.coords.longitude;
-//                alert("latitude is: "+ lat+ " longitude is: "+ longi);
-//            }, function(error){
-//                alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
-//            }, { enableHighAccuracy:true });
-//
-//            alert("navigator.geolocation is supported");
-//        } else{
-//            alert("not supported");
-//        }
-
-        /*
-        try {
-            navigator.splashscreen.show();
-        }
-        catch(err) {}
-        */
-    </script>
-
-    <img src="img/start-page-app-bg-mini.jpg" style="width: 100%; height: 100%" />
-
-    <script type="text/javascript"
-            src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAfTNWFYhoCfxMH3BbpYbQYsqdWXYW-yXc&sensor=true">
-    </script>
-    <!--script type="text/javascript" src="js/lib/sencha-touch-all.js"></script>
-
-    <script type="text/javascript" src="js/model/Station.js"></script>
+    <!--script type="text/javascript" src="js/model/Station.js"></script>
     <script type="text/javascript" src="js/controller/PageController.js"></script>
     <script type="text/javascript" src="js/controller/StationController.js"></script>
 
