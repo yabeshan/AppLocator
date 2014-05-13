@@ -1,8 +1,5 @@
 
-document.write('<script type="text/javascript" language="JavaScript" src="js/lib/gmap.js"></script>');
-document.write('<script type="text/javascript" language="JavaScript" src="js/lib/sencha-touch-all.js"></script>');
 
-/*
 var appInit = function() {
     if (initflag==true) return;
 
@@ -37,10 +34,7 @@ var appInit = function() {
 
 var initflag = false;
 var onDeviceReady = function() {
-    try {
-        navigator.splashscreen.show();
-    }
-    catch(err) {}
+    if (navigator && navigator.splashscreen) navigator.splashscreen.show();
 
     appInit();
     initflag = true;
@@ -52,5 +46,4 @@ window.onload=function(){
     setTimeout( onDeviceReady, 1000 );
 };
 
-*/
 

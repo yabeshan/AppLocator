@@ -20,7 +20,7 @@
 
     <gap:plugin name="org.apache.cordova.splashscreen" />
 
-    <preference name="SplashScreenDelay" value="5000"/>
+    <preference name="SplashScreenDelay" value="50000"/>
 
     <!--
         If you do not want any permissions to be added to your app, add the
