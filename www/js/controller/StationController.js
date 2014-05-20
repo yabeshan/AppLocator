@@ -31,6 +31,7 @@ Ext.define('App.controller.StationController', {
 
     onFocusSearch: function() {
         Ext.getCmp('searchPanel').showSearchResult();
+        App.app.getController("App.controller.DataController").search("");
     },
 
     onActivate: function() {
@@ -38,7 +39,10 @@ Ext.define('App.controller.StationController', {
     },
 
     onSearchKeyUp: function(searchField) {
-        queryString = searchField.getValue();
+        var queryString = searchField.getValue();
+        App.app.getController("App.controller.DataController").search( queryString );
+
+        /*
         console.log(this,'Please search by: ' + queryString);
 
         var store = Ext.getStore('StationStore');
@@ -52,19 +56,26 @@ Ext.define('App.controller.StationController', {
 //                    thisRegEx.test(record.get('region'))) {
 //                    return true;
 //                };
-                if ( thisRegEx.test(record.get('name')) ) {
+
+
+                if ( thisRegEx.test(record.get('address')) ||
+                    thisRegEx.test(record.get('zip'))  ||
+                    thisRegEx.test(record.get('city')) ) {
                     return true;
                 };
                 return false;
             });
         }
-
+*/
     },
 
     onClearSearch: function() {
-        console.log('Clear icon is tapped');
+        App.app.getController("App.controller.DataController").search("");
+        /*
+         console.log('Clear icon is tapped');
         var store = Ext.getStore('StationStore');
         store.clearFilter();
+        */
     },
 
     init: function() {

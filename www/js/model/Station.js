@@ -24,7 +24,7 @@ Ext.define('App.store.StationStore', {
     extend: 'Ext.data.Store',
     config: {
         model: "App.model.StationModel",
-        autoLoad: true,
+        autoLoad: true
 
 /*
         data  : [
@@ -50,8 +50,8 @@ Ext.define('App.store.StationStore', {
                 "thursday":"Yes","friday":"Yes","saturday":"No","sunday":"","vehicle":0,"payment":"0","flow":0,"special":""
             }
         ]
-*/
-//*
+//*/
+/*
         proxy: {
             type: 'ajax',
             url: 'data/stationsTmp.json',
@@ -62,7 +62,7 @@ Ext.define('App.store.StationStore', {
                 successProperty: 'success'
             }
         }
- //*/
+ */
 
     }
 });
