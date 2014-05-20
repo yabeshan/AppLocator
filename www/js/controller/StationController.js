@@ -31,7 +31,6 @@ Ext.define('App.controller.StationController', {
 
     onFocusSearch: function() {
         Ext.getCmp('searchPanel').showSearchResult();
-        App.app.getController("App.controller.DataController").search("");
     },
 
     onActivate: function() {
@@ -40,10 +39,7 @@ Ext.define('App.controller.StationController', {
 
     onSearchKeyUp: function(searchField) {
         var queryString = searchField.getValue();
-        App.app.getController("App.controller.DataController").search( queryString );
-
-        /*
-        console.log(this,'Please search by: ' + queryString);
+//        console.log(this,'Please search by: ' + queryString);
 
         var store = Ext.getStore('StationStore');
         store.clearFilter();
@@ -51,13 +47,6 @@ Ext.define('App.controller.StationController', {
         if(queryString){
             var thisRegEx = new RegExp(queryString, "i");
             store.filterBy(function(record) {
-//                if (thisRegEx.test(record.get('name')) ||
-//                    thisRegEx.test(record.get('continent')) ||
-//                    thisRegEx.test(record.get('region'))) {
-//                    return true;
-//                };
-
-
                 if ( thisRegEx.test(record.get('address')) ||
                     thisRegEx.test(record.get('zip'))  ||
                     thisRegEx.test(record.get('city')) ) {
@@ -66,16 +55,12 @@ Ext.define('App.controller.StationController', {
                 return false;
             });
         }
-*/
     },
 
     onClearSearch: function() {
-        App.app.getController("App.controller.DataController").search("");
-        /*
-         console.log('Clear icon is tapped');
+//         console.log('Clear icon is tapped');
         var store = Ext.getStore('StationStore');
         store.clearFilter();
-        */
     },
 
     init: function() {

@@ -72,8 +72,8 @@ Ext.define('App.view.MainPage' ,{
     mapContent:null,
     addMap: function() {
         if (this.mapContent == null) {
-//            this.mapContent = Ext.create('App.view.MapPanel');
-//            Ext.getCmp("mapHolder").add( this.mapContent );
+            this.mapContent = Ext.create('App.view.MapPanel');
+            Ext.getCmp("mapHolder").add( this.mapContent );
         }
     },
     update:function(){

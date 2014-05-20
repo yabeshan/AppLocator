@@ -7,7 +7,7 @@ var appInit = function() {
         name: 'App',
 
         controllers: [
-            'PageController', 'StationController', 'DataController'
+            'PageController', 'StationController'
         ],
 
         views: [
@@ -20,7 +20,7 @@ var appInit = function() {
                 id:'panelHolder',
                 fullscreen: true,
                 layout: 'card',
-                activeItem: 1,
+                activeItem: 0,
                 cls:'scaleApp',
                 items: [
                     {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'planTripPage'},
