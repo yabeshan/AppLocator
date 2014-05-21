@@ -3,7 +3,7 @@
 var appInit = function() {
     if (initflag==true) return;
 
-    alert(window.device);
+    alert("12    = "+ window.device);
     // fix for ios7
 //    if (parseFloat(window.device.version) === 7.0) {
 //        document.body.style.marginTop = "20px";
