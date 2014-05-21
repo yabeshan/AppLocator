@@ -36,13 +36,15 @@ var appInit = function() {
 
         }
     });
+    alert("start");
 };
 
 var initflag = false;
 var onDeviceReady = function() {
     if (navigator && navigator.splashscreen) navigator.splashscreen.show();
 
-    alert("15    = "+ window.device);
+    alert("init");
+//    alert("15    = "+ window.device);
     appInit();
     initflag = true;
     window.onload = function(){};
