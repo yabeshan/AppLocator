@@ -71,12 +71,6 @@ Ext.define('App.view.MapPanel', {
         var lat = model.get('latitude');
         var lon = model.get('longitude');
 
-        if (positionFlag) {
-            var centerCoord = new google.maps.LatLng ( lat, lon );
-            Ext.getCmp('mapPanel').setMapCenter( centerCoord );
-            Ext.getCmp('mapPanel').setMapOptions( {'zoom': 17} );
-        }
-
         var fuel = model.get('fuel');
         var icon = (fuel==0) ? 'img/map-point-blue.png' : ( (fuel==1) ? 'img/map-point-green.png' : 'img/map-point-double.png' );
         var marker = new google.maps.Marker({
@@ -87,7 +81,14 @@ Ext.define('App.view.MapPanel', {
             model: model
         });
 
-        google.maps.event.addListener(marker,'click',function(pos) {
+        if (positionFlag) {
+            var centerCoord = new google.maps.LatLng ( lat, lon );
+            Ext.getCmp('mapPanel').setMapCenter( centerCoord );
+            Ext.getCmp('mapPanel').setMapOptions( {'zoom': 17} );
+//            marker.setAnimation(google.maps.Animation.BOUNCE);
+        }
+
+        google.maps.event.addListener(marker,'mousedown',function(pos) {
             Ext.getCmp("mapPanel").tapMarker(this,marker,pos);
         });
 
@@ -96,6 +97,7 @@ Ext.define('App.view.MapPanel', {
 
     tapMarker: function(me,marker,pos) {
         alert(marker.model.get('id') + "   "+ marker.model.get('name'));
+//        marker.setAnimation(null);
     },
 
     onSearchTypeStations: function( lngSelectFlag, cngSelectFlag ) {
