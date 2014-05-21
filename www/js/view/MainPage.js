@@ -14,7 +14,7 @@ Ext.define('App.view.MainPage' ,{
                 id:     'mapHolder'
             },{
                 top:    '50px',
-                style:'left:50%; margin-left:-166px;',
+                style:'left:50%; margin-left:-160px;',
                 id:'searchHolder',
                 zIndex: 2,
                 items: [{

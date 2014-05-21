@@ -310,7 +310,7 @@ input::-webkit-input-placeholder {
     background-color: rgba(255,255,255,0);
     background-image: url(../img/main-page-toolbar-search-text.png);
     background-size: 289px 52px;
-    background-position: center center;
+    background-position: left center;
     background-repeat: no-repeat;
     width: 270px;
     height: 52px;

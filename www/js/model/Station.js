@@ -26,7 +26,7 @@ Ext.define('App.store.StationStore', {
         model: "App.model.StationModel",
         autoLoad: true,
 
-/*
+//*
         data  : [
             {
                 "id":10002,"name":"Clean Energy - Boundary & Dominion","status":"1","address":"3030 Boundary Rd",
@@ -51,7 +51,7 @@ Ext.define('App.store.StationStore', {
             }
         ]
 //*/
-//*
+/*
         proxy: {
             type: 'ajax',
             url: 'data/stationsTmp.json',
@@ -62,7 +62,7 @@ Ext.define('App.store.StationStore', {
                 successProperty: 'success'
             }
         }
- //*/
+ */
 
     }
 });
