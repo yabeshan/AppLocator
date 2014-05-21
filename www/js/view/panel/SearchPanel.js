@@ -32,11 +32,12 @@ Ext.define('App.view.SearchPanel', {
             },{
                 id:'searchList',
                 xtype:  'list',
-                style:"background-color: rgba(255,255,255,.8);font-size:65%",
+                style:"background-color: rgba(255,255,255,.8);font-size:65%;margin-left:10px;",
+                width:'295px',
                 store : 'StationStore',
                 itemTpl:  '<div><b>{name}</b>,  {country}</div>'
                          +'<div>{zip}, {state}, {city}, {address}</div>',
-                emptyText: '<div class="myContent">No Matching Countries</div>',
+                emptyText: '<div class="myContent"></div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {

@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/MainPage.js" afterPath="$PROJECT_DIR$/www/js/view/MainPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/model/Station.js" afterPath="$PROJECT_DIR$/www/js/model/Station.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/panel/SearchPanel.js" afterPath="$PROJECT_DIR$/www/js/view/panel/SearchPanel.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/css/app.css" afterPath="$PROJECT_DIR$/www/css/app.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AppLocator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -116,21 +113,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainPage.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MainPage.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/view/MainPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="49" selection-start="415" selection-end="415" vertical-scroll-proportion="0.42619926" vertical-offset="41" max-vertical-offset="1496">
+            <state line="16" column="49" selection-start="415" selection-end="415" vertical-scroll-proportion="-10.88" vertical-offset="0" max-vertical-offset="1496">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="SearchPanel.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="SearchPanel.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/view/panel/SearchPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="30" selection-start="585" selection-end="585" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1173">
+            <state line="35" column="26" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.6895943" vertical-offset="204" max-vertical-offset="1190">
               <folding>
-                <marker date="1400658813906" expanded="true" signature="655:678" placeholder="..." />
+                <marker date="1400659693921" expanded="true" signature="655:678" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -139,7 +136,7 @@
       <file leaf-file-name="app.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="309" column="40" selection-start="7709" selection-end="7709" vertical-scroll-proportion="-7.88" vertical-offset="5056" max-vertical-offset="6103">
+            <state line="294" column="20" selection-start="7349" selection-end="7360" vertical-scroll-proportion="-10.6" vertical-offset="4733" max-vertical-offset="6103">
               <folding />
             </state>
           </provider>
@@ -179,9 +176,9 @@
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/model/Station.js" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
-        <option value="$PROJECT_DIR$/www/js/view/panel/SearchPanel.js" />
         <option value="$PROJECT_DIR$/www/css/app.css" />
         <option value="$PROJECT_DIR$/www/js/view/MainPage.js" />
+        <option value="$PROJECT_DIR$/www/js/view/panel/SearchPanel.js" />
       </list>
     </option>
   </component>
@@ -606,7 +603,7 @@
       <workItem from="1399973387953" duration="32291000" />
       <workItem from="1400523768421" duration="859000" />
       <workItem from="1400575386671" duration="19017000" />
-      <workItem from="1400656223656" duration="2648000" />
+      <workItem from="1400656223656" duration="3403000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -704,7 +701,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251893000" />
+    <option name="totallyTimeSpent" value="252648000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -1069,26 +1066,26 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/view/panel/SearchPanel.js">
+    <entry file="file://$PROJECT_DIR$/www/js/view/MainPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="30" selection-start="585" selection-end="585" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1173">
-          <folding>
-            <marker date="1400658813906" expanded="true" signature="655:678" placeholder="..." />
-          </folding>
+        <state line="16" column="49" selection-start="415" selection-end="415" vertical-scroll-proportion="-10.88" vertical-offset="0" max-vertical-offset="1496">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/www/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="309" column="40" selection-start="7709" selection-end="7709" vertical-scroll-proportion="-7.88" vertical-offset="5056" max-vertical-offset="6103">
+        <state line="294" column="20" selection-start="7349" selection-end="7360" vertical-scroll-proportion="-10.6" vertical-offset="4733" max-vertical-offset="6103">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/view/MainPage.js">
+    <entry file="file://$PROJECT_DIR$/www/js/view/panel/SearchPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="49" selection-start="415" selection-end="415" vertical-scroll-proportion="0.42619926" vertical-offset="41" max-vertical-offset="1496">
-          <folding />
+        <state line="35" column="26" selection-start="1280" selection-end="1280" vertical-scroll-proportion="0.6895943" vertical-offset="204" max-vertical-offset="1190">
+          <folding>
+            <marker date="1400659693921" expanded="true" signature="655:678" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
