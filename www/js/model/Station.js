@@ -36,7 +36,7 @@ Ext.define('App.store.StationStore', {
             },{
                 "id":10004,"name":"Clean Energy - Cloverdale Chevron","status":"1","address":"17790 56th Ave",
                 "city":"Surrey","state":"BC","zip":"V3S 1C7","country":"Canada","latitude":49.103785,"longitude":-122.729808,
-                "type":"0","fuel":"0","open":"8:00","close":"20:00","monday":"Yes","tuesday":"Yes","wednesday":"Yes",
+                "type":"1","fuel":"1","open":"8:00","close":"20:00","monday":"Yes","tuesday":"Yes","wednesday":"Yes",
                 "thursday":"Yes","friday":"Yes","saturday":"No","sunday":"","vehicle":0,"payment":"0","flow":0,"special":""
             },{
                 "id":13000,"name":"Clean Energy - San Francisco Olympian Oil","status":"1","address":"2690 Third Street",
@@ -46,7 +46,7 @@ Ext.define('App.store.StationStore', {
             },{
                 "id":13003,"name":"Clean Energy - Elk Grove","status":"1","address":"9050 Elkmont Way","city":"Elk Grove",
                 "state":"CA","zip":"95624","country":"USA","latitude":38.38145065,"longitude":-121.364357,
-                "type":"0","fuel":"0","open":"13:00","close":"1:00","monday":"Yes","tuesday":"Yes","wednesday":"Yes",
+                "type":"1","fuel":"2","open":"13:00","close":"1:00","monday":"Yes","tuesday":"Yes","wednesday":"Yes",
                 "thursday":"Yes","friday":"Yes","saturday":"No","sunday":"","vehicle":0,"payment":"0","flow":0,"special":""
             }
         ]

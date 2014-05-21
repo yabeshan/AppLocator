@@ -74,23 +74,51 @@ Ext.define('App.view.MapPanel', {
         if (positionFlag) {
             var centerCoord = new google.maps.LatLng ( lat, lon );
             Ext.getCmp('mapPanel').setMapCenter( centerCoord );
-            Ext.getCmp('mapPanel').setMapOptions( {'zoom': 18} );
+            Ext.getCmp('mapPanel').setMapOptions( {'zoom': 17} );
         }
 
-        var createFlag = this.markerArr[ model.get('id') ];
-        if (createFlag==null) {
-            var fuel = model.get('fuel');
-            var icon = (fuel==0) ? 'img/map-point-blue.png' : ( (fuel==1) ? 'img/map-point-green.png' : 'img/map-point-double.png' );
-            var marker = new google.maps.Marker({
-                map: this.gMap,
-//                animation: google.maps.Animation.DROP,
-                icon: icon,//'img/map-point-green.png',
-                position: new google.maps.LatLng ( lat , lon )
-            });
-            this.markerArr[ model.get('id') ] = true;
-        }
+        var fuel = model.get('fuel');
+        var icon = (fuel==0) ? 'img/map-point-blue.png' : ( (fuel==1) ? 'img/map-point-green.png' : 'img/map-point-double.png' );
+        var marker = new google.maps.Marker({
+            map: this.gMap,
+//          animation: google.maps.Animation.DROP,
+            icon: icon,
+            position: new google.maps.LatLng ( lat , lon),
+            model: model
+        });
 
+        google.maps.event.addListener(marker,'click',function(pos) {
+            Ext.getCmp("mapPanel").tapMarker(this,marker,pos);
+        });
+
+        this.markerArr.push( marker );
+    },
+
+    tapMarker: function(me,marker,pos) {
+        alert(marker.model.get('id') + "   "+ marker.model.get('name'));
+    },
+
+    onSearchTypeStations: function( lngSelectFlag, cngSelectFlag ) {
+        var k=0, lng =this.markerArr.length, marker, fuel;
+        for (k;k<lng;k++) {
+            marker = this.markerArr[k];
+            //remove listener
+            marker.setMap(null);
+        };
+        this.markerArr = new Array();
+
+        Ext.getStore('StationStore').each(function(record,id){
+            fuel = record.get('fuel');
+            if (lngSelectFlag && cngSelectFlag) {
+                Ext.getCmp("mapPanel").addMarker( record, false );
+            } else if (lngSelectFlag && fuel>=1 ) {
+                Ext.getCmp("mapPanel").addMarker( record, false );
+            } else if (cngSelectFlag && fuel!=1 ) {
+                Ext.getCmp("mapPanel").addMarker( record, false );
+            }
+        });
     }
+
 });
 
 

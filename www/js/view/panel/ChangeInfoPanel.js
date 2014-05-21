@@ -103,15 +103,21 @@ Ext.define('App.view.ChangeInfoPanel' ,{
             },{
                 style:'position:absolute;background:#FFF;bottom:0px;height:50px;width:100%;',
                 title:'',
-                html: '<div id="lngBtn" class="main-page-bottom-toolbar main-page-toolbar-lng"></div>'
-//                    + '<div id="cngBtn" class="main-page-bottom-toolbar main-page-toolbar-cng"></div>'
-                    + '<div id="cngBtn" class="main-page-bottom-toolbar main-page-toolbar-cng"></div>',
+                html: '<div id="lngBtn" class="main-page-bottom-toolbar-select main-page-toolbar-lng"><img id="lngTop" src="img/main-page-toolbar-corner.png"></div>'
+                    + '<div id="cngBtn" class="main-page-bottom-toolbar-select main-page-toolbar-cng"><img id="cngTop" src="img/main-page-toolbar-corner.png"></div>'
+                    + '<div id="dotsBtn" class="main-page-bottom-toolbar main-page-toolbar-dots"></div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
-                            if (node.id=="menuBtn") {}
+                            if (node.id=="dotsBtn") {
+                                Ext.getCmp('changeInfoPanel').showPopup1();
+                            } else if (node.id=="lngBtn") {
+                                Ext.getCmp("changeInfoPanel").changeSelectFilter("lngBtn");
+                            } else if (node.id=="cngBtn") {
+                                Ext.getCmp("changeInfoPanel").changeSelectFilter("cngBtn");
+                            }
 
-                            Ext.getCmp('changeInfoPanel').showPopup1();
+
 
                         },
                         element: 'element'
@@ -119,6 +125,43 @@ Ext.define('App.view.ChangeInfoPanel' ,{
                 }
             }
         ]
+    },
+
+    lngSelectFlag:true,
+    cngSelectFlag:true,
+    changeSelectFilter: function(id) {
+        var flag, btn;
+        if (id=="lngBtn") {
+            flag = this.lngSelectFlag;
+            if (flag) {
+                Ext.get("lngTop").setVisible(false);
+                Ext.get("lngBtn").removeCls("main-page-bottom-toolbar-select");
+                Ext.get("lngBtn").addCls("main-page-bottom-toolbar");
+                this.lngSelectFlag = false;
+            } else {
+                Ext.get("lngTop").setVisible(true);
+                Ext.get("lngBtn").removeCls("main-page-bottom-toolbar");
+                Ext.get("lngBtn").addCls("main-page-bottom-toolbar-select");
+                this.lngSelectFlag = true;
+            }
+        } else if (id=="cngBtn") {
+            flag = this.cngSelectFlag;
+            if (flag) {
+                Ext.get("cngTop").setVisible(false);
+                Ext.get("cngBtn").removeCls("main-page-bottom-toolbar-select");
+                Ext.get("cngBtn").addCls("main-page-bottom-toolbar");
+                this.cngSelectFlag = false;
+            } else {
+                Ext.get("cngTop").setVisible(true);
+                Ext.get("cngBtn").removeCls("main-page-bottom-toolbar");
+                Ext.get("cngBtn").addCls("main-page-bottom-toolbar-select");
+                this.cngSelectFlag = true;
+            }
+        } else {
+            return;
+        }
+
+        Ext.getCmp('mapPanel').onSearchTypeStations( this.lngSelectFlag, this.cngSelectFlag );
     },
 
     initialize: function() {
