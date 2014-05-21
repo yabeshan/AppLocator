@@ -10,12 +10,12 @@ Ext.define('App.view.PopupPanel' ,{
         style:'position:absolute',
         items:[{
             cls:'info-zoom',
-            style:'background-color: rgba(255,255,255,.8);height:100%;width:100%;color:#6cb25e;font-weight:bold;padding:30px',
-            html:'<div style="float:right">Fuel Type</div>'
-                +'<div style="float:right">Vehicle Type</div>'
-                +'<div style="float:right">Hours of Operation</div>'
-                +'<div style="float:right">Flow Rate</div>'
-                +'<div style="float:right">Payment Types</div>'
+            style:'position:relative;background-color: rgba(255,255,255,.8);height:100%;width:100%;color:#6cb25e;font-weight:bold;padding:30px',
+            html:'<div style="position:absolute;height:20%;width:100%;">Fuel Type</div>'
+                +'<div style="position:absolute;height:20%;top:20%;left:20px;right:20px;border-top: 1px solid #CCC">Vehicle Type</div>'
+                +'<div style="position:absolute;height:20%;top:40%;left:20px;right:20px;border-top: 1px solid #CCC">Hours of Operation</div>'
+                +'<div style="position:absolute;height:20%;top:60%;left:20px;right:20px;border-top: 1px solid #CCC">Flow Rate</div>'
+                +'<div style="position:absolute;height:20%;top:80%;left:20px;right:20px;border-top: 1px solid #CCC">Payment Types</div>'
         },{
             cls:'info-zoom',
             style:'bottom:0px;height:36px',
@@ -130,15 +130,6 @@ Ext.define('App.view.ChangeInfoPanel' ,{
     config: {
         items:[
             {
-                cls:'main-page-changeinfo-panel',
-                xtype:'popupPanel'
-//            },{
-//                cls:'main-page-changeinfo-panel',
-//                xtype:'popup1Panel'
-//            },{
-//                cls:'main-page-changeinfo-panel',
-//                xtype:'popup2Panel'
-            },{
                 style:'position:absolute;background:#FFF;bottom:0px;height:50px;width:100%;pointer-events:all',
                 title:'',
                 html: '<div id="lngBtn" class="main-page-bottom-toolbar-select main-page-toolbar-lng"><img id="lngTop" src="img/main-page-toolbar-corner.png"></div>'
@@ -161,6 +152,9 @@ Ext.define('App.view.ChangeInfoPanel' ,{
                         element: 'element'
                     }
                 }
+            },{
+                cls:'main-page-changeinfo-panel',
+                xtype:'popupPanel'
             }
         ]
     },

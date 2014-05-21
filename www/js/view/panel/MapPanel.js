@@ -97,7 +97,7 @@ Ext.define('App.view.MapPanel', {
 
     tapMarker: function(me,marker,pos) {
 //        alert(marker.model.get('id') + "   "+ marker.model.get('name'));
-        Ext.getCmp('infoPopup').openPopup();
+        Ext.getCmp('infoPopup').openPopup(marker.model);
 //        marker.setAnimation(null);
     },
 

@@ -297,17 +297,17 @@ body {
     .info-zoom {
         zoom: 200%;
     }
-    /*.main-page-changeinfo-panel {*/
-        /*width:540px;margin-left: -270px;bottom:455px;*/
-    /*}*/
+    .main-page-changeinfo-panel {
+        bottom:122px;
+    }
 }
 @media screen and (min-width:700px) and (min-height:1000px) {
     .info-zoom {
         zoom: 200%;
     }
-    /*.main-page-changeinfo-panel {*/
-        /*width:540px;margin-left: -270px;bottom:455px;*/
-    /*}*/
+    .main-page-changeinfo-panel {
+        bottom:122px;
+    }
 }
 
 
