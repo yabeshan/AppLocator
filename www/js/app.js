@@ -44,7 +44,6 @@ var initflag = false;
 var onDeviceReady = function() {
     if (navigator && navigator.splashscreen) navigator.splashscreen.show();
 
-    alert("22    = "+ window.device);
     appInit();
     initflag = true;
     window.onload = function(){};
@@ -52,7 +51,7 @@ var onDeviceReady = function() {
 
 document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){
-    setTimeout( onDeviceReady, 5000 );
+    setTimeout( onDeviceReady, 1000 );
 };
 
 

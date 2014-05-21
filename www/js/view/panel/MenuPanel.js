@@ -60,9 +60,13 @@ Ext.define('App.view.MenuPanel' ,{
                                     Ext.getCmp('mapPanel').changeTraffic();
                                     break;
                                 case "mapviewBtn":
+                                    Ext.get('aerialBtn').setVisible(true);
+                                    Ext.get('mapviewBtn').setVisible(false);
                                     Ext.getCmp('mapPanel').changeType( google.maps.MapTypeId.ROADMAP );
                                     break;
                                 case "aerialBtn":
+                                    Ext.get('aerialBtn').setVisible(false);
+                                    Ext.get('mapviewBtn').setVisible(true);
                                     Ext.getCmp('mapPanel').changeType( google.maps.MapTypeId.HYBRID );
                                     break;
                             }
@@ -81,6 +85,9 @@ Ext.define('App.view.MenuPanel' ,{
 
     initialize: function() {
         Ext.getCmp('menuPanel').closeMenu();
+        setTimeout(function(){
+            Ext.get('mapviewBtn').setVisible(false);
+        },300)
     },
     openMenu: function() {
         Ext.getCmp('menuPanel').setZIndex(10);

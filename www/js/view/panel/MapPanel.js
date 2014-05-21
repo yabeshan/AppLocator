@@ -24,7 +24,7 @@ Ext.define('App.view.MapPanel', {
             Ext.getCmp("mapPanel").addMarker( record, false );
         });
 
-        this.locateMe();
+        if (navigator && navigator.geolocation) this.locateMe();
     },
 
     locateMe: function() {
