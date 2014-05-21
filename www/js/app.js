@@ -52,7 +52,7 @@ var onDeviceReady = function() {
 
 document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){
-    setTimeout( onDeviceReady, 1000 );
+    setTimeout( onDeviceReady, 5000 );
 };
 
 
