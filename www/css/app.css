@@ -304,11 +304,9 @@ body {
         zoom: 200%;
     }
     .info-popup-zoom {
-        zoom: 200%;
+        zoom: 180%;
     }
-    #stationAddress {
-        font-size: 110%;
-    }
+
     .main-page-changeinfo-panel {
         bottom:122px;
     }
@@ -318,7 +316,10 @@ body {
         zoom: 200%;
     }
     .info-popup-zoom {
-        zoom: 180%;
+        zoom: 200%;
+    }
+    #stationAddress {
+        font-size: 110%;
     }
     #stationAddress {
         font-size: 70%;
