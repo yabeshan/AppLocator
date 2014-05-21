@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/config.xml" afterPath="$PROJECT_DIR$/www/config.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="" />
     <ignored path="AppLocator.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -71,7 +67,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="27" column="76" selection-start="1569" selection-end="1569" vertical-scroll-proportion="0.19507575" vertical-offset="356" max-vertical-offset="1241">
+            <state line="26" column="9" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.16287878" vertical-offset="356" max-vertical-offset="1241">
               <folding />
             </state>
           </provider>
@@ -157,8 +153,8 @@
         <option value="$PROJECT_DIR$/www/js/controller/StationController.js" />
         <option value="$PROJECT_DIR$/www/js/model/Station.js" />
         <option value="$PROJECT_DIR$/www/js/view/MainPage.js" />
-        <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/config.xml" />
+        <option value="$PROJECT_DIR$/www/index.html" />
       </list>
     </option>
   </component>
@@ -499,7 +495,7 @@
       <workItem from="1399973387953" duration="32291000" />
       <workItem from="1400523768421" duration="859000" />
       <workItem from="1400575386671" duration="19017000" />
-      <workItem from="1400656223656" duration="786000" />
+      <workItem from="1400656223656" duration="1163000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -597,7 +593,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="250031000" />
+    <option name="totallyTimeSpent" value="250408000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -964,7 +960,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="76" selection-start="1569" selection-end="1569" vertical-scroll-proportion="0.19507575" vertical-offset="356" max-vertical-offset="1241">
+        <state line="26" column="9" selection-start="1434" selection-end="1434" vertical-scroll-proportion="0.16287878" vertical-offset="356" max-vertical-offset="1241">
           <folding />
         </state>
       </provider>
