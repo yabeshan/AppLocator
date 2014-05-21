@@ -3,11 +3,10 @@
 var appInit = function() {
     if (initflag==true) return;
 
-
     // fix for ios7
-//    if (parseFloat(window.device.version) === 7.0) {
-//        document.body.style.marginTop = "20px";
-//    }
+    if (window.device && parseFloat(window.device.version) === 7.0) {
+        document.body.style.marginTop = "20px";
+    }
 
     Ext.application({
         name: 'App',
@@ -43,7 +42,7 @@ var initflag = false;
 var onDeviceReady = function() {
     if (navigator && navigator.splashscreen) navigator.splashscreen.show();
 
-    alert("15    = "+ window.device);
+    alert("22    = "+ window.device);
     appInit();
     initflag = true;
     window.onload = function(){};
