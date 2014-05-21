@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/config.xml" afterPath="$PROJECT_DIR$/www/config.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -77,10 +76,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="5" column="19" selection-start="81" selection-end="81" vertical-scroll-proportion="0.15044248" vertical-offset="0" max-vertical-offset="1037">
+            <state line="5" column="19" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
               <folding />
             </state>
           </provider>
@@ -113,10 +112,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="23" column="0" selection-start="768" selection-end="768" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1938">
+            <state line="24" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.46195653" vertical-offset="153" max-vertical-offset="1870">
               <folding />
             </state>
           </provider>
@@ -186,8 +185,8 @@
         <option value="$PROJECT_DIR$/www/js/view/MainPage.js" />
         <option value="$PROJECT_DIR$/www/js/view/panel/SearchPanel.js" />
         <option value="$PROJECT_DIR$/www/css/app.css" />
-        <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
+        <option value="$PROJECT_DIR$/www/config.xml" />
       </list>
     </option>
   </component>
@@ -612,7 +611,7 @@
       <workItem from="1399973387953" duration="32291000" />
       <workItem from="1400523768421" duration="859000" />
       <workItem from="1400575386671" duration="19017000" />
-      <workItem from="1400656223656" duration="5717000" />
+      <workItem from="1400656223656" duration="5995000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -718,11 +717,15 @@
       <created>1400662341093</created>
       <updated>1400662341093</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="test windows devices&#10;">
+      <created>1400662840250</created>
+      <updated>1400662840250</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="254962000" />
+    <option name="totallyTimeSpent" value="255240000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -1097,16 +1100,16 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/config.xml">
+    <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="0" selection-start="768" selection-end="768" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="1938">
+        <state line="5" column="19" selection-start="81" selection-end="81" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1037">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/app.js">
+    <entry file="file://$PROJECT_DIR$/www/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="5" column="19" selection-start="81" selection-end="81" vertical-scroll-proportion="0.15044248" vertical-offset="0" max-vertical-offset="1037">
+        <state line="24" column="0" selection-start="819" selection-end="819" vertical-scroll-proportion="0.46195653" vertical-offset="153" max-vertical-offset="1870">
           <folding />
         </state>
       </provider>
