@@ -26,7 +26,43 @@ Ext.define('App.view.PlanTripPage' ,{
                     }
                 }]
             },{
-                html: '<div class="page"><br><br>Page content</div>'
+                xtype: 'spacer',
+                height:'30px'
+            },{
+
+                xtype: 'textfield',
+                label: 'Start Point',
+                labelWrap: true,
+                name: 'username',
+                placeHolder: 'Location'
+            },{
+                xtype: 'textfield',
+                label: 'End Point',
+                labelWrap: true,
+                name: 'username',
+                placeHolder: 'Location'
+            },{
+                xtype: 'spacer',
+                height:'30px'
+            },{
+                xtype: 'button',
+                style:'width:200px;height:80px;left:30%',
+                text: 'Add Destination'
+            },{
+                xtype: 'spacer',
+                height:'30px'
+            },{
+                xtype: 'button',
+                style:'width:200px;height:80px;left:30%',
+                text: 'Build Trip'
+            },{
+                xtype: 'spacer',
+                height:'30px'
+            },{
+                xtype: 'button',
+                style:'width:200px;height:80px;left:30%',
+                text: 'Clear Road'
+//                html: '<div class="page"><br><br>Page content</div>'
             }/*,{
                 xtype:'button',
                 cls:'SFB-logo1',

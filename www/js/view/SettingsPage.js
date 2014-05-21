@@ -27,7 +27,7 @@ Ext.define('App.view.SettingsPage' ,{
                     }
                 }]
             },{
-                html: '<div class="page"><br><br>Page content</div>'
+                html: '<div class="page"><br><br><p style="padding-left: 20%;text-align: left">Version database: xx-xx-xx<br>Last update: yy-yy-yy<br><br><button style="width: 200px; height: 80px">Update now</button></p></div>'
             }
         ]
     },
