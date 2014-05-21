@@ -3,7 +3,7 @@
 var appInit = function() {
     if (initflag==true) return;
 
-    alert("12    = "+ window.device);
+
     // fix for ios7
 //    if (parseFloat(window.device.version) === 7.0) {
 //        document.body.style.marginTop = "20px";
@@ -42,6 +42,7 @@ var initflag = false;
 var onDeviceReady = function() {
     if (navigator && navigator.splashscreen) navigator.splashscreen.show();
 
+    alert("15    = "+ window.device);
     appInit();
     initflag = true;
     window.onload = function(){};
@@ -49,7 +50,7 @@ var onDeviceReady = function() {
 
 document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){
-//    setTimeout( onDeviceReady, 1000 );
+    setTimeout( onDeviceReady, 1000 );
 };
 
 
