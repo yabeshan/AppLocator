@@ -10,12 +10,12 @@ Ext.define('App.view.PopupPanel' ,{
         style:'position:absolute',
         items:[{
             cls:'info-zoom',
-            style:'position:relative;background-color: rgba(255,255,255,.8);height:100%;width:100%;color:#6cb25e;font-weight:bold;padding:30px',
-            html:'<div style="position:absolute;height:20%;width:100%;">Fuel Type</div>'
+            style:'position:relative;background-color: rgba(255,255,255,.8);height:100%;width:100%;color:#6cb25e;font-weight:bold;padding-top:10px',
+            html:'<div style="position:absolute;height:20%;left:20px;right:20px;">Fuel Type</div>'
                 +'<div style="position:absolute;height:20%;top:20%;left:20px;right:20px;border-top: 1px solid #CCC">Vehicle Type</div>'
-                +'<div style="position:absolute;height:20%;top:40%;left:20px;right:20px;border-top: 1px solid #CCC">Hours of Operation</div>'
-                +'<div style="position:absolute;height:20%;top:60%;left:20px;right:20px;border-top: 1px solid #CCC">Flow Rate</div>'
-                +'<div style="position:absolute;height:20%;top:80%;left:20px;right:20px;border-top: 1px solid #CCC">Payment Types</div>'
+                +'<div style="position:absolute;height:20%;top:40%;left:20px;right:50%;border-top: 1px solid #CCC">Hours of Operation</div>'
+                +'<div style="position:absolute;height:20%;top:40%;left:50%;right:20px;border-top: 1px solid #CCC">Flow Rate</div>'
+                +'<div style="position:absolute;height:40%;top:60%;left:20px;right:20px;border-top: 1px solid #CCC">Payment Types</div>'
         },{
             cls:'info-zoom',
             style:'bottom:0px;height:36px',
