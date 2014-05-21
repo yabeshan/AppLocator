@@ -3,8 +3,11 @@
 var appInit = function() {
     if (initflag==true) return;
 
-    // fix for ios7
-    if (window.device && parseFloat(window.device.version) === 7.0) {
+    var iOS7 = window.device
+        && window.device.platform
+        && window.device.platform.toLowerCase() == "ios"
+        && parseFloat(window.device.version) >= 7.0;
+    if (iOS7) {
         document.body.style.marginTop = "20px";
     }
 
@@ -35,7 +38,6 @@ var appInit = function() {
 
         }
     });
-    alert("start");
 };
 
 var initflag = false;
