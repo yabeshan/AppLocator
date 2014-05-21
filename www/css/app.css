@@ -66,7 +66,7 @@ body {
     width: 540px;
     height: 540px;
 }
-.start-page-menu:active {
+.start-page-menu:hover {
     background-color: #59a04f;
 }
 .start-page-menu-nearme {

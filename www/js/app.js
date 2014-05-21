@@ -20,7 +20,7 @@ var appInit = function() {
                 id:'panelHolder',
                 fullscreen: true,
                 layout: 'card',
-                activeItem: 1,
+                activeItem: 0,
                 cls:'scaleApp',
                 items: [
                     {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'planTripPage'},
@@ -35,6 +35,11 @@ var appInit = function() {
 var initflag = false;
 var onDeviceReady = function() {
     if (navigator && navigator.splashscreen) navigator.splashscreen.show();
+
+    // fix for ios7
+    if (parseFloat(window.device.version) === 7.0) {
+        document.body.style.marginTop = "20px";
+    }
 
     appInit();
     initflag = true;
