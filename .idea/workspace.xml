@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/app.js" afterPath="$PROJECT_DIR$/www/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="AppLocator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,7 +79,7 @@
       <file leaf-file-name="app.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="38" column="23" selection-start="952" selection-end="952" vertical-scroll-proportion="0.5202822" vertical-offset="351" max-vertical-offset="1037">
+            <state line="52" column="2" selection-start="1296" selection-end="1296" vertical-scroll-proportion="0.7292035" vertical-offset="472" max-vertical-offset="1037">
               <folding />
             </state>
           </provider>
@@ -106,6 +107,15 @@
         <entry file="file://$PROJECT_DIR$/www/js/controller/StationController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state line="56" column="9" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.0" vertical-offset="506" max-vertical-offset="1275">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/www/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="23" column="56" selection-start="824" selection-end="824" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1870">
               <folding />
             </state>
           </provider>
@@ -170,12 +180,12 @@
         <option value="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" />
         <option value="$PROJECT_DIR$/www/js/controller/DataController.js" />
         <option value="$PROJECT_DIR$/www/js/controller/StationController.js" />
-        <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/index.html" />
         <option value="$PROJECT_DIR$/www/js/model/Station.js" />
         <option value="$PROJECT_DIR$/www/js/view/MainPage.js" />
         <option value="$PROJECT_DIR$/www/js/view/panel/SearchPanel.js" />
         <option value="$PROJECT_DIR$/www/css/app.css" />
+        <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
       </list>
     </option>
@@ -601,7 +611,7 @@
       <workItem from="1399973387953" duration="32291000" />
       <workItem from="1400523768421" duration="859000" />
       <workItem from="1400575386671" duration="19017000" />
-      <workItem from="1400656223656" duration="4708000" />
+      <workItem from="1400656223656" duration="5235000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -695,11 +705,15 @@
       <created>1398806987218</created>
       <updated>1398806987218</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="test windows devices&#10;">
+      <created>1400662096484</created>
+      <updated>1400662096484</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="253953000" />
+    <option name="totallyTimeSpent" value="254480000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -718,6 +732,7 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -728,7 +743,6 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.4957699" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32994923" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -752,7 +766,8 @@
     <MESSAGE value="[upd] side menu&#10;" />
     <MESSAGE value="[add] images&#10;" />
     <MESSAGE value="[add] map config&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="[add] map config&#10;" />
+    <MESSAGE value="test windows devices&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="test windows devices&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1029,13 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="38" selection-start="1091" selection-end="1091" vertical-scroll-proportion="0.4296029" vertical-offset="306" max-vertical-offset="1853">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/controller/StationController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="56" column="9" selection-start="1603" selection-end="1603" vertical-scroll-proportion="0.0" vertical-offset="506" max-vertical-offset="1275">
@@ -1080,9 +1088,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/www/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="56" selection-start="824" selection-end="824" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="1870">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="38" column="23" selection-start="952" selection-end="952" vertical-scroll-proportion="0.5202822" vertical-offset="351" max-vertical-offset="1037">
+        <state line="52" column="2" selection-start="1296" selection-end="1296" vertical-scroll-proportion="0.7292035" vertical-offset="472" max-vertical-offset="1037">
           <folding />
         </state>
       </provider>
