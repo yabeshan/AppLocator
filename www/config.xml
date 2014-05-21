@@ -21,6 +21,7 @@
 
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="com.vliesaputra.deviceinformation" />
 
     <preference name="SplashScreenDelay" value="50000"/>
 
