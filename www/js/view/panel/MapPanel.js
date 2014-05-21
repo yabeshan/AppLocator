@@ -88,7 +88,7 @@ Ext.define('App.view.MapPanel', {
 //            marker.setAnimation(google.maps.Animation.BOUNCE);
         }
 
-        google.maps.event.addListener(marker,'mousedown',function(pos) {
+        google.maps.event.addListener(marker,'mouseup',function(pos) {
             Ext.getCmp("mapPanel").tapMarker(this,marker,pos);
         });
 
@@ -96,7 +96,8 @@ Ext.define('App.view.MapPanel', {
     },
 
     tapMarker: function(me,marker,pos) {
-        alert(marker.model.get('id') + "   "+ marker.model.get('name'));
+//        alert(marker.model.get('id') + "   "+ marker.model.get('name'));
+        Ext.getCmp('infoPopup').openPopup();
 //        marker.setAnimation(null);
     },
 

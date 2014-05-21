@@ -285,9 +285,9 @@ body {
 
 
 .main-page-changeinfo-panel {
-    position:absolute; background-color:#FFF;
-    width:270px; height:400px;bottom:50px;
-    left:50%;margin-left: -135px;
+    position:absolute;
+    width:100%;top:10px;bottom:86px;
+    padding-left:10px;padding-right: 10px;
 }
 
 .info-zoom {
@@ -297,17 +297,17 @@ body {
     .info-zoom {
         zoom: 200%;
     }
-    .main-page-changeinfo-panel {
-        width:540px;margin-left: -270px;bottom:455px;
-    }
+    /*.main-page-changeinfo-panel {*/
+        /*width:540px;margin-left: -270px;bottom:455px;*/
+    /*}*/
 }
 @media screen and (min-width:700px) and (min-height:1000px) {
     .info-zoom {
         zoom: 200%;
     }
-    .main-page-changeinfo-panel {
-        width:540px;margin-left: -270px;bottom:455px;
-    }
+    /*.main-page-changeinfo-panel {*/
+        /*width:540px;margin-left: -270px;bottom:455px;*/
+    /*}*/
 }
 
 

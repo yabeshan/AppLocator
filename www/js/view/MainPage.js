@@ -53,15 +53,23 @@ Ext.define('App.view.MainPage' ,{
                 }
             },{
                 width:  '100%',
-                height: '50px',
+                height: '100%',
                 bottom: '0px',
                 zIndex: 4,
+                style:'pointer-events:none',
                 xtype: 'changeInfoPanel'
             },{
                 width:  '100%',
                 height: '100%',
                 zIndex: 10,
                 xtype:  'menuPanel'
+            },
+            {
+                width:  '100%',
+                height: '100%',
+                top:'0px',
+                zIndex: 11,
+                xtype:  'infoPopup'
             }
         ]
     },

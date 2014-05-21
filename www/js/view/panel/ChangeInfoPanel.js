@@ -1,7 +1,42 @@
 
 
+Ext.define('App.view.PopupPanel' ,{
+    extend: 'Ext.Container',
+    alias : 'widget.popupPanel',
+    id:'popupPanel',
 
+    config: {
+        layout:'fit',
+        style:'position:absolute',
+        items:[{
+            cls:'info-zoom',
+            style:'background-color: rgba(255,255,255,.8);height:100%;width:100%;color:#6cb25e;font-weight:bold;padding:30px',
+            html:'<div style="float:right">Fuel Type</div>'
+                +'<div style="float:right">Vehicle Type</div>'
+                +'<div style="float:right">Hours of Operation</div>'
+                +'<div style="float:right">Flow Rate</div>'
+                +'<div style="float:right">Payment Types</div>'
+        },{
+            cls:'info-zoom',
+            style:'bottom:0px;height:36px',
+            html:'<div style="background-color: #f1f2f2;height: 36px;width:100%;bottom:0px">'
+                + '<img id="defaultsBtn" src="img/main-page-moreinfo-defaults.png" style="width:102px;height:36px;float:left" />'
+                + '<img id="checkBtn" src="img/main-page-moreinfo-check.png" style="width:36px;height:36px;float:right" /></div>',
+            listeners: {
+                tap: {
+                    fn: function( e, node ) {
+                        if (node.id=="checkBtn") {
+                            Ext.getCmp('changeInfoPanel').hidePopup1();
+                        }
+                    },
+                    element: 'element'
+                }
+            }
+        }]
+    }
+});
 
+/*
 Ext.define('App.view.Popup1Panel' ,{
     extend: 'Ext.Container',
     alias : 'widget.popup1Panel',
@@ -84,7 +119,7 @@ Ext.define('App.view.Popup2Panel' ,{
         }]
     }
 });
-
+*/
 
 
 Ext.define('App.view.ChangeInfoPanel' ,{
@@ -96,12 +131,15 @@ Ext.define('App.view.ChangeInfoPanel' ,{
         items:[
             {
                 cls:'main-page-changeinfo-panel',
-                xtype:'popup1Panel'
+                xtype:'popupPanel'
+//            },{
+//                cls:'main-page-changeinfo-panel',
+//                xtype:'popup1Panel'
+//            },{
+//                cls:'main-page-changeinfo-panel',
+//                xtype:'popup2Panel'
             },{
-                cls:'main-page-changeinfo-panel',
-                xtype:'popup2Panel'
-            },{
-                style:'position:absolute;background:#FFF;bottom:0px;height:50px;width:100%;',
+                style:'position:absolute;background:#FFF;bottom:0px;height:50px;width:100%;pointer-events:all',
                 title:'',
                 html: '<div id="lngBtn" class="main-page-bottom-toolbar-select main-page-toolbar-lng"><img id="lngTop" src="img/main-page-toolbar-corner.png"></div>'
                     + '<div id="cngBtn" class="main-page-bottom-toolbar-select main-page-toolbar-cng"><img id="cngTop" src="img/main-page-toolbar-corner.png"></div>'
@@ -166,22 +204,17 @@ Ext.define('App.view.ChangeInfoPanel' ,{
 
     initialize: function() {
         this.hidePopup1();
-        this.hidePopup2();
     },
     update:function(){
 
     },
     showPopup1: function() {
-        Ext.getCmp('popup1Panel').show();
-    },
-    showPopup2: function() {
-        Ext.getCmp('popup2Panel').show();
+        Ext.getCmp('popupPanel').show();
+        Ext.getCmp('popupPanel').setStyle({'pointer-events':'all'});
     },
     hidePopup1: function() {
-        Ext.getCmp('popup1Panel').hide();
-    },
-    hidePopup2: function() {
-        Ext.getCmp('popup2Panel').hide();
+        Ext.getCmp('popupPanel').hide();
+        Ext.getCmp('popupPanel').setStyle({'pointer-events':'none'});
     }
 
 });
