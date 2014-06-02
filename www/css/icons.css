@@ -1,0 +1,70 @@
+
+
+
+/*************************************** Fuel Type *******************************************/
+.holder-fuel-type {
+    position:absolute;height:20%;left:20px;right:20px;
+}
+
+#fuel-type-cng {
+    position: absolute;width:60px;height:47px;top:20px;margin-left:10%;cursor: pointer;
+    background:  url('../img/fuel-type-icons.png') no-repeat -60px 0px;
+}
+#fuel-type-cng.select {
+    background:  url('../img/fuel-type-icons.png') no-repeat -60px -48px;
+}
+
+#fuel-type-lng {
+    position: absolute;width:60px;height:47px;top:20px;margin-left:20%;cursor: pointer;
+    background:  url('../img/fuel-type-icons.png') no-repeat 0px 0px;
+}
+#fuel-type-lng.select {
+    background:  url('../img/fuel-type-icons.png') no-repeat 0px -48px;
+}
+
+#fuel-type-disel {
+    position: absolute;width:60px;height:47px;top:20px;margin-left:30%;cursor: pointer;
+    background:  url('../img/fuel-type-icons.png') no-repeat -120px 0px;
+}
+#fuel-type-disel.select {
+    background:  url('../img/fuel-type-icons.png') no-repeat -120px -51px;
+}
+
+#fuel-type-redeem {
+    position: absolute;width:60px;height:47px;top:20px;margin-left:40%;cursor: pointer;
+    background:  url('../img/fuel-type-icons.png') no-repeat -180px 0px;
+}
+#fuel-type-redeem.select {
+    background:  url('../img/fuel-type-icons.png') no-repeat -180px -48px;
+}
+
+
+/*************************************** Vehicle Type ****************************************/
+.holder-vehicle-type {
+    position:absolute;height:20%;top:20%;left:20px;right:20px;border-top: 1px solid #CCC
+}
+
+
+
+/*************************************** Hours of Operation **********************************/
+.holder-hours-type {
+    position:absolute;height:20%;top:40%;left:20px;right:50%;border-top: 1px solid #CCC
+}
+
+
+
+/*************************************** Flow Rate *******************************************/
+.holder-flow-type {
+    position:absolute;height:20%;top:40%;left:50%;right:20px;border-top: 1px solid #CCC
+}
+
+
+
+/*************************************** Payment Types ***************************************/
+.holder-payment-type {
+    position:absolute;height:40%;top:60%;left:20px;right:20px;border-top: 1px solid #CCC
+}
+
+
+
+

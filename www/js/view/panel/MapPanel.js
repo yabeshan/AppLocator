@@ -15,8 +15,14 @@ Ext.define('App.view.MapPanel', {
     },
 
     initialize: function(me, eOpts) {
-        this.addSpinner();
-        this.locateMe();
+
+    },
+
+    update: function() {
+        if (this.gMap==null) {
+            this.addSpinner();
+            this.locateMe();
+        }
     },
 
     addSpinner: function(){
