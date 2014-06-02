@@ -10,13 +10,13 @@ Ext.define('App.view.SearchPanel', {
         items: [
             {
                 layout:'hbox',
-//                style:'position:relative; background-color:#900',
                 items: [
                     {
                         cls: 'searchfield-stations',
                         xtype: 'searchfield',
                         placeHolder: 'search by address, city or zip',
-                        itemId: 'searchBox'
+                        itemId: 'searchBox',
+                        id:'pac-input'
                     },{
                         html:'<img id="searchBtn" src="img/main-page-toolbar-search-btn.png" style="width:44px;height:52px;">',
                         listeners: {
@@ -54,8 +54,8 @@ Ext.define('App.view.SearchPanel', {
         this.hideSearchResult();
     },
     showSearchResult: function() {
-        Ext.getCmp('searchList').setStyle('width:100%;height:300px');
-        Ext.getCmp('searchList').show();
+//        Ext.getCmp('searchList').setStyle('width:100%;height:300px');
+//        Ext.getCmp('searchList').show();
     },
     hideSearchResult: function() {
         Ext.getCmp('searchList').hide();

@@ -70,11 +70,13 @@ Ext.define('App.view.MenuPanel' ,{
                                     Ext.getCmp('mapPanel').changeType( google.maps.MapTypeId.HYBRID );
                                     break;
                             }
-                            App.app.dispatch({
-                                controller:'PageController',
-                                action:'goPage',
-                                args:[{nextPage:id, direction:direction}]
-                            });
+                            if (id) {
+                                App.app.dispatch({
+                                    controller:'PageController',
+                                    action:'goPage',
+                                    args:[{nextPage:id, direction:direction}]
+                                });
+                            }
                         },
                         element: 'element'
                     }

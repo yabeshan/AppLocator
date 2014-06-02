@@ -10,17 +10,17 @@ Ext.define('App.controller.StationController', {
             myContainer: 'searchPanel'
         },
         control: {
-            'searchPanel': {
-                activate: 'onActivate'
-            },
-            'searchPanel searchfield[itemId=searchBox]' : {
-                clearicontap : 'onClearSearch',
-                keyup: 'onSearchKeyUp',
-                focus: 'onFocusSearch'
-            },
-            'searchPanel list' : {
-                itemtap : 'addMarker'
-            }
+//            'searchPanel': {
+//                activate: 'onActivate'
+//            },
+//            'searchPanel searchfield[itemId=searchBox]' : {
+//                clearicontap : 'onClearSearch',
+//                keyup: 'onSearchKeyUp',
+//                focus: 'onFocusSearch'
+//            },
+//            'searchPanel list' : {
+//                itemtap : 'addMarker'
+//            }
         }
 
     },

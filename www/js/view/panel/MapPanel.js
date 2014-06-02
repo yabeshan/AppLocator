@@ -1,73 +1,62 @@
 
-
 Ext.define('App.view.MapPanel', {
-    extend: 'Ext.Map',
+    extend: 'Ext.Container',
     alias : 'widget.mapPanel',
     id:'mapPanel',
 
+    gMap:null,
+    markerArr:[],
+    infowindow:null,
+    trafficLayer:null,
+
     config: {
         width:'100%',
-        height:'100%',
-        mapOptions: {
-            center: new google.maps.LatLng (34.0522,-118.2437),
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            disableDefaultUI:true,
-            zoom: 10
-        }
+        height:'100%'
     },
 
-    gMap:null,
-    initialize: function() {
-        this.gMap = this.getMap();
+    initialize: function(me, eOpts) {
+        this.addSpinner();
+        this.locateMe();
+    },
 
-        Ext.getStore('StationStore').each(function(record,id){
-            Ext.getCmp("mapPanel").addMarker( record, false );
+    addSpinner: function(){
+        this.setMasked({
+            xtype: 'loadmask',
+            message: 'Loading map...',
+            indicator: true,
+            hidden: false
         });
-
-        if (navigator && navigator.geolocation) this.locateMe();
     },
 
-    locateMe: function() {
-        if (navigator && navigator.geolocation)
-        {
-            navigator.geolocation.getCurrentPosition(function(position){
-                var lat=position.coords.latitude;
-                var lon=position.coords.longitude;
+    addMap: function(coord, mapZoom) {
+        var map = this.add( {
+            xtype:'map',
+            width:'100%',
+            height:'100%',
+            mapOptions:{
+                center: coord,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                disableDefaultUI:true,
+                zoom: mapZoom
+            },
+            listeners: {
+                maprender: Ext.getCmp('mapPanel').completeMap
+            }
+        } );
 
-                var centerCoord = new google.maps.LatLng ( lat, lon );
-                Ext.getCmp('mapPanel').setMapCenter( centerCoord );
-                Ext.getCmp('mapPanel').setMapOptions( {'zoom': 12} );
-
-            }, function(error){
-                alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
-            }, { timeout: 10000 });
-
-        } else{
-            alert("navigator.geolocation not supported");
-        }
+        this.gMap = map.getMap();
     },
 
-    trafficLayer:null,
-    changeTraffic: function() {
-        if (this.trafficLayer == null) {
-            this.trafficLayer = new google.maps.TrafficLayer();
-        }
-
-        if (this.trafficLayer.getMap()==null) {
-            this.trafficLayer.setMap(this.gMap);
-        } else {
-            this.trafficLayer.setMap(null);
-        }
-
-    },
-    changeType: function( val ) {
-        this.gMap.setMapTypeId( val );
+    completeMap: function(extMapComponent, googleMapComp) {
+        var that = Ext.getCmp('mapPanel');
+        that.unmask();
+        that.addSearchPanelInteractive();
+        Ext.getStore('StationStore').each(function(record,id){
+            that.addMarker( record, false );
+        });
     },
 
-    markerArr:[],
     addMarker: function( model, positionFlag ) {
-        Ext.getCmp('searchPanel').hideSearchResult();
-
         var lat = model.get('latitude');
         var lon = model.get('longitude');
 
@@ -78,7 +67,9 @@ Ext.define('App.view.MapPanel', {
 //          animation: google.maps.Animation.DROP,
             icon: icon,
             position: new google.maps.LatLng ( lat , lon),
-            model: model
+            model: model,
+            title: model.get("name") +", "+ model.get("zip") +", "
+                + model.get("state") +", "+ model.get("city") +", "+ model.get("address")
         });
 
         if (positionFlag) {
@@ -101,50 +92,111 @@ Ext.define('App.view.MapPanel', {
 //        marker.setAnimation(null);
     },
 
+    locateMe: function() {
+        this.addSpinner();
+        if (this.infowindow)
+            this.infowindow.close();
+
+        if (navigator && navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function(position){
+                var lat=position.coords.latitude;
+                var lon=position.coords.longitude;
+                Ext.getCmp("mapPanel").viewInfoWindow("You are here. ", lat, lon);
+            }, function(error){
+//                alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
+                Ext.getCmp("mapPanel").viewInfoWindow("Error: The Geolocation service failed. ");
+            }, { timeout: 2000 });
+        } else{
+//            alert("navigator.geolocation not supported");
+            Ext.getCmp("mapPanel").viewInfoWindow("Error: Your browser doesn\'t support geolocation. ");
+        }
+    },
+
+    viewInfoWindow: function(content, lat, lon) {
+        var mapZoom = 10;
+        if (lat==null || lon==null) {
+            lat = 37.0625;
+            lon = -95.677068;
+            mapZoom = 4;
+        }
+
+        var coord = new google.maps.LatLng ( lat, lon );
+        if (this.gMap==null) {
+            this.addMap(coord, mapZoom);
+        } else {
+            this.unmask();
+            this.gMap.setCenter(coord);
+            this.gMap.setZoom( mapZoom );
+        }
+
+        if (this.infowindow)
+            this.infowindow.close();
+
+        var options = {
+            map: this.gMap,
+            position: coord,
+            content: content
+        };
+        this.infowindow = new google.maps.InfoWindow(options);
+    },
+
+    addSearchPanelInteractive: function() {
+        var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
+        var searchBox = new google.maps.places.SearchBox( (input) );
+
+        google.maps.event.addListener(searchBox, 'places_changed', function() {
+            that = Ext.getCmp("mapPanel");
+            var places = searchBox.getPlaces();
+            var options = {
+                map: that.gMap,
+                position: places[0].geometry.location,
+                content: places[0].name
+            };
+
+            if (that.infowindow)
+                that.infowindow.close();
+
+            that.infowindow = new google.maps.InfoWindow(options);
+            that.gMap.setCenter(places[0].geometry.location);
+            that.gMap.setZoom(14);
+        });
+    },
+
+    changeTraffic: function() {
+        if (this.trafficLayer == null) {
+            this.trafficLayer = new google.maps.TrafficLayer();
+        }
+
+        if (this.trafficLayer.getMap()==null) {
+            this.trafficLayer.setMap(this.gMap);
+            Ext.get('trafficBtn').addCls("main-page-menupanel-traffic-select");
+        } else {
+            this.trafficLayer.setMap(null);
+            Ext.get('trafficBtn').removeCls("main-page-menupanel-traffic-select");
+        }
+
+    },
+    changeType: function( val ) {
+        this.gMap.setMapTypeId( val );
+    },
+
     onSearchTypeStations: function( lngSelectFlag, cngSelectFlag ) {
+
         var k=0, lng =this.markerArr.length, marker, fuel;
         for (k;k<lng;k++) {
             marker = this.markerArr[k];
-            //remove listener
-            marker.setMap(null);
-        };
-        this.markerArr = new Array();
+            fuel = marker.model.get('fuel');
 
-        Ext.getStore('StationStore').each(function(record,id){
-            fuel = record.get('fuel');
             if (lngSelectFlag && cngSelectFlag) {
-                Ext.getCmp("mapPanel").addMarker( record, false );
+                marker.setMap(this.gMap);
             } else if (lngSelectFlag && fuel>=1 ) {
-                Ext.getCmp("mapPanel").addMarker( record, false );
+                marker.setMap(this.gMap);
             } else if (cngSelectFlag && fuel!=1 ) {
-                Ext.getCmp("mapPanel").addMarker( record, false );
+                marker.setMap(this.gMap);
+            } else {
+                marker.setMap(null);
             }
-        });
+        };
     }
 
 });
-
-
-/*
-Ext.define('App.view.MapPanel' ,{
-    extend: 'Ext.Container',
-    alias : 'widget.mapPanel',
-    id:'mapPanel',
-
-    config: {
-
-        items:[
-            {
-                html:'<div style="position: absolute;top:50%;left:50%;margin-left: -60px;">MAP DISABLED</div>'
-            },{
-                xtype:'button',
-                height: '500px'
-            }
-        ]
-    },
-
-    addMarker: function( model ) {
-        console.log( "add marker  " + model.get('name') );
-    }
-});
-*/

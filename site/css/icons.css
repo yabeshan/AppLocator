@@ -1,0 +1,39 @@
+.sl-icon {
+    background-image: url('../../images/icons.png');
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    width: 32px;
+    height: 32px;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 32px;
+    text-align: center;
+}
+.sl-icon:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+.sl-icon.locate {
+    background-position: 0 0px;
+}
+.sl-icon.view {
+    background-position: 0 -32px;
+}
+.sl-icon.trip-planner {
+    background-position: 0 -64px;
+}
+.sl-icon.share {
+    background-position: 0 -96px;
+}
+.sl-icon.aerial {
+    background-position: 0 -128px;
+}
+.sl-icon.map {
+    background-position: 0 -160px;
+}
+.sl-icon.traffic {
+    background-position: 0 -192px;
+}
+/*# sourceMappingURL=icons.css.map */
