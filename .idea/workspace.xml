@@ -5,12 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/www/css/icons.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/panel/ChangeInfoPanel.js" afterPath="$PROJECT_DIR$/www/js/view/panel/ChangeInfoPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/MainPage.js" afterPath="$PROJECT_DIR$/www/js/view/MainPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" afterPath="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/config.xml" afterPath="$PROJECT_DIR$/www/config.xml" />
     </list>
     <ignored path="AppLocator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -112,15 +107,24 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ChangeInfoPanel.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ChangeInfoPanel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/view/panel/ChangeInfoPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="167" column="6" selection-start="6794" selection-end="6794" vertical-scroll-proportion="0.5380435" vertical-offset="2542" max-vertical-offset="3179">
+            <state line="167" column="6" selection-start="6794" selection-end="6794" vertical-scroll-proportion="0.0" vertical-offset="2542" max-vertical-offset="3179">
               <folding>
                 <marker date="1401746615125" expanded="false" signature="1345:1405" placeholder="..." />
                 <marker date="1401746615125" expanded="false" signature="1499:1533" placeholder="..." />
                 <marker date="1401746615125" expanded="false" signature="1623:1657" placeholder="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/www/config.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="27" selection-start="295" selection-end="295" vertical-scroll-proportion="0.18478261" vertical-offset="0" max-vertical-offset="2312">
+              <folding />
             </state>
           </provider>
         </entry>
@@ -183,7 +187,6 @@
         <option value="$PROJECT_DIR$/www/js/view/panel/MenuPanel.js" />
         <option value="$PROJECT_DIR$/www/js/controller/PageController.js" />
         <option value="$PROJECT_DIR$/www/css/app.css" />
-        <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/js/view/MainPage.js" />
         <option value="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" />
         <option value="$PROJECT_DIR$/___site/css/station-locator.css" />
@@ -191,6 +194,7 @@
         <option value="$PROJECT_DIR$/www/css/icons.css" />
         <option value="$PROJECT_DIR$/www/js/app.js" />
         <option value="$PROJECT_DIR$/www/js/view/panel/ChangeInfoPanel.js" />
+        <option value="$PROJECT_DIR$/www/config.xml" />
       </list>
     </option>
   </component>
@@ -617,7 +621,7 @@
       <workItem from="1401267529093" duration="5905000" />
       <workItem from="1401440299609" duration="6943000" />
       <workItem from="1401635057171" duration="27174000" />
-      <workItem from="1401734354062" duration="8755000" />
+      <workItem from="1401734354062" duration="9363000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -759,11 +763,11 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="350094000" />
+    <option name="totallyTimeSpent" value="350702000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1046,13 +1050,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/config.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="26" selection-start="294" selection-end="294" vertical-scroll-proportion="0.18478261" vertical-offset="0" max-vertical-offset="2312">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/view/MainPage.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="79" column="40" selection-start="2508" selection-end="2508" vertical-scroll-proportion="0.0" vertical-offset="931" max-vertical-offset="1496">
@@ -1120,12 +1117,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/view/panel/ChangeInfoPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="167" column="6" selection-start="6794" selection-end="6794" vertical-scroll-proportion="0.5380435" vertical-offset="2542" max-vertical-offset="3179">
+        <state line="167" column="6" selection-start="6794" selection-end="6794" vertical-scroll-proportion="0.0" vertical-offset="2542" max-vertical-offset="3179">
           <folding>
             <marker date="1401746615125" expanded="false" signature="1345:1405" placeholder="..." />
             <marker date="1401746615125" expanded="false" signature="1499:1533" placeholder="..." />
             <marker date="1401746615125" expanded="false" signature="1623:1657" placeholder="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/config.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="27" selection-start="295" selection-end="295" vertical-scroll-proportion="0.18478261" vertical-offset="0" max-vertical-offset="2312">
+          <folding />
         </state>
       </provider>
     </entry>
