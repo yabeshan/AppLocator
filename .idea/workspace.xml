@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/css/icons.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/index.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/css/station-locator.css" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/site/js/station-locator.js" />
+      <change type="NEW" beforePath="" afterPath="D:\temp\cyberiansoft\AppLocator\site\css\icons.css" />
+      <change type="NEW" beforePath="" afterPath="D:\temp\cyberiansoft\AppLocator\site\index.html" />
+      <change type="NEW" beforePath="" afterPath="D:\temp\cyberiansoft\AppLocator\site\css\station-locator.css" />
+      <change type="NEW" beforePath="" afterPath="D:\temp\cyberiansoft\AppLocator\site\js\station-locator.js" />
       <change type="NEW" beforePath="" afterPath="D:\temp\cyberiansoft\AppLocator\www\testmap.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/MainPage.js" afterPath="$PROJECT_DIR$/www/js/view/MainPage.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" afterPath="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" />
@@ -81,15 +81,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="station-locator.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/site/js/station-locator.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="1396" column="76" selection-start="50507" selection-end="50549" vertical-scroll-proportion="-8.36" vertical-offset="23523" max-vertical-offset="37383">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="app.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
@@ -119,19 +110,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="142" selection-start="2457" selection-end="2457" vertical-scroll-proportion="-8.461538" vertical-offset="545" max-vertical-offset="1309">
+            <state line="45" column="142" selection-start="2457" selection-end="2457" vertical-scroll-proportion="0.87262356" vertical-offset="306" max-vertical-offset="1309">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapPanel.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MapPanel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/view/panel/MapPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="16" selection-start="223" selection-end="223" vertical-scroll-proportion="0.36106196" vertical-offset="0" max-vertical-offset="3536">
+            <state line="12" column="16" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3536">
               <folding />
             </state>
           </provider>
@@ -568,7 +559,7 @@
       <workItem from="1401260333750" duration="2708000" />
       <workItem from="1401267529093" duration="5905000" />
       <workItem from="1401440299609" duration="6943000" />
-      <workItem from="1401635057171" duration="26235000" />
+      <workItem from="1401635057171" duration="26576000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -710,7 +701,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="340400000" />
+    <option name="totallyTimeSpent" value="340741000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -976,23 +967,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/site/css/station-locator.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1570" column="54" selection-start="35215" selection-end="35228" vertical-scroll-proportion="-1.6083033" vertical-offset="27581" max-vertical-offset="28135" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/css/icons.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="6" column="26" selection-start="189" selection-end="189" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="748" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="0" selection-start="585" selection-end="585" vertical-scroll-proportion="-3.458175" vertical-offset="2244" max-vertical-offset="6698">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/view/panel/InfoPopup.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="29" column="4" selection-start="1383" selection-end="1383" vertical-scroll-proportion="0.45840707" vertical-offset="234" max-vertical-offset="799">
@@ -1001,13 +975,6 @@
             <marker date="1400709785640" expanded="false" signature="-1:-1" placeholder="..." />
             <marker date="1400709785640" expanded="false" signature="-1:-1" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/site/js/station-locator.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1396" column="76" selection-start="50507" selection-end="50549" vertical-scroll-proportion="-8.36" vertical-offset="23523" max-vertical-offset="37383">
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1046,13 +1013,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="142" selection-start="2457" selection-end="2457" vertical-scroll-proportion="-8.461538" vertical-offset="545" max-vertical-offset="1309">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/www/js/view/panel/MenuPanel.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="85" selection-start="1131" selection-end="1158" vertical-scroll-proportion="0.0" vertical-offset="323" max-vertical-offset="1870">
@@ -1078,7 +1038,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/view/panel/MapPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="16" selection-start="223" selection-end="223" vertical-scroll-proportion="0.36106196" vertical-offset="0" max-vertical-offset="3536">
+        <state line="12" column="16" selection-start="223" selection-end="223" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="3536">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/www/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="45" column="142" selection-start="2457" selection-end="2457" vertical-scroll-proportion="0.87262356" vertical-offset="306" max-vertical-offset="1309">
           <folding />
         </state>
       </provider>
