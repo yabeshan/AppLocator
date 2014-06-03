@@ -38,7 +38,7 @@ Ext.define('App.view.MenuPanel' ,{
                     tap: {
                         fn: function( e, node ) {
                             Ext.getCmp('menuPanel').closeMenu();
-                            var id, direction='left';
+                            var id=-1, direction='left';
                             switch (node.id) {
                                 case "homeBtn":
                                     id = 0;
@@ -70,7 +70,7 @@ Ext.define('App.view.MenuPanel' ,{
                                     Ext.getCmp('mapPanel').changeType( google.maps.MapTypeId.HYBRID );
                                     break;
                             }
-                            if (id) {
+                            if (id>=0) {
                                 App.app.dispatch({
                                     controller:'PageController',
                                     action:'goPage',
@@ -92,12 +92,12 @@ Ext.define('App.view.MenuPanel' ,{
         },300)
     },
     openMenu: function() {
-        Ext.getCmp('menuPanel').setZIndex(10);
+        Ext.getCmp('menuPanel').setStyle({'pointer-events':'all'});
         Ext.getCmp('modalBG').show();
         Ext.getCmp('menuList').show();
     },
     closeMenu: function() {
-        Ext.getCmp('menuPanel').setZIndex(0);
+        Ext.getCmp('menuPanel').setStyle({'pointer-events':'none'});
         Ext.getCmp('modalBG').hide();
         Ext.getCmp('menuList').hide();
     }

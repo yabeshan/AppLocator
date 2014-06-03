@@ -71,8 +71,7 @@ Ext.define('App.view.SearchPanel', {
                 }
             },{
                 id:'sharePopup',
-                cls:'info-zoom',
-                style:'position:absolute;top:50%;left:50%;margin-left:-72px;',
+                style:'position:absolute;top:50%;left:50%;margin-left:-72px;zoom:130%',
                 html:'<img src="img/icons-share.png"><div id="share-facebook"></div>'
                     +'<div id="share-twitter"></div><div id="share-google"></div><div id="share-mail"></div>',
                 listeners: {

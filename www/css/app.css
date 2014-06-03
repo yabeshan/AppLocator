@@ -311,6 +311,12 @@ body {
 .info-popup-zoom {
     zoom:100%;
 }
+.filter-img-zoom {
+    zoom:100%;
+}
+.filter-lbl-zoom {
+    zoom:70%;
+}
 #stationAddress {
     font-size: 70%;
 }
@@ -321,7 +327,12 @@ body {
     .info-popup-zoom {
         zoom: 180%;
     }
-
+    .filter-img-zoom {
+        zoom:160%;
+    }
+    .filter-lbl-zoom {
+        zoom:100%;
+    }
     .main-page-changeinfo-panel {
         bottom:122px;
     }
@@ -332,6 +343,12 @@ body {
     }
     .info-popup-zoom {
         zoom: 200%;
+    }
+    .filter-img-zoom {
+        zoom:160%;
+    }
+    .filter-lbl-zoom {
+        zoom:100%;
     }
     #stationAddress {
         font-size: 300%;

@@ -34,8 +34,9 @@ Ext.define('App.view.StartPage' ,{
                             App.app.dispatch({
                                 controller:'PageController',
                                 action:'goPage',
-                                args:[{nextPage:2, direction:'left'}]
+                                args:[{nextPage:1, direction:'left'}]
                             });
+                            Ext.getCmp('searchPanel').showTripPlaner();
                         },
                         element: 'element'
                     }

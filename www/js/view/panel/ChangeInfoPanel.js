@@ -11,19 +11,19 @@ Ext.define('App.view.PopupPanel' ,{
         items:[{
             cls:'info-zoom',
             style:'zoom:80%;font-size:14px;position:relative;background-color: #FFF;height:100%;width:100%;color:#6cb25e;font-weight:bold;padding-top:10px',
-            html:'<div class="holder-fuel-type">Fuel Type<div id="fuel-type-cng" class="select"></div>'
-                    +'<div id="fuel-type-lng" class="select"></div><div id="fuel-type-disel" class="select"></div>'
-                    +'<div id="fuel-type-redeem" class="select"></div></div>'
-                +'<div class="holder-vehicle-type">Vehicle Type<div id="vehicle-type-cars"></div>'
-                    +'<div id="vehicle-type-box"></div><div id="vehicle-type-semi"></div></div>'
-                +'<div class="holder-hours-type">Hours of Operation<div id="hours-type-24">24/7</div>'
-                    +'<div id="hours-type-now">Open Now</div></div>'
-                +'<div class="holder-flow-type">Flow Rate<div id="flow-rate-low"></div>'
-                    +'<div id="flow-rate-medium"></div><div id="flow-rate-hight"></div></div>'
-                +'<div class="holder-payment-type">Payment Types<div id="payment-any">Any</div>'
-                    +'<div id="payment-clean">Clean Energy Fuel Card</div><div id="payment-visa">Visa</div>'
-                    +'<div id="payment-master">Mastercard</div><div id="payment-amex">Amex</div><div id="payment-discover">Discover</div><div id="payment-voyager">Voyager</div>'
-                    +'<div id="payment-wex">WEX</div><div id="payment-cash">Cash</div><div id="payment-other">Other</div></div>',
+            html:'<div class="holder-fuel-type">Fuel Type<div id="fuel-type-cng" class="select filter-img-zoom"></div>'
+                    +'<div id="fuel-type-lng" class="select filter-img-zoom"></div><div id="fuel-type-disel" class="select filter-img-zoom"></div>'
+                    +'<div id="fuel-type-redeem" class="select filter-img-zoom"></div></div>'
+                +'<div class="holder-vehicle-type">Vehicle Type<div id="vehicle-type-cars" class="filter-img-zoom"></div>'
+                    +'<div id="vehicle-type-box" class="filter-img-zoom"></div><div id="vehicle-type-semi" class="filter-img-zoom"></div></div>'
+                +'<div class="holder-hours-type">Hours of Operation<div id="hours-type-24" class="filter-lbl-zoom">24/7</div>'
+                    +'<div id="hours-type-now" class="filter-lbl-zoom">Open Now</div></div>'
+                +'<div class="holder-flow-type">Flow Rate<div id="flow-rate-low" class="filter-img-zoom"></div>'
+                    +'<div id="flow-rate-medium" class="filter-img-zoom"></div><div id="flow-rate-hight" class="filter-img-zoom"></div></div>'
+                +'<div class="holder-payment-type">Payment Types<div id="payment-any" class="filter-lbl-zoom">Any</div>'
+                    +'<div id="payment-clean" class="filter-lbl-zoom">Clean Energy Fuel Card</div><div id="payment-visa" class="filter-lbl-zoom">Visa</div>'
+                    +'<div id="payment-master" class="filter-lbl-zoom">Mastercard</div><div id="payment-amex" class="filter-lbl-zoom">Amex</div><div id="payment-discover" class="filter-lbl-zoom">Discover</div><div id="payment-voyager" class="filter-lbl-zoom">Voyager</div>'
+                    +'<div id="payment-wex" class="filter-lbl-zoom">WEX</div><div id="payment-cash" class="filter-lbl-zoom">Cash</div><div id="payment-other" class="filter-lbl-zoom">Other</div></div>',
             listeners: {
                 tap: {
                     fn: function( e, node ) {
