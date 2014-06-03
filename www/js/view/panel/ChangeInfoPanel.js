@@ -14,10 +14,16 @@ Ext.define('App.view.PopupPanel' ,{
             html:'<div class="holder-fuel-type">Fuel Type<div id="fuel-type-cng" class="select"></div>'
                     +'<div id="fuel-type-lng" class="select"></div><div id="fuel-type-disel" class="select"></div>'
                     +'<div id="fuel-type-redeem" class="select"></div></div>'
-                +'<div class="holder-vehicle-type">Vehicle Type</div>'
-                +'<div class="holder-hours-type">Hours of Operation</div>'
-                +'<div class="holder-flow-type">Flow Rate</div>'
-                +'<div class="holder-payment-type">Payment Types</div>',
+                +'<div class="holder-vehicle-type">Vehicle Type<div id="vehicle-type-cars"></div>'
+                    +'<div id="vehicle-type-box"></div><div id="vehicle-type-semi"></div></div>'
+                +'<div class="holder-hours-type">Hours of Operation<div id="hours-type-24">24/7</div>'
+                    +'<div id="hours-type-now">Open Now</div></div>'
+                +'<div class="holder-flow-type">Flow Rate<div id="flow-rate-low"></div>'
+                    +'<div id="flow-rate-medium"></div><div id="flow-rate-hight"></div></div>'
+                +'<div class="holder-payment-type">Payment Types<div id="payment-any">Any</div>'
+                    +'<div id="payment-clean">Clean Energy Fuel Card</div><div id="payment-visa">Visa</div>'
+                    +'<div id="payment-master">Mastercard</div><div id="payment-amex">Amex</div><div id="payment-discover">Discover</div><div id="payment-voyager">Voyager</div>'
+                    +'<div id="payment-wex">WEX</div><div id="payment-cash">Cash</div><div id="payment-other">Other</div></div>',
             listeners: {
                 tap: {
                     fn: function( e, node ) {
@@ -53,8 +59,34 @@ Ext.define('App.view.PopupPanel' ,{
             case "fuel-type-lng":
             case "fuel-type-disel":
             case "fuel-type-redeem":
+
+            case "vehicle-type-cars":
+            case "vehicle-type-box":
+            case "vehicle-type-semi":
+
+            case "hours-type-24":
+            case "hours-type-now":
+
+            case "flow-rate-low":
+            case "flow-rate-medium":
+            case "flow-rate-hight":
+
+            case "payment-any":
+            case "payment-clean":
+            case "payment-visa":
+            case "payment-master":
+            case "payment-amex":
+            case "payment-discover":
+            case "payment-voyager":
+            case "payment-wex":
+            case "payment-cash":
+            case "payment-other":
                 this.changeFuelType( Ext.get(id) );
                 break;
+        }
+
+        if (id=="payment-any") {
+            this.selectAllPayment( Ext.get("payment-any").hasCls("select") );
         }
     },
 
@@ -87,6 +119,45 @@ Ext.define('App.view.PopupPanel' ,{
         Ext.get("fuel-type-lng").addCls('select');
         Ext.get("fuel-type-disel").addCls('select');
         Ext.get("fuel-type-redeem").addCls('select');
+
+        Ext.get("vehicle-type-cars").removeCls('select');
+        Ext.get("vehicle-type-box").removeCls('select');
+        Ext.get("vehicle-type-semi").removeCls('select');
+
+        Ext.get("hours-type-24").removeCls('select');
+        Ext.get("hours-type-now").removeCls('select');
+
+        Ext.get("flow-rate-low").removeCls('select');
+        Ext.get("flow-rate-medium").removeCls('select');
+        Ext.get("flow-rate-hight").removeCls('select');
+
+        this.selectAllPayment(false);
+    },
+
+    selectAllPayment: function( flag ) {
+        if (flag) {
+            Ext.get("payment-any").addCls('select');
+            Ext.get("payment-clean").addCls('select');
+            Ext.get("payment-visa").addCls('select');
+            Ext.get("payment-master").addCls('select');
+            Ext.get("payment-amex").addCls('select');
+            Ext.get("payment-discover").addCls('select');
+            Ext.get("payment-voyager").addCls('select');
+            Ext.get("payment-wex").addCls('select');
+            Ext.get("payment-cash").addCls('select');
+            Ext.get("payment-other").addCls('select');
+        } else {
+            Ext.get("payment-any").removeCls('select');
+            Ext.get("payment-clean").removeCls('select');
+            Ext.get("payment-visa").removeCls('select');
+            Ext.get("payment-master").removeCls('select');
+            Ext.get("payment-amex").removeCls('select');
+            Ext.get("payment-discover").removeCls('select');
+            Ext.get("payment-voyager").removeCls('select');
+            Ext.get("payment-wex").removeCls('select');
+            Ext.get("payment-cash").removeCls('select');
+            Ext.get("payment-other").removeCls('select');
+        }
     }
 
 });

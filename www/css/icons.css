@@ -7,35 +7,35 @@
 }
 
 #fuel-type-cng {
-    position: absolute;width:60px;height:47px;top:20px;margin-left:10%;cursor: pointer;
-    background:  url('../img/fuel-type-icons.png') no-repeat -60px 0px;
+    position: absolute;width:60px;height:47px;top:21px;margin-left:10%;cursor: pointer;
+    background:  url('../img/icons-fuel-type.png') no-repeat -60px 0px;
 }
 #fuel-type-cng.select {
-    background:  url('../img/fuel-type-icons.png') no-repeat -60px -48px;
+    background:  url('../img/icons-fuel-type.png') no-repeat -60px -48px;
 }
 
 #fuel-type-lng {
-    position: absolute;width:60px;height:47px;top:20px;margin-left:20%;cursor: pointer;
-    background:  url('../img/fuel-type-icons.png') no-repeat 0px 0px;
+    position: absolute;width:60px;height:47px;top:21px;margin-left:30%;cursor: pointer;
+    background:  url('../img/icons-fuel-type.png') no-repeat 0px 0px;
 }
 #fuel-type-lng.select {
-    background:  url('../img/fuel-type-icons.png') no-repeat 0px -48px;
+    background:  url('../img/icons-fuel-type.png') no-repeat 0px -48px;
 }
 
 #fuel-type-disel {
-    position: absolute;width:60px;height:47px;top:20px;margin-left:30%;cursor: pointer;
-    background:  url('../img/fuel-type-icons.png') no-repeat -120px 0px;
+    position: absolute;width:60px;height:47px;top:21px;margin-left:50%;cursor: pointer;
+    background:  url('../img/icons-fuel-type.png') no-repeat -120px 0px;
 }
 #fuel-type-disel.select {
-    background:  url('../img/fuel-type-icons.png') no-repeat -120px -51px;
+    background:  url('../img/icons-fuel-type.png') no-repeat -120px -51px;
 }
 
 #fuel-type-redeem {
-    position: absolute;width:60px;height:47px;top:20px;margin-left:40%;cursor: pointer;
-    background:  url('../img/fuel-type-icons.png') no-repeat -180px 0px;
+    position: absolute;width:60px;height:47px;top:21px;margin-left:70%;cursor: pointer;
+    background:  url('../img/icons-fuel-type.png') no-repeat -180px 0px;
 }
 #fuel-type-redeem.select {
-    background:  url('../img/fuel-type-icons.png') no-repeat -180px -48px;
+    background:  url('../img/icons-fuel-type.png') no-repeat -180px -48px;
 }
 
 
@@ -44,6 +44,29 @@
     position:absolute;height:20%;top:20%;left:20px;right:20px;border-top: 1px solid #CCC
 }
 
+#vehicle-type-cars{
+    position: absolute;width:86px;height:47px;top:21px;margin-left:10%;cursor: pointer;
+    background: url('../img/icons-vehicle-type.png') no-repeat 0px -47px;
+}
+#vehicle-type-cars.select {
+    background: url('../img/icons-vehicle-type.png') no-repeat 2px 0px;
+}
+
+#vehicle-type-box{
+    position: absolute;width:97px;height:47px;top:21px;margin-left:40%;cursor: pointer;
+    background: url('../img/icons-vehicle-type.png') no-repeat -83px -47px;
+}
+#vehicle-type-box.select {
+    background: url('../img/icons-vehicle-type.png') no-repeat -81px 0px;
+}
+
+#vehicle-type-semi{
+    position: absolute;width:152px;height:47px;top:21px;margin-left:70%;cursor: pointer;
+    background: url('../img/icons-vehicle-type.png') no-repeat -183px -47px;
+}
+#vehicle-type-semi.select {
+    background: url('../img/icons-vehicle-type.png') no-repeat -181px 0px;
+}
 
 
 /*************************************** Hours of Operation **********************************/
@@ -51,20 +74,144 @@
     position:absolute;height:20%;top:40%;left:20px;right:50%;border-top: 1px solid #CCC
 }
 
+#hours-type-24 {
+    position: absolute;width:142px;height:30px;top:30px;margin-left:0%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#hours-type-24.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
 
+#hours-type-now {
+    position: absolute;width:142px;height:30px;top:30px;margin-left:40%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#hours-type-now.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
 
 /*************************************** Flow Rate *******************************************/
 .holder-flow-type {
     position:absolute;height:20%;top:40%;left:50%;right:20px;border-top: 1px solid #CCC
 }
 
+#flow-rate-low {
+    position: absolute;width:55px;height:47px;top:21px;margin-left:0%;cursor: pointer;
+    background: url('../img/icons-flow-rate.png') no-repeat 0px 0px;
+}
+#flow-rate-low.select {
+    background: url('../img/icons-flow-rate.png') no-repeat 0px -47px;
+}
 
+#flow-rate-medium {
+    position: absolute;width:55px;height:47px;top:21px;margin-left:30%;cursor: pointer;
+    background: url('../img/icons-flow-rate.png') no-repeat -60px 0px;
+}
+#flow-rate-medium.select {
+    background: url('../img/icons-flow-rate.png') no-repeat -60px -47px;
+}
+
+#flow-rate-hight {
+    position: absolute;width:55px;height:47px;top:21px;margin-left:60%;cursor: pointer;
+    background: url('../img/icons-flow-rate.png') no-repeat -120px 0px;
+}
+#flow-rate-hight.select {
+    background: url('../img/icons-flow-rate.png') no-repeat -120px -47px;
+}
 
 /*************************************** Payment Types ***************************************/
 .holder-payment-type {
     position:absolute;height:40%;top:60%;left:20px;right:20px;border-top: 1px solid #CCC
 }
 
+#payment-any {
+    position: absolute;height:30px;top:30px;margin-left:10%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#payment-any.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
 
+#payment-clean{
+    position: absolute;height:30px;top:30px;margin-left:30%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#payment-clean.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
 
+#payment-visa{
+    position: absolute;height:30px;top:30px;margin-left:70%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#payment-visa.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
 
+#payment-master {
+    position: absolute;height:30px;top:70px;margin-left:10%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#payment-master.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
+
+#payment-amex {
+    position: absolute;height:30px;top:70px;margin-left:30%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#payment-amex.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
+
+#payment-discover {
+    position: absolute;height:30px;top:70px;margin-left:50%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#payment-discover.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
+
+#payment-voyager {
+    position: absolute;height:30px;top:70px;margin-left:70%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#payment-voyager.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
+
+#payment-wex {
+    position: absolute;height:30px;top:110px;margin-left:10%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#payment-wex.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
+
+#payment-cash {
+    position: absolute;height:30px;top:110px;margin-left:30%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#payment-cash.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
+
+#payment-other {
+    position: absolute;height:30px;top:110px;margin-left:50%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#payment-other.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
