@@ -10,7 +10,7 @@ Ext.define('App.view.PopupPanel' ,{
         style:'position:absolute',
         items:[{
             cls:'info-zoom',
-            style:'position:relative;background-color: rgba(255,255,255,.9);height:100%;width:100%;color:#6cb25e;font-weight:bold;padding-top:10px',
+            style:'zoom:60%;position:relative;background-color: rgba(255,255,255,.9);height:100%;width:100%;color:#6cb25e;font-weight:bold;padding-top:10px',
             html:'<div class="holder-fuel-type">Fuel Type<div id="fuel-type-cng" class="select"></div>'
                     +'<div id="fuel-type-lng" class="select"></div><div id="fuel-type-disel" class="select"></div>'
                     +'<div id="fuel-type-redeem" class="select"></div></div>'
@@ -34,8 +34,8 @@ Ext.define('App.view.PopupPanel' ,{
             }
         },{
             cls:'info-zoom',
-            style:'bottom:0px;height:36px',
-            html:'<div style="background-color: #f1f2f2;height: 36px;width:100%;bottom:0px">'
+            style:'bottom:0px;height:36px;',
+            html:'<div style="background-color: #f1f2f2;height: 36px;width:100%;bottom:0px;">'
                 + '<img id="defaultsBtn" src="img/main-page-moreinfo-defaults.png" style="width:102px;height:36px;float:left" />'
                 + '<img id="checkBtn" src="img/main-page-moreinfo-check.png" style="width:36px;height:36px;float:right" /></div>',
             listeners: {

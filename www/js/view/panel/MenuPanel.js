@@ -45,7 +45,7 @@ Ext.define('App.view.MenuPanel' ,{
                                     direction='right';
                                     break;
                                 case "planTripBtn":
-                                    id = 2;
+                                    Ext.getCmp('searchPanel').showTripPlaner();
                                     break;
                                 case "aboutBtn":
                                     id = 3;

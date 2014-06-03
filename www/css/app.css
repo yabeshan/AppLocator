@@ -304,6 +304,7 @@ body {
     padding-left:10px;padding-right: 10px;
 }
 
+
 .info-zoom {
     zoom:100%;
 }
@@ -410,4 +411,28 @@ input::-webkit-input-placeholder {
 
 
 
+/************************************** TRIP PLANER ***************************************/
+#tp-title {
+    width: 100%;text-align: center;font-size: 16px;padding-top: 3px;font-weight: normal;
+}
 
+#tp-start-point {
+    padding-left: 10px; border: none;border-bottom: 1px solid #666;margin: 0px 5px 0px 5px;height: 35px;width:305px;
+}
+#tp-end-point {
+    padding-left: 10px; border: none;border-bottom: 1px solid #666;margin: 0px 5px 0px 5px;height: 35px;width:305px;
+}
+
+
+#tp-add {
+    font-size: 14px;margin: 20px 0px 0px 20px;float: left;width:160px;
+}
+#tp-build {
+    font-size: 14px;margin: 20px 0px 0px 30px;
+}
+#tp-clear {
+    font-size: 14px;margin: 10px 0px 0px 20px;float: left;width:160px;
+}
+#tp-close {
+    font-size: 14px;margin: 10px 0px 0px 30px;
+}

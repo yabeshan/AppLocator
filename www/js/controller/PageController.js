@@ -13,7 +13,6 @@ Ext.define('App.controller.PageController', {
                 this.nextPageCmp = Ext.getCmp('MainPage');
                 break;
             case 2:
-                this.nextPageCmp = Ext.getCmp('PlanTripPage');
                 break;
             case 3:
                 this.nextPageCmp = Ext.getCmp('AboutPage');
