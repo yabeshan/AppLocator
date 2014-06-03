@@ -48,7 +48,6 @@ Ext.define('App.view.SearchPanel', {
                 }
             },{
                 id:'tripPlaner',
-                cls:'info-zoom',
                 style:'position:absolute;width:315px;height:165px;background-color:#FFF;top:0px;color: #999;font-weight:bold;',
                 html:'<div id="tp-title">Trip Planer</div><input id="tp-start-point" type="text" placeholder="Start Point">'
                     +'<input id="tp-end-point" type="text" placeholder="End Point"><div id="tp-add">Add destination</div>'
@@ -70,12 +69,35 @@ Ext.define('App.view.SearchPanel', {
                         element: 'element'
                     }
                 }
+            },{
+                id:'sharePopup',
+                cls:'info-zoom',
+                style:'position:absolute;top:50%;left:50%;margin-left:-72px;',
+                html:'<img src="img/icons-share.png"><div id="share-facebook"></div>'
+                    +'<div id="share-twitter"></div><div id="share-google"></div><div id="share-mail"></div>',
+                listeners: {
+                    tap: {
+                        fn: function( e, node ) {
+                            if (node.id=="share-facebook") {
+
+                            } else if (node.id=="share-twitter") {
+
+                            } else if (node.id=="share-google") {
+
+                            } else if (node.id=="share-mail") {
+
+                            }
+                            Ext.getCmp('searchPanel').hideShare();
+                        },
+                        element: 'element'
+                    }
+                }
             }
         ]
 
     },
     initialize: function(me, eOpts) {
-//        setTimeout( this.showTripPlaner, 2000);
+        this.hideShare();
         this.hideTripPlaner();
         this.hideSearchResult();
     },
@@ -86,6 +108,12 @@ Ext.define('App.view.SearchPanel', {
     hideSearchResult: function() {
         Ext.getCmp('searchList').hide();
         Ext.getCmp('searchList').setStyle('width:0px;height:0px');
+    },
+    showShare: function() {
+        Ext.getCmp('sharePopup').show();
+    },
+    hideShare: function() {
+        Ext.getCmp('sharePopup').hide();
     },
 
     directionsService:null,

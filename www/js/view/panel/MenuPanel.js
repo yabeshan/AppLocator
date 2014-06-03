@@ -54,7 +54,7 @@ Ext.define('App.view.MenuPanel' ,{
                                     id = 4;
                                     break;
                                 case "shareBtn":
-                                    id = 5;
+                                    Ext.getCmp('searchPanel').showShare();
                                     break;
                                 case "trafficBtn":
                                     Ext.getCmp('mapPanel').changeTraffic();

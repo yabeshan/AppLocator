@@ -11,10 +11,20 @@ Ext.define('App.view.InfoPopup' ,{
                 style:'position:absolute;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:0px;left:0px;',
                 html:'<div style="position:absolute;width:100%;height:100%;background-image: url(img/popup-station-info.png);background-size: 300px 490px;background-position: center center;background-repeat: no-repeat;">'
                     +'<div id="stationName" style="background-color: #FFF;overflow:hidden;height:24px;position:absolute;left:50%;margin-left:-140px;top:50%;margin-top:-60px;width:280px;color:#30b457"></div>'
-                    +'<div id="stationAddress" style="background-color: #FFF;overflow:hidden;height:22px;position:absolute;left:50%;margin-left:-140px;top:50%;margin-top:-30px;width:280px;color:#67686a;font-weight:bold;"></div></div>',
+                    +'<div id="stationAddress" style="background-color: #FFF;overflow:hidden;height:22px;position:absolute;left:50%;margin-left:-140px;top:50%;margin-top:-30px;width:280px;color:#67686a;font-weight:bold;"></div>'
+                    +'<div style="position: absolute;top:50%;margin-top: -195px;left: 50%;margin-left: 15px"><div id="goDirect"></div><div id="goPlanner"></div><div id="goShare"></div></div></div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
+                            if (node.id=="goDirect") {
+                                document.getElementById('tp-end-point').value=Ext.get("stationAddress").dom.innerHTML;
+                                Ext.getCmp('searchPanel').showTripPlaner();
+                            } else if (node.id=="goPlanner") {
+                                document.getElementById('tp-end-point').value=Ext.get("stationAddress").dom.innerHTML;
+                                Ext.getCmp('searchPanel').showTripPlaner();
+                            } else if (node.id=="goShare") {
+                                Ext.getCmp('searchPanel').showShare();
+                            }
                             Ext.getCmp('infoPopup').closePopup();
                         },
                         element: 'element'

@@ -425,14 +425,38 @@ input::-webkit-input-placeholder {
 
 
 #tp-add {
-    font-size: 14px;margin: 20px 0px 0px 20px;float: left;width:160px;
+    font-size: 14px;margin: 20px 0px 0px 20px;float: left;width:160px;cursor: pointer;
 }
 #tp-build {
-    font-size: 14px;margin: 20px 0px 0px 30px;
+    font-size: 14px;margin: 20px 0px 0px 30px;cursor: pointer;
 }
 #tp-clear {
-    font-size: 14px;margin: 10px 0px 0px 20px;float: left;width:160px;
+    font-size: 14px;margin: 10px 0px 0px 20px;float: left;width:160px;cursor: pointer;
 }
 #tp-close {
-    font-size: 14px;margin: 10px 0px 0px 30px;
+    font-size: 14px;margin: 10px 0px 0px 30px;cursor: pointer;
+}
+
+#goDirect {
+    width:122px;height:42px;cursor: pointer;
+}
+#goPlanner {
+    width:122px;height:42px;cursor: pointer;
+}
+#goShare {
+    width:122px;height:42px;cursor: pointer;
+}
+
+
+#share-facebook {
+    position: absolute;width: 85px;height: 24px;top:9px;left:30px;cursor: pointer;
+}
+#share-twitter {
+    position: absolute;width: 85px;height: 24px;top:41px;left:30px;cursor: pointer;
+}
+#share-google {
+    position: absolute;width: 85px;height: 24px;top:73px;left:30px;cursor: pointer;
+}
+#share-mail {
+    position: absolute;width: 85px;height: 24px;top:105px;left:30px;cursor: pointer;
 }
