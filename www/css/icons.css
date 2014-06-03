@@ -53,7 +53,7 @@
 }
 
 #vehicle-type-box{
-    position: absolute;width:97px;height:47px;top:21px;margin-left:40%;cursor: pointer;
+    position: absolute;width:97px;height:47px;top:21px;margin-left:35%;cursor: pointer;
     background: url('../img/icons-vehicle-type.png') no-repeat -83px -47px;
 }
 #vehicle-type-box.select {
@@ -61,7 +61,7 @@
 }
 
 #vehicle-type-semi{
-    position: absolute;width:152px;height:47px;top:21px;margin-left:70%;cursor: pointer;
+    position: absolute;width:152px;height:47px;top:21px;margin-left:60%;cursor: pointer;
     background: url('../img/icons-vehicle-type.png') no-repeat -183px -47px;
 }
 #vehicle-type-semi.select {
