@@ -20,10 +20,11 @@
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
 
-    <gap:plugin name="org.apache.cordova.device" />
+    
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.geolocation" />
-
+    <gap:plugin name="org.apache.cordova.device" />
+    
 
     <!-- third party plugins >
     <gap:plugin name="com.phonegap.plugins.barcodescanner"/>
