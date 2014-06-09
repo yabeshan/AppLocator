@@ -90,7 +90,7 @@
       <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="26" column="51" selection-start="765" selection-end="765" vertical-scroll-proportion="0.5216606" vertical-offset="153" max-vertical-offset="1496">
+            <state line="13" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="0.33754513" vertical-offset="34" max-vertical-offset="1309">
               <folding />
             </state>
           </provider>
@@ -568,7 +568,7 @@
       <workItem from="1401635057171" duration="27174000" />
       <workItem from="1401734354062" duration="19320000" />
       <workItem from="1401809883421" duration="17984000" />
-      <workItem from="1402317402953" duration="997000" />
+      <workItem from="1402317402953" duration="1157000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -710,7 +710,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="379640000" />
+    <option name="totallyTimeSpent" value="379800000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -1067,7 +1067,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="26" column="51" selection-start="765" selection-end="765" vertical-scroll-proportion="0.5216606" vertical-offset="153" max-vertical-offset="1496">
+        <state line="13" column="0" selection-start="393" selection-end="393" vertical-scroll-proportion="0.33754513" vertical-offset="34" max-vertical-offset="1309">
           <folding />
         </state>
       </provider>

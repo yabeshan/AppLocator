@@ -12,17 +12,6 @@
         Station Locator
     </description>
 
-    <!--
-        Enable individual API permissions here.
-        The "device" permission is required for the 'deviceready' event.
-    -->
-
-
-    <feature name="http://api.phonegap.com/1.0/device" />
-    <feature name="http://api.phonegap.com/1.0/geolocation"/>
-
-
-    <preference name="SplashScreenDelay" value="50000"/>
 
     <gap:plugin name="org.apache.cordova.device" />
     <gap:plugin name="org.apache.cordova.splashscreen" />
