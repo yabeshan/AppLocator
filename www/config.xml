@@ -17,16 +17,17 @@
         The "device" permission is required for the 'deviceready' event.
     -->
 
-    
-    <gap:plugin name="org.apache.cordova.splashscreen" />
-    <gap:plugin name="org.apache.cordova.geolocation" />
-    <gap:plugin name="org.apache.cordova.device" />
-    
+
     <feature name="http://api.phonegap.com/1.0/device" />
     <feature name="http://api.phonegap.com/1.0/geolocation"/>
 
 
     <preference name="SplashScreenDelay" value="50000"/>
+    
+    <gap:plugin name="org.apache.cordova.splashscreen" />
+    <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.device" />
+
 
 
     <preference name="phonegap-version"           value="3.4.0" />               <!-- all: current version of PhoneGap -->
@@ -74,7 +75,7 @@
     <gap:splash src="res/screen/ios/screen-ipad-landscape.png"          gap:platform="ios"     width="1024" height="768" />
     <gap:splash src="res/screen/windows-phone/screen-portrait.jpg"      gap:platform="winphone" />
 
-    <access origin="*"/> <!-- allow local pages -->
-   
+    <access origin="*"/>
+
 
 </widget>
