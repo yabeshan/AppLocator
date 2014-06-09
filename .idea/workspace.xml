@@ -4,7 +4,9 @@
     <bookmark url="file://$PROJECT_DIR$/www/css/app.css" line="149" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="" />
+    <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/config.xml" afterPath="$PROJECT_DIR$/www/config.xml" />
+    </list>
     <ignored path="AppLocator.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -88,7 +90,7 @@
       <file leaf-file-name="config.xml" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/config.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="0" selection-start="566" selection-end="566" vertical-scroll-proportion="0.23285198" vertical-offset="245" max-vertical-offset="1173">
+            <state line="22" column="4" selection-start="570" selection-end="570" vertical-scroll-proportion="0.32490975" vertical-offset="194" max-vertical-offset="1309">
               <folding />
             </state>
           </provider>
@@ -566,7 +568,7 @@
       <workItem from="1401635057171" duration="27174000" />
       <workItem from="1401734354062" duration="19320000" />
       <workItem from="1401809883421" duration="17984000" />
-      <workItem from="1402317402953" duration="1661000" />
+      <workItem from="1402317402953" duration="1810000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -708,7 +710,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="380304000" />
+    <option name="totallyTimeSpent" value="380453000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -1065,7 +1067,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/config.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="0" selection-start="566" selection-end="566" vertical-scroll-proportion="0.23285198" vertical-offset="245" max-vertical-offset="1173">
+        <state line="22" column="4" selection-start="570" selection-end="570" vertical-scroll-proportion="0.32490975" vertical-offset="194" max-vertical-offset="1309">
           <folding />
         </state>
       </provider>
