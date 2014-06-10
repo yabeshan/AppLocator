@@ -151,6 +151,8 @@ Ext.define('App.view.MapPanel', {
         var searchBox = new google.maps.places.SearchBox( (input) );
 
         google.maps.event.addListener(searchBox, 'places_changed', function() {
+            alert(111);
+            /*
             that = Ext.getCmp("mapPanel");
             var places = searchBox.getPlaces();
             var options = {
@@ -165,6 +167,7 @@ Ext.define('App.view.MapPanel', {
             that.infowindow = new google.maps.InfoWindow(options);
             that.gMap.setCenter(places[0].geometry.location);
             that.gMap.setZoom(14);
+            */
         });
     },
 

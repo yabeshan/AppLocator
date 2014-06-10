@@ -51,7 +51,7 @@ Ext.define('App.view.SearchPanel', {
                 style:'position:absolute;width:315px;height:165px;background-color:#FFF;top:0px;color: #999;font-weight:bold;',
                 html:'<div id="tp-title">Trip Planer</div><input id="tp-start-point" type="text" placeholder="Start Point">'
                     +'<input id="tp-end-point" type="text" placeholder="End Point"><div id="tp-add">Add destination</div>'
-                    +'<div id="tp-build">Build Trip</div><div id="tp-clear">Clear Road</div><div id="tp-close">Close</div>',
+                    +'<div id="tp-build">Build Trip</div><div id="tp-clear">Clear Trip</div><div id="tp-close">Close</div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
@@ -176,6 +176,7 @@ Ext.define('App.view.SearchPanel', {
         this.directionsDisplay.setMap(null);
         document.getElementById('tp-start-point').value="";
         document.getElementById('tp-end-point').value="";
+
     }
 
 });
