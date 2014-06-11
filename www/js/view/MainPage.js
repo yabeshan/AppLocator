@@ -6,13 +6,13 @@ Ext.define('App.view.MainPage' ,{
 
     config: {
         items:[
-            {
+            {/*
                 width:  '100%',
                 top:    '40px',
                 bottom: '40px',
                 zIndex: 1,
                 xtype: 'mapPanel'
-            },{/*
+            },{
                 top:    '50px',
                 style:'left:50%; margin-left:-158px;',
                 id:'searchHolder',
@@ -75,7 +75,7 @@ Ext.define('App.view.MainPage' ,{
     },
 
     initialize: function() {
-        this.update();
+//        this.update();
     },
     update:function(){
         Ext.getCmp('mapPanel').update();
