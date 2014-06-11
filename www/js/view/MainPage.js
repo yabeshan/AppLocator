@@ -12,7 +12,7 @@ Ext.define('App.view.MainPage' ,{
                 bottom: '40px',
                 zIndex: 1,
                 xtype: 'mapPanel'
-            },{
+            },{/*
                 top:    '50px',
                 style:'left:50%; margin-left:-158px;',
                 id:'searchHolder',
@@ -21,6 +21,7 @@ Ext.define('App.view.MainPage' ,{
                     flex: 1,
                     xtype: 'searchPanel'
                 }]
+                */
             },{
                 width:'100%',
                 height:'40px',
@@ -30,7 +31,7 @@ Ext.define('App.view.MainPage' ,{
 
                 html: '<div id="menuBtn" class="button start-page-menu main-page-toolbar-menu"></div>'
                     + '<div id="locateBtn" class="button start-page-menu main-page-toolbar-locateme"></div>'
-                    + '<input id="pac-input22" type="text" placeholder="Search Box" style="text-align: left">',
+                    + '<input id="pac-input22" type="text" placeholder="Search Box" style="text-align: left;z-index: 10000000;position: absolute">',
                 listeners: {
                     swipe: {
                         fn: function( e, node ) {

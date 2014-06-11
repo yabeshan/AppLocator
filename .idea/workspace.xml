@@ -6,10 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="2412ee0a-f7c8-4768-8ecf-39509d0e039d" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/MainPage.js" afterPath="$PROJECT_DIR$/www/js/view/MainPage.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" afterPath="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/www/index.html" afterPath="$PROJECT_DIR$/www/index_sbox.html" />
-      <change type="MOVED" beforePath="D:\temp\cyberiansoft\AppLocator\www\index_old.html" afterPath="$PROJECT_DIR$/www/index.html" />
     </list>
     <ignored path="AppLocator.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -109,21 +105,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainPage.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainPage.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/view/MainPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="34" selection-start="1018" selection-end="1029" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1513">
+            <state line="33" column="144" selection-start="1149" selection-end="1149" vertical-scroll-proportion="0.46028882" vertical-offset="306" max-vertical-offset="1530">
               <folding>
-                <marker date="1402458513125" expanded="true" signature="1075:1091" placeholder="..." />
+                <marker date="1402459020703" expanded="true" signature="1096:1149" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MapPanel.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="MapPanel.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/www/js/view/panel/MapPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="150" column="58" selection-start="4664" selection-end="4664" vertical-scroll-proportion="0.340388" vertical-offset="2357" max-vertical-offset="3689">
+            <state line="150" column="58" selection-start="4664" selection-end="4664" vertical-scroll-proportion="0.0" vertical-offset="2357" max-vertical-offset="3689">
               <folding />
             </state>
           </provider>
@@ -196,8 +192,8 @@
         <option value="$PROJECT_DIR$/www/config.xml" />
         <option value="$PROJECT_DIR$/www/temp/stylesheet.css" />
         <option value="$PROJECT_DIR$/www/index.html" />
-        <option value="$PROJECT_DIR$/www/js/view/MainPage.js" />
         <option value="$PROJECT_DIR$/www/js/view/panel/MapPanel.js" />
+        <option value="$PROJECT_DIR$/www/js/view/MainPage.js" />
       </list>
     </option>
   </component>
@@ -655,7 +651,7 @@
       <workItem from="1402317402953" duration="3370000" />
       <workItem from="1402384103000" duration="684000" />
       <workItem from="1402408605187" duration="7774000" />
-      <workItem from="1402448524953" duration="5300000" />
+      <workItem from="1402448524953" duration="5739000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -797,7 +793,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="395771000" />
+    <option name="totallyTimeSpent" value="396210000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -1155,19 +1151,19 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/view/MainPage.js">
+    <entry file="file://$PROJECT_DIR$/www/js/view/panel/MapPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="34" selection-start="1018" selection-end="1029" vertical-scroll-proportion="0.0" vertical-offset="300" max-vertical-offset="1513">
-          <folding>
-            <marker date="1402458513125" expanded="true" signature="1075:1091" placeholder="..." />
-          </folding>
+        <state line="150" column="58" selection-start="4664" selection-end="4664" vertical-scroll-proportion="0.0" vertical-offset="2357" max-vertical-offset="3689">
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/www/js/view/panel/MapPanel.js">
+    <entry file="file://$PROJECT_DIR$/www/js/view/MainPage.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="150" column="58" selection-start="4664" selection-end="4664" vertical-scroll-proportion="0.340388" vertical-offset="2357" max-vertical-offset="3689">
-          <folding />
+        <state line="33" column="144" selection-start="1149" selection-end="1149" vertical-scroll-proportion="0.46028882" vertical-offset="306" max-vertical-offset="1530">
+          <folding>
+            <marker date="1402459020703" expanded="true" signature="1096:1149" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
