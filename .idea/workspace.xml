@@ -108,7 +108,7 @@
       <file leaf-file-name="MapPanel.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/www/js/view/panel/MapPanel.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="65" column="8" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.70017636" vertical-offset="708" max-vertical-offset="3910">
+            <state line="60" column="18" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.5802469" vertical-offset="691" max-vertical-offset="4029">
               <folding />
             </state>
           </provider>
@@ -643,7 +643,7 @@
       <workItem from="1402384103000" duration="684000" />
       <workItem from="1402408605187" duration="7774000" />
       <workItem from="1402448524953" duration="6626000" />
-      <workItem from="1402466087921" duration="5427000" />
+      <workItem from="1402466087921" duration="5923000" />
     </task>
     <task id="LOCAL-00001" summary="add index">
       <created>1398255674875</created>
@@ -785,7 +785,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="402524000" />
+    <option name="totallyTimeSpent" value="403020000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-4" y="-4" width="1374" height="742" extended-state="6" />
@@ -1130,7 +1130,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/www/js/view/panel/MapPanel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="65" column="8" selection-start="1616" selection-end="1616" vertical-scroll-proportion="0.70017636" vertical-offset="708" max-vertical-offset="3910">
+        <state line="60" column="18" selection-start="1395" selection-end="1395" vertical-scroll-proportion="0.5802469" vertical-offset="691" max-vertical-offset="4029">
           <folding />
         </state>
       </provider>
