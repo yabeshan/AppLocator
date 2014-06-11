@@ -16,6 +16,8 @@ Ext.define('App.view.PopupPanel' ,{
                     +'<div id="fuel-type-redeem" class="select filter-img-zoom"></div></div>'
                 +'<div class="holder-vehicle-type">Vehicle Type<div id="vehicle-type-cars" class="filter-img-zoom"></div>'
                     +'<div id="vehicle-type-box" class="filter-img-zoom"></div><div id="vehicle-type-semi" class="filter-img-zoom"></div></div>'
+                +'<div class="holder-station-status">Station Status<div id="station-operational" class="filter-lbl-zoom">Operational</div>'
+                    +'<div id="station-under" class="filter-lbl-zoom">Under Maintenance</div><div id="station-coming" class="filter-lbl-zoom">Coming Soon</div></div>'
                 +'<div class="holder-hours-type">Hours of Operation<div id="hours-type-24" class="filter-lbl-zoom">24/7</div>'
                     +'<div id="hours-type-now" class="filter-lbl-zoom">Open Now</div></div>'
                 +'<div class="holder-flow-type">Flow Rate<div id="flow-rate-low" class="filter-img-zoom"></div>'
@@ -63,6 +65,10 @@ Ext.define('App.view.PopupPanel' ,{
             case "vehicle-type-cars":
             case "vehicle-type-box":
             case "vehicle-type-semi":
+
+            case "station-operational":
+            case "station-under":
+            case "station-coming":
 
             case "hours-type-24":
             case "hours-type-now":

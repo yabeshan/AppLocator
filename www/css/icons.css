@@ -68,10 +68,41 @@
     background: url('../img/icons-vehicle-type.png') no-repeat -181px 0px;
 }
 
+/*************************************** Station Status **********************************/
+.holder-station-status {
+    position:absolute;height:20%;top:40%;left:20px;right:20px;border-top: 1px solid #CCC
+}
+
+#station-operational {
+    position: absolute;width:160px;height:30px;top:30px;margin-left:0%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#station-operational.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
+
+#station-under {
+    position: absolute;width:250px;height:30px;top:30px;margin-left:30%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#station-under.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
+
+#station-coming {
+    position: absolute;width:160px;height:30px;top:30px;margin-left:70%;cursor: pointer;
+    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+}
+#station-coming.select {
+    background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
+}
 
 /*************************************** Hours of Operation **********************************/
 .holder-hours-type {
-    position:absolute;height:20%;top:40%;left:20px;right:50%;border-top: 1px solid #CCC
+    position:absolute;height:20%;top:60%;left:20px;right:50%;border-top: 1px solid #CCC
 }
 
 #hours-type-24 {
@@ -94,7 +125,7 @@
 
 /*************************************** Flow Rate *******************************************/
 .holder-flow-type {
-    position:absolute;height:20%;top:40%;left:50%;right:20px;border-top: 1px solid #CCC
+    position:absolute;height:20%;top:60%;left:50%;right:20px;border-top: 1px solid #CCC
 }
 
 #flow-rate-low {
@@ -123,7 +154,7 @@
 
 /*************************************** Payment Types ***************************************/
 .holder-payment-type {
-    position:absolute;height:40%;top:60%;left:20px;right:20px;border-top: 1px solid #CCC
+    position:absolute;height:20%;top:80%;left:20px;right:20px;border-top: 1px solid #CCC
 }
 
 #payment-any {
