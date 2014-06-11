@@ -6,7 +6,7 @@ Ext.define('App.view.MainPage' ,{
 
     config: {
         items:[
-            {/*
+            {
                 width:  '100%',
                 top:    '40px',
                 bottom: '40px',
@@ -21,7 +21,6 @@ Ext.define('App.view.MainPage' ,{
                     flex: 1,
                     xtype: 'searchPanel'
                 }]
-                */
             },{
                 width:'100%',
                 height:'40px',

@@ -88,8 +88,8 @@ Ext.define('App.view.MenuPanel' ,{
     initialize: function() {
         Ext.getCmp('menuPanel').closeMenu();
         setTimeout(function(){
-            Ext.get('mapviewBtn').setVisible(false);
-        },300)
+//            Ext.get('mapviewBtn').setVisible(false);
+        },500)
     },
     openMenu: function() {
         Ext.getCmp('menuPanel').setStyle({'pointer-events':'all'});

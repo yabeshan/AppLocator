@@ -1,5 +1,37 @@
 
 
+/*
+
+
+var initflag = false;
+var onDeviceReady = function() {
+    if (initflag) return;
+
+    initflag = true;
+    alert("init");
+
+
+    Ext.application({
+        launch: function() {
+            Ext.create('Ext.Panel', {
+                items: [
+                    {html:'<div style="position: absolute;width: 100px;height: 100px; top: 100px; left: 100px; background-color: #900">11111111111111111111111111111111111111111111111111111111111111111111111111111111111</div>'}
+                ]
+            });
+
+        }
+    });
+};
+
+document.addEventListener('deviceready', onDeviceReady, false);
+window.onload=function(){
+    setTimeout( onDeviceReady, 3000 );
+};
+
+
+ */
+
+
 var appInit = function() {
     if (initflag==true) return;
 
@@ -26,16 +58,16 @@ var appInit = function() {
 
             Ext.create('Ext.Panel', {
                 id:'panelHolder',
-                fullscreen: false,
+                fullscreen: true,
                 layout: 'card',
-                activeItem: 1,
+                activeItem: 0,
                 cls:'scaleApp',
                 items: [
                     {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'aboutPage'}, {xtype:'settingsPage'}
                 ]
             });
-
         }
+
     });
 };
 
@@ -52,5 +84,3 @@ document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){
     setTimeout( onDeviceReady, 1000 );
 };
-
-
