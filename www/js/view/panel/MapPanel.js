@@ -54,23 +54,36 @@ Ext.define('App.view.MapPanel', {
 
         setInterval(function(){
             var obj1 = document.getElementsByClassName("pac-container");
-            var obj2 = document.getElementsByClassName("pac-item");
+//            var obj2 = document.getElementsByClassName("pac-item");
             if (obj1[0]) {
-
                 var el = Ext.get(obj1[0]);
                 el.on({
                     tap : function(e, t) {
-                        alert(444);
+                        if (e.target.parentNode) {
+                            if (e.target.parentNode.parentNode) {
+                                Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
+                            } else {
+                                Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
+                            }
+                        } else {
+                            Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
+                        }
+
                     }
                 });
-//                obj1[0].addEventListener('mousedown', function(ev) {
-//                    console.log( ev.currentTarget.innerHTML );
-//                    ev.currentTarget.innerHTML
-//                    alert( 111 );
-//                }, false);
             }
         },5000);
 
+    },
+
+    addResultClickHandler: function (content) {
+        var start = content.indexOf('pac-matched">')+13,
+            end = content.length- 7,
+            center = String(content.slice(start, end)),
+            arr = center.split("</span>"),
+            result = arr[0]+arr[1]+arr[2].replace('<span>', ',  ');
+
+        alert( result );
     },
 
     completeMap: function(extMapComponent, googleMapComp) {
