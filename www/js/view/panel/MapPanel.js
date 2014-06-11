@@ -84,6 +84,9 @@ Ext.define('App.view.MapPanel', {
     },
 
     addResultClickHandler: function (content) {
+        that = Ext.getCmp("mapPanel");
+        if (that.autoDirection) return;
+
         var start = content.indexOf('pac-matched">')+13,
             end = content.length- 7,
             center = String(content.slice(start, end)),
@@ -91,27 +94,23 @@ Ext.define('App.view.MapPanel', {
             country = (arr[2]) ? arr[2].replace('<span>', ',  ') : "" ,
             result = arr[0]+arr[1]+country;
 
-        that = Ext.getCmp("mapPanel");
-        if (that.autoDirection) return;
-
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         input.value = result;
 
-        var places = that.searchBox.getPlaces();
-        var options = {
-            map: that.gMap,
-            position: places[0].geometry.location,
-            content: places[0].name
-        };
-
-        if (that.infowindow)
-            that.infowindow.close();
-
-        that.infowindow = new google.maps.InfoWindow(options);
-        that.gMap.setCenter(places[0].geometry.location);
-        that.gMap.setZoom(14);
-
 //        alert( result );
+//        var places = that.searchBox.getPlaces();
+//        var options = {
+//            map: that.gMap,
+//            position: places[0].geometry.location,
+//            content: places[0].name
+//        };
+//
+//        if (that.infowindow)
+//            that.infowindow.close();
+//
+//        that.infowindow = new google.maps.InfoWindow(options);
+//        that.gMap.setCenter(places[0].geometry.location);
+//        that.gMap.setZoom(14);
     },
 
     completeMap: function(extMapComponent, googleMapComp) {
@@ -212,21 +211,21 @@ Ext.define('App.view.MapPanel', {
         this.searchBox = new google.maps.places.SearchBox( (input) );
 
         google.maps.event.addListener( this.searchBox, 'places_changed', function() {
-//            that = Ext.getCmp("mapPanel");
-//            that.autoDirection = true;
-//            var places = that.searchBox.getPlaces();
-//            var options = {
-//                map: that.gMap,
-//                position: places[0].geometry.location,
-//                content: places[0].name
-//            };
-//
-//            if (that.infowindow)
-//                that.infowindow.close();
-//
-//            that.infowindow = new google.maps.InfoWindow(options);
-//            that.gMap.setCenter(places[0].geometry.location);
-//            that.gMap.setZoom(14);
+            that = Ext.getCmp("mapPanel");
+            that.autoDirection = true;
+            var places = that.searchBox.getPlaces();
+            var options = {
+                map: that.gMap,
+                position: places[0].geometry.location,
+                content: places[0].name
+            };
+
+            if (that.infowindow)
+                that.infowindow.close();
+
+            that.infowindow = new google.maps.InfoWindow(options);
+            that.gMap.setCenter(places[0].geometry.location);
+            that.gMap.setZoom(14);
         });
 
     },
