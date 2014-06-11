@@ -118,7 +118,12 @@ Ext.define('App.view.SearchPanel', {
 
     directionsService:null,
     directionsDisplay:null,
-    showTripPlaner: function() {
+    showTripPlaner: function( flag ) {
+
+        if (flag && Ext.getCmp("mapPanel").userLocation != null) {
+            document.getElementById('tp-start-point').value = Ext.getCmp("mapPanel").userLocation;
+        }
+
         Ext.getCmp('tripPlaner').show();
 
         var start = document.getElementById('tp-start-point');
@@ -138,12 +143,20 @@ Ext.define('App.view.SearchPanel', {
     },
     hideTripPlaner: function() {
         Ext.getCmp('tripPlaner').hide();
-//        Ext.getCmp('tripPlaner').setStyle('width:0px;height:0px');
+
+        if (Ext.get("tp-center-point")) {
+            Ext.get("tp-center-point").setStyle({'visibility':'hidden'});
+            Ext.get("tp-center-point").setStyle({'height':'0px'});
+            Ext.get("tp-center-point").setStyle({'margin':'0'});
+        }
+        if (Ext.get("tp-add")) Ext.get("tp-add").setStyle({'opacity':1});
     },
 
     addPoint: function() {
         Ext.get("tp-center-point").setStyle({'visibility':'visible'});
         Ext.get("tp-center-point").setStyle({'height':'35px'});
+        Ext.get("tp-center-point").setStyle({'margin':'10px 5px 20px 5px'});
+        Ext.get("tp-add").setStyle({'opacity':.5});
     },
 
     buildTrip: function() {
@@ -184,7 +197,13 @@ Ext.define('App.view.SearchPanel', {
     clearRoad: function() {
         this.directionsDisplay.setMap(null);
         document.getElementById('tp-start-point').value="";
+        document.getElementById('tp-center-point').value="";
         document.getElementById('tp-end-point').value="";
+
+        Ext.get("tp-center-point").setStyle({'visibility':'hidden'});
+        Ext.get("tp-center-point").setStyle({'height':'0px'});
+        Ext.get("tp-center-point").setStyle({'margin':'0'});
+        Ext.get("tp-add").setStyle({'opacity':1});
 
     }
 

@@ -18,10 +18,10 @@ Ext.define('App.view.InfoPopup' ,{
                     tap: {
                         fn: function( e, node ) {
                             if (node.id=="goDirect") {
-                                document.getElementById('tp-end-point').value=Ext.get("stationAddress").dom.innerHTML;
-                                Ext.getCmp('searchPanel').showTripPlaner();
+                                document.getElementById('tp-end-point').value=Ext.get("stationAddress").dom.innerText;
+                                Ext.getCmp('searchPanel').showTripPlaner(true);
                             } else if (node.id=="goPlanner") {
-                                document.getElementById('tp-end-point').value=Ext.get("stationAddress").dom.innerHTML;
+                                document.getElementById('tp-end-point').value=Ext.get("stationAddress").dom.innerText;
                                 Ext.getCmp('searchPanel').showTripPlaner();
                             } else if (node.id=="goShare") {
                                 Ext.getCmp('searchPanel').showShare();

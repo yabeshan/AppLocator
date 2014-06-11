@@ -51,7 +51,6 @@ Ext.define('App.view.MapPanel', {
         } );
 
         this.gMap = map.getMap();
-        this.addSearchItemHandlers();
     },
 
     searchItemFlag:false,
@@ -96,21 +95,21 @@ Ext.define('App.view.MapPanel', {
 
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         input.value = result;
-
 //        alert( result );
-//        var places = that.searchBox.getPlaces();
-//        var options = {
-//            map: that.gMap,
-//            position: places[0].geometry.location,
-//            content: places[0].name
-//        };
-//
-//        if (that.infowindow)
-//            that.infowindow.close();
-//
-//        that.infowindow = new google.maps.InfoWindow(options);
-//        that.gMap.setCenter(places[0].geometry.location);
-//        that.gMap.setZoom(14);
+
+        var places = that.searchBox.getPlaces();
+        var options = {
+            map: that.gMap,
+            position: places[0].geometry.location,
+            content: places[0].name
+        };
+
+        if (that.infowindow)
+            that.infowindow.close();
+
+        that.infowindow = new google.maps.InfoWindow(options);
+        that.gMap.setCenter(places[0].geometry.location);
+        that.gMap.setZoom(14);
     },
 
     completeMap: function(extMapComponent, googleMapComp) {
@@ -178,6 +177,7 @@ Ext.define('App.view.MapPanel', {
         }
     },
 
+    userLocation:null,
     viewInfoWindow: function(content, lat, lon) {
         var mapZoom = 10;
         if (lat==null || lon==null) {
@@ -185,6 +185,24 @@ Ext.define('App.view.MapPanel', {
             lon = -95.677068;
             mapZoom = 4;
         }
+
+        Ext.Ajax.request({
+            url: 'http://maps.googleapis.com/maps/api/geocode/json?sensor=true&language=en',
+            method: 'GET',
+            useDefaultXhrHeader:false,
+            disableCaching: true,
+            timeout:120000,
+            params: {
+                latlng: lat+','+lon
+            },
+            success: function(response) {
+                var res = Ext.JSON.decode(response.responseText);
+                Ext.getCmp("mapPanel").userLocation = res.results[0].formatted_address;
+            },
+            failure: function(response) {
+
+            }
+        });
 
         var coord = new google.maps.LatLng ( lat, lon );
         if (this.gMap==null) {
@@ -209,8 +227,10 @@ Ext.define('App.view.MapPanel', {
     addSearchPanelInteractive: function() {
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         this.searchBox = new google.maps.places.SearchBox( (input) );
+        this.addSearchItemHandlers();
 
         google.maps.event.addListener( this.searchBox, 'places_changed', function() {
+
             that = Ext.getCmp("mapPanel");
             that.autoDirection = true;
             var places = that.searchBox.getPlaces();
@@ -227,7 +247,6 @@ Ext.define('App.view.MapPanel', {
             that.gMap.setCenter(places[0].geometry.location);
             that.gMap.setZoom(14);
         });
-
     },
 
     changeTraffic: function() {

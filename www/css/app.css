@@ -437,10 +437,10 @@ input::-webkit-input-placeholder {
     padding-left: 10px; border: none;border-bottom: 1px solid #666;margin: 10px 5px 0px 5px;height: 35px;width:305px;
 }
 #tp-center-point {
-    padding-left: 10px; border: none;border-bottom: 1px solid #666;margin: 10px 5px 0px 5px;height: 0px;width:305px;visibility: hidden;
+    padding-left: 10px; border: none;border-bottom: 1px solid #666;margin: 0;height: 0px;width:305px;visibility: hidden;
 }
 #tp-end-point {
-    padding-left: 10px; border: none;border-bottom: 1px solid #666;margin: 10px 5px 0px 5px;height: 35px;width:305px;
+    padding-left: 10px; border: none;border-bottom: 1px solid #666;margin: -10px 5px 0px 5px;height: 35px;width:305px;
 }
 
 
