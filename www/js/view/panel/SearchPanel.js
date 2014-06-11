@@ -48,16 +48,17 @@ Ext.define('App.view.SearchPanel', {
                 }
             },{
                 id:'tripPlaner',
-                style:'position:absolute;width:315px;height:165px;background-color:#FFF;top:0px;color: #999;font-weight:bold;',
-                html:'<div id="tp-title">Trip Planer</div><input id="tp-start-point" type="text" placeholder="Start Point">'
-                    +'<input id="tp-end-point" type="text" placeholder="End Point"><div id="tp-add">Add destination</div>'
-                    +'<div id="tp-build">Build Trip</div><div id="tp-clear">Clear Trip</div><div id="tp-close">Close</div>',
+                style:'position:absolute;width:315px;background-color:#FFF;top:0px;color: #999;font-weight:bold;',
+                html:'<div id="tp-title">Trip Planer</div><img id="tp-close" src="img/popup-close-button.png" >'
+                    +'<input id="tp-start-point" type="text" placeholder="Start Point"><input id="tp-center-point" type="text" placeholder="End Point">'
+                    +'<input id="tp-end-point" type="text" placeholder="End Point"><div id="tp-add"><img src="img/icons-add.png" style="float: left; padding-right:20px;">Add destination</div>'
+                    +'<div id="tp-build"><img src="img/icons-trip.png" style="float: left; padding-right:20px;">Build Trip</div><div id="tp-clear"><img src="img/icons-close.png" style="float: left; padding-right:20px;">Clear Trip</div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
                             var parent = Ext.getCmp('searchPanel');
                             if (node.id=="tp-add") {
-
+                                parent.addPoint();
                             } else if (node.id=="tp-build") {
                                 parent.buildTrip();
                             } else if (node.id=="tp-clear") {
@@ -123,6 +124,9 @@ Ext.define('App.view.SearchPanel', {
         var start = document.getElementById('tp-start-point');
         var searchBox = new google.maps.places.SearchBox( (start) );
 
+        var center = document.getElementById('tp-center-point');
+        var searchBox = new google.maps.places.SearchBox( (center) );
+
         var end = document.getElementById('tp-end-point');
         var searchBox = new google.maps.places.SearchBox( (end) );
 
@@ -135,6 +139,11 @@ Ext.define('App.view.SearchPanel', {
     hideTripPlaner: function() {
         Ext.getCmp('tripPlaner').hide();
 //        Ext.getCmp('tripPlaner').setStyle('width:0px;height:0px');
+    },
+
+    addPoint: function() {
+        Ext.get("tp-center-point").setStyle({'visibility':'visible'});
+        Ext.get("tp-center-point").setStyle({'height':'35px'});
     },
 
     buildTrip: function() {
