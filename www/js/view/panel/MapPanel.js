@@ -147,7 +147,9 @@ Ext.define('App.view.MapPanel', {
     },
 
     addSearchPanelInteractive: function() {
-        var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
+//        var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
+        var input = document.getElementById('pac-input22');
+
         var searchBox = new google.maps.places.SearchBox( (input) );
 
         google.maps.event.addListener(searchBox, 'places_changed', function() {

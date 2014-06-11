@@ -29,7 +29,8 @@ Ext.define('App.view.MainPage' ,{
                 style:'background:#30b457',
 
                 html: '<div id="menuBtn" class="button start-page-menu main-page-toolbar-menu"></div>'
-                    + '<div id="locateBtn" class="button start-page-menu main-page-toolbar-locateme"></div>',
+                    + '<div id="locateBtn" class="button start-page-menu main-page-toolbar-locateme"></div>'
+                    + '<input id="pac-input22" type="text" placeholder="Search Box" style="text-align: left">',
                 listeners: {
                     swipe: {
                         fn: function( e, node ) {
