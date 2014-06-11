@@ -51,29 +51,36 @@ Ext.define('App.view.MapPanel', {
         } );
 
         this.gMap = map.getMap();
+        this.addSearchItemHandlers();
+    },
 
-        setInterval(function(){
-            var obj1 = document.getElementsByClassName("pac-container");
-//            var obj2 = document.getElementsByClassName("pac-item");
-            if (obj1[0]) {
-                var el = Ext.get(obj1[0]);
-                el.on({
-                    tap : function(e, t) {
-                        if (e.target.parentNode) {
-                            if (e.target.parentNode.parentNode) {
-                                Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
-                            } else {
-                                Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
-                            }
+    searchItemFlag:false,
+    searchBox:null,
+    autoDirection:false,
+    addSearchItemHandlers: function() {
+        var obj1 = document.getElementsByClassName("pac-container");
+        var obj2 = document.getElementsByClassName("pac-item");
+
+        if (obj1[0] && Ext.getCmp('mapPanel').searchItemFlag==false) {
+            Ext.getCmp('mapPanel').searchItemFlag = true;
+            var el = Ext.get(obj1[0]);
+
+            el.on({
+                tap : function(e, t) {
+                    if (e.target.parentNode) {
+                        if (e.target.parentNode.parentNode) {
+                            Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
                         } else {
-                            Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
+                            Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
                         }
-
+                    } else {
+                        Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
                     }
-                });
-            }
-        },5000);
-
+                }
+            });
+        } else {
+            setTimeout( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
+        }
     },
 
     addResultClickHandler: function (content) {
@@ -81,9 +88,30 @@ Ext.define('App.view.MapPanel', {
             end = content.length- 7,
             center = String(content.slice(start, end)),
             arr = center.split("</span>"),
-            result = arr[0]+arr[1]+arr[2].replace('<span>', ',  ');
+            country = (arr[2]) ? arr[2].replace('<span>', ',  ') : "" ,
+            result = arr[0]+arr[1]+country;
 
-        alert( result );
+        that = Ext.getCmp("mapPanel");
+        if (that.autoDirection) return;
+
+        var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
+        input.value = result;
+
+        var places = that.searchBox.getPlaces();
+        var options = {
+            map: that.gMap,
+            position: places[0].geometry.location,
+            content: places[0].name
+        };
+
+        if (that.infowindow)
+            that.infowindow.close();
+
+        that.infowindow = new google.maps.InfoWindow(options);
+        that.gMap.setCenter(places[0].geometry.location);
+        that.gMap.setZoom(14);
+
+//        alert( result );
     },
 
     completeMap: function(extMapComponent, googleMapComp) {
@@ -181,25 +209,24 @@ Ext.define('App.view.MapPanel', {
 
     addSearchPanelInteractive: function() {
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
-//        var input = document.getElementById('pac-input');
+        this.searchBox = new google.maps.places.SearchBox( (input) );
 
-        var searchBox = new google.maps.places.SearchBox( (input) );
-
-        google.maps.event.addListener(searchBox, 'places_changed', function() {
-            that = Ext.getCmp("mapPanel");
-            var places = searchBox.getPlaces();
-            var options = {
-                map: that.gMap,
-                position: places[0].geometry.location,
-                content: places[0].name
-            };
-
-            if (that.infowindow)
-                that.infowindow.close();
-
-            that.infowindow = new google.maps.InfoWindow(options);
-            that.gMap.setCenter(places[0].geometry.location);
-            that.gMap.setZoom(14);
+        google.maps.event.addListener( this.searchBox, 'places_changed', function() {
+//            that = Ext.getCmp("mapPanel");
+//            that.autoDirection = true;
+//            var places = that.searchBox.getPlaces();
+//            var options = {
+//                map: that.gMap,
+//                position: places[0].geometry.location,
+//                content: places[0].name
+//            };
+//
+//            if (that.infowindow)
+//                that.infowindow.close();
+//
+//            that.infowindow = new google.maps.InfoWindow(options);
+//            that.gMap.setCenter(places[0].geometry.location);
+//            that.gMap.setZoom(14);
         });
 
     },
