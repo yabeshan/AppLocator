@@ -1,69 +1,90 @@
- <!DOCTYPE html>
-<!--
-    Licensed to the Apache Software Foundation (ASF) under one
-    or more contributor license agreements.  See the NOTICE file
-    distributed with this work for additional information
-    regarding copyright ownership.  The ASF licenses this file
-    to you under the Apache License, Version 2.0 (the
-    "License"); you may not use this file except in compliance
-    with the License.  You may obtain a copy of the License at
-
-    http://www.apache.org/licenses/LICENSE-2.0
-
-    Unless required by applicable law or agreed to in writing,
-    software distributed under the License is distributed on an
-    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
-     KIND, either express or implied.  See the License for the
-    specific language governing permissions and limitations
-    under the License.
--->
+<!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8" />
-        <meta name="format-detection" content="telephone=no">
-        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
-        <!--meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" /-->
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
-        <meta name="apple-mobile-web-app-capable" content="yes">
-        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+<head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Geocomplete : jQuery Geocoding and Places Autocomplete Plugin" />
+    <link rel="stylesheet" type="text/css" media="screen" href="temp/stylesheet.css">
+    <title>Geocomplete - Examples</title>
+</head>
 
-        <link rel="stylesheet" type="text/css" href="css/sencha-touch/sencha-touch.css" />
-        <link rel="stylesheet" type="text/css" href="css/icons.css" />
-        <link rel="stylesheet" type="text/css" href="css/app.css" />
-        <title>Station Locator</title>
+<body>
 
+<div id="header_wrap" class="outer">
+    <header class="inner">
+        <h1 id="project_title">Geocomplete</h1>
+        <h2 id="project_tagline">Example: Multiple Results</h2>
+    </header>
+</div>
 
+<div id="main_content_wrap" class="outer">
+    <section id="main_content" class="inner">
 
-        <script type="text/javascript" src="phonegap.js"></script>
-        <script type="text/javascript">
-            if (navigator && navigator.splashscreen) navigator.splashscreen.show();
-        </script>
-        <script type="text/javascript" src="js/lib/sencha-touch-all.js"></script>
+        <form>
+            <input id="geocomplete" type="text" placeholder="Type in an address" size="90" value="Lo"/>
+            <input id="find" type="button" value="find" />
+        </form>
 
-        <!--script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyAfTNWFYhoCfxMH3BbpYbQYsqdWXYW-yXc&sensor=true&amp;language=en-EN"></script-->
-        <!--script type="text/javascript" src="js/lib/gmapV2.js"></script-->
+        <div class="map_canvas"></div>
 
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&language=en&libraries=places"></script>
-        <!--script type="text/javascript" src="js/lib/gmapV3.js"></script-->
+        <ul id="multiple"></ul>
 
+        <h3>Source:</h3>
+        <pre>
+$("#geocomplete")
+  .geocomplete({ map: ".map_canvas" })
+  .bind("geocode:multiple", function(event, results){
+    $.each(results, function(){
+      $("&lt;li&gt;").html(this.formatted_address).appendTo($("#multiple"));
+    });
+  });</pre>
 
-        <script type="text/javascript" src="js/model/Station.js"></script>
-        <script type="text/javascript" src="js/controller/PageController.js"></script>
-        <script type="text/javascript" src="js/controller/StationController.js"></script>
+    </section>
+</div>
 
-        <script type="text/javascript" src="js/view/StartPage.js"></script>
-        <script type="text/javascript" src="js/view/MainPage.js"></script>
-        <script type="text/javascript" src="js/view/AboutPage.js"></script>
-        <script type="text/javascript" src="js/view/SettingsPage.js"></script>
+<script src="http://maps.googleapis.com/maps/api/js?sensor=false&amp;libraries=places"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
 
-        <script type="text/javascript" src="js/view/panel/InfoPopup.js"></script>
-        <script type="text/javascript" src="js/view/panel/MapPanel.js"></script>
-        <script type="text/javascript" src="js/view/panel/MenuPanel.js"></script>
-        <script type="text/javascript" src="js/view/panel/SearchPanel.js"></script>
-        <script type="text/javascript" src="js/view/panel/ChangeInfoPanel.js"></script>
+<script src="temp/jquery.geocomplete.js"></script>
+<script src="temp/logger.js"></script>
 
-        <script type="text/javascript" src="js/app.js"></script>
+<script>
+    $(function(){
 
-    </head>
-    <body></body>
+        var $geocomplete = $("#geocomplete"),
+                $multiple = $("#multiple");
+
+        $geocomplete
+                .geocomplete({ map: ".map_canvas" })
+                .bind("geocode:multiple", function(event, results){
+                    $.each(results, function(){
+                        var result = this;
+                        $("<li>")
+                                .html(result.formatted_address)
+                                .appendTo($multiple)
+                                .click(function(){
+                                    $geocomplete.geocomplete("update", result)
+                                });
+                    });
+                });
+
+        $("#find").click(function(){
+            $geocomplete.trigger("geocode");
+        });
+
+    });
+</script>
+
+<script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+    try {
+        var pageTracker = _gat._getTracker("UA-57649-7");
+        pageTracker._trackPageview();
+    } catch(err) {}
+</script>
+
+</body>
 </html>
