@@ -10,34 +10,17 @@
 
 <body>
 
-<div id="header_wrap" class="outer">
-    <header class="inner">
-        <h1 id="project_title">Geocomplete</h1>
-        <h2 id="project_tagline">Example: Multiple Results</h2>
-    </header>
-</div>
-
-<div id="main_content_wrap" class="outer">
-    <section id="main_content" class="inner">
+<div id="main_content_wrap" style="margin: 0px !important;padding: 0px !important;padding-left: 20px !important;">
+    <section id="main_content" style="margin: 0px !important;padding: 0px !important;padding-left: 20px !important;">
 
         <form>
             <input id="geocomplete" type="text" placeholder="Type in an address" size="90" value="Lo"/>
             <input id="find" type="button" value="find" />
         </form>
 
-        <div class="map_canvas"></div>
+        <div class="map_canvas" style="width: 200px; height: 200px;margin: 0px !important;padding: 0px !important;"></div>
 
-        <ul id="multiple"></ul>
-
-        <h3>Source:</h3>
-        <pre>
-$("#geocomplete")
-  .geocomplete({ map: ".map_canvas" })
-  .bind("geocode:multiple", function(event, results){
-    $.each(results, function(){
-      $("&lt;li&gt;").html(this.formatted_address).appendTo($("#multiple"));
-    });
-  });</pre>
+        <ul id="multiple" style="opacity: .4"></ul>
 
     </section>
 </div>
