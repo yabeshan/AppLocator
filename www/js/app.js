@@ -26,7 +26,7 @@ var appInit = function() {
 
             Ext.create('Ext.Panel', {
                 id:'panelHolder',
-                fullscreen: false,
+                fullscreen: true,
                 layout: 'card',
                 activeItem: 1,
                 cls:'scaleApp',
