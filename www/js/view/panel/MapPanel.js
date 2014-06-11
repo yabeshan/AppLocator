@@ -51,6 +51,19 @@ Ext.define('App.view.MapPanel', {
         } );
 
         this.gMap = map.getMap();
+
+        setInterval(function(){
+            var obj1 = document.getElementsByClassName("pac-container");
+            var obj2 = document.getElementsByClassName("pac-item");
+            if (obj1[0]) {
+                obj1[0].addEventListener('mousedown', function(ev) {
+//                    console.log( ev.currentTarget.innerHTML );
+//                    ev.currentTarget.innerHTML
+                    alert( 111 );
+                }, false);
+            }
+        },5000);
+        
     },
 
     completeMap: function(extMapComponent, googleMapComp) {
