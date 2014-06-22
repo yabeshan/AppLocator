@@ -66,10 +66,10 @@ Ext.define('App.view.MapPanel', {
 
             el.on({
                 tap : function(e, t) {
-                    alert("cont = " + e.target.innerHTML);
+//                    alert("cont = " + e.target.innerHTML);
 //                    console.log(e.target.innerHTML);
 
-                    /*
+
                     if (e.target.parentNode) {
                         if (e.target.parentNode.parentNode) {
                             Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
@@ -79,16 +79,16 @@ Ext.define('App.view.MapPanel', {
                     } else {
                         Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
                     }
-                    */
+
                 }
             });
 
 
-            google.maps.event.addDomListener(obj1[0], 'touchstart', function(e) {
-                alert('touchstart     ' + e.target.innerHTML );
-                e.preventDefault();
-                return false;
-            });
+//            google.maps.event.addDomListener(obj1[0], 'touchstart', function(e) {
+//                alert('touchstart     ' + e.target.innerHTML );
+//                e.preventDefault();
+//                return false;
+//            });
 
         } else {
             setTimeout( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
@@ -96,6 +96,7 @@ Ext.define('App.view.MapPanel', {
     },
 
     addResultClickHandler: function (content) {
+        alert("cont = " + content);
         that = Ext.getCmp("mapPanel");
         if (that.autoDirection) return;
 
@@ -105,7 +106,7 @@ Ext.define('App.view.MapPanel', {
             arr = center.split("</span>"),
             country = (arr[2]) ? arr[2].replace('<span>', ',  ') : "" ,
             result = arr[0]+arr[1]+country;
-
+        alert("result = " + result);
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         input.value = result;
 //        alert( result );
