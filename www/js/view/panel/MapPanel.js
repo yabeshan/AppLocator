@@ -62,7 +62,7 @@ Ext.define('App.view.MapPanel', {
 
         if (obj1[0] && Ext.getCmp('mapPanel').searchItemFlag==false) {
             Ext.getCmp('mapPanel').searchItemFlag = true;
-            var el = Ext.get(obj1[0]);
+            var el = Ext.get(obj1[4]);
 
             el.on({
                 tap : function(e, t) {
