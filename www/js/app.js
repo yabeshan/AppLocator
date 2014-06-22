@@ -60,7 +60,7 @@ var appInit = function() {
                 id:'panelHolder',
                 fullscreen: true,
                 layout: 'card',
-                activeItem: 0,
+                activeItem: 1,
                 cls:'scaleApp',
                 items: [
                     {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'aboutPage'}, {xtype:'settingsPage'}

@@ -62,10 +62,17 @@ Ext.define('App.view.MapPanel', {
 
         if (obj1[0] && Ext.getCmp('mapPanel').searchItemFlag==false) {
             Ext.getCmp('mapPanel').searchItemFlag = true;
-            var el = Ext.get(obj1[4]);
+            var el = Ext.get(obj1[0]);
+
+            google.maps.event.addDomListener(obj1[0], 'mousedown', function(e) {
+                alert('click');
+                e.preventDefault();
+                return false;
+            });
 
             el.on({
                 tap : function(e, t) {
+                    /*
                     if (e.target.parentNode) {
                         if (e.target.parentNode.parentNode) {
                             Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
@@ -75,6 +82,7 @@ Ext.define('App.view.MapPanel', {
                     } else {
                         Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
                     }
+                    */
                 }
             });
         } else {

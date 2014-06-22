@@ -74,7 +74,7 @@ Ext.define('App.view.MainPage' ,{
     },
 
     initialize: function() {
-//        this.update();
+        this.update();
     },
     update:function(){
         Ext.getCmp('mapPanel').update();
