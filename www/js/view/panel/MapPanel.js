@@ -64,14 +64,34 @@ Ext.define('App.view.MapPanel', {
             Ext.getCmp('mapPanel').searchItemFlag = true;
             var el = Ext.get(obj1[0]);
 
-            google.maps.event.addDomListener(obj1[0], 'mousedown', function(e) {
-                alert('click');
+            google.maps.event.addDomListener(obj1[0], 'tap', function(e) {
+                alert('tap');
                 e.preventDefault();
                 return false;
             });
 
+            google.maps.event.addDomListener(obj1[0], 'touchstart', function(e) {
+                alert('touchstart');
+                e.preventDefault();
+                return false;
+            });
+
+            if (obj2[0]){
+                obj2[0].on({ tap : function(e, t) {alert(111);} });
+            }
+            if (obj2[1]){
+                obj2[1].on({ tap : function(e, t) {alert(222);} });
+            }
+            if (obj2[2]){
+                obj2[2].on({ tap : function(e, t) {alert(333);} });
+            }
+            if (obj2[3]){
+                obj2[3].on({ tap : function(e, t) {alert(444);} });
+            }
+
             el.on({
                 tap : function(e, t) {
+                    alert("cont");
                     /*
                     if (e.target.parentNode) {
                         if (e.target.parentNode.parentNode) {
