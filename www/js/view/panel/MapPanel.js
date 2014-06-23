@@ -70,15 +70,11 @@ Ext.define('App.view.MapPanel', {
 //                    console.log(e.target.innerHTML);
 
                     var item = e.target.innerHTML;
-                    alert( item.indexOf('pac-matched">') +"   "+ item);
-
-//                    if (item.hasClass('pac-item')) {
-//                        Ext.getCmp('mapPanel').addResultClickHandler( e.target.innerHTML );
-//                    } else {
-//                        Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.innerHTML );
-//                    }
-
-
+                    if( item.indexOf('pac-matched">') < 80 ) {
+                        Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.innerHTML );
+                    } else {
+                        Ext.getCmp('mapPanel').addResultClickHandler( e.target.innerHTML );
+                    }
 //                    if (e.target.parentNode) {
 //                        if (e.target.parentNode.parentNode) {
 //                            Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
