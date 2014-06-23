@@ -69,8 +69,13 @@ Ext.define('App.view.MapPanel', {
 //                    alert("cont = " + e.target.innerHTML);
 //                    console.log(e.target.innerHTML);
 
-                    var item =
-                    Ext.getCmp('mapPanel').addResultClickHandler( e.target.innerHTML );
+                    var item = e.target.innerHTML;
+                    if (item.hasClass('pac-item')) {
+                        Ext.getCmp('mapPanel').addResultClickHandler( e.target.innerHTML );
+                    } else {
+                        Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.innerHTML );
+                    }
+
 
 //                    if (e.target.parentNode) {
 //                        if (e.target.parentNode.parentNode) {
