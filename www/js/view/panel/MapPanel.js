@@ -113,7 +113,7 @@ Ext.define('App.view.MapPanel', {
             that.infowindow = new google.maps.InfoWindow(options);
             that.gMap.setCenter(places[0].geometry.location);
             that.gMap.setZoom(14);
-        },100);
+        },3000);
 
     },
 
