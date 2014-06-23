@@ -70,25 +70,36 @@ Ext.define('App.view.MapPanel', {
 //                    console.log(e.target.innerHTML);
 
 
-                    if (e.target.parentNode) {
-                        if (e.target.parentNode.parentNode) {
-                            Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
-                        } else {
-                            Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
-                        }
-                    } else {
-                        Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
-                    }
+//                    if (e.target.parentNode) {
+//                        if (e.target.parentNode.parentNode) {
+//                            Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
+//                        } else {
+//                            Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
+//                        }
+//                    } else {
+//                        Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
+//                    }
 
                 }
             });
 
 
-//            google.maps.event.addDomListener(obj1[0], 'touchstart', function(e) {
+            google.maps.event.addDomListener(obj1[0], 'touchstart', function(e) {
 //                alert('touchstart     ' + e.target.innerHTML );
-//                e.preventDefault();
-//                return false;
-//            });
+
+                if (e.target.parentNode) {
+                    if (e.target.parentNode.parentNode) {
+                        Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
+                    } else {
+                        Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
+                    }
+                } else {
+                    Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
+                }
+
+                e.preventDefault();
+                return false;
+            });
 
         } else {
             setTimeout( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
