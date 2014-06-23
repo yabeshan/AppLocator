@@ -69,16 +69,18 @@ Ext.define('App.view.MapPanel', {
 //                    alert("cont = " + e.target.innerHTML);
 //                    console.log(e.target.innerHTML);
 
-
-//                    if (e.target.parentNode) {
-//                        if (e.target.parentNode.parentNode) {
-//                            Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
-//                        } else {
-//                            Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
-//                        }
-//                    } else {
-//                        Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
-//                    }
+                    if (e.target.parentNode) {
+                        if (e.target.parentNode.parentNode) {
+                            alert("111 "+  e.target.innerHTML);
+                            Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
+                        } else {
+                            alert("222 "+  e.target.innerHTML);
+                            Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
+                        }
+                    } else {
+                        alert("333 "+  e.target.innerHTML);
+                        Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
+                    }
 
                 }
             });
@@ -86,19 +88,18 @@ Ext.define('App.view.MapPanel', {
 
             google.maps.event.addDomListener(obj1[0], 'touchstart', function(e) {
 //                alert('touchstart     ' + e.target.innerHTML );
-
-                if (e.target.parentNode) {
-                    if (e.target.parentNode.parentNode) {
-                        Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
-                    } else {
-                        Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
-                    }
-                } else {
-                    Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
-                }
-
-                e.preventDefault();
-                return false;
+//                if (e.target.parentNode) {
+//                    if (e.target.parentNode.parentNode) {
+//                        Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
+//                    } else {
+//                        Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
+//                    }
+//                } else {
+//                    Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
+//                }
+//
+//                e.preventDefault();
+//                return false;
             });
 
         } else {
@@ -107,7 +108,6 @@ Ext.define('App.view.MapPanel', {
     },
 
     addResultClickHandler: function (content) {
-        alert("cont = " + content);
         that = Ext.getCmp("mapPanel");
         if (that.autoDirection) return;
 
@@ -117,7 +117,7 @@ Ext.define('App.view.MapPanel', {
             arr = center.split("</span>"),
             country = (arr[2]) ? arr[2].replace('<span>', ',  ') : "" ,
             result = arr[0]+arr[1]+country;
-        alert("result = " + result);
+
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         input.value = result;
 //        alert( result );
