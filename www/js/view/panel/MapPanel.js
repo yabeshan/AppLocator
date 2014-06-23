@@ -68,20 +68,17 @@ Ext.define('App.view.MapPanel', {
                 tap : function(e, t) {
 //                    alert("cont = " + e.target.innerHTML);
 //                    console.log(e.target.innerHTML);
+                    Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
 
-                    if (e.target.parentNode) {
-                        if (e.target.parentNode.parentNode) {
-                            alert("111 "+  e.target.innerHTML);
-                            Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
-                        } else {
-                            alert("222 "+  e.target.innerHTML);
-                            Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
-                        }
-                    } else {
-                        alert("333 "+  e.target.innerHTML);
-                        Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
-                    }
-
+//                    if (e.target.parentNode) {
+//                        if (e.target.parentNode.parentNode) {
+//                            Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
+//                        } else {
+//                            Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
+//                        }
+//                    } else {
+//                        Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
+//                    }
                 }
             });
 
@@ -110,7 +107,7 @@ Ext.define('App.view.MapPanel', {
     addResultClickHandler: function (content) {
         that = Ext.getCmp("mapPanel");
         if (that.autoDirection) return;
-
+        alert( content );
         var start = content.indexOf('pac-matched">')+13,
             end = content.length- 7,
             center = String(content.slice(start, end)),
