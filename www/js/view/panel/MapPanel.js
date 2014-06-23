@@ -68,7 +68,9 @@ Ext.define('App.view.MapPanel', {
                 tap : function(e, t) {
 //                    alert("cont = " + e.target.innerHTML);
 //                    console.log(e.target.innerHTML);
-                    Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.innerHTML );
+
+                    var item =
+                    Ext.getCmp('mapPanel').addResultClickHandler( e.target.innerHTML );
 
 //                    if (e.target.parentNode) {
 //                        if (e.target.parentNode.parentNode) {
