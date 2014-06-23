@@ -66,24 +66,12 @@ Ext.define('App.view.MapPanel', {
 
             el.on({
                 tap : function(e, t) {
-//                    alert("cont = " + e.target.innerHTML);
-//                    console.log(e.target.innerHTML);
-
                     var item = e.target.innerHTML;
                     if( item.indexOf('pac-matched">') < 80 ) {
                         Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.innerHTML );
                     } else {
                         Ext.getCmp('mapPanel').addResultClickHandler( e.target.innerHTML );
                     }
-//                    if (e.target.parentNode) {
-//                        if (e.target.parentNode.parentNode) {
-//                            Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.parentNode.innerHTML );
-//                        } else {
-//                            Ext.getCmp('mapPanel').addResultClickHandler(e.target.parentNode.innerHTML );
-//                        }
-//                    } else {
-//                        Ext.getCmp('mapPanel').addResultClickHandler(e.target.innerHTML );
-//                    }
                 }
             });
         } else {
@@ -94,7 +82,7 @@ Ext.define('App.view.MapPanel', {
     addResultClickHandler: function (content) {
         that = Ext.getCmp("mapPanel");
         if (that.autoDirection) return;
-        alert( content );
+
         var start = content.indexOf('pac-matched">')+13,
             end = content.length- 7,
             center = String(content.slice(start, end)),
@@ -104,21 +92,21 @@ Ext.define('App.view.MapPanel', {
 
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         input.value = result;
-//        alert( result );
-
-        var places = that.searchBox.getPlaces();
-        var options = {
-            map: that.gMap,
-            position: places[0].geometry.location,
-            content: places[0].name
-        };
-
-        if (that.infowindow)
-            that.infowindow.close();
-
-        that.infowindow = new google.maps.InfoWindow(options);
-        that.gMap.setCenter(places[0].geometry.location);
-        that.gMap.setZoom(14);
+        alert( result );
+        
+//        var places = that.searchBox.getPlaces();
+//        var options = {
+//            map: that.gMap,
+//            position: places[0].geometry.location,
+//            content: places[0].name
+//        };
+//
+//        if (that.infowindow)
+//            that.infowindow.close();
+//
+//        that.infowindow = new google.maps.InfoWindow(options);
+//        that.gMap.setCenter(places[0].geometry.location);
+//        that.gMap.setZoom(14);
     },
 
     completeMap: function(extMapComponent, googleMapComp) {
