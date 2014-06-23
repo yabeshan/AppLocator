@@ -66,11 +66,16 @@ Ext.define('App.view.MapPanel', {
 
             el.on({
                 tap : function(e, t) {
-                    var item = e.target.innerHTML;
+                    var obj = e.target;
+                    var item = obj.innerHTML;
+                    if( item.indexOf('pac-matched">') < 0 ) {
+                        obj = e.target.parentNode;
+                        item = obj.innerHTML;
+                    }
                     if( item.indexOf('pac-matched">') < 80 ) {
-                        Ext.getCmp('mapPanel').addResultClickHandler( e.target.parentNode.innerHTML );
+                        Ext.getCmp('mapPanel').addResultClickHandler( obj.parentNode.innerHTML );
                     } else {
-                        Ext.getCmp('mapPanel').addResultClickHandler( e.target.innerHTML );
+                        Ext.getCmp('mapPanel').addResultClickHandler( item );
                     }
                 }
             });
@@ -92,21 +97,24 @@ Ext.define('App.view.MapPanel', {
 
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         input.value = result;
-        alert( result );
-        
-//        var places = that.searchBox.getPlaces();
-//        var options = {
-//            map: that.gMap,
-//            position: places[0].geometry.location,
-//            content: places[0].name
-//        };
-//
-//        if (that.infowindow)
-//            that.infowindow.close();
-//
-//        that.infowindow = new google.maps.InfoWindow(options);
-//        that.gMap.setCenter(places[0].geometry.location);
-//        that.gMap.setZoom(14);
+
+        setTimeout(function(){
+            var places = that.searchBox.getPlaces();
+            var options = {
+                map: that.gMap,
+                position: places[0].geometry.location,
+                content: places[0].name
+            };
+
+
+            if (that.infowindow)
+                that.infowindow.close();
+
+            that.infowindow = new google.maps.InfoWindow(options);
+            that.gMap.setCenter(places[0].geometry.location);
+            that.gMap.setZoom(14);
+        },100);
+
     },
 
     completeMap: function(extMapComponent, googleMapComp) {
@@ -226,24 +234,24 @@ Ext.define('App.view.MapPanel', {
         this.searchBox = new google.maps.places.SearchBox( (input) );
         this.addSearchItemHandlers();
 
-        google.maps.event.addListener( this.searchBox, 'places_changed', function() {
-
-            that = Ext.getCmp("mapPanel");
-            that.autoDirection = true;
-            var places = that.searchBox.getPlaces();
-            var options = {
-                map: that.gMap,
-                position: places[0].geometry.location,
-                content: places[0].name
-            };
-
-            if (that.infowindow)
-                that.infowindow.close();
-
-            that.infowindow = new google.maps.InfoWindow(options);
-            that.gMap.setCenter(places[0].geometry.location);
-            that.gMap.setZoom(14);
-        });
+//        google.maps.event.addListener( this.searchBox, 'places_changed', function() {
+//
+//            that = Ext.getCmp("mapPanel");
+//            that.autoDirection = true;
+//            var places = that.searchBox.getPlaces();
+//            var options = {
+//                map: that.gMap,
+//                position: places[0].geometry.location,
+//                content: places[0].name
+//            };
+//
+//            if (that.infowindow)
+//                that.infowindow.close();
+//
+//            that.infowindow = new google.maps.InfoWindow(options);
+//            that.gMap.setCenter(places[0].geometry.location);
+//            that.gMap.setZoom(14);
+//        });
     },
 
     changeTraffic: function() {
