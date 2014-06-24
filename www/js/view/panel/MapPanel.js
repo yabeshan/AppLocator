@@ -98,6 +98,33 @@ Ext.define('App.view.MapPanel', {
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         input.value = result;
 
+
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({'address' : result}, function(results, status){
+            if (status == google.maps.GeocoderStatus.OK) {
+                lat = results[0].geometry.location.lat();
+                lng = results[0].geometry.location.lng();
+                position = new google.maps.LatLng(lat, lng);
+
+                that.gMap.setCenter(new google.maps.LatLng( lat, lng ));
+                that.gMap.setZoom(15);
+
+//                if (that.infowindow)
+//                    that.infowindow.close();
+//
+//                that.infowindow = new google.maps.InfoWindow(options);
+//                that.gMap.setCenter(places[0].geometry.location);
+//                that.gMap.setZoom(14);
+            }
+            alert(results +"   "+ status);
+
+        });
+
+//        var autocomplete = new google.maps.places.Autocomplete(that.searchBox);
+//        autocomplete.bindTo('bounds', that.gMap);
+
+        /*
+        // работает но не стабильно с какимито чудовищными опозданиями
         setTimeout(function(){
             var places = that.searchBox.getPlaces();
             var options = {
@@ -114,7 +141,7 @@ Ext.define('App.view.MapPanel', {
             that.gMap.setCenter(places[0].geometry.location);
             that.gMap.setZoom(14);
         },3000);
-
+        */
     },
 
     completeMap: function(extMapComponent, googleMapComp) {
