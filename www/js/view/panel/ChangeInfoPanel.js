@@ -105,7 +105,11 @@ Ext.define('App.view.PopupPanel' ,{
         var cngFlag = Ext.get("fuel-type-cng").hasCls('select'),
             lngFlag = Ext.get("fuel-type-lng").hasCls('select'),
             parent = Ext.getCmp('changeInfoPanel'),
-            changeFlag = false;
+            changeFlag = false,
+            operFlag = Ext.get("station-operational").hasCls('select'),
+            underFlag = Ext.get("station-under").hasCls('select'),
+            comingFlag = Ext.get("station-coming").hasCls('select');
+
         if (parent.cngSelectFlag != cngFlag) {
             changeFlag = true;
             parent.changeSelectFilter("cngBtn");
@@ -114,9 +118,9 @@ Ext.define('App.view.PopupPanel' ,{
             changeFlag = true;
             parent.changeSelectFilter("lngBtn");
         }
-        if (changeFlag) {
-            Ext.getCmp('mapPanel').onSearchTypeStations( parent.lngSelectFlag, parent.cngSelectFlag );
-        }
+//        if (changeFlag) {
+            Ext.getCmp('mapPanel').onSearchTypeStations( parent.lngSelectFlag, parent.cngSelectFlag, operFlag, underFlag, comingFlag );
+//        }
         parent.hidePopup1();
     },
 
@@ -143,6 +147,11 @@ Ext.define('App.view.PopupPanel' ,{
 
         this.selectAllPayment(false);
         Ext.getCmp('changeInfoPanel').hidePopup1();
+
+        var operFlag = Ext.get("station-operational").hasCls('select'),
+            underFlag = Ext.get("station-under").hasCls('select'),
+            comingFlag = Ext.get("station-coming").hasCls('select');
+        Ext.getCmp('mapPanel').onSearchTypeStations( parent.lngSelectFlag, parent.cngSelectFlag, operFlag, underFlag, comingFlag );
     },
 
     selectAllPayment: function( flag ) {

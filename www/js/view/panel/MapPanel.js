@@ -155,6 +155,9 @@ Ext.define('App.view.MapPanel', {
 
         var fuel = model.get('fuel');
         var icon = (fuel==0) ? 'img/map-point-blue.png' : ( (fuel==1) ? 'img/map-point-green.png' : 'img/map-point-double.png' );
+        var status = model.get('status');
+        if (status==2) icon = 'img/map-point-grey.png';
+
         var marker = new google.maps.Marker({
             map: this.gMap,
 //          animation: google.maps.Animation.DROP,
@@ -164,6 +167,8 @@ Ext.define('App.view.MapPanel', {
             title: model.get("name") +", "+ model.get("zip") +", "
                 + model.get("state") +", "+ model.get("city") +", "+ model.get("address")
         });
+
+//        if (model.get('status')==2) marker.setMap(null);
 
         if (positionFlag) {
             var centerCoord = new google.maps.LatLng ( lat, lon );
@@ -296,22 +301,31 @@ Ext.define('App.view.MapPanel', {
         this.gMap.setMapTypeId( val );
     },
 
-    onSearchTypeStations: function( lngSelectFlag, cngSelectFlag ) {
-
-        var k=0, lng =this.markerArr.length, marker, fuel;
+    onSearchTypeStations: function( lngSelectFlag, cngSelectFlag, operFlag, underFlag, comingFlag ) {
+        var k=0, lng =this.markerArr.length, marker, fuel, typeFlag, status, statusFlag;
+        console.log( lngSelectFlag +"   "+ cngSelectFlag +"   "+ operFlag +"   "+ underFlag +"   "+ comingFlag );
         for (k;k<lng;k++) {
             marker = this.markerArr[k];
-            fuel = marker.model.get('fuel');
 
-            if (lngSelectFlag && cngSelectFlag) {
-                marker.setMap(this.gMap);
-            } else if (lngSelectFlag && fuel>=1 ) {
-                marker.setMap(this.gMap);
-            } else if (cngSelectFlag && fuel!=1 ) {
+            fuel = marker.model.get('fuel');
+            typeFlag =
+                (lngSelectFlag && cngSelectFlag) ||
+                (lngSelectFlag && fuel>=1 ) ||
+                (cngSelectFlag && fuel!=1 );
+
+            status = marker.model.get('status');
+            statusFlag =
+                (operFlag && status==0) ||
+                (underFlag && status==1) ||
+                (comingFlag && status==2);
+
+
+            if (typeFlag && statusFlag) {
                 marker.setMap(this.gMap);
             } else {
                 marker.setMap(null);
             }
+
         };
     }
 

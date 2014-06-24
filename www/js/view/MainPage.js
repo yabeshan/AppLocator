@@ -69,6 +69,12 @@ Ext.define('App.view.MainPage' ,{
                 top:'0px',
                 zIndex: 11,
                 xtype:  'infoPopup'
+            },{
+                width:  '100%',
+                height: '100%',
+                top:'0px',
+                zIndex: 11,
+                xtype:  'tripPlaner'
             }
         ]
     },

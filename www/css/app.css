@@ -333,7 +333,7 @@ body {
         zoom:100%;
     }
     .main-page-changeinfo-panel {
-        bottom:65px;
+        bottom:72px;
     }
 }
 @media screen and (min-width:700px) and (min-height:1000px) {
@@ -356,7 +356,7 @@ body {
         font-size: 70%;
     }
     .main-page-changeinfo-panel {
-        bottom:70px;
+        bottom:72px;
     }
 }
 
@@ -433,25 +433,28 @@ input::-webkit-input-placeholder {
 }
 
 #tp-start-point {
-    padding-left: 10px; border: none;border-bottom: 1px solid #666;margin: 10px 5px 0px 5px;height: 35px;width:305px;
+    padding-left: 10px; border: none;height: 35px;width:305px;
 }
-#tp-center-point {
-    padding-left: 10px; border: none;border-bottom: 1px solid #666;margin: 0;height: 0px;width:305px;visibility: hidden;
+#tp-second-point {
+    padding-left: 10px; border: none;height: 35px;width:305px;
 }
-#tp-end-point {
-    padding-left: 10px; border: none;border-bottom: 1px solid #666;margin: -10px 5px 0px 5px;height: 35px;width:305px;
+.holder-trip-point {
+    position: relative;
+    border-bottom: 1px solid #666;width:400px;left:50%;margin-left: -200px;
 }
-
-
-#tp-add {
-    font-size: 14px;margin-bottom:5px;padding: 25px 0px 15px 20px;width:250px;cursor: pointer;
+.holder-trip-point img {
+    position: relative;
+    padding-left: 20px;top: -15px;
 }
-#tp-build {
+.trip-planer-btn{
+    position: relative;left: 50%;margin-left: -200px;
     font-size: 14px;margin-bottom:5px;padding: 15px 0px 15px 20px;width:250px;cursor: pointer;
 }
-#tp-clear {
-    font-size: 14px;margin-bottom:5px;padding: 15px 0px 15px 20px;width:250px;cursor: pointer;
+.trip-planer-btn img {
+    float: left; padding-right:20px;
+    pointer-events:none;
 }
+
 #tp-close {
     position:absolute;width:40px;top:0px;right:0px;
 }

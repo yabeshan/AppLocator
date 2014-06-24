@@ -49,30 +49,6 @@ Ext.define('App.view.SearchPanel', {
                     }
                 }
             },{
-                id:'tripPlaner',
-                style:'position:absolute;width:315px;background-color:#FFF;top:0px;color: #999;font-weight:bold;',
-                html:'<div id="tp-title">Trip Planer</div><img id="tp-close" src="img/popup-close-button.png" >'
-                    +'<input id="tp-start-point" type="text" placeholder="Start Point"><input id="tp-center-point" type="text" placeholder="End Point">'
-                    +'<input id="tp-end-point" type="text" placeholder="End Point"><div id="tp-add"><img src="img/icons-add.png" style="float: left; padding-right:20px;">Add destination</div>'
-                    +'<div id="tp-build"><img src="img/icons-trip.png" style="float: left; padding-right:20px;">Build Trip</div><div id="tp-clear"><img src="img/icons-close.png" style="float: left; padding-right:20px;">Clear Trip</div>',
-                listeners: {
-                    tap: {
-                        fn: function( e, node ) {
-                            var parent = Ext.getCmp('searchPanel');
-                            if (node.id=="tp-add") {
-                                parent.addPoint();
-                            } else if (node.id=="tp-build") {
-                                parent.buildTrip();
-                            } else if (node.id=="tp-clear") {
-                                parent.clearRoad();
-                            } else if (node.id=="tp-close") {
-                                parent.hideTripPlaner();
-                            }
-                        },
-                        element: 'element'
-                    }
-                }
-            },{
                 id:'sharePopup',
                 style:'position:absolute;top:50%;left:50%;margin-left:-72px;zoom:130%',
                 html:'<img src="img/icons-share.png"><div id="share-facebook"></div>'
@@ -100,7 +76,6 @@ Ext.define('App.view.SearchPanel', {
     },
     initialize: function(me, eOpts) {
         this.hideShare();
-        this.hideTripPlaner();
         this.hideSearchResult();
     },
     showSearchResult: function() {
@@ -116,100 +91,6 @@ Ext.define('App.view.SearchPanel', {
     },
     hideShare: function() {
         Ext.getCmp('sharePopup').hide();
-    },
-
-    directionsService:null,
-    directionsDisplay:null,
-    showTripPlaner: function( flag ) {
-
-        if (flag && Ext.getCmp("mapPanel").userLocation != null) {
-            document.getElementById('tp-start-point').value = Ext.getCmp("mapPanel").userLocation;
-        }
-
-        Ext.getCmp('tripPlaner').show();
-
-        var start = document.getElementById('tp-start-point');
-        var searchBox = new google.maps.places.SearchBox( (start) );
-
-        var center = document.getElementById('tp-center-point');
-        var searchBox = new google.maps.places.SearchBox( (center) );
-
-        var end = document.getElementById('tp-end-point');
-        var searchBox = new google.maps.places.SearchBox( (end) );
-
-//        Ext.getCmp('mapPanel').searchItemFlag=false;
-//        Ext.getCmp("mapPanel").addSearchItemHandlers();
-
-        var that = Ext.getCmp('searchPanel');
-        if (that.directionsService==null)
-            that.directionsService = new google.maps.DirectionsService();
-        if (that.directionsDisplay==null)
-            that.directionsDisplay = new google.maps.DirectionsRenderer();
-    },
-    hideTripPlaner: function() {
-        Ext.getCmp('tripPlaner').hide();
-
-        if (Ext.get("tp-center-point")) {
-            Ext.get("tp-center-point").setStyle({'visibility':'hidden'});
-            Ext.get("tp-center-point").setStyle({'height':'0px'});
-            Ext.get("tp-center-point").setStyle({'margin':'0'});
-        }
-        if (Ext.get("tp-add")) Ext.get("tp-add").setStyle({'opacity':1});
-    },
-
-    addPoint: function() {
-        Ext.get("tp-center-point").setStyle({'visibility':'visible'});
-        Ext.get("tp-center-point").setStyle({'height':'35px'});
-        Ext.get("tp-center-point").setStyle({'margin':'10px 5px 20px 5px'});
-        Ext.get("tp-add").setStyle({'opacity':.5});
-    },
-
-    buildTrip: function() {
-        var start = document.getElementById('tp-start-point').value;
-        var end = document.getElementById('tp-end-point').value;
-
-        var request = {
-            origin: start,
-            destination: end,
-//            waypoints: waypts,
-            optimizeWaypoints: true,
-            travelMode: google.maps.TravelMode.DRIVING
-        };
-
-        var that = Ext.getCmp('searchPanel');
-        that.directionsService.alternatives = true;
-        that.directionsService.route(request, function (response, status) {
-            if (status == google.maps.DirectionsStatus.OK) {
-                //directionsDisplay.setDirections(response);
-
-                that.directionsDisplay.setDirections(response);
-                that.directionsDisplay.setMap( Ext.getCmp("mapPanel").gMap );
-
-                var route = response.routes[0];
-                var totalDistanse = 0;
-
-
-                for (var i = 0; i < route.legs.length; i++) {
-                    totalDistanse += route.legs[i].distance.value;
-                }
-            }
-            else {
-                alert(status + '. Please enter correct Start and Destination Points');
-            }
-
-        });
-    },
-    clearRoad: function() {
-        this.directionsDisplay.setMap(null);
-        document.getElementById('tp-start-point').value="";
-        document.getElementById('tp-center-point').value="";
-        document.getElementById('tp-end-point').value="";
-
-        Ext.get("tp-center-point").setStyle({'visibility':'hidden'});
-        Ext.get("tp-center-point").setStyle({'height':'0px'});
-        Ext.get("tp-center-point").setStyle({'margin':'0'});
-        Ext.get("tp-add").setStyle({'opacity':1});
-
     }
 
 });

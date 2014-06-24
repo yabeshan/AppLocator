@@ -36,7 +36,7 @@ Ext.define('App.view.StartPage' ,{
                                 action:'goPage',
                                 args:[{nextPage:1, direction:'left'}]
                             });
-                            Ext.getCmp('searchPanel').showTripPlaner();
+                            Ext.getCmp('tripPlaner').openPopup();
                         },
                         element: 'element'
                     }
