@@ -333,7 +333,7 @@ body {
         zoom:100%;
     }
     .main-page-changeinfo-panel {
-        bottom:122px;
+        bottom:36px;
     }
 }
 @media screen and (min-width:700px) and (min-height:1000px) {
@@ -356,7 +356,7 @@ body {
         font-size: 70%;
     }
     .main-page-changeinfo-panel {
-        bottom:122px;
+        bottom:56px;
     }
 }
 

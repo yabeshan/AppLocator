@@ -46,10 +46,7 @@ Ext.define('App.view.MapPanel', {
                 zoom: mapZoom
             },
             listeners: {
-                maprender: Ext.getCmp('mapPanel').completeMap,
-                updatedata: function() {
-                    alert('updatedata');
-                }
+                maprender: Ext.getCmp('mapPanel').completeMap
             }
         } );
 
