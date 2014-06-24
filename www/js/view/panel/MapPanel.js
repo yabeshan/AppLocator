@@ -46,8 +46,32 @@ Ext.define('App.view.MapPanel', {
                 zoom: mapZoom
             },
             listeners: {
-                maprender: Ext.getCmp('mapPanel').completeMap
+                maprender: Ext.getCmp('mapPanel').completeMap,
+                updatedata: function() {
+                    alert('updatedata');
+                }
             }
+        /*
+        bounds_changed
+        center_changed
+        click (fired when the user clicks on the map, but not when they click on a marker or infowindow)
+        dblclick
+        drag
+        dragend
+        dragstart
+        heading_changed
+        idle
+        maptypeid_changed
+        mousemove
+        mouseout
+        mouseover
+        projection_changed
+        resize
+        rightclick
+        tilesloaded
+        tilt_changed
+        zoom_changed
+        */
         } );
 
         this.gMap = map.getMap();
@@ -79,9 +103,49 @@ Ext.define('App.view.MapPanel', {
                     }
                 }
             });
+
+//            if(obj1.length>1) {
+//                for (var k=1; k<obj1.length; k++) {
+//                    var el = Ext.get(obj1[k]);
+//
+//                    el.on( 'tap', function(e, t) {
+//                        console.log( this.id +"   "+ this.innerHTML  );
+//                    }, el);
+//                }
+//            }
         } else {
             setTimeout( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
         }
+    },
+
+    startGeocoderPosition: function(result) {
+        if (result==null) {
+            result = document.getElementById('pac-input').getElementsByTagName('input')[0].value;
+        }
+
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({'address' : result}, function(results, status){
+//            alert(results +"   "+ status);
+            if (status == google.maps.GeocoderStatus.OK) {
+                lat = results[0].geometry.location.lat();
+                lng = results[0].geometry.location.lng();
+                position = new google.maps.LatLng(lat, lng);
+
+                if (that.infowindow)
+                    that.infowindow.close();
+
+                var coord = new google.maps.LatLng ( lat, lng );
+                var options = {
+                    map: that.gMap,
+                    position: coord,
+                    content: result
+                };
+
+                that.infowindow = new google.maps.InfoWindow(options);
+                that.gMap.setCenter( coord );
+                that.gMap.setZoom(15);
+            }
+        });
     },
 
     addResultClickHandler: function (content) {
@@ -97,51 +161,7 @@ Ext.define('App.view.MapPanel', {
 
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         input.value = result;
-
-
-        var geocoder = new google.maps.Geocoder();
-        geocoder.geocode({'address' : result}, function(results, status){
-            if (status == google.maps.GeocoderStatus.OK) {
-                lat = results[0].geometry.location.lat();
-                lng = results[0].geometry.location.lng();
-                position = new google.maps.LatLng(lat, lng);
-
-                that.gMap.setCenter(new google.maps.LatLng( lat, lng ));
-                that.gMap.setZoom(15);
-
-//                if (that.infowindow)
-//                    that.infowindow.close();
-//
-//                that.infowindow = new google.maps.InfoWindow(options);
-//                that.gMap.setCenter(places[0].geometry.location);
-//                that.gMap.setZoom(14);
-            }
-            alert(results +"   "+ status);
-
-        });
-
-//        var autocomplete = new google.maps.places.Autocomplete(that.searchBox);
-//        autocomplete.bindTo('bounds', that.gMap);
-
-        /*
-        // работает но не стабильно с какимито чудовищными опозданиями
-        setTimeout(function(){
-            var places = that.searchBox.getPlaces();
-            var options = {
-                map: that.gMap,
-                position: places[0].geometry.location,
-                content: places[0].name
-            };
-
-
-            if (that.infowindow)
-                that.infowindow.close();
-
-            that.infowindow = new google.maps.InfoWindow(options);
-            that.gMap.setCenter(places[0].geometry.location);
-            that.gMap.setZoom(14);
-        },3000);
-        */
+        Ext.getCmp("mapPanel").startGeocoderPosition(result);
     },
 
     completeMap: function(extMapComponent, googleMapComp) {
@@ -257,6 +277,7 @@ Ext.define('App.view.MapPanel', {
     },
 
     addSearchPanelInteractive: function() {
+        console.log("addSearchPanelInteractive");
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         this.searchBox = new google.maps.places.SearchBox( (input) );
         this.addSearchItemHandlers();

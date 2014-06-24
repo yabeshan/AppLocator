@@ -18,10 +18,12 @@ Ext.define('App.view.SearchPanel', {
                         itemId: 'searchBox',
                         id:'pac-input'
                     },{
+                        style:'cursor:pointer;',
                         html:'<img id="searchBtn" src="img/main-page-toolbar-search-btn.png" style="width:44px;height:52px;">',
                         listeners: {
                             tap: {
                                 fn: function( e, node ) {
+                                    Ext.getCmp("mapPanel").startGeocoderPosition();
                                     Ext.getCmp('searchPanel').hideSearchResult();
                                 },
                                 element: 'element'
@@ -134,6 +136,9 @@ Ext.define('App.view.SearchPanel', {
 
         var end = document.getElementById('tp-end-point');
         var searchBox = new google.maps.places.SearchBox( (end) );
+
+//        Ext.getCmp('mapPanel').searchItemFlag=false;
+//        Ext.getCmp("mapPanel").addSearchItemHandlers();
 
         var that = Ext.getCmp('searchPanel');
         if (that.directionsService==null)

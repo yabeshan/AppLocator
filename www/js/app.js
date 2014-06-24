@@ -35,14 +35,6 @@ window.onload=function(){
 var appInit = function() {
     if (initflag==true) return;
 
-    var iOS7 = window.device
-        && window.device.platform
-        && window.device.platform.toLowerCase() == "ios"
-        && parseFloat(window.device.version) >= 7.0;
-    if (iOS7) {
-        document.body.style.marginTop = "20px";
-    }
-
     Ext.application({
         name: 'App',
 
@@ -60,7 +52,7 @@ var appInit = function() {
                 id:'panelHolder',
                 fullscreen: true,
                 layout: 'card',
-                activeItem: 1,
+                activeItem: 0,
                 cls:'scaleApp',
                 items: [
                     {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'aboutPage'}, {xtype:'settingsPage'}
