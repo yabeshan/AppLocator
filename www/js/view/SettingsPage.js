@@ -11,23 +11,24 @@ Ext.define('App.view.SettingsPage' ,{
             {
                 xtype:'toolbar',
                 style:'background:#30b457',
-                title:'Settings',
-                items:[{
-                    xtype:'button',
-                    text:'Back',
-                    ui:'back',
-                    listeners: {
-                        tap: function() {
-                            App.app.dispatch({
-                                controller:'PageController',
-                                action:'goPage',
-                                args:[{nextPage:1, direction:'right'}]
-                            });
-                        }
-                    }
-                }]
+                title:'Settings'
             },{
-                html: '<div class="page"><br><br><p style="padding-left: 20%;text-align: left">Version database: xx-xx-xx<br>Last update: yy-yy-yy<br><br><button style="width: 200px; height: 80px">Update now</button></p></div>'
+                html: '<img id="backBtn" src="img/icons_button-back.png" style="position:absolute;z-index:90000; top:10px; left:20px;height: 30px;cursor:pointer">'
+                    +'<div class="page"><br><br><p style="padding-left: 20%;text-align: left">Version database: xx-xx-xx<br>Last update: yy-yy-yy<br><br><button style="width: 200px; height: 80px">Update now</button></p></div>',
+                listeners: {
+                    tap: {
+                        fn: function( e, node ) {
+                            if (node.id=="backBtn") {
+                                App.app.dispatch({
+                                    controller:'PageController',
+                                    action:'goPage',
+                                    args:[{nextPage:1, direction:'right'}]
+                                });
+                            }
+                        },
+                        element: 'element'
+                    }
+                }
             }
         ]
     },

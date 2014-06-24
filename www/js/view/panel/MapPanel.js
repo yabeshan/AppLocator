@@ -51,27 +51,6 @@ Ext.define('App.view.MapPanel', {
                     alert('updatedata');
                 }
             }
-        /*
-        bounds_changed
-        center_changed
-        click (fired when the user clicks on the map, but not when they click on a marker or infowindow)
-        dblclick
-        drag
-        dragend
-        dragstart
-        heading_changed
-        idle
-        maptypeid_changed
-        mousemove
-        mouseout
-        mouseover
-        projection_changed
-        resize
-        rightclick
-        tilesloaded
-        tilt_changed
-        zoom_changed
-        */
         } );
 
         this.gMap = map.getMap();
@@ -196,7 +175,7 @@ Ext.define('App.view.MapPanel', {
 //            marker.setAnimation(google.maps.Animation.BOUNCE);
         }
 
-        google.maps.event.addListener(marker,'mouseup',function(pos) {
+        google.maps.event.addListener(marker,'click',function(pos) {
             Ext.getCmp("mapPanel").tapMarker(this,marker,pos);
         });
 

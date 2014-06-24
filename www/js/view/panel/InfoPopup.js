@@ -8,7 +8,7 @@ Ext.define('App.view.InfoPopup' ,{
         items:[
             {
                 cls:'info-popup-zoom',
-                style:'position:absolute;width:100%;height:100%;background-color:rgba(0,0,0,.6);top:0px;left:0px;',
+                style:'position:absolute;width:100%;height:100%;background-color:rgba(255,255,255,1);top:0px;left:0px;',
                 html:'<div style="position:absolute;width:100%;height:100%;background-image: url(img/popup-station-info.png);background-size: 300px 490px;background-position: center center;background-repeat: no-repeat;">'
                     +'<div id="stationName" style="overflow:hidden;height:24px;position:absolute;left:50%;margin-left:-140px;top:50%;margin-top:-60px;width:280px;color:#30b457"></div>'
                     +'<div id="stationName" style="position:absolute;left:50%;margin-left:-135px;top:50%;margin-top:-190px;color:#fff;font-style: italic;fony-size:30px;font-weight: normal">Operational</div>'

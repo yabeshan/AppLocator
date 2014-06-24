@@ -300,8 +300,7 @@ body {
 
 .main-page-changeinfo-panel {
     position:absolute;
-    width:100%;top:10px;bottom:86px;
-    padding-left:10px;padding-right: 10px;
+    width:100%;top:0px;bottom:36px;
 }
 
 

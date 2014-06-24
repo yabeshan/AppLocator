@@ -16,8 +16,8 @@ Ext.define('App.view.PopupPanel' ,{
                     +'<div id="fuel-type-redeem" class="select filter-img-zoom"></div></div>'
                 +'<div class="holder-vehicle-type">Vehicle Type<div id="vehicle-type-cars" class="filter-img-zoom"></div>'
                     +'<div id="vehicle-type-box" class="filter-img-zoom"></div><div id="vehicle-type-semi" class="filter-img-zoom"></div></div>'
-                +'<div class="holder-station-status">Station Status<div id="station-operational" class="filter-lbl-zoom">Operational</div>'
-                    +'<div id="station-under" class="filter-lbl-zoom">Under Maintenance</div><div id="station-coming" class="filter-lbl-zoom">Coming Soon</div></div>'
+                +'<div class="holder-station-status">Station Status<div id="station-operational" class="select filter-lbl-zoom">Operational</div>'
+                    +'<div id="station-under" class="select filter-lbl-zoom">Under Maintenance</div><div id="station-coming" class="filter-lbl-zoom">Coming Soon</div></div>'
                 +'<div class="holder-hours-type">Hours of Operation<div id="hours-type-24" class="filter-lbl-zoom">24/7</div>'
                     +'<div id="hours-type-now" class="filter-lbl-zoom">Open Now</div></div>'
                 +'<div class="holder-flow-type">Flow Rate<div id="flow-rate-low" class="filter-img-zoom"></div>'
@@ -130,6 +130,10 @@ Ext.define('App.view.PopupPanel' ,{
         Ext.get("vehicle-type-box").removeCls('select');
         Ext.get("vehicle-type-semi").removeCls('select');
 
+        Ext.get("station-operational").addCls('select');
+        Ext.get("station-under").addCls('select');
+        Ext.get("station-coming").removeCls('select');
+
         Ext.get("hours-type-24").removeCls('select');
         Ext.get("hours-type-now").removeCls('select');
 
@@ -138,6 +142,7 @@ Ext.define('App.view.PopupPanel' ,{
         Ext.get("flow-rate-hight").removeCls('select');
 
         this.selectAllPayment(false);
+        Ext.getCmp('changeInfoPanel').hidePopup1();
     },
 
     selectAllPayment: function( flag ) {
