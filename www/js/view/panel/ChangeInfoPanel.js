@@ -148,8 +148,8 @@ Ext.define('App.view.PopupPanel' ,{
         this.selectAllPayment(false);
         var parent = Ext.getCmp('changeInfoPanel');
         parent.hidePopup1();
-        parent.changeSelectFilter("cngBtn");
-        parent.changeSelectFilter("lngBtn");
+        if (parent.cngSelectFlag == false) parent.changeSelectFilter("cngBtn");
+        if (parent.lngSelectFlag == false) parent.changeSelectFilter("lngBtn");
         Ext.getCmp('mapPanel').onSearchTypeStations( true, true, true, true, false );
     },
 
