@@ -8,6 +8,78 @@ Ext.define('App.view.TripPlaner' ,{
         items:[
             {
                 cls:'info-popup-zoom',
+                style:'position:absolute;width:100%;height:100%;background-color:#fff',
+                html:'<div id="tp-title">Trip Planner</div><img id="tp-close" src="img/popup-close-button.png" >',
+                listeners: {
+                    tap: {
+                        fn: function( e, node ) {
+                            if (node.id=="tp-close") {
+//                                var el1 = document.getElementById ('trip-planer');
+                                var el2 = document.getElementById ('route-viewer');
+
+                                if (el2.style.visibility == "visible") {
+                                    Ext.getCmp('tripPlaner').closeRouteViewer();
+                                } else {
+                                    Ext.getCmp('tripPlaner').closePopup();
+                                }
+                            }
+                        },
+                        element: 'element'
+                    }
+                }
+            },{
+                id:'trip-planer',
+                cls:'info-popup-zoom',
+                style:'position:absolute;width:100%;top:50px;bottom:10px;background-color:#fff',
+                scrollable: {
+                    direction: 'vertical'
+                },
+                html:'<div id="trip-palent-starter"><div class="holder-trip-point"><input id="tp-end-point-0" type="text" placeholder="Start Point" class="tp-input-point"></div>'
+                    +'<div class="holder-trip-point"><input id="tp-end-point-1" type="text" placeholder="End Point" class="tp-input-point"><img id="change-arrow-1" src="img/icons-change.png"></div></div>'
+
+                    +'<div id="tp-add" class="trip-planer-btn"><img src="img/icons-add.png">Add destination</div>'
+                    +'<div id="tp-build" class="trip-planer-btn"><img id="tp-build-img" src="img/icons-trip.png"><span id="tp-build-title" style="pointer-events:none">Build Trip</span></div>'
+                    +'<div id="tp-clear" class="trip-planer-btn"><img src="img/icons-close.png">Clear Trip</div>',
+                listeners: {
+                    tap: {
+                        fn: function( e, node ) {
+                            var parent = Ext.getCmp('tripPlaner');
+                            if (node.id=="tp-add") {
+                                parent.addPoint();
+                            } else if (node.id=="tp-build") {
+                                parent.buildTrip();
+                            } else if (node.id=="tp-clear") {
+                                parent.clearRoad();
+                            } else if (node.id.indexOf("change-arrow")>=0) {
+                                parent.swipeItems(node.id);
+                            }
+                        },
+                        element: 'element'
+                    }
+                }
+            },{
+                id:'route-viewer',
+                cls:'info-popup-zoom',
+                style:'position:absolute;width:100%;top:50px;bottom:10px;background-color:#fff;visibility:hidden',
+                scrollable: {
+                    direction: 'vertical'
+                },
+                html:'<div id="directionsPanel" style="padding: 10px;"></div>',
+                listeners: {
+                    tap: {
+                        fn: function( e, node ) {
+                            if (node.id=="route-viewer-close") {
+                                Ext.getCmp('tripPlaner').closeRouteViewer();
+                            }
+                        },
+                        element: 'element'
+                    }
+                }
+            }
+
+            /*
+            {
+                cls:'info-popup-zoom',
                 style:'position:absolute;width:100%;height:100%;background-color:rgba(255,255,255,1);top:0px;left:0px;overflow:auto',
                 html:'<div id="tp-title">Trip Planner</div><img id="tp-close" src="img/popup-close-button.png" >'
                     +'<div id="trip-palent-starter"><div class="holder-trip-point"><input id="tp-end-point-0" type="text" placeholder="Start Point" class="tp-input-point"></div>'
@@ -55,6 +127,7 @@ Ext.define('App.view.TripPlaner' ,{
                     }
                 }
             }
+            */
         ]
     },
 
@@ -137,8 +210,8 @@ Ext.define('App.view.TripPlaner' ,{
     buildTrip: function() {
         if ( Ext.get('tp-build-img').dom.src.indexOf("icons-trip")<0 ) {
             this.openRouteViewer();
-//            Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
-//            Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
+            Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
+            Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
             return;
         }
 

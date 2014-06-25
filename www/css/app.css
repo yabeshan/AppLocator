@@ -431,14 +431,7 @@ input::-webkit-input-placeholder {
 #tp-title {
     width: 100%;text-align: center;font-size: 18px;padding-top: 3px;font-weight: normal;padding-bottom: 15px;
 }
-#route-viewer-title {
-    width: 100%;text-align: center;font-size: 18px;padding-top: 3px;font-weight: normal;padding-bottom: 15px;
-}
-
 #tp-close {
-    position:absolute;width:40px;top:0px;right:0px;
-}
-#route-viewer-close {
     position:absolute;width:40px;top:0px;right:0px;
 }
 
