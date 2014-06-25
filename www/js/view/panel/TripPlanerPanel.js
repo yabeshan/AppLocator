@@ -118,10 +118,11 @@ Ext.define('App.view.TripPlaner' ,{
         var start = document.getElementById('tp-end-point-0').value;
         var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
         var end = document.getElementById('tp-end-point-'+lastID).value;
-        var waypts = [];
+        var waypts = [], val;
         if (lastID>1) {
             for (var k=lastID-1; k>0; k--) {
-                waypts.push({location:document.getElementById('tp-end-point-'+k).value, stopover:true});
+                val = document.getElementById('tp-end-point-'+k).value;
+                if (val.length>4) waypts.push({location:val, stopover:true});
             }
         }
 
@@ -160,9 +161,6 @@ Ext.define('App.view.TripPlaner' ,{
         var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
         if (lastID>1) {
             for (var k=lastID; k>1; k--) {
-//                console.log( Ext.get('tp-end-point-'+k) );
-//                Ext.get('tp-end-point-'+k).parent.remove( Ext.get('tp-end-point-'+k) );
-
                 (elem=document.getElementById( 'item-end-point-'+k )).parentNode.removeChild(elem);
             }
         }

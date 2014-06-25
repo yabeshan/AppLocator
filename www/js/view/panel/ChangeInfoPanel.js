@@ -146,9 +146,11 @@ Ext.define('App.view.PopupPanel' ,{
         Ext.get("flow-rate-hight").removeCls('select');
 
         this.selectAllPayment(false);
-        Ext.getCmp('changeInfoPanel').hidePopup1();
-
-        Ext.getCmp('mapPanel').onSearchTypeStations( Ext.getCmp('changeInfoPanel').lngSelectFlag, Ext.getCmp('changeInfoPanel').cngSelectFlag, true, true, false );
+        var parent = Ext.getCmp('changeInfoPanel');
+        parent.hidePopup1();
+        parent.changeSelectFilter("cngBtn");
+        parent.changeSelectFilter("lngBtn");
+        Ext.getCmp('mapPanel').onSearchTypeStations( true, true, true, true, false );
     },
 
     selectAllPayment: function( flag ) {
