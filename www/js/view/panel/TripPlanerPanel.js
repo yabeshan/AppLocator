@@ -9,13 +9,17 @@ Ext.define('App.view.TripPlaner' ,{
             {
                 cls:'info-popup-zoom',
                 style:'position:absolute;width:100%;height:100%;background-color:rgba(255,255,255,1);top:0px;left:0px;overflow:auto',
-                html:'<div id="tp-title">Trip Planer</div><img id="tp-close" src="img/popup-close-button.png" >'
+                html:'<div id="tp-title">Trip Planner</div><img id="tp-close" src="img/popup-close-button.png" >'
                     +'<div id="trip-palent-starter"><div class="holder-trip-point"><input id="tp-end-point-0" type="text" placeholder="Start Point" class="tp-input-point"></div>'
                     +'<div class="holder-trip-point"><input id="tp-end-point-1" type="text" placeholder="End Point" class="tp-input-point"><img id="change-arrow-1" src="img/icons-change.png"></div></div>'
 
                     +'<div id="tp-add" class="trip-planer-btn"><img src="img/icons-add.png">Add destination</div>'
                     +'<div id="tp-build" class="trip-planer-btn"><img id="tp-build-img" src="img/icons-trip.png"><span id="tp-build-title" style="pointer-events:none">Build Trip</span></div>'
-                    +'<div id="tp-clear" class="trip-planer-btn"><img src="img/icons-close.png">Clear Trip</div>',
+                    +'<div id="tp-clear" class="trip-planer-btn"><img src="img/icons-close.png">Clear Trip</div>'
+                    +'',
+                scrollable: {
+                    direction: 'vertical'
+                },
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
@@ -35,12 +39,37 @@ Ext.define('App.view.TripPlaner' ,{
                         element: 'element'
                     }
                 }
+            },{
+                cls:'info-popup-zoom',
+                html:'<div id="route-viewer" style="position: absolute;width: 100%;height: 100%;top:0px;left:0px;background-color: #fff;visibility:hidden">'
+                    +'<div id="route-viewer-title">List to Trip</div><img id="route-viewer-close" src="img/popup-close-button.png" >'
+                    +'<div id="directionsPanel" style="padding: 10px;"></div></div>',
+                listeners: {
+                    tap: {
+                        fn: function( e, node ) {
+                            if (node.id=="route-viewer-close") {
+                                Ext.getCmp('tripPlaner').closeRouteViewer();
+                            }
+                        },
+                        element: 'element'
+                    }
+                }
             }
         ]
     },
 
     initialize: function() {
         Ext.getCmp('tripPlaner').closePopup();
+        Ext.getCmp('tripPlaner').closeRouteViewer();
+    },
+
+    closeRouteViewer: function() {
+        var el = document.getElementById ('route-viewer');
+        if (el) el.style.visibility = "hidden" ;
+    },
+    openRouteViewer: function() {
+        var el = document.getElementById ('route-viewer');
+        if (el) el.style.visibility = "visible" ;
     },
 
     initSearchBoxFlag:null,
@@ -106,13 +135,15 @@ Ext.define('App.view.TripPlaner' ,{
     },
 
     buildTrip: function() {
-        if ( Ext.get('tp-build-img').dom.src.indexOf("icons-trip")>0 ) {
-            Ext.get('tp-build-title').dom.innerHTML = "List to Trip";
-            Ext.get('tp-build-img').dom.src = "img/icons-list-trip.png";
-        } else {
-            Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
-            Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
+        if ( Ext.get('tp-build-img').dom.src.indexOf("icons-trip")<0 ) {
+            this.openRouteViewer();
+//            Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
+//            Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
+            return;
         }
+
+        Ext.get('tp-build-title').dom.innerHTML = "List to Trip";
+        Ext.get('tp-build-img').dom.src = "img/icons-list-trip.png";
         Ext.getCmp('tripPlaner').hide();
 
         var start = document.getElementById('tp-end-point-0').value;
@@ -142,6 +173,8 @@ Ext.define('App.view.TripPlaner' ,{
 
                 that.directionsDisplay.setDirections(response);
                 that.directionsDisplay.setMap( Ext.getCmp("mapPanel").gMap );
+                that.directionsDisplay.setPanel(document.getElementById("directionsPanel"));
+
                 var route = response.routes[0];
                 var totalDistanse = 0;
                 for (var i = 0; i < route.legs.length; i++) {

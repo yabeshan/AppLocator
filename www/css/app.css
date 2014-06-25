@@ -431,6 +431,16 @@ input::-webkit-input-placeholder {
 #tp-title {
     width: 100%;text-align: center;font-size: 18px;padding-top: 3px;font-weight: normal;padding-bottom: 15px;
 }
+#route-viewer-title {
+    width: 100%;text-align: center;font-size: 18px;padding-top: 3px;font-weight: normal;padding-bottom: 15px;
+}
+
+#tp-close {
+    position:absolute;width:40px;top:0px;right:0px;
+}
+#route-viewer-close {
+    position:absolute;width:40px;top:0px;right:0px;
+}
 
 .tp-input-point {
     padding-left: 10px; border: none;height: 35px;width:290px;
@@ -449,10 +459,6 @@ input::-webkit-input-placeholder {
 .trip-planer-btn img {
     float: left; padding-right:20px;
     pointer-events:none;
-}
-
-#tp-close {
-    position:absolute;width:40px;top:0px;right:0px;
 }
 
 #goDirect {
