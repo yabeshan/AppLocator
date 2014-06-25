@@ -148,10 +148,7 @@ Ext.define('App.view.PopupPanel' ,{
         this.selectAllPayment(false);
         Ext.getCmp('changeInfoPanel').hidePopup1();
 
-        var operFlag = Ext.get("station-operational").hasCls('select'),
-            underFlag = Ext.get("station-under").hasCls('select'),
-            comingFlag = Ext.get("station-coming").hasCls('select');
-        Ext.getCmp('mapPanel').onSearchTypeStations( parent.lngSelectFlag, parent.cngSelectFlag, operFlag, underFlag, comingFlag );
+        Ext.getCmp('mapPanel').onSearchTypeStations( Ext.getCmp('changeInfoPanel').lngSelectFlag, Ext.getCmp('changeInfoPanel').cngSelectFlag, true, true, false );
     },
 
     selectAllPayment: function( flag ) {

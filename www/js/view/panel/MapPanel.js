@@ -53,17 +53,43 @@ Ext.define('App.view.MapPanel', {
         this.gMap = map.getMap();
     },
 
-    searchItemFlag:false,
     searchBox:null,
     autoDirection:false,
+    countObj:0,
     addSearchItemHandlers: function() {
         var obj1 = document.getElementsByClassName("pac-container");
         var obj2 = document.getElementsByClassName("pac-item");
+        var that = Ext.getCmp('mapPanel');
 
-        if (obj1[0] && Ext.getCmp('mapPanel').searchItemFlag==false) {
-            Ext.getCmp('mapPanel').searchItemFlag = true;
-            var el = Ext.get(obj1[0]);
+        if (obj1[that.countObj] && that.countObj != obj1.length) {
+            var k = obj1.length-1;
+            for (k; k>=that.countObj; k--) {
+                var el = Ext.get(obj1[k]);
+                el.index = k;
 
+                el.on({
+                    tap : function(e, t) {
+                        var input = Ext.getCmp("mapPanel").searchBoxInputArr[this.index];
+                        var obj = e.target;
+                        var item = obj.innerHTML;
+                        if( item.indexOf('pac-matched">') < 0 ) {
+                            obj = e.target.parentNode;
+                            item = obj.innerHTML;
+                        }
+                        if( item.indexOf('pac-matched">') < 80 ) {
+                            Ext.getCmp('mapPanel').addResultClickHandler( obj.parentNode.innerHTML, input );
+                        } else {
+                            Ext.getCmp('mapPanel').addResultClickHandler( item, input );
+                        }
+                    }
+                });
+
+            }
+            that.countObj = obj1.length;
+
+
+            /*
+             var el = Ext.get(obj1[0]);
             el.on({
                 tap : function(e, t) {
                     var obj = e.target;
@@ -79,18 +105,7 @@ Ext.define('App.view.MapPanel', {
                     }
                 }
             });
-
-//            if(obj1.length>1) {
-//                for (var k=1; k<obj1.length; k++) {
-//                    var el = Ext.get(obj1[k]);
-//
-//                    el.on( 'tap', function(e, t) {
-//                        console.log( this.id +"   "+ this.innerHTML  );
-//                    }, el);
-//                }
-//            }
-        } else {
-            setTimeout( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
+             */
         }
     },
 
@@ -124,7 +139,7 @@ Ext.define('App.view.MapPanel', {
         });
     },
 
-    addResultClickHandler: function (content) {
+    addResultClickHandler: function (content, input) {
         that = Ext.getCmp("mapPanel");
         if (that.autoDirection) return;
 
@@ -135,9 +150,12 @@ Ext.define('App.view.MapPanel', {
             country = (arr[2]) ? arr[2].replace('<span>', ',  ') : "" ,
             result = arr[0]+arr[1]+country;
 
-        var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
+//        var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
+//        input.value = result;
+//        Ext.getCmp("mapPanel").startGeocoderPosition(result);
+
         input.value = result;
-        Ext.getCmp("mapPanel").startGeocoderPosition(result);
+        if (input.type=='search') Ext.getCmp("mapPanel").startGeocoderPosition(result);
     },
 
     completeMap: function(extMapComponent, googleMapComp) {
@@ -257,11 +275,12 @@ Ext.define('App.view.MapPanel', {
         this.infowindow = new google.maps.InfoWindow(options);
     },
 
+    searchBoxInputArr:[],
     addSearchPanelInteractive: function() {
-        console.log("addSearchPanelInteractive");
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         this.searchBox = new google.maps.places.SearchBox( (input) );
-        this.addSearchItemHandlers();
+        this.searchBoxInputArr.push(input);
+        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
 
 //        google.maps.event.addListener( this.searchBox, 'places_changed', function() {
 //
