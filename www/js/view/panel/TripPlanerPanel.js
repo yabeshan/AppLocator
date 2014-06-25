@@ -210,8 +210,8 @@ Ext.define('App.view.TripPlaner' ,{
     buildTrip: function() {
         if ( Ext.get('tp-build-img').dom.src.indexOf("icons-trip")<0 ) {
             this.openRouteViewer();
-            Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
-            Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
+//            Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
+//            Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
             return;
         }
 
