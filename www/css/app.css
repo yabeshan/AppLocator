@@ -72,39 +72,43 @@ body {
     cursor: pointer;
 }
 
+#logo-holder {
+    background-image: url(../img/start-page-header-logo2.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
 .start-page-menu {
     background-color: #30b457;
-    width: 540px;
-    height: 540px;
+    cursor: pointer;
 }
 .start-page-menu:hover {
+    background-color: #30b457;
+}
+.start-page-menu:active {
     background-color: #59a04f;
 }
+
 .start-page-menu-nearme {
     background-image: url(../img/start-page-nearme-button.png);
     background-position: center center;
     background-repeat: no-repeat;
-    bottom:540px;
-    left:50%;
-    margin-left: -540px;
+    background-size: 100% 100%;
 }
 .start-page-menu-plantrip {
     background-image: url(../img/start-page-plantrip-button.png);
     background-position: center center;
     background-repeat: no-repeat;
     border-left: 1px solid #FFF;
-    bottom:540px;
-    left:50%;
-    margin-left: 0px;
+    background-size: 100% 100%;
 }
 .start-page-menu-about {
     background-image: url(../img/start-page-about-button.png);
     background-position: center center;
     background-repeat: no-repeat;
     border-top: 1px solid #FFF;
-    bottom:0px;
-    left:50%;
-    margin-left: -540px;
+    background-size: 100% 100%;
 }
 .start-page-menu-settings {
     background-image: url(../img/start-page-settings-button.png);
@@ -112,9 +116,7 @@ body {
     background-repeat: no-repeat;
     border-left: 1px solid #FFF;
     border-top: 1px solid #FFF;
-    bottom:0px;
-    left:50%;
-    margin-left: 0px;
+    background-size: 100% 100%;
 }
 
 .main-page-menupanel-button {

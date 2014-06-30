@@ -58,12 +58,6 @@ var appInit = function() {
                     {xtype:'startPage'}, {xtype:'mainPage'}, {xtype:'aboutPage'}, {xtype:'settingsPage'}
                 ]
             });
-
-            var windowWidth = window.innerWidth;
-            var windowHeight = window.innerHeight;
-            var pixelRatio = window.devicePixelRatio || 1;
-
-            alert( windowWidth +"   "+ windowHeight +"   "+ pixelRatio);
         }
 
     });
