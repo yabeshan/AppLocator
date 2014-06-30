@@ -53,9 +53,11 @@ Ext.define('App.view.StartPage' ,{
     },
 
     initialize: function() {
-        var pixelRatio = window.devicePixelRatio || 1,
-            windowWidth = window.innerWidth / pixelRatio,
-            windowHeight = window.innerHeight / pixelRatio,
+//        var pixelRatio = window.devicePixelRatio || 1,
+//            windowWidth = window.innerWidth / pixelRatio,
+//            windowHeight = window.innerHeight / pixelRatio,
+        var windowWidth = window.innerWidth,
+            windowHeight = window.innerHeight,
             maxBtnWidth = windowWidth * .5;
 
         if (maxBtnWidth > 512) maxBtnWidth = 512;
