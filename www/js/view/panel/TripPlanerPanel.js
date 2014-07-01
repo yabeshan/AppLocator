@@ -247,11 +247,16 @@ Ext.define('App.view.TripPlaner' ,{
 //        return;
 
         if(this.routeMarker.length>0) {
-            this.intBulder = setInterval(function(){
-                var that = Ext.getCmp('tripPlaner');
-                that.findRadiusStations( that.routeMarker.pop() );
-                if (that.routeMarker.length==0) clearInterval( that.intBulder );
-            },10);
+            var m = 0, arr = that.routeMarker, lng = arr.length;
+            for (m; m<lng; m++) {
+                this.findRadiusStations( this.routeMarker[m] );
+            }
+
+//            this.intBulder = setInterval(function(){
+//                var that = Ext.getCmp('tripPlaner');
+//                that.findRadiusStations( that.routeMarker.pop() );
+//                if (that.routeMarker.length==0) clearInterval( that.intBulder );
+//            },10);
         }
     },
 

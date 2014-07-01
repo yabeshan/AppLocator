@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.cyberiansoft.stationlocator"
-        version   = "0.1.81">
+        version   = "0.1.9">
 
     <name>Station Locator</name>
 
@@ -22,6 +22,7 @@
 
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <gap:plugin name="org.apache.cordova.geolocation" />
+    <gap:plugin name="org.apache.cordova.inappbrowser" />
 
     <!--gap:plugin name="org.apache.cordova.device" />
     <feature name="http://api.phonegap.com/1.0/device" /-->
