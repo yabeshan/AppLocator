@@ -34,8 +34,8 @@ Ext.define('App.view.TripPlaner' ,{
                 scrollable: {
                     direction: 'vertical'
                 },
-                html:'<div id="trip-palent-starter"><div class="holder-trip-point"><input id="tp-end-point-0" type="text" placeholder="Start Point" class="tp-input-point"></div>'
-                    +'<div class="holder-trip-point"><input id="tp-end-point-1" type="text" placeholder="End Point" class="tp-input-point"><img id="change-arrow-1" src="img/icons-change.png"></div></div>'
+                html:'<div id="trip-palent-starter"><div class="holder-trip-point"><input id="tp-end-point-0" type="text" placeholder="Start Point" class="tp-input-point" value="Los Angeles,  CA, United States"></div>'
+                    +'<div class="holder-trip-point"><input id="tp-end-point-1" type="text" placeholder="End Point" class="tp-input-point" value="Oxnard,  CA, United States"><img id="change-arrow-1" src="img/icons-change.png"></div></div>'
 
                     +'<div id="tp-add" class="trip-planer-btn"><img src="img/icons-add.png">Add destination</div>'
                     +'<div id="tp-build" class="trip-planer-btn"><img id="tp-build-img" src="img/icons-trip.png"><span id="tp-build-title" style="pointer-events:none">Build Trip</span></div>'
@@ -199,6 +199,7 @@ Ext.define('App.view.TripPlaner' ,{
 
                 that.directionsDisplay.setDirections(response);
                 that.directionsDisplay.setMap( Ext.getCmp("mapPanel").gMap );
+                that.directionsDisplay.setOptions( { suppressMarkers: true } );
                 that.directionsDisplay.setPanel(document.getElementById("directionsPanel"));
 
                 var route = response.routes[0];
@@ -206,6 +207,10 @@ Ext.define('App.view.TripPlaner' ,{
                 for (var i = 0; i < route.legs.length; i++) {
                     totalDistanse += route.legs[i].distance.value;
                 }
+                var distanseBetweenMarkers = Math.max(1000, Math.round(totalDistanse / 100));
+
+                Ext.getCmp('tripPlaner').addRedMarkers(response.routes[0]);
+                Ext.getCmp('tripPlaner').viewRadiusStations(response.routes[0]);
             }
             else {
                 alert(status + '. Please enter correct Start and Destination Points');
@@ -213,7 +218,121 @@ Ext.define('App.view.TripPlaner' ,{
         });
     },
 
+    routeMarker:[],
+    intBulder:null,
+    viewRadiusStations:function(myRoute) {
+        var map = Ext.getCmp("mapPanel").gMap;
+        var markerZIndex = 10000000;
+        var point=myRoute.overview_path[0], marker, posx, posy, dist;
+//console.log( point.k +"   "+ point.A);
+
+        var k = 1, arr = myRoute.overview_path, lng = arr.length;
+        for (k; k<lng; k++) {
+            posx = Math.pow( Math.abs(point.k-arr[k].k), 2);
+            posy = Math.pow( Math.abs(point.A-arr[k].A), 2);
+            dist = Math.sqrt(posx+posy);
+            if (dist>= 0.08) {
+                this.routeMarker.push( point );
+                point=arr[k];
+//                marker = new google.maps.Marker({
+//                    position: arr[k],
+//                    map: map,
+//                    icon: 'img/map-point-grey.png'
+//                });
+            }
+        }
+        this.routeMarker.push( point );
+
+//        this.findRadiusStations( this.routeMarker.pop() );
+//        return;
+
+        if(this.routeMarker.length>0) {
+            this.intBulder = setInterval(function(){
+                var that = Ext.getCmp('tripPlaner');
+                that.findRadiusStations( that.routeMarker.pop() );
+                if (that.routeMarker.length==0) clearInterval( that.intBulder );
+            },10);
+        }
+    },
+
+    findRadiusStations:function(point) {
+//        console.log( point.k +"   "+ point.A );
+        var map = Ext.getCmp("mapPanel").gMap;
+        var k= 0, arr = Ext.getCmp("mapPanel").markerArr, lng = arr.length, coordx, coordy, posx, posy, dist;
+        for (k; k<lng; k++) {
+            coordx = arr[k].model.get("latitude");
+            coordy = arr[k].model.get("longitude");
+
+            posx = Math.pow( Math.abs(point.k-coordx), 2);
+            posy = Math.pow( Math.abs(point.A-coordy), 2);
+            dist = Math.sqrt(posx+posy);
+
+            if (dist>0.1 && !arr[k].model.get('viewRoute')) {
+                arr[k].setMap(null);
+            } else {
+                arr[k].model.set({'viewRoute':true});
+                arr[k].setMap(map);
+            }
+        }
+    },
+
+    redMarkerArr:null,
+    redMarkerImageArr:['img/redA.png','img/redB.png','img/redC.png','img/redD.png','img/redE.png','img/redF.png','img/redG.png','img/redH.png','img/redI.png','img/redJ.png','img/redK.png','img/redL.png'],
+    addRedMarkers:function(myRoute) {
+        var map = Ext.getCmp("mapPanel").gMap;
+        var markerZIndex = 10000000;
+        var that = Ext.getCmp('tripPlaner');
+        if (that.redMarkerArr!=null) that.removeRedMarkers();
+        that.redMarkerArr = [];
+
+//        console.log( "start_location = "+ myRoute.legs[0].start_location );
+        var marker = new google.maps.Marker({
+            position: myRoute.legs[0].start_location,
+            map: map,
+            icon: that.redMarkerImageArr[that.redMarkerArr.length],
+            zIndex:markerZIndex
+        });
+        that.redMarkerArr.push(marker);
+
+
+//        console.log( "start_location = "+ (myRoute.legs.length-1) );
+        var k=0, arr = myRoute.legs, lng = arr.length-1;
+        for (k;k<lng;k++) {
+//            console.log (arr[k].start_location);
+            marker = new google.maps.Marker({
+                position: arr[k].end_location,
+                map: map,
+                icon: that.redMarkerImageArr[that.redMarkerArr.length],
+                zIndex:markerZIndex
+            });
+            console.log("middle    "+ that.redMarkerImageArr[that.redMarkerArr.length]);
+            that.redMarkerArr.push(marker);
+        }
+
+//        console.log( "end_location = "+ myRoute.legs[0].end_location );
+        marker = new google.maps.Marker({
+            position: myRoute.legs[ myRoute.legs.length-1 ].end_location,
+            map: map,
+            icon: that.redMarkerImageArr[that.redMarkerArr.length],
+            zIndex:markerZIndex
+        });
+        that.redMarkerArr.push(marker);
+    },
+
+    removeRedMarkers:function() {
+        if (this.redMarkerArr==null) return;
+
+        var k= 0, arr = this.redMarkerArr, lng = arr.length;
+        for (k; k<lng; k++) {
+            arr[k].setMap(null);
+        }
+        this.redMarkerArr = null;
+    },
+
     clearRoad: function() {
+        Ext.getCmp('searchPanel').directionsDisplay.setDirections({ routes: [] });
+        Ext.getCmp('tripPlaner').removeRedMarkers();
+
         Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
         Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
 

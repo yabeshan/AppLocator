@@ -57,13 +57,13 @@ Ext.define('App.view.SearchPanel', {
                     tap: {
                         fn: function( e, node ) {
                             if (node.id=="share-facebook") {
-
+                                window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
                             } else if (node.id=="share-twitter") {
-
+                                window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
                             } else if (node.id=="share-google") {
-
+                                window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
                             } else if (node.id=="share-mail") {
-
+                                window.open('mailto:?subject=Clean%20Energy%20Station&amp;body=http%3A%2F%2Fcnglngstations.com%2F', '_system');
                             }
                             Ext.getCmp('searchPanel').hideShare();
                         },

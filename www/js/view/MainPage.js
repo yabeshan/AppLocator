@@ -81,6 +81,7 @@ Ext.define('App.view.MainPage' ,{
 
     initialize: function() {
 //        this.update();
+//        setTimeout( Ext.getCmp('tripPlaner').openPopup, 2000 )
     },
     update:function(){
         Ext.getCmp('mapPanel').update();
