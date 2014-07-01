@@ -19,10 +19,8 @@ Ext.define('App.view.InfoPopup' ,{
                     tap: {
                         fn: function( e, node ) {
                             if (node.id=="goDirect") {
-//                                document.getElementById('tp-end-point-1').value=Ext.get("stationAddress").dom.innerText;
                                 Ext.getCmp('tripPlaner').openPopup({'type':'get', 'point':Ext.get("stationAddress").dom.innerText });
                             } else if (node.id=="goPlanner") {
-//                                document.getElementById('tp-end-point-1').value=Ext.get("stationAddress").dom.innerText;
                                 Ext.getCmp('tripPlaner').openPopup({'type':'add', 'point':Ext.get("stationAddress").dom.innerText });
                             } else if (node.id=="goShare") {
                                 Ext.getCmp('searchPanel').showShare();

@@ -158,6 +158,7 @@ Ext.define('App.view.MapPanel', {
 
         input.value = result;
         if (input.type=='search') Ext.getCmp("mapPanel").startGeocoderPosition(result);
+        else Ext.getCmp('tripPlaner').openPopup({'type':'change'});
     },
 
     completeMap: function(extMapComponent, googleMapComp) {

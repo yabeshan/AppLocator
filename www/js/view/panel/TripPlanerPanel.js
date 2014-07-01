@@ -101,7 +101,7 @@ Ext.define('App.view.TripPlaner' ,{
             Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
             Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
 
-            if (Ext.getCmp("mapPanel").userLocation != null) {
+            if (Ext.getCmp("mapPanel").userLocation != null && document.getElementById('tp-end-point-0').value.length==0) {
                 document.getElementById('tp-end-point-0').value = Ext.getCmp("mapPanel").userLocation;
             }
 
@@ -179,6 +179,12 @@ Ext.define('App.view.TripPlaner' ,{
     },
 
     buildTrip: function() {
+        this.routeMarker = [];
+        var k= 0, arr = Ext.getCmp("mapPanel").markerViewArr, lng = arr.length;
+        for (k; k<lng; k++) {
+            arr[k].model.set({'viewRoute':null});
+        }
+
         if ( Ext.get('tp-build-img').dom.src.indexOf("icons-trip")<0 ) {
             this.openRouteViewer();
 //            Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
@@ -244,7 +250,6 @@ Ext.define('App.view.TripPlaner' ,{
         var point=myRoute.overview_path[0], marker, posx, posy, dist;
 //console.log( point.k +"   "+ point.A);
 
-        this.routeMarker = [];
         var k = 1, arr = myRoute.overview_path, lng = arr.length;
         for (k; k<lng; k++) {
             posx = Math.pow( Math.abs(point.k-arr[k].k), 2);
