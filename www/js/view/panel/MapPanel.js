@@ -6,6 +6,7 @@ Ext.define('App.view.MapPanel', {
 
     gMap:null,
     markerArr:[],
+    markerViewArr:[],
     infowindow:null,
     trafficLayer:null,
 
@@ -165,6 +166,7 @@ Ext.define('App.view.MapPanel', {
         Ext.getStore('StationStore').each(function(record,id){
             that.addMarker( record, false );
         });
+        that.onSearchTypeStations();
     },
 
     addMarker: function( model, positionFlag ) {
@@ -172,12 +174,14 @@ Ext.define('App.view.MapPanel', {
         var lon = model.get('longitude');
 
         var fuel = model.get('fuel');
+
         var icon = (fuel==0) ? 'img/map-point-blue.png' : ( (fuel==1) ? 'img/map-point-green.png' : 'img/map-point-double.png' );
         var status = model.get('status');
-        if (status==2) icon = 'img/map-point-grey.png';
+        if (status==1) icon = (fuel==0) ? 'img/map-point-blue-cs.png' : ( (fuel==1) ? 'img/map-point-green-cs.png' : 'img/map-point-double-cs.png' );
+        if (status==2) icon = 'img/map-point-grey-cs.png';
 
         var marker = new google.maps.Marker({
-            map: this.gMap,
+//            map: this.gMap,
 //          animation: google.maps.Animation.DROP,
             icon: icon,
             position: new google.maps.LatLng ( lat , lon),
@@ -320,31 +324,31 @@ Ext.define('App.view.MapPanel', {
         this.gMap.setMapTypeId( val );
     },
 
-    onSearchTypeStations: function( lngSelectFlag, cngSelectFlag, operFlag, underFlag, comingFlag ) {
+    searchFilter:{'fuel':[0, 1, 2], 'status':[0, 2]},
+    onSearchTypeStations: function() {
         var k=0, lng =this.markerArr.length, marker, fuel, typeFlag, status, statusFlag;
-        console.log( lngSelectFlag +"   "+ cngSelectFlag +"   "+ operFlag +"   "+ underFlag +"   "+ comingFlag );
+        this.markerViewArr = [];
+
+        if (this.searchFilter.fuel.length==1) {
+            if (this.searchFilter.fuel.indexOf(2)>=0) this.searchFilter.fuel = [];
+            else this.searchFilter.fuel.push(2);
+        }
+
         for (k;k<lng;k++) {
             marker = this.markerArr[k];
 
             fuel = marker.model.get('fuel');
-            typeFlag =
-                (lngSelectFlag && cngSelectFlag) ||
-                (lngSelectFlag && fuel>=1 ) ||
-                (cngSelectFlag && fuel!=1 );
+            typeFlag = this.searchFilter.fuel.indexOf( Number(fuel) )>=0;
 
             status = marker.model.get('status');
-            statusFlag =
-                (operFlag && status==0) ||
-                (underFlag && status==1) ||
-                (comingFlag && status==2);
-
+            statusFlag = this.searchFilter.status.indexOf( Number(status) )>=0;
 
             if (typeFlag && statusFlag) {
                 marker.setMap(this.gMap);
+                this.markerViewArr.push( marker );
             } else {
                 marker.setMap(null);
             }
-
         };
     }
 

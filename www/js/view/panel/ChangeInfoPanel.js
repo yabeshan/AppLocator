@@ -105,22 +105,44 @@ Ext.define('App.view.PopupPanel' ,{
         var cngFlag = Ext.get("fuel-type-cng").hasCls('select'),
             lngFlag = Ext.get("fuel-type-lng").hasCls('select'),
             parent = Ext.getCmp('changeInfoPanel'),
-            changeFlag = false,
+            panel = Ext.getCmp('mapPanel'),
             operFlag = Ext.get("station-operational").hasCls('select'),
             underFlag = Ext.get("station-under").hasCls('select'),
             comingFlag = Ext.get("station-coming").hasCls('select');
 
-        if (parent.cngSelectFlag != cngFlag) {
-            changeFlag = true;
+        if (   (cngFlag && panel.searchFilter.fuel.indexOf( 0 )<0)
+            || (!cngFlag && panel.searchFilter.fuel.indexOf( 0 )>=0) ) {
             parent.changeSelectFilter("cngBtn");
         }
-        if (parent.lngSelectFlag != lngFlag) {
-            changeFlag = true;
+
+        if (   (lngFlag && panel.searchFilter.fuel.indexOf( 1 )<0)
+            || (!lngFlag && panel.searchFilter.fuel.indexOf( 1 )>=0) ) {
             parent.changeSelectFilter("lngBtn");
         }
-//        if (changeFlag) {
-            Ext.getCmp('mapPanel').onSearchTypeStations( parent.lngSelectFlag, parent.cngSelectFlag, operFlag, underFlag, comingFlag );
-//        }
+
+        if ( (operFlag && underFlag && comingFlag) || (!operFlag && !underFlag && !comingFlag) ) {
+            panel.searchFilter.status= [0, 1, 2];
+        } else {
+            if ( operFlag && panel.searchFilter.status.indexOf( 0 )<0) {
+                panel.searchFilter.status.push( 0 );
+            } else if (!operFlag && panel.searchFilter.status.indexOf( 0 )>=0) {
+                panel.searchFilter.status.splice( panel.searchFilter.status.indexOf( 0 ), 1 );
+            }
+
+            if ( comingFlag && panel.searchFilter.status.indexOf( 1 )<0) {
+                panel.searchFilter.status.push( 1 );
+            } else if (!comingFlag && panel.searchFilter.status.indexOf( 1 )>=0) {
+                panel.searchFilter.status.splice( panel.searchFilter.status.indexOf( 1 ), 1 );
+            }
+
+            if ( underFlag && panel.searchFilter.status.indexOf( 2 )<0) {
+                panel.searchFilter.status.push( 2 );
+            } else if (!underFlag && panel.searchFilter.status.indexOf( 2 )>=0) {
+                panel.searchFilter.status.splice( panel.searchFilter.status.indexOf( 2 ), 1 );
+            }
+        }
+
+        panel.onSearchTypeStations();
         parent.hidePopup1();
     },
 
@@ -203,10 +225,10 @@ Ext.define('App.view.ChangeInfoPanel' ,{
                                 that.showPopup1();
                             } else if (node.id=="lngBtn") {
                                 that.changeSelectFilter("lngBtn");
-                                Ext.getCmp('mapPanel').onSearchTypeStations( that.lngSelectFlag, that.cngSelectFlag );
+                                Ext.getCmp('mapPanel').onSearchTypeStations();
                             } else if (node.id=="cngBtn") {
                                 that.changeSelectFilter("cngBtn");
-                                Ext.getCmp('mapPanel').onSearchTypeStations( that.lngSelectFlag, that.cngSelectFlag );
+                                Ext.getCmp('mapPanel').onSearchTypeStations();
                             }
                         },
                         element: 'element'
@@ -221,33 +243,35 @@ Ext.define('App.view.ChangeInfoPanel' ,{
 
     lngSelectFlag:true,
     cngSelectFlag:true,
+
+
     changeSelectFilter: function(id) {
-        var flag, btn;
+        var index, btn, panel = Ext.getCmp('mapPanel');
         if (id=="lngBtn") {
-            flag = this.lngSelectFlag;
-            if (flag) {
+            index = panel.searchFilter.fuel.indexOf( 1 );
+            if (index>=0) {
                 Ext.get("lngTop").setVisible(false);
                 Ext.get("lngBtn").removeCls("main-page-bottom-toolbar-select");
                 Ext.get("lngBtn").addCls("main-page-bottom-toolbar");
-                this.lngSelectFlag = false;
+                panel.searchFilter.fuel.splice( index, 1);
             } else {
                 Ext.get("lngTop").setVisible(true);
                 Ext.get("lngBtn").removeCls("main-page-bottom-toolbar");
                 Ext.get("lngBtn").addCls("main-page-bottom-toolbar-select");
-                this.lngSelectFlag = true;
+                panel.searchFilter.fuel.push(1);
             }
         } else if (id=="cngBtn") {
-            flag = this.cngSelectFlag;
-            if (flag) {
+            index = panel.searchFilter.fuel.indexOf( 0 );
+            if (index>=0) {
                 Ext.get("cngTop").setVisible(false);
                 Ext.get("cngBtn").removeCls("main-page-bottom-toolbar-select");
                 Ext.get("cngBtn").addCls("main-page-bottom-toolbar");
-                this.cngSelectFlag = false;
+                panel.searchFilter.fuel.splice( index, 1);
             } else {
                 Ext.get("cngTop").setVisible(true);
                 Ext.get("cngBtn").removeCls("main-page-bottom-toolbar");
                 Ext.get("cngBtn").addCls("main-page-bottom-toolbar-select");
-                this.cngSelectFlag = true;
+                panel.searchFilter.fuel.push(0);
             }
         }
     },

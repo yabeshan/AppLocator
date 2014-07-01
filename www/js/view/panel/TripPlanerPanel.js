@@ -34,8 +34,8 @@ Ext.define('App.view.TripPlaner' ,{
                 scrollable: {
                     direction: 'vertical'
                 },
-                html:'<div id="trip-palent-starter"><div class="holder-trip-point"><input id="tp-end-point-0" type="text" placeholder="Start Point" class="tp-input-point" value="Los Angeles,  CA, United States"></div>'
-                    +'<div class="holder-trip-point"><input id="tp-end-point-1" type="text" placeholder="End Point" class="tp-input-point" value="Oxnard,  CA, United States"><img id="change-arrow-1" src="img/icons-change.png"></div></div>'
+                html:'<div id="trip-palent-starter"><div class="holder-trip-point"><input id="tp-end-point-0" type="text" placeholder="Start Point" class="tp-input-point" value=""></div>'
+                    +'<div class="holder-trip-point"><input id="tp-end-point-1" type="text" placeholder="End Point" class="tp-input-point" value=""><img id="change-arrow-1" src="img/icons-change.png"></div></div>'
 
                     +'<div id="tp-add" class="trip-planer-btn"><img src="img/icons-add.png">Add destination</div>'
                     +'<div id="tp-build" class="trip-planer-btn"><img id="tp-build-img" src="img/icons-trip.png"><span id="tp-build-title" style="pointer-events:none">Build Trip</span></div>'
@@ -226,6 +226,7 @@ Ext.define('App.view.TripPlaner' ,{
         var point=myRoute.overview_path[0], marker, posx, posy, dist;
 //console.log( point.k +"   "+ point.A);
 
+        this.routeMarker = [];
         var k = 1, arr = myRoute.overview_path, lng = arr.length;
         for (k; k<lng; k++) {
             posx = Math.pow( Math.abs(point.k-arr[k].k), 2);
@@ -247,7 +248,7 @@ Ext.define('App.view.TripPlaner' ,{
 //        return;
 
         if(this.routeMarker.length>0) {
-            var m = 0, arr = that.routeMarker, lng = arr.length;
+            var m = 0, arr = this.routeMarker, lng = arr.length;
             for (m; m<lng; m++) {
                 this.findRadiusStations( this.routeMarker[m] );
             }
@@ -263,7 +264,9 @@ Ext.define('App.view.TripPlaner' ,{
     findRadiusStations:function(point) {
 //        console.log( point.k +"   "+ point.A );
         var map = Ext.getCmp("mapPanel").gMap;
-        var k= 0, arr = Ext.getCmp("mapPanel").markerArr, lng = arr.length, coordx, coordy, posx, posy, dist;
+//        markerViewArr
+        var k= 0, arr = Ext.getCmp("mapPanel").markerViewArr, lng = arr.length, coordx, coordy, posx, posy, dist;
+
         for (k; k<lng; k++) {
             coordx = arr[k].model.get("latitude");
             coordy = arr[k].model.get("longitude");
@@ -272,7 +275,7 @@ Ext.define('App.view.TripPlaner' ,{
             posy = Math.pow( Math.abs(point.A-coordy), 2);
             dist = Math.sqrt(posx+posy);
 
-            if (dist>0.1 && !arr[k].model.get('viewRoute')) {
+            if (dist>0.1 && arr[k].model.get('viewRoute')!=true) {
                 arr[k].setMap(null);
             } else {
                 arr[k].model.set({'viewRoute':true});
@@ -335,6 +338,13 @@ Ext.define('App.view.TripPlaner' ,{
     },
 
     clearRoad: function() {
+        var map = Ext.getCmp("mapPanel").gMap;
+        var k= 0, arr = Ext.getCmp("mapPanel").markerViewArr, lng = arr.length;
+        for (k; k<lng; k++) {
+            arr[k].setMap(map);
+            arr[k].model.set({'viewRoute':null});
+        }
+
         Ext.getCmp('searchPanel').directionsDisplay.setDirections({ routes: [] });
         Ext.getCmp('tripPlaner').removeRedMarkers();
 

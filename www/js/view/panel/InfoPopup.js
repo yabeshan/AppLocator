@@ -49,9 +49,9 @@ Ext.define('App.view.InfoPopup' ,{
         Ext.get("stationAddress").dom.innerHTML = adress + hours + accepts;
             Ext.getCmp('infoPopup').show();
 
-        if (model.get('status')==1) {
+        if (model.get('status')==2) {
             Ext.get("stationStatus").dom.innerHTML = "Under Maintenance";
-        } else if (model.get('status')==2) {
+        } else if (model.get('status')==1) {
             Ext.get("stationStatus").dom.innerHTML = "Coming Soon";
         } else {
             Ext.get("stationStatus").dom.innerHTML = "Operational";
