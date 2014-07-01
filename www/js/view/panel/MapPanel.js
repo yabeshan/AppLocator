@@ -123,6 +123,7 @@ Ext.define('App.view.MapPanel', {
                 lng = results[0].geometry.location.lng();
                 position = new google.maps.LatLng(lat, lng);
 
+                var that = Ext.getCmp("mapPanel");
                 if (that.infowindow)
                     that.infowindow.close();
 

@@ -94,13 +94,29 @@ Ext.define('App.view.TripPlaner' ,{
     },
 
     initSearchBoxFlag:null,
-    openPopup: function(flag) {
+    openPopup: function( obj ) {
         Ext.getCmp('tripPlaner').show();
 
-        if (flag && Ext.getCmp("mapPanel").userLocation != null) {
-            document.getElementById('tp-end-point-0').value = Ext.getCmp("mapPanel").userLocation;
+        if (obj != null) {
             Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
             Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
+
+            if (Ext.getCmp("mapPanel").userLocation != null) {
+                document.getElementById('tp-end-point-0').value = Ext.getCmp("mapPanel").userLocation;
+            }
+
+            if (obj.type=="get") {
+                document.getElementById('tp-end-point-1').value = obj.point;
+            }
+
+            if (obj.type=="add") {
+                if (document.getElementById('tp-end-point-1').value.length==0) {
+                    document.getElementById('tp-end-point-1').value = obj.point;
+                } else {
+                    var newID = this.addPoint();
+                    document.getElementById('tp-end-point-'+newID).value = obj.point;
+                }
+            }
         }
 
         var that = Ext.getCmp('searchPanel');
@@ -148,6 +164,8 @@ Ext.define('App.view.TripPlaner' ,{
 
         Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
         Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
+
+        return newID;
     },
 
     swipeItems: function(id) {

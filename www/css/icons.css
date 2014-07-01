@@ -6,19 +6,27 @@
     position:absolute;height:20%;left:20px;right:20px;
 }
 
+#fuel-type-cng-info {
+    position:absolute;top:50%;left:50%;width:60px;height:47px;margin-top: 103px;margin-left: -70px;
+    background:  url('../img/icons-fuel-type.png') no-repeat -60px 0px;
+}
 #fuel-type-cng {
     position: absolute;width:60px;height:47px;top:21px;margin-left:10%;cursor: pointer;
     background:  url('../img/icons-fuel-type.png') no-repeat -60px 0px;
 }
-#fuel-type-cng.select {
+#fuel-type-cng.select, #fuel-type-cng-info.select {
     background:  url('../img/icons-fuel-type.png') no-repeat -60px -48px;
 }
 
+#fuel-type-lng-info {
+    position: absolute;top:50%;left:50%;width:60px;height:47px;margin-top: 103px;margin-left: 12px;
+    background:  url('../img/icons-fuel-type.png') no-repeat 0px 0px;
+}
 #fuel-type-lng {
     position: absolute;width:60px;height:47px;top:21px;margin-left:30%;cursor: pointer;
     background:  url('../img/icons-fuel-type.png') no-repeat 0px 0px;
 }
-#fuel-type-lng.select {
+#fuel-type-lng.select, #fuel-type-lng-info.select {
     background:  url('../img/icons-fuel-type.png') no-repeat 0px -48px;
 }
 

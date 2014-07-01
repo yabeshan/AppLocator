@@ -168,11 +168,14 @@ Ext.define('App.view.PopupPanel' ,{
         Ext.get("flow-rate-hight").removeCls('select');
 
         this.selectAllPayment(false);
+
         var parent = Ext.getCmp('changeInfoPanel');
         parent.hidePopup1();
-        if (parent.cngSelectFlag == false) parent.changeSelectFilter("cngBtn");
-        if (parent.lngSelectFlag == false) parent.changeSelectFilter("lngBtn");
-        Ext.getCmp('mapPanel').onSearchTypeStations( true, true, true, true, false );
+        if (Ext.get("cngBtn").hasCls('main-page-bottom-toolbar') ) parent.changeSelectFilter("cngBtn");
+        if (Ext.get("lngBtn").hasCls('main-page-bottom-toolbar') ) parent.changeSelectFilter("lngBtn");
+
+        Ext.getCmp('mapPanel').searchFilter = {'fuel':[0, 1, 2], 'status':[0, 2]};
+        Ext.getCmp('mapPanel').onSearchTypeStations();
     },
 
     selectAllPayment: function( flag ) {
@@ -240,10 +243,6 @@ Ext.define('App.view.ChangeInfoPanel' ,{
             }
         ]
     },
-
-    lngSelectFlag:true,
-    cngSelectFlag:true,
-
 
     changeSelectFilter: function(id) {
         var index, btn, panel = Ext.getCmp('mapPanel');

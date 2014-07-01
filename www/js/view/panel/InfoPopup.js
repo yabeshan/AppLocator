@@ -13,16 +13,17 @@ Ext.define('App.view.InfoPopup' ,{
                     +'<div id="stationName" style="overflow:hidden;height:24px;position:absolute;left:50%;margin-left:-140px;top:50%;margin-top:-60px;width:280px;color:#30b457"></div>'
                     +'<div id="stationStatus" style="position:absolute;left:50%;margin-left:-135px;top:50%;margin-top:-190px;color:#fff;font-style: italic;fony-size:30px;font-weight: normal;width:140px">Operational</div>'
                     +'<div id="stationAddress" style="overflow:hidden;height:84px;position:absolute;left:50%;margin-left:-140px;top:50%;margin-top:-35px;width:280px;color:#67686a;font-weight:bold;"></div>'
-                    +'<div style="position: absolute;top:50%;margin-top: -195px;left: 50%;margin-left: 15px"><div id="goDirect"></div><div id="goPlanner"></div><div id="goShare"></div></div></div>',
+                    +'<div style="position: absolute;top:50%;margin-top: -195px;left: 50%;margin-left: 15px"><div id="goDirect"></div><div id="goPlanner"></div><div id="goShare"></div></div>'
+                    +'<div id="fuel-type-cng-info" class=""></div><div id="fuel-type-lng-info"></div></div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
                             if (node.id=="goDirect") {
-                                document.getElementById('tp-end-point-1').value=Ext.get("stationAddress").dom.innerText;
-                                Ext.getCmp('tripPlaner').openPopup(true);
+//                                document.getElementById('tp-end-point-1').value=Ext.get("stationAddress").dom.innerText;
+                                Ext.getCmp('tripPlaner').openPopup({'type':'get', 'point':Ext.get("stationAddress").dom.innerText });
                             } else if (node.id=="goPlanner") {
-                                document.getElementById('tp-end-point-1').value=Ext.get("stationAddress").dom.innerText;
-                                Ext.getCmp('tripPlaner').openPopup();
+//                                document.getElementById('tp-end-point-1').value=Ext.get("stationAddress").dom.innerText;
+                                Ext.getCmp('tripPlaner').openPopup({'type':'add', 'point':Ext.get("stationAddress").dom.innerText });
                             } else if (node.id=="goShare") {
                                 Ext.getCmp('searchPanel').showShare();
                             }
@@ -55,6 +56,19 @@ Ext.define('App.view.InfoPopup' ,{
             Ext.get("stationStatus").dom.innerHTML = "Coming Soon";
         } else {
             Ext.get("stationStatus").dom.innerHTML = "Operational";
+        }
+
+        var fuel = model.get('fuel');
+        if (fuel == 0 || fuel == 2) {
+            Ext.get("fuel-type-cng-info").addCls('select');
+        } else {
+            Ext.get("fuel-type-cng-info").removeCls('select');
+        }
+
+        if (fuel == 1 || fuel == 2) {
+            Ext.get("fuel-type-lng-info").addCls('select');
+        } else {
+            Ext.get("fuel-type-lng-info").removeCls('select');
         }
 
 
