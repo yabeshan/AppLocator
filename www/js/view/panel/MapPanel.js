@@ -19,6 +19,66 @@ Ext.define('App.view.MapPanel', {
 
     },
 
+    nearStationForPoint:function( lat, lon) {
+//        lat = 37.0625;
+//        lon = -95.677068;
+
+        var that = Ext.getCmp("mapPanel");
+        var k=0, arr=that.markerViewArr, lng=arr.length, posx, posy, dist, point, pointMin, distMin=200;
+        for (k;k<lng;k++) {
+            point=arr[k];
+            posx = Math.pow( Math.abs( lat - arr[k].model.get("latitude") ), 2);
+            posy = Math.pow( Math.abs( lon - arr[k].model.get("longitude") ), 2);
+            dist = Math.sqrt(posx+posy);
+            if (dist<distMin) {
+                distMin = dist;
+                pointMin = point;
+            }
+        }
+//        console.log( lat +"    "+ pointMin.model.get("latitude") );
+//        console.log( lon +"    "+ pointMin.model.get("longitude") );
+
+        var ZOOM_MAX = 21;
+        var points = [
+            { lat: lat, lng: lon },
+            { lat: pointMin.model.get("latitude"), lng: pointMin.model.get("longitude") }
+        ];
+        var markers = [];
+        var bounds = new google.maps.LatLngBounds();
+
+        for (var k=0; k<points.length; k++) {
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(points[k].lat, points[k].lng)
+            });
+//            marker.setMap( Ext.getCmp("mapPanel").gMap );
+//            markers.push( marker );
+            bounds.extend( marker.getPosition() );
+        }
+
+        var ne = bounds.getNorthEast();
+        var sw = bounds.getSouthWest();
+
+        function latRad(lat) {
+            var sin = Math.sin(lat * Math.PI / 180);
+            var radX2 = Math.log((1 + sin) / (1 - sin)) / 2;
+            return Math.max(Math.min(radX2, Math.PI), -Math.PI) / 2;
+        }
+        var latFraction = (latRad(ne.lat()) - latRad(sw.lat())) / Math.PI;
+        var lngDiff = ne.lng() - sw.lng();
+        var lngFraction = ((lngDiff < 0) ? (lngDiff + 360) : lngDiff) / 360;
+
+        function zoom(mapPx, worldPx, fraction) {
+            return Math.floor(Math.log(mapPx / worldPx / fraction) / Math.LN2);
+        }
+        var latZoom = zoom(200, 256, latFraction);
+        var lngZoom = zoom(200, 256, lngFraction);
+        var mapZoom = Math.min(latZoom, lngZoom, ZOOM_MAX);
+
+        Ext.getCmp("mapPanel").gMap.setCenter( new google.maps.LatLng ( lat, lon ) );
+
+        Ext.getCmp("mapPanel").gMap.setZoom( mapZoom-1 );
+    },
+
     update: function() {
         if (this.gMap==null) {
             this.addSpinner();
@@ -135,8 +195,7 @@ Ext.define('App.view.MapPanel', {
                 };
 
                 that.infowindow = new google.maps.InfoWindow(options);
-                that.gMap.setCenter( coord );
-                that.gMap.setZoom(15);
+                Ext.getCmp("mapPanel").nearStationForPoint( lat, lng );
             }
         });
     },
@@ -224,6 +283,7 @@ Ext.define('App.view.MapPanel', {
                 var lat=position.coords.latitude;
                 var lon=position.coords.longitude;
                 Ext.getCmp("mapPanel").viewInfoWindow("You are here. ", lat, lon);
+                Ext.getCmp("mapPanel").nearStationForPoint( lat, lon );
             }, function(error){
 //                alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
                 Ext.getCmp("mapPanel").viewInfoWindow("Error: The Geolocation service failed. ");
