@@ -253,7 +253,7 @@ Ext.define('App.view.TripPlaner' ,{
         var k = 1, arr = myRoute.overview_path, lng = arr.length;
         for (k; k<lng; k++) {
             posx = Math.pow( Math.abs(point.k-arr[k].k), 2);
-            posy = Math.pow( Math.abs(point.A-arr[k].A), 2);
+            posy = Math.pow( Math.abs( (point.A || point.B) - (arr[k].A || arr[k].B) ), 2);
             dist = Math.sqrt(posx+posy);
             if (dist>= 0.08) {
                 this.routeMarker.push( point );
@@ -273,9 +273,8 @@ Ext.define('App.view.TripPlaner' ,{
         if(this.routeMarker.length>0) {
             var m = 0, arr = this.routeMarker, lng = arr.length;
             for (m; m<lng; m++) {
-                this.findRadiusStations( this.routeMarker[m] );
+                this.findRadiusStations( this.routeMarker[m].k, (this.routeMarker[m].A || this.routeMarker[m].B) );
             }
-
 //            this.intBulder = setInterval(function(){
 //                var that = Ext.getCmp('tripPlaner');
 //                that.findRadiusStations( that.routeMarker.pop() );
@@ -284,8 +283,8 @@ Ext.define('App.view.TripPlaner' ,{
         }
     },
 
-    findRadiusStations:function(point) {
-//        console.log( point.k +"   "+ point.A );
+    findRadiusStations:function( startX, startY ) {
+
         var map = Ext.getCmp("mapPanel").gMap;
 //        markerViewArr
         var k= 0, arr = Ext.getCmp("mapPanel").markerViewArr, lng = arr.length, coordx, coordy, posx, posy, dist;
@@ -294,8 +293,8 @@ Ext.define('App.view.TripPlaner' ,{
             coordx = arr[k].model.get("latitude");
             coordy = arr[k].model.get("longitude");
 
-            posx = Math.pow( Math.abs(point.k-coordx), 2);
-            posy = Math.pow( Math.abs(point.A-coordy), 2);
+            posx = Math.pow( Math.abs(startX-coordx), 2);
+            posy = Math.pow( Math.abs(startY-coordy), 2);
             dist = Math.sqrt(posx+posy);
 
             if (dist>0.1 && arr[k].model.get('viewRoute')!=true) {
