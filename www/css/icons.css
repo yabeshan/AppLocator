@@ -162,11 +162,11 @@
 
 /*************************************** Payment Types ***************************************/
 .holder-payment-type {
-    position:absolute;height:20%;top:75%;left:10px;right:10px;border-top: 1px solid #CCC
+    position:absolute;height:20%;top:70%;left:10px;right:10px;border-top: 1px solid #CCC
 }
 
 #payment-any {
-    position: absolute;height:30px;top:30px;margin-left:0%;cursor: pointer;
+    position: absolute;height:30px;top:40px;margin-left:-5px;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -175,7 +175,7 @@
 }
 
 #payment-clean{
-    position: absolute;height:30px;top:30px;margin-left:25%;cursor: pointer;
+    position: absolute;height:30px;top:40px;margin-left:27%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -184,7 +184,7 @@
 }
 
 #payment-visa{
-    position: absolute;height:30px;top:30px;margin-left:80%;cursor: pointer;
+    position: absolute;height:30px;top:40px;margin-left:80%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -193,7 +193,7 @@
 }
 
 #payment-master {
-    position: absolute;height:30px;top:70px;margin-left:0%;cursor: pointer;
+    position: absolute;height:30px;top:90px;margin-left:-5px;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -202,7 +202,7 @@
 }
 
 #payment-amex {
-    position: absolute;height:30px;top:70px;margin-left:25%;cursor: pointer;
+    position: absolute;height:30px;top:90px;margin-left:27%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -211,7 +211,7 @@
 }
 
 #payment-discover {
-    position: absolute;height:30px;top:70px;margin-left:55%;cursor: pointer;
+    position: absolute;height:30px;top:90px;margin-left:55%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -220,7 +220,7 @@
 }
 
 #payment-voyager {
-    position: absolute;height:30px;top:70px;margin-left:80%;cursor: pointer;
+    position: absolute;height:30px;top:90px;margin-left:80%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -229,7 +229,7 @@
 }
 
 #payment-wex {
-    position: absolute;height:30px;top:110px;margin-left:0%;cursor: pointer;
+    position: absolute;height:30px;top:140px;margin-left:-5px;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -238,7 +238,7 @@
 }
 
 #payment-cash {
-    position: absolute;height:30px;top:110px;margin-left:25%;cursor: pointer;
+    position: absolute;height:30px;top:140px;margin-left:27%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -247,7 +247,7 @@
 }
 
 #payment-other {
-    position: absolute;height:30px;top:110px;margin-left:55%;cursor: pointer;
+    position: absolute;height:30px;top:140px;margin-left:55%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }

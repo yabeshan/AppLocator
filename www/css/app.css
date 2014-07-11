@@ -284,17 +284,17 @@ body {
 }
 @media screen and (min-width:300px) {
     .menu-zoom {
-        zoom: 27%;
+        zoom: 29%;
     }
 }
 @media screen and (min-width:450px) {
     .menu-zoom {
-        zoom: 42%;
+        zoom: 45%;
     }
 }
 @media screen and (min-width:1000px) {
     .menu-zoom {
-        zoom: 47%;
+        zoom: 52%;
     }
 }
 
@@ -438,14 +438,14 @@ input::-webkit-input-placeholder {
 }
 
 .tp-input-point {
-    padding-left: 10px; border: none;height: 35px;width:270px;
+    padding-left: 10px; border: none;height: 35px;width:255px;
 }
 .holder-trip-point {
     position: relative;
     border-bottom: 1px solid #666;width:320px;left:50%;margin-left: -160px;
 }
 .holder-trip-point-delete {
-    position: absolute;top: -26px;right: 27px;
+    position: absolute;top: -26px;right: 34px;
 }
 .holder-trip-point-change {
     position: absolute;top: -14px;right: -3px;
