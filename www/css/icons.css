@@ -3,7 +3,7 @@
 
 /*************************************** Fuel Type *******************************************/
 .holder-fuel-type {
-    position:absolute;height:20%;left:20px;right:20px;
+    position:absolute;height:20%;left:10px;right:10px;
 }
 
 #fuel-type-cng-info {
@@ -49,7 +49,7 @@
 
 /*************************************** Vehicle Type ****************************************/
 .holder-vehicle-type {
-    position:absolute;height:20%;top:20%;left:20px;right:20px;border-top: 1px solid #CCC
+    position:absolute;height:20%;top:20%;left:10px;right:10px;border-top: 1px solid #CCC
 }
 
 #vehicle-type-cars{
@@ -78,13 +78,13 @@
 
 /*************************************** Station Status **********************************/
 .holder-station-status {
-    position:absolute;height:20%;top:40%;left:20px;right:20px;border-top: 1px solid #CCC
+    position:absolute;height:20%;top:40%;left:10px;right:10px;border-top: 1px solid #CCC
 }
 
 #station-operational {
     position: absolute;width:160px;height:30px;top:30px;margin-left:0%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #station-operational.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -93,7 +93,7 @@
 #station-under {
     position: absolute;width:250px;height:30px;top:30px;margin-left:30%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #station-under.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -102,7 +102,7 @@
 #station-coming {
     position: absolute;width:160px;height:30px;top:30px;margin-left:70%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #station-coming.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -110,13 +110,13 @@
 
 /*************************************** Hours of Operation **********************************/
 .holder-hours-type {
-    position:absolute;height:20%;top:55%;left:20px;right:50%;border-top: 1px solid #CCC
+    position:absolute;height:20%;top:55%;left:10px;right:50%;border-top: 1px solid #CCC
 }
 
 #hours-type-24 {
     position: absolute;width:142px;height:30px;top:30px;margin-left:0%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #hours-type-24.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -125,7 +125,7 @@
 #hours-type-now {
     position: absolute;width:142px;height:30px;top:30px;margin-left:40%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #hours-type-now.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -133,7 +133,7 @@
 
 /*************************************** Flow Rate *******************************************/
 .holder-flow-type {
-    position:absolute;height:20%;top:55%;left:50%;right:20px;border-top: 1px solid #CCC
+    position:absolute;height:20%;top:55%;left:50%;right:10px;border-top: 1px solid #CCC
 }
 
 #flow-rate-low {
@@ -162,13 +162,13 @@
 
 /*************************************** Payment Types ***************************************/
 .holder-payment-type {
-    position:absolute;height:20%;top:75%;left:20px;right:20px;border-top: 1px solid #CCC
+    position:absolute;height:20%;top:75%;left:10px;right:10px;border-top: 1px solid #CCC
 }
 
 #payment-any {
     position: absolute;height:30px;top:30px;margin-left:0%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-any.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -177,7 +177,7 @@
 #payment-clean{
     position: absolute;height:30px;top:30px;margin-left:25%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-clean.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -186,7 +186,7 @@
 #payment-visa{
     position: absolute;height:30px;top:30px;margin-left:80%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-visa.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -195,7 +195,7 @@
 #payment-master {
     position: absolute;height:30px;top:70px;margin-left:0%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-master.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -204,7 +204,7 @@
 #payment-amex {
     position: absolute;height:30px;top:70px;margin-left:25%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-amex.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -213,7 +213,7 @@
 #payment-discover {
     position: absolute;height:30px;top:70px;margin-left:55%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-discover.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -222,7 +222,7 @@
 #payment-voyager {
     position: absolute;height:30px;top:70px;margin-left:80%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-voyager.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -231,7 +231,7 @@
 #payment-wex {
     position: absolute;height:30px;top:110px;margin-left:0%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-wex.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -240,7 +240,7 @@
 #payment-cash {
     position: absolute;height:30px;top:110px;margin-left:25%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-cash.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;
@@ -249,7 +249,7 @@
 #payment-other {
     position: absolute;height:30px;top:110px;margin-left:55%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
-    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #999999;
+    background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-other.select {
     background: url('../img/icons-dotbg.png') no-repeat 0px -30px;color: #6cb25e;

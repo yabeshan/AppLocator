@@ -25,6 +25,7 @@ Ext.define('App.view.MapPanel', {
 
         var that = Ext.getCmp("mapPanel");
         var k=0, arr=that.markerViewArr, lng=arr.length, posx, posy, dist, point, pointMin, distMin=200;
+        if (lng==0) return;
         for (k;k<lng;k++) {
             point=arr[k];
             posx = Math.pow( Math.abs( lat - arr[k].model.get("latitude") ), 2);
@@ -76,7 +77,8 @@ Ext.define('App.view.MapPanel', {
 
         Ext.getCmp("mapPanel").gMap.setCenter( new google.maps.LatLng ( lat, lon ) );
 
-        Ext.getCmp("mapPanel").gMap.setZoom( mapZoom-1 );
+        if (mapZoom<2) mapZoom=2;
+        Ext.getCmp("mapPanel").gMap.setZoom( mapZoom );
     },
 
     update: function() {
@@ -89,7 +91,7 @@ Ext.define('App.view.MapPanel', {
     addSpinner: function(){
         this.setMasked({
             xtype: 'loadmask',
-            message: 'Loading map...',
+            message: 'Loading...',
             indicator: true,
             hidden: false
         });
@@ -175,6 +177,9 @@ Ext.define('App.view.MapPanel', {
             result = document.getElementById('pac-input').getElementsByTagName('input')[0].value;
         }
 
+        var mapPanel = Ext.getCmp("mapPanel");
+        mapPanel.addSpinner();
+
         var geocoder = new google.maps.Geocoder();
         geocoder.geocode({'address' : result}, function(results, status){
 //            alert(results +"   "+ status);
@@ -197,6 +202,9 @@ Ext.define('App.view.MapPanel', {
                 that.infowindow = new google.maps.InfoWindow(options);
                 Ext.getCmp("mapPanel").nearStationForPoint( lat, lng );
             }
+            setTimeout(function(){
+                mapPanel.unmask();
+            },500);
         });
     },
 
@@ -228,6 +236,7 @@ Ext.define('App.view.MapPanel', {
             that.addMarker( record, false );
         });
         that.onSearchTypeStations();
+        that.nearStationForPoint( that.userCoord.lat, that.userCoord.lon );
     },
 
     addMarker: function( model, positionFlag ) {
@@ -284,10 +293,11 @@ Ext.define('App.view.MapPanel', {
                 var lon=position.coords.longitude;
                 Ext.getCmp("mapPanel").viewInfoWindow("You are here. ", lat, lon);
                 Ext.getCmp("mapPanel").nearStationForPoint( lat, lon );
+                Ext.getCmp("mapPanel").userCoord = {'lat':lat, 'lon':lon};
             }, function(error){
 //                alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
                 Ext.getCmp("mapPanel").viewInfoWindow("Error: The Geolocation service failed. ");
-            }, { timeout: 2000 });
+            }, { timeout: 12000 });
         } else{
 //            alert("navigator.geolocation not supported");
             Ext.getCmp("mapPanel").viewInfoWindow("Error: Your browser doesn\'t support geolocation. ");
@@ -295,6 +305,7 @@ Ext.define('App.view.MapPanel', {
     },
 
     userLocation:null,
+    userCoord:null,
     viewInfoWindow: function(content, lat, lon) {
         var mapZoom = 10;
         if (lat==null || lon==null) {
