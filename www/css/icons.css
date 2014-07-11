@@ -53,7 +53,7 @@
 }
 
 #vehicle-type-cars{
-    position: absolute;width:86px;height:47px;top:21px;margin-left:5%;cursor: pointer;
+    position: absolute;width:86px;height:47px;top:21px;margin-left:0%;cursor: pointer;
     background: url('../img/icons-vehicle-type.png') no-repeat 0px -48px;
 }
 #vehicle-type-cars.select {
@@ -61,7 +61,7 @@
 }
 
 #vehicle-type-box{
-    position: absolute;width:97px;height:47px;top:21px;margin-left:30%;cursor: pointer;
+    position: absolute;width:97px;height:47px;top:21px;margin-left:25%;cursor: pointer;
     background: url('../img/icons-vehicle-type.png') no-repeat -83px -48px;
 }
 #vehicle-type-box.select {
@@ -69,7 +69,7 @@
 }
 
 #vehicle-type-semi{
-    position: absolute;width:152px;height:47px;top:21px;margin-left:60%;cursor: pointer;
+    position: absolute;width:152px;height:47px;top:21px;margin-left:55%;cursor: pointer;
     background: url('../img/icons-vehicle-type.png') no-repeat -183px -48px;
 }
 #vehicle-type-semi.select {
@@ -82,7 +82,7 @@
 }
 
 #station-operational {
-    position: absolute;width:160px;height:30px;top:30px;margin-left:0%;cursor: pointer;
+    position: absolute;width:160px;height:30px;top:35px;margin-left:0%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -91,7 +91,7 @@
 }
 
 #station-under {
-    position: absolute;width:250px;height:30px;top:30px;margin-left:30%;cursor: pointer;
+    position: absolute;width:250px;height:30px;top:35px;margin-left:30%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -100,7 +100,7 @@
 }
 
 #station-coming {
-    position: absolute;width:160px;height:30px;top:30px;margin-left:70%;cursor: pointer;
+    position: absolute;width:160px;height:30px;top:35px;margin-left:70%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -110,11 +110,11 @@
 
 /*************************************** Hours of Operation **********************************/
 .holder-hours-type {
-    position:absolute;height:20%;top:55%;left:10px;right:50%;border-top: 1px solid #CCC
+    position:absolute;height:20%;top:52%;left:10px;right:50%;border-top: 1px solid #CCC
 }
 
 #hours-type-24 {
-    position: absolute;width:142px;height:30px;top:30px;margin-left:0%;cursor: pointer;
+    position: absolute;width:142px;height:30px;top:40px;margin-left:0%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -123,7 +123,7 @@
 }
 
 #hours-type-now {
-    position: absolute;width:142px;height:30px;top:30px;margin-left:40%;cursor: pointer;
+    position: absolute;width:142px;height:30px;top:40px;margin-left:40%;cursor: pointer;
     padding-left: 40px; padding-top: 5px;font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
@@ -133,11 +133,11 @@
 
 /*************************************** Flow Rate *******************************************/
 .holder-flow-type {
-    position:absolute;height:20%;top:55%;left:50%;right:10px;border-top: 1px solid #CCC
+    position:absolute;height:20%;top:52%;left:50%;right:10px;border-top: 1px solid #CCC
 }
 
 #flow-rate-low {
-    position: absolute;width:55px;height:47px;top:21px;margin-left:0%;cursor: pointer;
+    position: absolute;width:55px;height:47px;top:30px;margin-left:0%;cursor: pointer;
     background: url('../img/icons-flow-rate.png') no-repeat 0px 0px;
 }
 #flow-rate-low.select {
@@ -145,7 +145,7 @@
 }
 
 #flow-rate-medium {
-    position: absolute;width:55px;height:47px;top:21px;margin-left:35%;cursor: pointer;
+    position: absolute;width:55px;height:47px;top:30px;margin-left:35%;cursor: pointer;
     background: url('../img/icons-flow-rate.png') no-repeat -60px 0px;
 }
 #flow-rate-medium.select {
@@ -153,7 +153,7 @@
 }
 
 #flow-rate-hight {
-    position: absolute;width:55px;height:47px;top:21px;margin-left:70%;cursor: pointer;
+    position: absolute;width:55px;height:47px;top:30px;margin-left:70%;cursor: pointer;
     background: url('../img/icons-flow-rate.png') no-repeat -120px 0px;
 }
 #flow-rate-hight.select {
