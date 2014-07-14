@@ -1,0 +1,64 @@
+[
+    {   "StationId":"b39d926c-06f1-4eb2-b10a-00c93a60f3db",
+//        "StationIdNumber":14501,
+//        "StationName":"Clean Energy - Chicago Clybourn",
+//        "Longitude":"-87.687673",
+//        "Latitude":"41.938867",
+        "StationType":"C",
+//        "StationStatus":"Active",
+//        "StationAddress":"3164 North Clybourn Ave",
+//        "StationCity":"Chicago",
+//        "StationState":"IL",
+//        "StationZip":"60618",
+//        "StationCountry":"USA",
+        "StationTypePublic":"Yes",
+        "StationTypePrivate":"No",
+
+//        "StationFuelTypeCNG":"Yes",
+//        "StationFuelTypeLNG":"No",
+//        "StationFuelTypeDSL":"Yes",
+//        "StationFuelTypeRDM":"Yes",
+
+        "HoursOpen":"No",
+//        "CNG3000PSI":"Yes",
+//        "CNG3000StandardNozzle":"No",
+//        "CNG3000HighFlowNozzle":"No",
+
+
+
+//        "VehicleTypesCarsAndVans":"No",
+//        "VehicleTypesBoxTrucks":"No",
+//        "VehicleTypesSemiTrucks":"Yes",
+
+
+        "PaymentTypesAcceptedMasterCard":null,
+        "PaymentTypesAcceptedWrightExpress":"Yes",
+        "PaymentTypesAcceptedCleanEnergyFuelCard":"Yes",
+        "PaymentTypesAcceptedVisa":"Yes",
+        "PaymentTypesAcceptedDiscover":"Yes",
+        "PaymentTypesAcceptedVoyager":"No",
+        "PaymentTypesAcceptedTranStar":"Yes",
+        "PaymentTypesAcceptedNaturalFuels":"Yes",
+
+        "CNG3600PSI":null,
+        "CNG3600StandardNozzle":null,
+        "CNG3600HighFlowNozzle":null,
+        "CNGCapacity":null,
+        "LNGGreenHoses":null,
+        "LNGBlueHoses":null,
+        "DieselHoses":null,
+        "FuelingLanes":null,
+        "Canopy":null,
+        "SCFMCNG":null,
+        "GGE_MinCNG":null,
+        "DispensingRateCNG":null,
+        "SCFMLNG":null,
+        "GGE_MinLNG":null,
+        "DispensingRateLNG":null,
+
+//        "HoursOpenFrom":null,
+//        "HoursOpenTo":null,
+//        "HoursOpenIs24H":"Yes"
+    },
+
+    {"StationId":"34326b98-6e6f-4d8c-9000-025f91c0ce9c","StationIdNumber":20256,"StationName":"Clean Energy - Denver Broadway","Longitude":"-104.988205","Latitude":"39.80867","StationType":"C","StationStatus":"Coming Soon","StationAddress":"6185 Broadway","StationCity":"Denver","StationState":"CO","StationZip":"80116","StationCountry":"USA","StationTypePublic":"Yes","StationTypePrivate":"No","StationFuelTypeCNG":"Yes","StationFuelTypeLNG":"No","HoursOpen":"Yes","CNG3000PSI":"Yes","CNG3600PSI":null,"VehicleTypesCarsAndVans":"Yes","VehicleTypesBoxTrucks":"Yes","VehicleTypesSemiTrucks":"Yes","PaymentTypesAcceptedCleanEnergyFuelCard":"No","PaymentTypesAcceptedMasterCard":null,"PaymentTypesAcceptedVisa":"No","PaymentTypesAcceptedDiscover":"Yes","PaymentTypesAcceptedWrightExpress":"No","PaymentTypesAcceptedVoyager":"Yes","PaymentTypesAcceptedTranStar":"No","PaymentTypesAcceptedNaturalFuels":"No","CNG3000StandardNozzle":"No","CNG3000HighFlowNozzle":"Yes","CNG3600StandardNozzle":null,"CNG3600HighFlowNozzle":null,"CNGCapacity":null,"LNGGreenHoses":null,"LNGBlueHoses":null,"DieselHoses":null,"FuelingLanes":null,"Canopy":null,"SCFMCNG":null,"GGE_MinCNG":null,"DispensingRateCNG":null,"SCFMLNG":null,"GGE_MinLNG":null,"DispensingRateLNG":null,"StationFuelTypeDSL":"No","StationFuelTypeRDM":"No","HoursOpenFrom":null,"HoursOpenTo":null,"HoursOpenIs24H":"Yes"},{"StationId":"3dc7920d-8d38-457b-9c0f-03298dd3e7ea","StationIdNumber":13196,"StationName":"Clean Energy - LAX -

@@ -10,7 +10,7 @@ Ext.define('App.view.PopupPanel' ,{
         style:'position:absolute',
         items:[{
             cls:'info-zoom',
-            style:'zoom:89%;font-size:14px;position:relative;background-color: #FFF;height:100%;width:100%;color:#6cb25e;font-weight:bold;padding-top:10px',
+            style:'zoom:89%;font-size:16px;position:relative;background-color: #FFF;height:100%;width:100%;color:#6cb25e;font-weight:bold;padding-top:10px',
             html:'<div class="holder-fuel-type">Fuel Type<div id="fuel-type-cng" class="select filter-img-zoom"></div>'
                     +'<div id="fuel-type-lng" class="select filter-img-zoom"></div><div id="fuel-type-disel" class="select filter-img-zoom"></div>'
                     +'<div id="fuel-type-redeem" class="select filter-img-zoom"></div></div>'
@@ -98,49 +98,61 @@ Ext.define('App.view.PopupPanel' ,{
 
     changeFuelType: function(cmp) {
         if (cmp.hasCls('select')) cmp.removeCls('select');
-        else cmp.addCls('select');
+        else {
+            cmp.addCls('select');
+
+            if (cmp.id=="vehicle-type-semi") {
+                Ext.get("vehicle-type-box").addCls('select');
+                Ext.get("vehicle-type-cars").addCls('select');
+            } else if (cmp.id=="vehicle-type-box") {
+                Ext.get("vehicle-type-cars").addCls('select');
+            }
+        }
     },
 
     applyHandler: function() {
-        var cngFlag = Ext.get("fuel-type-cng").hasCls('select'),
-            lngFlag = Ext.get("fuel-type-lng").hasCls('select'),
-            parent = Ext.getCmp('changeInfoPanel'),
+        var parent = Ext.getCmp('changeInfoPanel'),
             panel = Ext.getCmp('mapPanel'),
+
+            cngFlag = Ext.get("fuel-type-cng").hasCls('select'),
+            lngFlag = Ext.get("fuel-type-lng").hasCls('select'),
+
             operFlag = Ext.get("station-operational").hasCls('select'),
             underFlag = Ext.get("station-under").hasCls('select'),
             comingFlag = Ext.get("station-coming").hasCls('select');
 
-        if (   (cngFlag && panel.searchFilter.fuel.indexOf( 0 )<0)
-            || (!cngFlag && panel.searchFilter.fuel.indexOf( 0 )>=0) ) {
+        if (cngFlag != panel.searchFilter.StationFuelTypeCNG) {
             parent.changeSelectFilter("cngBtn");
         }
-
-        if (   (lngFlag && panel.searchFilter.fuel.indexOf( 1 )<0)
-            || (!lngFlag && panel.searchFilter.fuel.indexOf( 1 )>=0) ) {
+        if (lngFlag != panel.searchFilter.StationFuelTypeLNG) {
             parent.changeSelectFilter("lngBtn");
         }
 
-        if ( (operFlag && underFlag && comingFlag) || (!operFlag && !underFlag && !comingFlag) ) {
-            panel.searchFilter.status= [0, 1, 2];
-        } else {
-            if ( operFlag && panel.searchFilter.status.indexOf( 0 )<0) {
-                panel.searchFilter.status.push( 0 );
-            } else if (!operFlag && panel.searchFilter.status.indexOf( 0 )>=0) {
-                panel.searchFilter.status.splice( panel.searchFilter.status.indexOf( 0 ), 1 );
-            }
+        panel.searchFilter.StationStatusActive = operFlag;
+        panel.searchFilter.StationStatusUnder = underFlag;
+        panel.searchFilter.StationStatusComing = comingFlag;
 
-            if ( comingFlag && panel.searchFilter.status.indexOf( 1 )<0) {
-                panel.searchFilter.status.push( 1 );
-            } else if (!comingFlag && panel.searchFilter.status.indexOf( 1 )>=0) {
-                panel.searchFilter.status.splice( panel.searchFilter.status.indexOf( 1 ), 1 );
-            }
+        panel.searchFilter.VehicleTypesCarsAndVans = Ext.get("vehicle-type-cars").hasCls('select');
+        panel.searchFilter.VehicleTypesBoxTrucks = Ext.get("vehicle-type-box").hasCls('select');
+        panel.searchFilter.VehicleTypesSemiTrucks = Ext.get("vehicle-type-semi").hasCls('select');
 
-            if ( underFlag && panel.searchFilter.status.indexOf( 2 )<0) {
-                panel.searchFilter.status.push( 2 );
-            } else if (!underFlag && panel.searchFilter.status.indexOf( 2 )>=0) {
-                panel.searchFilter.status.splice( panel.searchFilter.status.indexOf( 2 ), 1 );
-            }
-        }
+        panel.searchFilter.HoursOpenIs24H = Ext.get("hours-type-24").hasCls('select');
+        panel.searchFilter.HoursOpenNow = Ext.get("hours-type-now").hasCls('select');
+
+        panel.searchFilter.FlowRateLow = Ext.get("flow-rate-low").hasCls('select');
+        panel.searchFilter.FlowRateMedium = Ext.get("flow-rate-medium").hasCls('select');
+        panel.searchFilter.FlowRateHigh = Ext.get("flow-rate-hight").hasCls('select');
+
+        panel.searchFilter.paymentAny = Ext.get("payment-any").hasCls('select');
+        panel.searchFilter.paymentMastercard = Ext.get("payment-master").hasCls('select');
+        panel.searchFilter.paymentWEX = Ext.get("payment-wex").hasCls('select');
+        panel.searchFilter.paymentCleanEnergy = Ext.get("payment-clean").hasCls('select');
+        panel.searchFilter.paymentAmex = Ext.get("payment-amex").hasCls('select');
+        panel.searchFilter.paymentCash = Ext.get("payment-cash").hasCls('select');
+        panel.searchFilter.paymentDiscover = Ext.get("payment-discover").hasCls('select');
+        panel.searchFilter.paymentOther = Ext.get("payment-other").hasCls('select');
+        panel.searchFilter.paymentVisa = Ext.get("payment-visa").hasCls('select');
+        panel.searchFilter.paymentVoyager = Ext.get("payment-voyager").hasCls('select');
 
         panel.onSearchTypeStations();
         parent.hidePopup1();
@@ -174,7 +186,7 @@ Ext.define('App.view.PopupPanel' ,{
         if (Ext.get("cngBtn").hasCls('main-page-bottom-toolbar') ) parent.changeSelectFilter("cngBtn");
         if (Ext.get("lngBtn").hasCls('main-page-bottom-toolbar') ) parent.changeSelectFilter("lngBtn");
 
-        Ext.getCmp('mapPanel').searchFilter = {'fuel':[0, 1, 2], 'status':[0, 2]};
+        Ext.getCmp('mapPanel').searchFilter = Ext.getCmp('mapPanel').searchFilterDefault();
         Ext.getCmp('mapPanel').onSearchTypeStations();
     },
 
@@ -245,32 +257,32 @@ Ext.define('App.view.ChangeInfoPanel' ,{
     },
 
     changeSelectFilter: function(id) {
-        var index, btn, panel = Ext.getCmp('mapPanel');
+        var selectFlag, panel = Ext.getCmp('mapPanel');
         if (id=="lngBtn") {
-            index = panel.searchFilter.fuel.indexOf( 1 );
-            if (index>=0) {
+            selectFlag = Ext.get("lngBtn").hasCls('main-page-bottom-toolbar-select');
+            if( selectFlag ) {
                 Ext.get("lngTop").setVisible(false);
                 Ext.get("lngBtn").removeCls("main-page-bottom-toolbar-select");
                 Ext.get("lngBtn").addCls("main-page-bottom-toolbar");
-                panel.searchFilter.fuel.splice( index, 1);
+                panel.searchFilter.StationFuelTypeLNG = false;
             } else {
                 Ext.get("lngTop").setVisible(true);
                 Ext.get("lngBtn").removeCls("main-page-bottom-toolbar");
                 Ext.get("lngBtn").addCls("main-page-bottom-toolbar-select");
-                panel.searchFilter.fuel.push(1);
+                panel.searchFilter.StationFuelTypeLNG = true;
             }
         } else if (id=="cngBtn") {
-            index = panel.searchFilter.fuel.indexOf( 0 );
-            if (index>=0) {
+            selectFlag = Ext.get("cngBtn").hasCls('main-page-bottom-toolbar-select');
+            if ( selectFlag ) {
                 Ext.get("cngTop").setVisible(false);
                 Ext.get("cngBtn").removeCls("main-page-bottom-toolbar-select");
                 Ext.get("cngBtn").addCls("main-page-bottom-toolbar");
-                panel.searchFilter.fuel.splice( index, 1);
+                panel.searchFilter.StationFuelTypeCNG = false;
             } else {
                 Ext.get("cngTop").setVisible(true);
                 Ext.get("cngBtn").removeCls("main-page-bottom-toolbar");
                 Ext.get("cngBtn").addCls("main-page-bottom-toolbar-select");
-                panel.searchFilter.fuel.push(0);
+                panel.searchFilter.StationFuelTypeCNG = true;
             }
         }
     },

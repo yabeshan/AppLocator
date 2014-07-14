@@ -28,21 +28,21 @@ Ext.define('App.view.MapPanel', {
         if (lng==0) return;
         for (k;k<lng;k++) {
             point=arr[k];
-            posx = Math.pow( Math.abs( lat - arr[k].model.get("latitude") ), 2);
-            posy = Math.pow( Math.abs( lon - arr[k].model.get("longitude") ), 2);
+            posx = Math.pow( Math.abs( lat - arr[k].model.get("Latitude") ), 2);
+            posy = Math.pow( Math.abs( lon - arr[k].model.get("Longitude") ), 2);
             dist = Math.sqrt(posx+posy);
             if (dist<distMin) {
                 distMin = dist;
                 pointMin = point;
             }
         }
-//        console.log( lat +"    "+ pointMin.model.get("latitude") );
-//        console.log( lon +"    "+ pointMin.model.get("longitude") );
+//        console.log( lat +"    "+ pointMin.model.get("Latitude") );
+//        console.log( lon +"    "+ pointMin.model.get("Longitude") );
 
         var ZOOM_MAX = 21;
         var points = [
             { lat: lat, lng: lon },
-            { lat: pointMin.model.get("latitude"), lng: pointMin.model.get("longitude") }
+            { lat: pointMin.model.get("Latitude"), lng: pointMin.model.get("Longitude") }
         ];
         var markers = [];
         var bounds = new google.maps.LatLngBounds();
@@ -200,6 +200,7 @@ Ext.define('App.view.MapPanel', {
                 };
 
                 that.infowindow = new google.maps.InfoWindow(options);
+                Ext.getCmp('mapPanel').onSearchTypeStations();
                 Ext.getCmp("mapPanel").nearStationForPoint( lat, lng );
             }
             setTimeout(function(){
@@ -235,20 +236,35 @@ Ext.define('App.view.MapPanel', {
         Ext.getStore('StationStore').each(function(record,id){
             that.addMarker( record, false );
         });
+        that.searchFilter = that.searchFilterDefault();
         that.onSearchTypeStations();
         that.nearStationForPoint( that.userCoord.lat, that.userCoord.lon );
     },
 
     addMarker: function( model, positionFlag ) {
-        var lat = model.get('latitude');
-        var lon = model.get('longitude');
+        var lat = model.get('Latitude');
+        var lon = model.get('Longitude');
 
-        var fuel = model.get('fuel');
-
-        var icon = (fuel==0) ? 'img/map-point-blue.png' : ( (fuel==1) ? 'img/map-point-green.png' : 'img/map-point-double.png' );
-        var status = model.get('status');
-        if (status==1) icon = (fuel==0) ? 'img/map-point-blue-cs.png' : ( (fuel==1) ? 'img/map-point-green-cs.png' : 'img/map-point-double-cs.png' );
-        if (status==2) icon = 'img/map-point-grey-cs.png';
+        var status = model.get('StationStatus'), icon;
+        if (status=='Coming Soon') {
+            if (model.get('StationFuelTypeCNG')=='Yes' && model.get('StationFuelTypeLNG')=='No') {
+                icon = 'img/map-point-blue-cs.png';
+            } else if (model.get('StationFuelTypeLNG')=='Yes' && model.get('StationFuelTypeCNG')=='No') {
+                icon = 'img/map-point-green-cs.png';
+            } else {
+                icon = 'img/map-point-double-cs.png';
+            }
+        } else if (status=='Under Maintenance') {
+            icon = 'img/map-point-grey-cs.png';
+        } else {
+            if (model.get('StationFuelTypeCNG')=='Yes' && model.get('StationFuelTypeLNG')=='No') {
+                icon = 'img/map-point-blue.png';
+            } else if (model.get('StationFuelTypeLNG')=='Yes' && model.get('StationFuelTypeCNG')=='No') {
+                icon = 'img/map-point-green.png';
+            } else {
+                icon = 'img/map-point-double.png';
+            }
+        }
 
         var marker = new google.maps.Marker({
 //            map: this.gMap,
@@ -256,11 +272,9 @@ Ext.define('App.view.MapPanel', {
             icon: icon,
             position: new google.maps.LatLng ( lat , lon),
             model: model,
-            title: model.get("name") +", "+ model.get("zip") +", "
-                + model.get("state") +", "+ model.get("city") +", "+ model.get("address")
+            title: model.get("StationName") +", "+ model.get("StationZip") +", "+ model.get("StationCountry") +", "
+                + model.get("StationState") +", "+ model.get("StationCity") +", "+ model.get("StationAddress")
         });
-
-//        if (model.get('status')==2) marker.setMap(null);
 
         if (positionFlag) {
             var centerCoord = new google.maps.LatLng ( lat, lon );
@@ -397,32 +411,93 @@ Ext.define('App.view.MapPanel', {
         this.gMap.setMapTypeId( val );
     },
 
-    searchFilter:{'fuel':[0, 1, 2], 'status':[0, 2]},
-    onSearchTypeStations: function() {
-        var k=0, lng =this.markerArr.length, marker, fuel, typeFlag, status, statusFlag;
-        this.markerViewArr = [];
+    searchFilter:null,
+    searchFilterDefault: function() {
+        return {
+            'StationFuelTypeCNG'    :true,
+            'StationFuelTypeLNG'    :true,
+            'StationFuelTypeDSL'    :true,
+            'StationFuelTypeRDM'    :true,
 
-        if (this.searchFilter.fuel.length==1) {
-            if (this.searchFilter.fuel.indexOf(2)>=0) this.searchFilter.fuel = [];
-            else this.searchFilter.fuel.push(2);
+            'StationStatusActive'   :true,
+            'StationStatusUnder'    :true,
+            'StationStatusComing'   :false,
+
+            'VehicleTypesCarsAndVans'   :false,
+            'VehicleTypesBoxTrucks'     :false,
+            'VehicleTypesSemiTrucks'    :false,
+
+            'HoursOpenIs24H'        :false,
+            'HoursOpenNow'          :false,
+            'FlowRateLow'           :false,
+            'FlowRateMedium'        :false,
+            'FlowRateHigh'          :false,
+
+            'paymentAny'        :false,
+            'paymentMastercard' :false,
+            'paymentWEX'        :false,
+            'paymentCleanEnergy':false,
+            'paymentAmex'       :false,
+            'paymentCash'       :false,
+            'paymentDiscover'   :false,
+            'paymentOther'      :false,
+            'paymentVisa'       :false,
+            'paymentVoyager'    :false
         }
+    },
+    onSearchTypeStations: function() {
+        var k=0, lng =this.markerArr.length, marker,
+            typeFlag, typeCNG, typeLNG, typeDSL, typeRDM,
+            statusFlag, hoursFlag, flowFlag,
+            carsFlag, carsVans, carsBox, carsSemi;
+        this.markerViewArr = [];
 
         for (k;k<lng;k++) {
             marker = this.markerArr[k];
 
-            fuel = marker.model.get('fuel');
-            typeFlag = this.searchFilter.fuel.indexOf( Number(fuel) )>=0;
+            typeCNG = ( this.searchFilter.StationFuelTypeCNG && marker.model.get('StationFuelTypeCNG')=="Yes" );
+            typeLNG = ( this.searchFilter.StationFuelTypeLNG && marker.model.get('StationFuelTypeLNG')=="Yes" );
+            typeDSL = ( this.searchFilter.StationFuelTypeDSL && marker.model.get('StationFuelTypeDSL')=="Yes" );
+            typeRDM = ( this.searchFilter.StationFuelTypeRDM && marker.model.get('StationFuelTypeRDM')=="Yes" );
+            typeFlag = (typeCNG || typeLNG);
 
-            status = marker.model.get('status');
-            statusFlag = this.searchFilter.status.indexOf( Number(status) )>=0;
+            statusFlag =
+                    ( this.searchFilter.StationStatusActive && marker.model.get('StationStatus')=="Active" ) ||
+                    ( this.searchFilter.StationStatusUnder && marker.model.get('StationStatus')=="Under Maintenance" ) ||
+                    ( this.searchFilter.StationStatusComing && marker.model.get('StationStatus')=="Coming Soon" );
 
-            if (typeFlag && statusFlag) {
+            carsFlag = ( !this.searchFilter.VehicleTypesCarsAndVans && !this.searchFilter.VehicleTypesBoxTrucks && !this.searchFilter.VehicleTypesSemiTrucks );
+            if (carsFlag==false) {
+                carsVans = ( this.searchFilter.VehicleTypesCarsAndVans && marker.model.get('VehicleTypesCarsAndVans')=="Yes" );
+                carsBox = ( this.searchFilter.VehicleTypesBoxTrucks && marker.model.get('VehicleTypesBoxTrucks')=="Yes" );
+                carsSemi = ( this.searchFilter.VehicleTypesSemiTrucks && marker.model.get('VehicleTypesSemiTrucks')=="Yes" );
+                if ( this.searchFilter.VehicleTypesCarsAndVans && this.searchFilter.VehicleTypesBoxTrucks && this.searchFilter.VehicleTypesSemiTrucks ) {
+                    carsFlag = carsVans && carsBox && carsSemi;
+                } else {
+                    carsFlag = carsVans || carsBox || carsSemi;
+                }
+            }
+
+            hoursFlag =
+                    ( !this.searchFilter.HoursOpenIs24H && !this.searchFilter.HoursOpenNow ) ||
+                    ( this.searchFilter.HoursOpenIs24H && this.searchFilter.HoursOpenNow ) ||
+                    ( this.searchFilter.HoursOpenIs24H && marker.model.get('HoursOpenIs24H')=="Yes" ) ||
+                    ( this.searchFilter.HoursOpenNow && (marker.model.get('HoursOpenIs24H')=="Yes" || Math.random()*100>50 ) );
+
+            flowFlag =
+                    ( !this.searchFilter.FlowRateLow && !this.searchFilter.FlowRateMedium && !this.searchFilter.FlowRateHigh ) ||
+                    ( this.searchFilter.FlowRateLow && marker.model.get('CNG3000PSI')=="Yes" ) ||
+                    ( this.searchFilter.FlowRateMedium && marker.model.get('CNG3000StandardNozzle')=="Yes" ) ||
+                    ( this.searchFilter.FlowRateHigh && marker.model.get('CNG3000HighFlowNozzle')=="Yes" );
+
+            if (typeFlag && statusFlag && carsFlag && hoursFlag && flowFlag) {
                 marker.setMap(this.gMap);
                 this.markerViewArr.push( marker );
             } else {
                 marker.setMap(null);
             }
         };
+//        alert(this.markerViewArr.length);
     }
 
 });

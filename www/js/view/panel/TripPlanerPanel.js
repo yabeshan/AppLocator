@@ -266,7 +266,7 @@ Ext.define('App.view.TripPlaner' ,{
                 Ext.getCmp('tripPlaner').viewRadiusStations(response.routes[0]);
             }
             else {
-                alert(status + '. Please enter correct Start and Destination Points');
+                alert(status + '. Please enter correct Start and Destination Points','Error');
             }
             setTimeout(function(){
                 mapPanel.unmask();
@@ -321,14 +321,14 @@ Ext.define('App.view.TripPlaner' ,{
         var k= 0, arr = Ext.getCmp("mapPanel").markerViewArr, lng = arr.length, coordx, coordy, posx, posy, dist;
 
         for (k; k<lng; k++) {
-            coordx = arr[k].model.get("latitude");
-            coordy = arr[k].model.get("longitude");
+            coordx = arr[k].model.get("Latitude");
+            coordy = arr[k].model.get("Longitude");
 
             posx = Math.pow( Math.abs(startX-coordx), 2);
             posy = Math.pow( Math.abs(startY-coordy), 2);
             dist = Math.sqrt(posx+posy);
 
-            if (dist>0.1 && arr[k].model.get('viewRoute')!=true) {
+            if (dist>0.3 && arr[k].model.get('viewRoute')!=true) {
                 arr[k].setMap(null);
             } else {
                 arr[k].model.set({'viewRoute':true});

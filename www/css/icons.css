@@ -30,19 +30,27 @@
     background:  url('../img/icons-fuel-type.png') no-repeat 0px -48px;
 }
 
+#fuel-type-disel-info {
+    position: absolute;top:50%;left:50%;width:60px;height:47px;margin-top: 105px;margin-left: 87px;
+    background:  url('../img/icons-fuel-type.png') no-repeat -120px 0px;
+}
 #fuel-type-disel {
     position: absolute;width:60px;height:47px;top:21px;margin-left:50%;cursor: pointer;
     background:  url('../img/icons-fuel-type.png') no-repeat -120px 0px;
 }
-#fuel-type-disel.select {
+#fuel-type-disel.select, #fuel-type-disel-info.select {
     background:  url('../img/icons-fuel-type.png') no-repeat -120px -51px;
 }
 
+#fuel-type-redeem-info {
+    position: absolute;top:50%;left:50%;width:60px;height:47px;margin-top: 105px;margin-left: -142px;
+    background:  url('../img/icons-fuel-type.png') no-repeat -180px 0px;
+}
 #fuel-type-redeem {
     position: absolute;width:60px;height:47px;top:21px;margin-left:70%;cursor: pointer;
     background:  url('../img/icons-fuel-type.png') no-repeat -180px 0px;
 }
-#fuel-type-redeem.select {
+#fuel-type-redeem.select, #fuel-type-redeem-info.select {
     background:  url('../img/icons-fuel-type.png') no-repeat -180px -48px;
 }
 
@@ -52,27 +60,39 @@
     position:absolute;height:20%;top:20%;left:10px;right:10px;border-top: 1px solid #CCC
 }
 
+#vehicle-type-cars-info{
+    position: absolute;top:50%;left:50%;width:86px;height:47px;margin-top: 251px;margin-left: -190px;zoom: .75;
+    background: url('../img/icons-vehicle-type.png') no-repeat 0px -48px;
+}
 #vehicle-type-cars{
     position: absolute;width:86px;height:47px;top:21px;margin-left:0%;cursor: pointer;
     background: url('../img/icons-vehicle-type.png') no-repeat 0px -48px;
 }
-#vehicle-type-cars.select {
+#vehicle-type-cars.select, #vehicle-type-cars-info.select {
     background: url('../img/icons-vehicle-type.png') no-repeat 2px 0px;
 }
 
+#vehicle-type-box-info{
+    position: absolute;top:50%;left:50%;width:97px;height:47px;margin-top: 251px;margin-left: -100px;zoom: .75;
+    background: url('../img/icons-vehicle-type.png') no-repeat -83px -48px;
+}
 #vehicle-type-box{
     position: absolute;width:97px;height:47px;top:21px;margin-left:25%;cursor: pointer;
     background: url('../img/icons-vehicle-type.png') no-repeat -83px -48px;
 }
-#vehicle-type-box.select {
+#vehicle-type-box.select, #vehicle-type-box-info.select {
     background: url('../img/icons-vehicle-type.png') no-repeat -81px 0px;
 }
 
+#vehicle-type-semi-info{
+    position: absolute;top:50%;left:50%;width:152px;height:47px;margin-top: 251px;margin-left: 10px;zoom: .75;
+    background: url('../img/icons-vehicle-type.png') no-repeat -183px -48px;
+}
 #vehicle-type-semi{
     position: absolute;width:152px;height:47px;top:21px;margin-left:55%;cursor: pointer;
     background: url('../img/icons-vehicle-type.png') no-repeat -183px -48px;
 }
-#vehicle-type-semi.select {
+#vehicle-type-semi.select, #vehicle-type-semi-info.select {
     background: url('../img/icons-vehicle-type.png') no-repeat -181px 0px;
 }
 
@@ -136,27 +156,39 @@
     position:absolute;height:20%;top:52%;left:50%;right:10px;border-top: 1px solid #CCC
 }
 
+#flow-rate-low-info {
+    position: absolute;width:55px;height:47px;top:50%;left:50%;margin-top: -150px;margin-left: -167px;zoom:0.8;
+    background: url('../img/icons-flow-rate.png') no-repeat 0px 0px;
+}
 #flow-rate-low {
     position: absolute;width:55px;height:47px;top:30px;margin-left:0%;cursor: pointer;
     background: url('../img/icons-flow-rate.png') no-repeat 0px 0px;
 }
-#flow-rate-low.select {
+#flow-rate-low.select, #flow-rate-low-info.select {
     background: url('../img/icons-flow-rate.png') no-repeat 0px -47px;
 }
 
+#flow-rate-medium-info {
+    position: absolute;width:55px;height:47px;top:50%;left:50%;margin-top: -150px;margin-left: -107px;zoom:0.8;
+    background: url('../img/icons-flow-rate.png') no-repeat -60px 0px;
+}
 #flow-rate-medium {
     position: absolute;width:55px;height:47px;top:30px;margin-left:35%;cursor: pointer;
     background: url('../img/icons-flow-rate.png') no-repeat -60px 0px;
 }
-#flow-rate-medium.select {
+#flow-rate-medium.select, #flow-rate-medium-info.select {
     background: url('../img/icons-flow-rate.png') no-repeat -60px -47px;
 }
 
+#flow-rate-hight-info {
+    position: absolute;width:55px;height:47px;top:50%;left:50%;margin-top: -150px;margin-left: -47px;zoom:0.8;
+    background: url('../img/icons-flow-rate.png') no-repeat -120px 0px;
+}
 #flow-rate-hight {
     position: absolute;width:55px;height:47px;top:30px;margin-left:70%;cursor: pointer;
     background: url('../img/icons-flow-rate.png') no-repeat -120px 0px;
 }
-#flow-rate-hight.select {
+#flow-rate-hight.select, #flow-rate-hight-info.select {
     background: url('../img/icons-flow-rate.png') no-repeat -120px -47px;
 }
 
