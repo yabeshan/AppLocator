@@ -14,7 +14,11 @@ Ext.define('App.view.SettingsPage' ,{
                 title:'Settings'
             },{
                 html: '<img id="backBtn" src="img/icons_button-back.png" style="position:absolute;z-index:90000; top:0px; left:0px;height:47px;cursor:pointer">'
-                    +'<div class="page"><br><br><p style="padding-left: 20%;text-align: left">Version database: xx-xx-xx<br>Last update: yy-yy-yy<br><br><button style="width: 200px; height: 80px">Update now</button></p></div>',
+                    +'<div class="page"><br><br>'
+//                    +'<p style="padding-left: 20%;text-align: left">Version database: xx-xx-xx<br>Last update: yy-yy-yy<br><br><button style="width: 200px; height: 80px">Update now</button></p>'
+//                    +'<p style="padding-left: 20%;text-align: left">Checking for update...</p>'
+                    +'<p style="padding-left: 20%;text-align: left">Your software is up to date.</p>'
+                    +'</div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {

@@ -257,13 +257,22 @@ Ext.define('App.view.TripPlaner' ,{
 
                 var route = response.routes[0];
                 var totalDistanse = 0;
+                var totalTime = 0;
+
                 for (var i = 0; i < route.legs.length; i++) {
                     totalDistanse += route.legs[i].distance.value;
+                    totalTime += route.legs[i].duration.value;
                 }
+
+                var hoursRoute = Math.floor( totalTime / 3600 );
+                var minsRoute = Math.ceil( (totalTime-hoursRoute*3600)/60 );
+
+                Ext.get('tp-build-title').dom.innerHTML += ' ('+ Math.ceil(totalDistanse/1610) +'mi, '+ hoursRoute +'h '+ minsRoute+'mins)';
                 var distanseBetweenMarkers = Math.max(1000, Math.round(totalDistanse / 100));
 
                 Ext.getCmp('tripPlaner').addRedMarkers(response.routes[0]);
                 Ext.getCmp('tripPlaner').viewRadiusStations(response.routes[0]);
+
             }
             else {
                 alert(status + '. Please enter correct Start and Destination Points','Error');
