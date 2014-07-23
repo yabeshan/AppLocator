@@ -206,7 +206,6 @@ Ext.define('App.view.TripPlaner' ,{
     buildTrip: function() {
         var mapPanel = Ext.getCmp("mapPanel");
         if (mapPanel.infowindow) mapPanel.infowindow.close();
-        mapPanel.addSpinner();
 
         this.routeMarker = [];
         var k= 0, arr = Ext.getCmp("mapPanel").markerViewArr, lng = arr.length;
@@ -221,6 +220,7 @@ Ext.define('App.view.TripPlaner' ,{
             return;
         }
 
+        mapPanel.addSpinner();
         Ext.get('tp-build-title').dom.innerHTML = "List to Trip";
         Ext.get('tp-build-img').dom.src = "img/icons-list-trip.png";
         Ext.getCmp('tripPlaner').hide();
