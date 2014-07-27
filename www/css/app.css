@@ -1,5 +1,15 @@
+@font-face {
+    font-family: 'Lobster';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Lobster'),
+    url(fonts/Lobster.woff2) format('woff2'),
+    url(fonts/Lobster.woff) format('woff');
+}
+
 * {
     -webkit-tap-highlight-color: rgba(0,0,0,0);  /*make transparent link selection, adjust last value opacity 0 to 1.0*/
+    font-family: 'Lobster', cursive;
 }
 
 body {
