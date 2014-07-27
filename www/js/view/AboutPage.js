@@ -33,7 +33,7 @@ Ext.define('App.view.AboutPage' ,{
                     direction: 'vertical'
                 },
                 html:
-                        '<p style="text-align: justify;padding: 30px 30px 0px 30px; padding-left: 10%">4675 MacArthur Court, Suite 800<br>Newport Beach, California 92660</p>'+
+                        '<p style="text-align: justify;padding: 30px 30px 0px 30px; padding-left: 10%"><span style="font-weight: 100;">4675 MacArthur Court, Suite 800</span><br>4675 MacArthur Court, Suite 800<br><span style="font-weight: 700;">4675 MacArthur Court, Suite 800</span><br>Newport Beach, California 92660</p>'+
                         '<p style="text-align: justify;padding: 0px 30px 0px 30px; padding-left: 10%"><br><b style="color:#07448B">Customer Service Hotline</b><br><a href="tel:8885551212">888-555-1212</a><br><a id="mailSpan" href="#">info@cleanenergyfuels.com</a><br>' +
                         '<br><img id="facebookLink" src="img/social-facebook.jpg"> <img id="twitterLink" src="img/social-twitter.jpg"> <img id="linkedinLink" src="img/social-linkedin.jpg"> <img id="googleLink" src="img/social-googleplus.png"></p><br><br>'+
 
