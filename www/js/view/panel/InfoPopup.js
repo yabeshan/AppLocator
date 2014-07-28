@@ -28,7 +28,7 @@ Ext.define('App.view.InfoPopup' ,{
                             } else if (node.id=="goPlanner") {
                                 Ext.getCmp('tripPlaner').openPopup({'type':'add', 'point':Ext.getCmp('infoPopup').stationAddress });
                             } else if (node.id=="goShare") {
-                                Ext.getCmp('searchPanel').showShare();
+                                Ext.getCmp('sharePanel').showShare( true );
                             }
                             Ext.getCmp('infoPopup').closePopup();
                         },

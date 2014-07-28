@@ -62,6 +62,11 @@ Ext.define('App.view.MainPage' ,{
                 width:  '100%',
                 height: '100%',
                 zIndex: 10,
+                xtype:  'sharePanel'
+            },{
+                width:  '100%',
+                height: '100%',
+                zIndex: 10,
                 xtype:  'menuPanel'
             },{
                 width:  '100%',
