@@ -459,12 +459,15 @@ Ext.define('App.view.MapPanel', {
             typeLNG = ( this.searchFilter.StationFuelTypeLNG && marker.model.get('StationFuelTypeLNG')=="Yes" );
             typeDSL = ( this.searchFilter.StationFuelTypeDSL && marker.model.get('StationFuelTypeDSL')=="Yes" );
             typeRDM = ( this.searchFilter.StationFuelTypeRDM && marker.model.get('StationFuelTypeRDM')=="Yes" );
-            typeFlag = (typeCNG || typeLNG);
+            typeFlag =
+                (typeCNG && typeLNG) || (typeCNG && typeRDM) || (typeLNG && typeRDM) ||
+                (typeCNG || typeLNG || typeRDM);
 
             statusFlag =
                     ( this.searchFilter.StationStatusActive && marker.model.get('StationStatus')=="Active" ) ||
                     ( this.searchFilter.StationStatusUnder && marker.model.get('StationStatus')=="Under Maintenance" ) ||
-                    ( this.searchFilter.StationStatusComing && marker.model.get('StationStatus')=="Coming Soon" );
+                    ( this.searchFilter.StationStatusComing && marker.model.get('StationStatus')=="Coming Soon" ) ||
+                    ( !this.searchFilter.StationStatusActive && !this.searchFilter.StationStatusUnder && !this.searchFilter.StationStatusComing );
 
             carsFlag = ( !this.searchFilter.VehicleTypesCarsAndVans && !this.searchFilter.VehicleTypesBoxTrucks && !this.searchFilter.VehicleTypesSemiTrucks );
             if (carsFlag==false) {

@@ -31,7 +31,7 @@
 }
 
 #fuel-type-disel-info {
-    position: absolute;top:50%;left:50%;width:60px;height:47px;margin-top: 105px;margin-left: 87px;
+    position: absolute;top:50%;left:50%;width:60px;height:47px;margin-top: 105px;margin-left: 87px;display: none;
     background:  url('../img/icons-fuel-type.png') no-repeat -120px 0px;
 }
 #fuel-type-disel {

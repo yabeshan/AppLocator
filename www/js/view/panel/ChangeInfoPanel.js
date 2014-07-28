@@ -111,6 +111,7 @@ Ext.define('App.view.PopupPanel' ,{
     },
 
     applyHandler: function() {
+        Ext.getCmp("tripPlaner").buildTripIconsRestore();
         var parent = Ext.getCmp('changeInfoPanel'),
             panel = Ext.getCmp('mapPanel'),
 
@@ -127,6 +128,7 @@ Ext.define('App.view.PopupPanel' ,{
         if (lngFlag != panel.searchFilter.StationFuelTypeLNG) {
             parent.changeSelectFilter("lngBtn");
         }
+        panel.searchFilter.StationFuelTypeRDM = Ext.get("fuel-type-redeem").hasCls('select');
 
         panel.searchFilter.StationStatusActive = operFlag;
         panel.searchFilter.StationStatusUnder = underFlag;
@@ -159,6 +161,8 @@ Ext.define('App.view.PopupPanel' ,{
     },
 
     defaultHandler: function() {
+        Ext.getCmp("tripPlaner").buildTripIconsRestore();
+
         Ext.get("fuel-type-cng").addCls('select');
         Ext.get("fuel-type-lng").addCls('select');
         Ext.get("fuel-type-disel").addCls('select');
@@ -257,6 +261,7 @@ Ext.define('App.view.ChangeInfoPanel' ,{
     },
 
     changeSelectFilter: function(id) {
+        Ext.getCmp('mapPanel').searchFilter.StationFuelTypeRDM = false;
         var selectFlag, panel = Ext.getCmp('mapPanel');
         if (id=="lngBtn") {
             selectFlag = Ext.get("lngBtn").hasCls('main-page-bottom-toolbar-select');

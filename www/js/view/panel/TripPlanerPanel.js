@@ -426,5 +426,10 @@ Ext.define('App.view.TripPlaner' ,{
         }
         document.getElementById('tp-end-point-0').value="";
         document.getElementById('tp-end-point-1').value="";
+    },
+
+    buildTripIconsRestore: function() {
+        Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
+        Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
     }
 });
