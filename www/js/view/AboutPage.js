@@ -44,12 +44,12 @@ Ext.define('App.view.AboutPage' ,{
                     '<img id="twitterLink" src="img/social-twitter.png" style="height:50px;padding: 10px 30px 0 0;"><img id="linkedinLink" src="img/social-linkedin.png" style="height:50px;padding: 10px 30px 0 0;"><img id="googleLink" src="img/social-googleplus.png" style="height:50px;padding: 10px 0 0 0;"></div>'+
 
                     '<div style="color:#30b457;font-weight: bold;font-size: 22px;padding: 20px 10px 20px 20px;">About Natural Gas</div>'+
-                    '<div style="color:#5d5c4a;font-size: 22px;padding:10px 10px 10px 20px;background-color:#f8f8f8;border-top: 1px solid #c1c0c0;">What is CNG?</div>'+
-                    '<div style="background-color:#f8f8f8;padding: 10px 10px 30px 20px;">Compressed natural gas (CNG) is methane stored under high pressure in a gaseous form, making it lighter than air. CNG is typically used for light and medium-size natural gas vehicles (NGVs), and some heavy-duty trucks.</div>'+
-                    '<div style="color:#5d5c4a;font-size: 22px;padding:10px 10px 10px 20px;background-color:#f8f8f8;border-top: 1px solid #c1c0c0;">What is LNG?</div>'+
-                    '<div style="background-color:#f8f8f8;padding: 10px 10px 30px 20px;">Liquefied natural gas (LNG) s methane cryogenically cooled to a liquid form, reducing its volume for ease in storage and transport. LNG provides fleet managers with the ability to store more fuel with less tank weight, thus creating an efficient and cost-saving fueling solution for heavy-duty trucking, marine, and rail fleets regulated by strict weight & range requirements.</div>'+
-                    '<div style="color:#5d5c4a;font-size: 22px;padding:10px 10px 10px 20px;background-color:#f8f8f8;border-top: 1px solid #c1c0c0;">What is Redeem (RNG)?</div>'+
-                    '<div style="background-color:#f8f8f8;padding: 10px 10px 30px 20px;">Redeem is biomethane and America’s first transportation fuel made entirely from organic waste and is available for distribution as either CNG or LNG. Redeem is up to 90% cleaner than gasoline and diesel, cost-efficient, and domestically available, making it a smart choice for natural gas vehicle fleets including heavy-duty trucks.</div>',
+                    '<div id="menuCNG" class="about-submenu about-submenu-open">What is CNG?</div>'+
+                    '<div id="submenuCNG" style="background-color:#f8f8f8;padding: 10px 10px 30px 20px;">Compressed natural gas (CNG) is methane stored under high pressure in a gaseous form, making it lighter than air. CNG is typically used for light and medium-size natural gas vehicles (NGVs), and some heavy-duty trucks.</div>'+
+                    '<div id="menuLNG" class="about-submenu about-submenu-open">What is LNG?</div>'+
+                    '<div id="submenuLNG" style="background-color:#f8f8f8;padding: 10px 10px 30px 20px;">Liquefied natural gas (LNG) s methane cryogenically cooled to a liquid form, reducing its volume for ease in storage and transport. LNG provides fleet managers with the ability to store more fuel with less tank weight, thus creating an efficient and cost-saving fueling solution for heavy-duty trucking, marine, and rail fleets regulated by strict weight & range requirements.</div>'+
+                    '<div id="menuRNG" class="about-submenu about-submenu-open">What is Redeem (RNG)?</div>'+
+                    '<div id="submenuRNG" style="background-color:#f8f8f8;padding: 10px 10px 30px 20px;">Redeem is biomethane and America’s first transportation fuel made entirely from organic waste and is available for distribution as either CNG or LNG. Redeem is up to 90% cleaner than gasoline and diesel, cost-efficient, and domestically available, making it a smart choice for natural gas vehicle fleets including heavy-duty trucks.</div>',
 
                 listeners: {
                     tap: {
@@ -66,6 +66,36 @@ Ext.define('App.view.AboutPage' ,{
                                 window.open("mailto:Info@CleanEnergyFuels.com", "_system");
                             } else if (node.id=="siteSpan") {
                                 window.open("http://www.CleanEnergyFuels.com", "_system");
+                            } else  if (node.id=="menuCNG") {
+                                if ( Ext.get('menuCNG').hasCls('about-submenu-open') ) {
+                                    Ext.get('submenuCNG').setVisible(false);
+                                    Ext.get('menuCNG').removeCls('about-submenu-open');
+                                    Ext.get('menuCNG').addCls('about-submenu-close');
+                                } else {
+                                    Ext.get('submenuCNG').setVisible(true);
+                                    Ext.get('menuCNG').removeCls('about-submenu-close');
+                                    Ext.get('menuCNG').addCls('about-submenu-open');
+                                }
+                            } else  if (node.id=="menuLNG") {
+                                if ( Ext.get('menuLNG').hasCls('about-submenu-open') ) {
+                                    Ext.get('submenuLNG').setVisible(false);
+                                    Ext.get('menuLNG').removeCls('about-submenu-open');
+                                    Ext.get('menuLNG').addCls('about-submenu-close');
+                                } else {
+                                    Ext.get('submenuLNG').setVisible(true);
+                                    Ext.get('menuLNG').removeCls('about-submenu-close');
+                                    Ext.get('menuLNG').addCls('about-submenu-open');
+                                }
+                            } else  if (node.id=="menuRNG") {
+                                if (Ext.get('menuRNG').hasCls('about-submenu-open')) {
+                                    Ext.get('submenuRNG').setVisible(false);
+                                    Ext.get('menuRNG').removeCls('about-submenu-open');
+                                    Ext.get('menuRNG').addCls('about-submenu-close');
+                                } else {
+                                    Ext.get('submenuRNG').setVisible(true);
+                                    Ext.get('menuRNG').removeCls('about-submenu-close');
+                                    Ext.get('menuRNG').addCls('about-submenu-open');
+                                }
                             }
                         },
                         element: 'element'
@@ -78,11 +108,11 @@ Ext.define('App.view.AboutPage' ,{
         ]
     },
 
+    initialize: function() {
 
-    initialize: function() {},
+    },
     update:function(){
-//        Ext.getCmp('MainPagePanel').hide();
-//        Ext.getCmp('MainPagePanel').show();
+
     }
 
 });

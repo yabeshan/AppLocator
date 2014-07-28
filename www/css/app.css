@@ -509,3 +509,22 @@ input::-webkit-input-placeholder {
 #share-mail {
     position: absolute;width: 85px;height: 24px;top:105px;left:30px;cursor: pointer;
 }
+
+.about-submenu {
+    background-color:#f8f8f8;
+    color:#5d5c4a;font-size: 22px;
+    padding:12px 10px 12px 20px;
+    border-top: 1px solid #c1c0c0;
+}
+.about-submenu-open {
+    background-image: url(../img/about-submenu-bg-open.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 54px 13px;
+}
+.about-submenu-close {
+    background-image: url(../img/about-submenu-bg-close.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+    background-size: 43px 35px;
+}
