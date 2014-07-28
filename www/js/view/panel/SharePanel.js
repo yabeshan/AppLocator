@@ -9,7 +9,7 @@ Ext.define('App.view.SharePanel', {
 
         items: [
             {
-                style:'position:absolute;top:60px;left:50%;margin-left:-72px;zoom:130%;',
+                style:'position:absolute;top:50%;margin-top:-72px;left:50%;margin-left:-72px;zoom:130%;',
                 html:'<img src="img/icons-share.png"><div id="share-facebook"></div>'+
                      '<div id="share-twitter"></div><div id="share-google"></div><div id="share-mail"></div>'+
                      '<img id="share-station-mail" src="img/icons-share-info.png" style="position: absolute;top:132px;left:0px;" >'

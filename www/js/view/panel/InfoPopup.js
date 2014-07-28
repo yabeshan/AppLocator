@@ -73,9 +73,9 @@ Ext.define('App.view.InfoPopup' ,{
         if ( model.get('StationFuelTypeRDM')=="Yes" ) Ext.get("fuel-type-redeem-info").addCls('select');
         else Ext.get("fuel-type-redeem-info").removeCls('select');
 
-        if ( model.get('VehicleTypesCarsAndVans')=="Yes" ) Ext.get("vehicle-type-cars-info").addCls('select');
+        if ( model.get('VehicleTypesCarsAndVans')=="Yes" || model.get('VehicleTypesBoxTrucks')=="Yes" || model.get('VehicleTypesSemiTrucks')=="Yes" ) Ext.get("vehicle-type-cars-info").addCls('select');
         else Ext.get("vehicle-type-cars-info").removeCls('select');
-        if ( model.get('VehicleTypesBoxTrucks')=="Yes" ) Ext.get("vehicle-type-box-info").addCls('select');
+        if ( model.get('VehicleTypesBoxTrucks')=="Yes" || model.get('VehicleTypesSemiTrucks')=="Yes" ) Ext.get("vehicle-type-box-info").addCls('select');
         else Ext.get("vehicle-type-box-info").removeCls('select');
         if ( model.get('VehicleTypesSemiTrucks')=="Yes" ) Ext.get("vehicle-type-semi-info").addCls('select');
         else Ext.get("vehicle-type-semi-info").removeCls('select');
