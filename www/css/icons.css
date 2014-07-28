@@ -35,7 +35,7 @@
     background:  url('../img/icons-fuel-type.png') no-repeat -120px 0px;
 }
 #fuel-type-disel {
-    position: absolute;width:60px;height:47px;top:21px;margin-left:50%;cursor: pointer;
+    position: absolute;width:60px;height:47px;top:21px;margin-left:70%;cursor: pointer;display: none;
     background:  url('../img/icons-fuel-type.png') no-repeat -120px 0px;
 }
 #fuel-type-disel.select, #fuel-type-disel-info.select {
@@ -47,7 +47,7 @@
     background:  url('../img/icons-fuel-type.png') no-repeat -180px 0px;
 }
 #fuel-type-redeem {
-    position: absolute;width:60px;height:47px;top:21px;margin-left:70%;cursor: pointer;
+    position: absolute;width:60px;height:47px;top:21px;margin-left:50%;cursor: pointer;
     background:  url('../img/icons-fuel-type.png') no-repeat -180px 0px;
 }
 #fuel-type-redeem.select, #fuel-type-redeem-info.select {

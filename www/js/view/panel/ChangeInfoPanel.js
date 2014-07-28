@@ -12,8 +12,8 @@ Ext.define('App.view.PopupPanel' ,{
             cls:'info-zoom',
             style:'zoom:89%;font-size:16px;position:relative;background-color: #FFF;height:100%;width:100%;color:#6cb25e;font-weight:bold;padding-top:10px',
             html:'<div class="holder-fuel-type">Fuel Type<div id="fuel-type-cng" class="select filter-img-zoom"></div>'
-                    +'<div id="fuel-type-lng" class="select filter-img-zoom"></div><div id="fuel-type-disel" class="select filter-img-zoom"></div>'
-                    +'<div id="fuel-type-redeem" class="select filter-img-zoom"></div></div>'
+                    +'<div id="fuel-type-lng" class="select filter-img-zoom"></div><div id="fuel-type-redeem" class="select filter-img-zoom"></div>'
+                    +'<div id="fuel-type-disel" class="select filter-img-zoom"></div></div>'
                 +'<div class="holder-vehicle-type">Vehicle Type<div id="vehicle-type-cars" class="filter-img-zoom"></div>'
                     +'<div id="vehicle-type-box" class="filter-img-zoom"></div><div id="vehicle-type-semi" class="filter-img-zoom"></div></div>'
                 +'<div class="holder-station-status">Station Status<div id="station-operational" class="select filter-lbl-zoom">Operational</div>'

@@ -468,6 +468,7 @@ Ext.define('App.view.MapPanel', {
 
             carsFlag = ( !this.searchFilter.VehicleTypesCarsAndVans && !this.searchFilter.VehicleTypesBoxTrucks && !this.searchFilter.VehicleTypesSemiTrucks );
             if (carsFlag==false) {
+                /*
                 carsVans = ( this.searchFilter.VehicleTypesCarsAndVans && marker.model.get('VehicleTypesCarsAndVans')=="Yes" );
                 carsBox = ( this.searchFilter.VehicleTypesBoxTrucks && marker.model.get('VehicleTypesBoxTrucks')=="Yes" );
                 carsSemi = ( this.searchFilter.VehicleTypesSemiTrucks && marker.model.get('VehicleTypesSemiTrucks')=="Yes" );
@@ -475,6 +476,15 @@ Ext.define('App.view.MapPanel', {
                     carsFlag = carsVans && carsBox && carsSemi;
                 } else {
                     carsFlag = carsVans || carsBox || carsSemi;
+                }
+                */
+
+                if ( this.searchFilter.VehicleTypesSemiTrucks ) {
+                    carsFlag = marker.model.get('VehicleTypesSemiTrucks')=="Yes";
+                } else if ( this.searchFilter.VehicleTypesBoxTrucks ) {
+                    carsFlag = marker.model.get('VehicleTypesBoxTrucks')=="Yes";
+                } else if ( this.searchFilter.VehicleTypesCarsAndVans ) {
+                    carsFlag = marker.model.get('VehicleTypesCarsAndVans')=="Yes";
                 }
             }
 

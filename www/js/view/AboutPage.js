@@ -33,42 +33,23 @@ Ext.define('App.view.AboutPage' ,{
                     direction: 'vertical'
                 },
                 html:
-                    '<img src="img/about-logo.png" style="width: 250px;padding: 40px 0px 0px 40px;">'+
-                    '<div style="color:#28549c;padding: 20px 40px 20px 40px;max-width: 900px">Clean Energy is the largest provider of natural gas fuel for transportation in North America, fueling over 30,000 vehicles each day at approximately 500 fueling stations throughout North America.</div>'+
-                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:95px"><img src="img/about-icon-city.png" style="float:left;width: 100px"><span style="position:relative;top:22px;">123 Main St.<br>Newport Beach, CA 91110</span></div>'+
-                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:80px"><img src="img/about-icon-mobile.png" style="float:left;width: 100px"><span style="position:relative;top:27px;"><a href="tel:3102345678" style="color:#5a5947;text-decoration: none">310.234.5678</a></span></div>'+
-                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:80px"><img src="img/about-icon-web.png" style="float:left;width: 100px"><span style="position:relative;top:27px;" id="siteSpan">www.CleanEnergyFuels.com</span></div>'+
-                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:80px"><img src="img/about-icon-mail.png" style="float:left;width: 100px"><span style="position:relative;top:27px;" id="mailSpan">Info@CleanEnergyFuels.com</span></div>'+
+                    '<img src="img/about-logo.png" style="width: 250px;padding: 20px 0px 0px 20px;">'+
+                    '<div style="color:#28549c;padding: 10px 10px 20px 20px;max-width: 900px">Clean Energy is the largest provider of natural gas fuel for transportation in North America, fueling over 30,000 vehicles each day at approximately 500 fueling stations throughout North America.</div>'+
+                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:80px"><img src="img/about-icon-city.png" style="float:left;width: 80px"><span style="position:relative;top:16px;">123 Main St.<br>Newport Beach, CA 91110</span></div>'+
+                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:62px"><img src="img/about-icon-mobile.png" style="float:left;width: 80px"><span style="position:relative;top:20px;"><a href="tel:3102345678" style="color:#5a5947;text-decoration: none">310.234.5678</a></span></div>'+
+                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:62px"><img src="img/about-icon-web.png" style="float:left;width: 80px"><span style="position:relative;top:20px;" id="siteSpan">www.CleanEnergyFuels.com</span></div>'+
+                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:62px"><img src="img/about-icon-mail.png" style="float:left;width: 80px"><span style="position:relative;top:20px;" id="mailSpan">Info@CleanEnergyFuels.com</span></div>'+
 
-                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;border-bottom: 1px solid #c1c0c0;width: 100%;height:80px">' +
-                        '<img src="img/social-facebook.png" style="height:60px;padding: 15px 30px 0 40px;">'+
-                        '<img src="img/social-twitter.png" style="height:60px;padding: 15px 30px 0 0;">' +
-                        '<img src="img/social-linkedin.png" style="height:60px;padding: 15px 30px 0 0;">' +
-                        '<img src="img/social-googleplus.png" style="height:60px;padding: 15px 0 0 0;">' +
-                    '</div>'+
+                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;border-bottom: 1px solid #c1c0c0;width: 100%;height:65px"><img id="facebookLink" src="img/social-facebook.png" style="height:50px;padding: 10px 30px 0 40px;">'+
+                    '<img id="twitterLink" src="img/social-twitter.png" style="height:50px;padding: 10px 30px 0 0;"><img id="linkedinLink" src="img/social-linkedin.png" style="height:50px;padding: 10px 30px 0 0;"><img id="googleLink" src="img/social-googleplus.png" style="height:50px;padding: 10px 0 0 0;"></div>'+
 
-                    '<div>scroll</div>'+
-                    '<div>about</div>'+
-
-                    '<div>cng</div>'+
-                    '<div>111</div>'+
-                    '<div>lng</div>'+
-                    '<div>222</div>'+
-                    '<div>rng</div>'+
-                    '<div>333</div>',
-
-                /*
-                html:
-                        '<p style="text-align: justify;padding: 30px 30px 0px 30px; padding-left: 10%"><span style="font-weight: 100;">4675 MacArthur Court, Suite 800</span><br>4675 MacArthur Court, Suite 800<br><span style="font-weight: 700;">4675 MacArthur Court, Suite 800</span><br>Newport Beach, California 92660</p>'+
-                        '<p style="text-align: justify;padding: 0px 30px 0px 30px; padding-left: 10%"><br><b style="color:#07448B">Customer Service Hotline</b><br><a href="tel:8885551212">888-555-1212</a><br><a id="mailSpan" href="#">info@cleanenergyfuels.com</a><br>' +
-                        '<br><img id="facebookLink" src="img/social-facebook.jpg"> <img id="twitterLink" src="img/social-twitter.jpg"> <img id="linkedinLink" src="img/social-linkedin.jpg"> <img id="googleLink" src="img/social-googleplus.png"></p><br><br>'+
-
-                        '<p style="text-align: justify;padding: 0px 30px 0px 30px">Clean Energy is the largest provider of natural gas fuel for transportation in North America, fueling over 30,000 vehicles each day at approximately 500 fueling stations throughout North America.</p>'+
-
-                '<h1 style="padding: 10px;color:#07448B;font-weight: bold;font-size: 120%">What is CNG?</h1><p style="text-align: justify;padding: 0px 30px 0px 30px">Compressed natural gas (CNG) is methane stored under high pressure in a gaseous form, making it lighter than air. CNG is typically used for light and medium-size natural gas vehicles (NGVs), and some heavy-duty trucks.</p>'+
-                '<h1 style="padding: 10px;color:#07448B;font-weight: bold;font-size: 120%">What is LNG?</h1><p style="text-align: justify;padding: 0px 30px 0px 30px">Liquefied natural gas (LNG) s methane cryogenically cooled to a liquid form, reducing its volume for ease in storage and transport. LNG provides fleet managers with the ability to store more fuel with less tank weight, thus creating an efficient and cost-saving fueling solution for heavy-duty trucking, marine, and rail fleets regulated by strict weight & range requirements.</p>'+
-                '<h1 style="padding: 10px;color:#07448B;font-weight: bold;font-size: 120%">What is Redeem (RNG)?</h1><p style="text-align: justify;padding: 0px 30px 0px 30px">Redeem is biomethane and America’s first transportation fuel made entirely from organic waste and is available for distribution as either CNG or LNG. Redeem is up to 90% cleaner than gasoline and diesel, cost-efficient, and domestically available, making it a smart choice for natural gas vehicle fleets including heavy-duty trucks.</p>',
-                */
+                    '<div style="color:#30b457;font-weight: bold;font-size: 22px;padding: 20px 10px 20px 20px;">About Natural Gas</div>'+
+                    '<div style="color:#5d5c4a;font-size: 22px;padding:10px 10px 10px 20px;background-color:#f8f8f8;border-top: 1px solid #c1c0c0;">What is CNG?</div>'+
+                    '<div style="background-color:#f8f8f8;padding: 10px 10px 30px 20px;">Compressed natural gas (CNG) is methane stored under high pressure in a gaseous form, making it lighter than air. CNG is typically used for light and medium-size natural gas vehicles (NGVs), and some heavy-duty trucks.</div>'+
+                    '<div style="color:#5d5c4a;font-size: 22px;padding:10px 10px 10px 20px;background-color:#f8f8f8;border-top: 1px solid #c1c0c0;">What is LNG?</div>'+
+                    '<div style="background-color:#f8f8f8;padding: 10px 10px 30px 20px;">Liquefied natural gas (LNG) s methane cryogenically cooled to a liquid form, reducing its volume for ease in storage and transport. LNG provides fleet managers with the ability to store more fuel with less tank weight, thus creating an efficient and cost-saving fueling solution for heavy-duty trucking, marine, and rail fleets regulated by strict weight & range requirements.</div>'+
+                    '<div style="color:#5d5c4a;font-size: 22px;padding:10px 10px 10px 20px;background-color:#f8f8f8;border-top: 1px solid #c1c0c0;">What is Redeem (RNG)?</div>'+
+                    '<div style="background-color:#f8f8f8;padding: 10px 10px 30px 20px;">Redeem is biomethane and America’s first transportation fuel made entirely from organic waste and is available for distribution as either CNG or LNG. Redeem is up to 90% cleaner than gasoline and diesel, cost-efficient, and domestically available, making it a smart choice for natural gas vehicle fleets including heavy-duty trucks.</div>',
 
                 listeners: {
                     tap: {
