@@ -10,19 +10,19 @@ Ext.define('App.view.PopupPanel' ,{
         style:'position:absolute',
         items:[{
             cls:'info-zoom',
-            style:'zoom:89%;font-size:16px;position:relative;background-color: #FFF;height:100%;width:100%;color:#6cb25e;font-weight:bold;padding-top:10px',
-            html:'<div class="holder-fuel-type">Fuel Type<div id="fuel-type-cng" class="select filter-img-zoom"></div>'
+            style:'zoom:89%;font-size:25px;position:relative;background-color: #FFF;height:100%;width:100%;padding-top:10px;',
+            html:'<div class="holder-fuel-type"><span class="holder-title">Fuel Type</span><div id="fuel-type-cng" class="select filter-img-zoom"></div>'
                     +'<div id="fuel-type-lng" class="select filter-img-zoom"></div><div id="fuel-type-redeem" class="select filter-img-zoom"></div>'
                     +'<div id="fuel-type-disel" class="select filter-img-zoom"></div></div>'
-                +'<div class="holder-vehicle-type">Vehicle Type<div id="vehicle-type-cars" class="filter-img-zoom"></div>'
+                +'<div class="holder-vehicle-type"><span class="holder-title">Vehicle Type</span><div id="vehicle-type-cars" class="filter-img-zoom"></div>'
                     +'<div id="vehicle-type-box" class="filter-img-zoom"></div><div id="vehicle-type-semi" class="filter-img-zoom"></div></div>'
-                +'<div class="holder-station-status">Station Status<div id="station-operational" class="select filter-lbl-zoom">Operational</div>'
+                +'<div class="holder-station-status"><span class="holder-title">Station Status</span><div id="station-operational" class="select filter-lbl-zoom">Operational</div>'
                     +'<div id="station-under" class="select filter-lbl-zoom">Under Maintenance</div><div id="station-coming" class="filter-lbl-zoom">Coming Soon</div></div>'
-                +'<div class="holder-hours-type">Hours of Operation<div id="hours-type-24" class="filter-lbl-zoom">24/7</div>'
+                +'<div class="holder-hours-type"><span class="holder-title">Hours of Operation</span><div id="hours-type-24" class="filter-lbl-zoom">24/7</div>'
                     +'<div id="hours-type-now" class="filter-lbl-zoom">Open Now</div></div>'
-                +'<div class="holder-flow-type">Flow Rate<div id="flow-rate-low" class="filter-img-zoom"></div>'
+                +'<div class="holder-flow-type"><span class="holder-title">Flow Rate</span><div id="flow-rate-low" class="filter-img-zoom"></div>'
                     +'<div id="flow-rate-medium" class="filter-img-zoom"></div><div id="flow-rate-hight" class="filter-img-zoom"></div></div>'
-                +'<div class="holder-payment-type">Payment Types<div id="payment-any" class="filter-lbl-zoom">Any</div>'
+                +'<div class="holder-payment-type"><span class="holder-title">Payment Types</span><div id="payment-any" class="filter-lbl-zoom">Any</div>'
                     +'<div id="payment-clean" class="filter-lbl-zoom">Clean Energy Fuel Card</div><div id="payment-visa" class="filter-lbl-zoom">Visa</div>'
                     +'<div id="payment-master" class="filter-lbl-zoom">Mastercard</div><div id="payment-amex" class="filter-lbl-zoom">Amex</div><div id="payment-discover" class="filter-lbl-zoom">Discover</div><div id="payment-voyager" class="filter-lbl-zoom">Voyager</div>'
                     +'<div id="payment-wex" class="filter-lbl-zoom">WEX</div><div id="payment-cash" class="filter-lbl-zoom">Cash</div><div id="payment-other" class="filter-lbl-zoom">Other</div></div>',

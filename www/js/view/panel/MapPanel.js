@@ -463,6 +463,7 @@ Ext.define('App.view.MapPanel', {
                 (typeCNG && typeLNG) || (typeCNG && typeRDM) || (typeLNG && typeRDM) ||
                 (typeCNG || typeLNG || typeRDM);
 
+
             statusFlag =
                     ( this.searchFilter.StationStatusActive && marker.model.get('StationStatus')=="Active" ) ||
                     ( this.searchFilter.StationStatusUnder && marker.model.get('StationStatus')=="Under Maintenance" ) ||
@@ -485,9 +486,9 @@ Ext.define('App.view.MapPanel', {
                 if ( this.searchFilter.VehicleTypesSemiTrucks ) {
                     carsFlag = marker.model.get('VehicleTypesSemiTrucks')=="Yes";
                 } else if ( this.searchFilter.VehicleTypesBoxTrucks ) {
-                    carsFlag = marker.model.get('VehicleTypesBoxTrucks')=="Yes";
+                    carsFlag = marker.model.get('VehicleTypesBoxTrucks')=="Yes" || marker.model.get('VehicleTypesSemiTrucks')=="Yes";
                 } else if ( this.searchFilter.VehicleTypesCarsAndVans ) {
-                    carsFlag = marker.model.get('VehicleTypesCarsAndVans')=="Yes";
+                    carsFlag = marker.model.get('VehicleTypesCarsAndVans')=="Yes" || marker.model.get('VehicleTypesBoxTrucks')=="Yes" || marker.model.get('VehicleTypesSemiTrucks')=="Yes";
                 }
             }
 
