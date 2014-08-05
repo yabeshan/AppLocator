@@ -34,22 +34,22 @@ Ext.define('App.view.SharePanel', {
 
                         var stAddress = 'Station Address';
 
-                        body += 'Trip Info <br>1<br/>2';
+                        body += 'Trip Info <br><br>';
 
                         if (document.getElementById('tp-end-point-0').value.length>0 || document.getElementById('tp-end-point-1').value.length>0) {
                             stAddress = document.getElementById('tp-end-point-0').value;
-                            body += '<br />Start: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
+                            body += '<br>Start: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
 
                             var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
                             if (lastID>1) {
                                 for (var k=1; k<lastID; k++) {
                                     stAddress = document.getElementById('tp-end-point-'+k).value;
-                                    body += '<br />Destination: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
+                                    body += '<br>Destination: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
                                 }
                             }
 
                             stAddress = document.getElementById('tp-end-point-'+lastID).value;
-                            body += '<br />End: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
+                            body += '<br>End: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
                         }
                         window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
 

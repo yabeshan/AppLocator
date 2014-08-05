@@ -458,21 +458,21 @@ input::-webkit-input-placeholder {
 }
 
 .info-popup-header {
-    position:absolute;width:338px;top:20px;height:30%;left:50%;margin-left: -169px;
+    position:absolute;width:338px;top:20px;height:30%;left:50%;margin-left: -164px;
     background-image: url(../img/popup-station-info-short.png);
     background-repeat: no-repeat;
     background-size: 338px 154px;
 }
 .info-popup-details {
-    position:absolute;width:338px;top:35%;height: 30%;left:50%;margin-left: -169px;padding: 10px;
+    position:absolute;width:338px;top:35%;height: 30%;left:50%;margin-left: -164px;padding: 10px;
     border-top: 1px solid #95979b;
 }
 .info-popup-fuel-types {
-    position:absolute;width:338px;top:60%;height: 20%;left:50%;margin-left: -169px;
+    position:absolute;width:338px;top:60%;height: 20%;left:50%;margin-left: -164px;
     border-top: 1px solid #95979b;padding: 10px;color: #67686a;
 }
 .info-popup-vehicle-types {
-    position:absolute;width:338px;top:80%;height: 20%;left:50%;margin-left: -169px;
+    position:absolute;width:338px;top:80%;height: 20%;left:50%;margin-left: -164px;
     padding: 10px;color: #67686a;
 }
 
