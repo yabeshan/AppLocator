@@ -34,7 +34,7 @@ Ext.define('App.view.SharePanel', {
 
                         var stAddress = 'Station Address';
 
-                        body += 'Trip Info <br /><br />';
+                        body += 'Trip Info <br>1<br/>2';
 
                         if (document.getElementById('tp-end-point-0').value.length>0 || document.getElementById('tp-end-point-1').value.length>0) {
                             stAddress = document.getElementById('tp-end-point-0').value;
@@ -60,7 +60,7 @@ Ext.define('App.view.SharePanel', {
                         var stHours = Ext.getCmp('infoPopup').stationHours;
                         var stAccepts = Ext.getCmp('infoPopup').stationAccepts;
 
-                        body += 'Station Info <br /><br />';
+                        body += 'Station Info <br/>1<br>2';
                         body += '<br /><br />Station: ' + stName;
                         body += '<br />Address: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
                         body += '<br />Open Hours: ' + stHours;
