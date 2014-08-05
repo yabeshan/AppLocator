@@ -51,7 +51,7 @@ Ext.define('App.view.SharePanel', {
                             stAddress = document.getElementById('tp-end-point-'+lastID).value;
                             body += '<br />End: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
                         }
-                        window.open('mailto:?subject='+subj+'&amp;body='+body, '_system');
+                        window.open('mailto:?subject='+subj+'&body='+body, '_system');
 
                     } else if (node.id=="share-station-mail") {
 
@@ -67,7 +67,7 @@ Ext.define('App.view.SharePanel', {
                         body += '<br />Accepts: ' + stAccepts;
                         body += '<br />';
 
-                        window.open('mailto:?subject='+subj+'&amp;body='+body, '_system');
+                        window.open('mailto:?subject='+subj+'&body='+body, '_system');
                     }
                     Ext.getCmp('sharePanel').hideShare();
                 },
