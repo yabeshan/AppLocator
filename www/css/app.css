@@ -458,21 +458,22 @@ input::-webkit-input-placeholder {
 }
 
 .info-popup-header {
-    position:absolute;width:507px;top:20px;height: 462px;left:50%;margin-left: -253px;
+    position:absolute;width:338px;top:20px;height:30%;left:50%;margin-left: -169px;
     background-image: url(../img/popup-station-info-short.png);
     background-repeat: no-repeat;
-    background-size: 507px 231px;
+    background-size: 338px 154px;
 }
 .info-popup-details {
-    position:absolute;width:507px;top:251px;height: 30%;left:50%;margin-left: -253px;
+    position:absolute;width:338px;top:35%;height: 30%;left:50%;margin-left: -169px;padding: 10px;
     border-top: 1px solid #95979b;
 }
 .info-popup-fuel-types {
-    position:absolute;width:507px;top:60%;height: 20%;left:50%;margin-left: -253px;
-    border-top: 1px solid #95979b;
+    position:absolute;width:338px;top:60%;height: 20%;left:50%;margin-left: -169px;
+    border-top: 1px solid #95979b;padding: 10px;color: #67686a;
 }
 .info-popup-vehicle-types {
-    position:absolute;width:507px;top:80%;height: 20%;left:50%;margin-left: -253px;
+    position:absolute;width:338px;top:80%;height: 20%;left:50%;margin-left: -169px;
+    padding: 10px;color: #67686a;
 }
 
 /************************************** TRIP PLANER ***************************************/
@@ -507,13 +508,19 @@ input::-webkit-input-placeholder {
 }
 
 #goDirect {
-    width:122px;height:42px;cursor: pointer;
+    position: absolute;top:12px;left:185px;
+    width:138px;height:45px;cursor: pointer;
+    color: #004aa9;font-size: 14px;padding-left: 37px;padding-top: 13px;
 }
 #goPlanner {
-    width:122px;height:42px;cursor: pointer;
+    position: absolute;top:58px;left:185px;
+    width:138px;height:45px;cursor: pointer;
+    color: #004aa9;font-size: 14px;padding-left: 37px;padding-top: 13px;
 }
 #goShare {
-    width:122px;height:42px;cursor: pointer;
+    position: absolute;top:105px;left:185px;
+    width:138px;height:45px;cursor: pointer;
+    color: #004aa9;font-size: 14px;padding-left: 37px;padding-top: 13px;
 }
 
 
