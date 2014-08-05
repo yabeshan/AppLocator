@@ -22,7 +22,7 @@ Ext.define('App.view.SharePanel', {
                     var subj = 'Email from Station Locator';
                     var body = '';
                     var mapHref = 'https://www.google.com/maps/place/';
-                    var signature = '<br /><br /><br />Sincerely, <br /><br /> Clean Energy Station Locator <br /> http://www.cnglngstations.com';
+                    var signature = '<br><br><br>Sincerely, <br><br> Clean Energy Station Locator <br> http://www.cnglngstations.com';
 
                     if (node.id=="share-facebook") {
                         window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
@@ -42,7 +42,7 @@ Ext.define('App.view.SharePanel', {
 
                             var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
                             if (lastID>1) {
-                                for (var k=lastID-1; k>0; k--) {
+                                for (var k=1; k<lastID; k++) {
                                     stAddress = document.getElementById('tp-end-point-'+k).value;
                                     body += '<br />Destination: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
                                 }
@@ -51,7 +51,7 @@ Ext.define('App.view.SharePanel', {
                             stAddress = document.getElementById('tp-end-point-'+lastID).value;
                             body += '<br />End: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
                         }
-                        window.open('mailto:?subject='+subj+'&body='+body, '_system');
+                        window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
 
                     } else if (node.id=="share-station-mail") {
 
@@ -60,14 +60,14 @@ Ext.define('App.view.SharePanel', {
                         var stHours = Ext.getCmp('infoPopup').stationHours;
                         var stAccepts = Ext.getCmp('infoPopup').stationAccepts;
 
-                        body += 'Station Info <br/>1<br>2';
-                        body += '<br /><br />Station: ' + stName;
-                        body += '<br />Address: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
-                        body += '<br />Open Hours: ' + stHours;
-                        body += '<br />Accepts: ' + stAccepts;
-                        body += '<br />';
+                        body += 'Station Info <br><br>';
+                        body += '<br>Station: ' + stName;
+                        body += '<br>Address: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
+                        body += '<br>Open Hours: ' + stHours;
+                        body += '\<br\>Accepts: ' + stAccepts;
+                        body += '\<br\>';
 
-                        window.open('mailto:?subject='+subj+'&body='+body, '_system');
+                        window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
                     }
                     Ext.getCmp('sharePanel').hideShare();
                 },
