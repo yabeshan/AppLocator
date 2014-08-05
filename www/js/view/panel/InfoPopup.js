@@ -44,17 +44,23 @@ Ext.define('App.view.InfoPopup' ,{
     initialize: function() {
         Ext.getCmp('infoPopup').closePopup();
     },
+    stationName:null,
     stationAddress:null,
+    stationHours:null,
+    stationAccepts:null,
     openPopup: function(model) {
         if (model==null) return;
         Ext.getCmp('infoPopup').show();
 
+        this.stationName = model.get('StationName');
         this.stationAddress = model.get('StationAddress')+", "+model.get('StationCity')+", "+model.get('StationState')+", "+model.get('StationZip');
-        Ext.get("stationName").dom.innerHTML = model.get('StationName');
+        this.stationHours = (model.get('HoursOpenIs24H')=="Yes") ? 'Open 24/7' : 'M-F 8:00am - 6:00pm';
+        this.stationAccepts = 'Visa, Clean Fuel Energy Card, Amex';
+
+        Ext.get("stationName").dom.innerHTML = this.stationName;
         var adress = '<font style="font-size:15px;line-height: 20px;">'+ this.stationAddress +'</font><br>',
-            hoursTxt = (model.get('HoursOpenIs24H')=="Yes") ? 'Open 24/7' : 'M-F 8:00am - 6:00pm',
-            hours = '<font style="font-size:12px;line-height: 24px;">Hours: <font style="font-weight:normal;font-style: italic">'+hoursTxt+'</font></font><br>',
-            accepts = '<font style="font-size:12px;line-height: 24px;">Accepts: <font style="font-weight:normal;font-style: italic">Visa, Clean Fuel Energy Card, Amex</font></font><br>';
+            hours = '<font style="font-size:12px;line-height: 24px;">Hours: <font style="font-weight:normal;font-style: italic">'+this.stationHours+'</font></font><br>',
+            accepts = '<font style="font-size:12px;line-height: 24px;">Accepts: <font style="font-weight:normal;font-style: italic">'+this.stationAccepts+'</font></font><br>';
 
         Ext.get("stationAddress").dom.innerHTML = adress + hours + accepts;
 
