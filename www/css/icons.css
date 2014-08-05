@@ -105,7 +105,7 @@
 
 #station-operational {
     position: absolute;width:160px;height:30px;top:45px;margin-left:0%;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #station-operational.select {
@@ -113,7 +113,7 @@
 }
 
 #station-under {
-    position: absolute;width:220px;top:40px;margin-left:35%;cursor: pointer;
+    position: absolute;width:220px;top:40px;margin-left:37%;cursor: pointer;
     padding-left: 40px; margin-top: -8px;font-weight: normal;
     background: url('../img/icons-dotbg-gray.png') no-repeat 0px 16px;color: #666;
 }
@@ -122,7 +122,7 @@
 }
 
 #station-coming {
-    position: absolute;width:160px;top:40px;margin-left:72%;cursor: pointer;
+    position: absolute;width:160px;top:40px;margin-left:75%;cursor: pointer;
     padding-left: 40px; margin-top: -8px;font-weight: normal;
     background: url('../img/icons-dotbg-gray.png') no-repeat 0px 16px;color: #666;
 }
@@ -137,7 +137,7 @@
 
 #hours-type-24 {
     position: absolute;width:142px;height:30px;top:45px;margin-left:0%;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #hours-type-24.select {
@@ -146,7 +146,7 @@
 
 #hours-type-now {
     position: absolute;width:220px;height:30px;top:85px;margin-left:0%;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #hours-type-now.select {
@@ -201,7 +201,7 @@
 
 #payment-any {
     position: absolute;height:30px;top:50px;margin-left:-5px;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-any.select {
@@ -210,7 +210,7 @@
 
 #payment-clean{
     position: absolute;height:30px;top:50px;margin-left:36%;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-clean.select {
@@ -219,7 +219,7 @@
 
 #payment-master {
     position: absolute;height:30px;top:100px;margin-left:-5px;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-master.select {
@@ -228,7 +228,7 @@
 
 #payment-amex {
     position: absolute;height:30px;top:100px;margin-left:36%;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-amex.select {
@@ -237,7 +237,7 @@
 
 #payment-discover {
     position: absolute;height:30px;top:100px;margin-left:70%;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-discover.select {
@@ -246,7 +246,7 @@
 
 #payment-wex {
     position: absolute;height:30px;top:150px;margin-left:-5px;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-wex.select {
@@ -255,7 +255,7 @@
 
 #payment-cash {
     position: absolute;height:30px;top:150px;margin-left:36%;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-cash.select {
@@ -264,7 +264,7 @@
 
 #payment-other {
     position: absolute;height:30px;top:150px;margin-left:70%;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-other.select {
@@ -274,7 +274,7 @@
 
 #payment-visa{
     position: absolute;height:30px;top:200px;margin-left:-5px;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-visa.select {
@@ -283,7 +283,7 @@
 
 #payment-voyager {
     position: absolute;height:30px;top:200px;margin-left:36%;cursor: pointer;
-    padding-left: 40px; padding-top: 5px;font-weight: normal;
+    padding-left: 40px; font-weight: normal;
     background: url('../img/icons-dotbg.png') no-repeat 0px 0px;color: #666;
 }
 #payment-voyager.select {

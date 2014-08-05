@@ -453,7 +453,27 @@ input::-webkit-input-placeholder {
     background-color: rgba(255,0,0,.6);
 }
 
+#info-close {
+    position:absolute;width:40px;top:0px;right:0px;z-index: 99999;
+}
 
+.info-popup-header {
+    position:absolute;width:507px;top:20px;height: 462px;left:50%;margin-left: -253px;
+    background-image: url(../img/popup-station-info-short.png);
+    background-repeat: no-repeat;
+    background-size: 507px 231px;
+}
+.info-popup-details {
+    position:absolute;width:507px;top:251px;height: 30%;left:50%;margin-left: -253px;
+    border-top: 1px solid #95979b;
+}
+.info-popup-fuel-types {
+    position:absolute;width:507px;top:60%;height: 20%;left:50%;margin-left: -253px;
+    border-top: 1px solid #95979b;
+}
+.info-popup-vehicle-types {
+    position:absolute;width:507px;top:80%;height: 20%;left:50%;margin-left: -253px;
+}
 
 /************************************** TRIP PLANER ***************************************/
 #tp-title {
