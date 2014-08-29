@@ -86,7 +86,7 @@ Ext.define('App.view.MapPanel', {
             this.addSpinner();
 
             this.viewInfoWindow();
-            setTimeout(Ext.getCmp("mapPanel").locateMe, 2000);
+//            setTimeout(Ext.getCmp("mapPanel").locateMe, 2000);
         }
     },
 
@@ -232,6 +232,7 @@ Ext.define('App.view.MapPanel', {
     },
 
     completeMap: function(extMapComponent, googleMapComp) {
+        alert(111);
         var that = Ext.getCmp('mapPanel');
         if( !that.userCoord || !that.userCoord.lat || !that.userCoord.lon ) {
             setTimeout( Ext.getCmp('mapPanel').completeMap, 3000);
