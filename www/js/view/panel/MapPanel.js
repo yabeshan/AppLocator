@@ -239,12 +239,45 @@ Ext.define('App.view.MapPanel', {
             if (Ext.getCmp("mapPanel").locateMeStartFlag==null) {
                 Ext.getCmp("mapPanel").locateMe();
             }
-            setTimeout( Ext.getCmp('mapPanel').completeMap, 3000);
+            setTimeout( Ext.getCmp('mapPanel').completeMap, 1000);
             return;
         }
 
         that.unmask();
         that.addSearchPanelInteractive();
+        that.updateDataStationsComplete();
+
+//        setTimeout(function(){
+//            Ext.getCmp('mapPanel').updateDataStations( 'http://qwe.7id.biz/stations.json' );
+//        },20000);
+    },
+
+    updateDataStations: function( url) {
+        var store = Ext.getStore('StationStore');
+        store.getProxy().set('url', url);
+        store.load({
+            scope: this,
+            callback: function(records, operation, success) {
+                if (success) {
+                    console.log('complete upload data');
+                    alert("complete");
+                } else {
+                    console.log('error upload data');
+                    alert("error");
+                }
+                Ext.getCmp('mapPanel').updateDataStationsComplete();
+            }
+        });
+    },
+
+    updateDataStationsComplete: function() {
+        var that = Ext.getCmp('mapPanel');
+//        Ext.getStore('StationStore').loadData();
+
+        if (that.markerArr.length>0) {
+            that.removeAllMarkers();
+        }
+
         Ext.getStore('StationStore').each(function(record,id){
             that.addMarker( record, false );
         });
@@ -252,6 +285,17 @@ Ext.define('App.view.MapPanel', {
 
         that.onSearchTypeStations();
         that.nearStationForPoint( that.userCoord.lat, that.userCoord.lon );
+    },
+
+    removeAllMarkers: function() {
+        var k=0, lng =this.markerArr.length, marker;
+        this.markerViewArr = [];
+
+        for (k;k<lng;k++) {
+            marker = this.markerArr[k];
+            marker.setMap(null);
+        }
+        this.markerArr = [];
     },
 
     addMarker: function( model, positionFlag ) {

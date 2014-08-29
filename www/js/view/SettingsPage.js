@@ -17,7 +17,7 @@ Ext.define('App.view.SettingsPage' ,{
                     +'<div class="page"><br><br>'
 //                    +'<p style="padding-left: 20%;text-align: left">Version database: xx-xx-xx<br>Last update: yy-yy-yy<br><br><button style="width: 200px; height: 80px">Update now</button></p>'
 //                    +'<p style="padding-left: 20%;text-align: left">Checking for update...</p>'
-                    +'<p style="width: 100%;text-align: center">Your software is up to date (v0.2.3)</p>'
+                    +'<p style="width: 100%;text-align: center">Your software is up to date (v0.2.3)</p><button id="updateData">Update</button>'
                     +'</div>',
                 listeners: {
                     tap: {
@@ -28,6 +28,8 @@ Ext.define('App.view.SettingsPage' ,{
                                     action:'goPage',
                                     args:[{nextPage:1, direction:'right'}]
                                 });
+                            } else if (node.id=="updateData") {
+                                Ext.getCmp('mapPanel').updateDataStations( 'http://qwe.7id.biz/stations.json' );
                             }
                         },
                         element: 'element'
