@@ -100,7 +100,9 @@ Ext.define('App.view.MenuPanel' ,{
     },
     closeMenu: function() {
         Ext.getCmp('menuPanel').setStyle({'pointer-events':'none'});
-//        Ext.getCmp('searchHolder').setStyle({'pointer-events':'all'});
+        setTimeout(function(){
+            Ext.getCmp('searchHolder').setStyle({'pointer-events':'all'});
+        },2000);
 
         Ext.getCmp('modalBG').hide();
         Ext.getCmp('menuList').hide();
