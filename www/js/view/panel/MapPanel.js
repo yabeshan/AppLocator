@@ -253,7 +253,7 @@ Ext.define('App.view.MapPanel', {
     },
 
     updateDataStations: function( url) {
-        that.addSpinner();
+        Ext.getCmp('mapPanel').addSpinner();
         var store = Ext.getStore('StationStore');
         store.getProxy().set('url', url);
         store.load({
