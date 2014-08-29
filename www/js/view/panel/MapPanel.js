@@ -234,6 +234,7 @@ Ext.define('App.view.MapPanel', {
     completeMap: function(extMapComponent, googleMapComp) {
         var that = Ext.getCmp('mapPanel');
         if( !that.userCoord || !that.userCoord.lat || !that.userCoord.lon ) {
+            that.unmask();
             that.addSpinner();
             if (Ext.getCmp("mapPanel").locateMeStartFlag==null) {
                 Ext.getCmp("mapPanel").locateMe();
