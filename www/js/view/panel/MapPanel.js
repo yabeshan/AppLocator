@@ -253,6 +253,7 @@ Ext.define('App.view.MapPanel', {
     },
 
     updateDataStations: function( url) {
+        that.addSpinner();
         var store = Ext.getStore('StationStore');
         store.getProxy().set('url', url);
         store.load({
@@ -260,10 +261,10 @@ Ext.define('App.view.MapPanel', {
             callback: function(records, operation, success) {
                 if (success) {
                     console.log('complete upload data');
-                    alert("complete");
+//                    alert("complete");
                 } else {
                     console.log('error upload data');
-                    alert("error");
+//                    alert("error");
                 }
                 Ext.getCmp('mapPanel').updateDataStationsComplete();
             }
@@ -284,6 +285,7 @@ Ext.define('App.view.MapPanel', {
 
         that.onSearchTypeStations();
         that.nearStationForPoint( that.userCoord.lat, that.userCoord.lon );
+        that.unmask();
     },
 
     removeAllMarkers: function() {
