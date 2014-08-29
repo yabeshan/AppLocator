@@ -232,9 +232,11 @@ Ext.define('App.view.MapPanel', {
     },
 
     completeMap: function(extMapComponent, googleMapComp) {
-        alert(111);
         var that = Ext.getCmp('mapPanel');
         if( !that.userCoord || !that.userCoord.lat || !that.userCoord.lon ) {
+            if (Ext.getCmp("mapPanel").locateMeStartFlag==null) {
+                Ext.getCmp("mapPanel").locateMe();
+            }
             setTimeout( Ext.getCmp('mapPanel').completeMap, 3000);
             return;
         }
@@ -305,8 +307,10 @@ Ext.define('App.view.MapPanel', {
 //        marker.setAnimation(null);
     },
 
+    locateMeStartFlag:null,
     locateMe: function() {
         var that = Ext.getCmp("mapPanel");
+        that.locateMeStartFlag = true;
         that.addSpinner();
         if (that.infowindow)
             that.infowindow.close();
