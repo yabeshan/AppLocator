@@ -245,7 +245,7 @@ Ext.define('App.view.MapPanel', {
 
         that.unmask();
         that.addSearchPanelInteractive();
-        that.updateDataStationsComplete();
+        that.updateDataStations( urlDATA );
 
 //        setTimeout(function(){
 //            Ext.getCmp('mapPanel').updateDataStations( 'http://qwe.7id.biz/stations.json' );
@@ -273,7 +273,6 @@ Ext.define('App.view.MapPanel', {
     updateDataStationsComplete: function() {
         var that = Ext.getCmp('mapPanel');
 //        Ext.getStore('StationStore').loadData();
-
         if (that.markerArr.length>0) {
             that.removeAllMarkers();
         }
