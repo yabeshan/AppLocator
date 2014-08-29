@@ -84,7 +84,9 @@ Ext.define('App.view.MapPanel', {
     update: function() {
         if (this.gMap==null) {
             this.addSpinner();
-            this.locateMe();
+
+            this.viewInfoWindow();
+            setTimeout(Ext.getCmp("mapPanel").locateMe, 2000);
         }
     },
 
@@ -231,12 +233,18 @@ Ext.define('App.view.MapPanel', {
 
     completeMap: function(extMapComponent, googleMapComp) {
         var that = Ext.getCmp('mapPanel');
+        if( !that.userCoord || !that.userCoord.lat || !that.userCoord.lon ) {
+            setTimeout( Ext.getCmp('mapPanel').completeMap, 3000);
+            return;
+        }
+
         that.unmask();
         that.addSearchPanelInteractive();
         Ext.getStore('StationStore').each(function(record,id){
             that.addMarker( record, false );
         });
         that.searchFilter = that.searchFilterDefault();
+
         that.onSearchTypeStations();
         that.nearStationForPoint( that.userCoord.lat, that.userCoord.lon );
     },
@@ -297,11 +305,13 @@ Ext.define('App.view.MapPanel', {
     },
 
     locateMe: function() {
-        this.addSpinner();
-        if (this.infowindow)
-            this.infowindow.close();
+        var that = Ext.getCmp("mapPanel");
+        that.addSpinner();
+        if (that.infowindow)
+            that.infowindow.close();
 
         if (navigator && navigator.geolocation) {
+
             navigator.geolocation.getCurrentPosition(function(position){
                 var lat=position.coords.latitude;
                 var lon=position.coords.longitude;

@@ -64,8 +64,8 @@ Ext.define('App.view.SharePanel', {
                         body += '<br>Station: ' + stName;
                         body += '<br>Address: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
                         body += '<br>Open Hours: ' + stHours;
-                        body += '\<br\>Accepts: ' + stAccepts;
-                        body += '\<br\>';
+                        body += '<br>Accepts: ' + stAccepts;
+                        body += '<br>';
 
                         window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
                     }

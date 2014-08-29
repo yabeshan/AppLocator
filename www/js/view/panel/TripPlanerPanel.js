@@ -144,6 +144,10 @@ Ext.define('App.view.TripPlaner' ,{
 
     addPoint: function() {
         var newID = Ext.get('trip-palent-starter').dom.children.length;
+        if (newID>6){
+            alert("You can not add more Destinations.");
+            return;
+        }
         var newItem = document.createElement("div");
         newItem.id = "item-end-point-"+newID;
         newItem.className ="holder-trip-point";
@@ -151,7 +155,7 @@ Ext.define('App.view.TripPlaner' ,{
         var newInput = document.createElement("input");
         newInput.id = "tp-end-point-"+newID;
         newInput.type = "text";
-        newInput.placeholder = "End Point";
+        newInput.placeholder = "Search Box";
         newInput.className= "tp-input-point";
 
         var newDelImg = document.createElement("img");
@@ -207,6 +211,15 @@ Ext.define('App.view.TripPlaner' ,{
         var mapPanel = Ext.getCmp("mapPanel");
         if (mapPanel.infowindow) mapPanel.infowindow.close();
 
+        var start = document.getElementById('tp-end-point-0').value;
+        var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
+        var end = document.getElementById('tp-end-point-'+lastID).value;
+        var waypts = [], val;
+        if( start.length<3 || end.length<3 ) {
+            alert("Please enter correct Start and Destination Points");
+            return;
+        }
+
         this.routeMarker = [];
         var k= 0, arr = Ext.getCmp("mapPanel").markerViewArr, lng = arr.length;
         for (k; k<lng; k++) {
@@ -225,22 +238,18 @@ Ext.define('App.view.TripPlaner' ,{
         Ext.get('tp-build-img').dom.src = "img/icons-list-trip.png";
         Ext.getCmp('tripPlaner').hide();
 
-        var start = document.getElementById('tp-end-point-0').value;
-        var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
-        var end = document.getElementById('tp-end-point-'+lastID).value;
-        var waypts = [], val;
         if (lastID>1) {
             for (var k=lastID-1; k>0; k--) {
                 val = document.getElementById('tp-end-point-'+k).value;
                 if (val.length>4) waypts.push({location:val, stopover:true});
             }
         }
-
+        waypts.reverse();
         var request = {
             origin: start,
             destination: end,
             waypoints: waypts,
-            optimizeWaypoints: true,
+            optimizeWaypoints: false,
             travelMode: google.maps.TravelMode.DRIVING
         };
 

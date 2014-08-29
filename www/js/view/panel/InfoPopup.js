@@ -53,7 +53,7 @@ Ext.define('App.view.InfoPopup' ,{
         Ext.getCmp('infoPopup').show();
 
         this.stationName = model.get('StationName');
-        this.stationAddress = model.get('StationAddress')+", "+model.get('StationCity')+", "+model.get('StationState')+", "+model.get('StationZip');
+        this.stationAddress = model.get('StationAddress')+" "+model.get('StationCity')+", "+model.get('StationState')+" "+model.get('StationZip');
         this.stationHours = (model.get('HoursOpenIs24H')=="Yes") ? 'Open 24/7' : 'M-F 8:00am - 6:00pm';
         this.stationAccepts = 'Visa, Clean Fuel Energy Card, Amex';
 
