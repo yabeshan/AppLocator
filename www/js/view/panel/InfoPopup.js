@@ -54,7 +54,7 @@ Ext.define('App.view.InfoPopup' ,{
 
         this.stationName = model.get('StationName');
         this.stationAddress = model.get('StationAddress')+" "+model.get('StationCity')+", "+model.get('StationState')+" "+model.get('StationZip');
-        this.stationHours = (model.get('HoursOpenIs24H')=="Yes") ? 'Open 24/7' : model.get('HoursOpen');//'M-F 8:00am - 6:00pm';
+        this.stationHours = (model.get('HoursOpenIs24H')=="Yes") ? 'Open 24/7' : (model.get('HoursOpen')||"");//'M-F 8:00am - 6:00pm';
 
 
 //        if (station.HoursOpenIs24H == "Yes")

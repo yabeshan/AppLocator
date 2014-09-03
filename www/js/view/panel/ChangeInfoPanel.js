@@ -426,7 +426,7 @@ Ext.define('App.view.ChangeInfoPanel' ,{
         Ext.getCmp('popupPanel').show();
         Ext.getCmp('popupPanel').setStyle({'pointer-events':'all'});
 
-//        Ext.getCmp('filter-pay').hide();
+        Ext.getCmp('filter-pay').hide();
     },
     hidePopup1: function() {
         Ext.getCmp('popupPanel').hide();
