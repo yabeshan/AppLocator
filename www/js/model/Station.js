@@ -25,6 +25,7 @@ Ext.define('App.model.StationModel', {
             'HoursOpenIs24H',
             'HoursOpenFrom',
             'HoursOpenTo',
+            'HoursOpen',
 
 
             'PaymentTypesAcceptedAmex',
