@@ -55,7 +55,32 @@ Ext.define('App.view.InfoPopup' ,{
         this.stationName = model.get('StationName');
         this.stationAddress = model.get('StationAddress')+" "+model.get('StationCity')+", "+model.get('StationState')+" "+model.get('StationZip');
         this.stationHours = (model.get('HoursOpenIs24H')=="Yes") ? 'Open 24/7' : 'M-F 8:00am - 6:00pm';
-        this.stationAccepts = 'Visa, Clean Fuel Energy Card, Amex';
+
+        this.stationAccepts  = "";
+        this.stationAccepts += (model.get('PaymentTypesAcceptedAmex')=="Yes") ? "Amex, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedCleanEnergyFuelCard')=="Yes") ? "Clean Energy Fuel Card, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedComData')=="Yes") ? "ComData, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedDiscover')=="Yes") ? "Discover, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedEFS')=="Yes") ? "EFS, " : "" ;
+
+        this.stationAccepts += (model.get('PaymentTypesAcceptedFuelmanFleetwide')=="Yes") ? "Fuelman Fleetwide, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedLegacyEFS')=="Yes") ? "Legacy EFS, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedMasterCard')=="Yes") ? "MasterCard, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedMasterCardFleet')=="Yes") ? "MasterCard Fleet, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedPFGiftCard')=="Yes") ? "PFGiftCard, " : "" ;
+
+        this.stationAccepts += (model.get('PaymentTypesAcceptedSpeedway')=="Yes") ? "Speedway, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedTCH')=="Yes") ? "TCH, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedTcheck')=="Yes") ? "Tcheck, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedVisa')=="Yes") ? "Visa, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedVisaFleet')=="Yes") ? "Visa Fleet, " : "" ;
+
+        this.stationAccepts += (model.get('PaymentTypesAcceptedVoyager')=="Yes") ? "Voyager, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedWrightExpress')=="Yes") ? "WEX, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedWEXFleetone')=="Yes") ? "WEX Fleetone, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedTranStar')=="Yes") ? "TranStar, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedNaturalFuels')=="Yes") ? "NaturalFuels, " : "" ;
+
 
         Ext.get("stationName").dom.innerHTML = this.stationName;
         var adress = '<font style="font-size:15px;line-height: 20px;">'+ this.stationAddress +'</font><br>',

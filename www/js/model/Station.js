@@ -26,12 +26,29 @@ Ext.define('App.model.StationModel', {
             'HoursOpenFrom',
             'HoursOpenTo',
 
-            'PaymentTypesAcceptedMasterCard',
-            'PaymentTypesAcceptedWrightExpress',
+
+            'PaymentTypesAcceptedAmex',
             'PaymentTypesAcceptedCleanEnergyFuelCard',
-            'PaymentTypesAcceptedVisa',
+            'PaymentTypesAcceptedComData',
             'PaymentTypesAcceptedDiscover',
+            'PaymentTypesAcceptedEFS',
+
+            'PaymentTypesAcceptedFuelmanFleetwide',
+            'PaymentTypesAcceptedLegacyEFS',
+            'PaymentTypesAcceptedMasterCard',
+            'PaymentTypesAcceptedMasterCardFleet',
+            'PaymentTypesAcceptedPFGiftCard',
+
+            'PaymentTypesAcceptedSpeedway',
+            'PaymentTypesAcceptedTCH',
+            'PaymentTypesAcceptedTcheck',
+            'PaymentTypesAcceptedVisa',
+            'PaymentTypesAcceptedVisaFleet',
+
             'PaymentTypesAcceptedVoyager',
+            'PaymentTypesAcceptedWrightExpress',
+            'PaymentTypesAcceptedWEXFleetone',
+
             'PaymentTypesAcceptedTranStar',
             'PaymentTypesAcceptedNaturalFuels',
 
@@ -49,7 +66,7 @@ Ext.define('App.store.StationStore', {
         autoLoad: true,
         proxy: {
             type: 'ajax',
-            url: 'data/stationsTmp.json',
+            url: 'data/stations.json',
             reader: {
                 type: 'json',
                 totalProperty: 'totalCount',
