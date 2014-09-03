@@ -10,6 +10,7 @@ Ext.define('App.view.PopupPanel' ,{
         style:'position:absolute',
         items:[{
             cls:'info-zoom',
+            id:'filter-type',
             style:'zoom:89%;font-size:25px;position:relative;background-color: #FFF;height:100%;width:100%;padding-top:10px;',
             html:'<div class="holder-fuel-type"><span class="holder-title">Fuel Type</span><div id="fuel-type-cng" class="select filter-img-zoom"></div>'
                     +'<div id="fuel-type-lng" class="select filter-img-zoom"></div><div id="fuel-type-redeem" class="select filter-img-zoom"></div>'
@@ -22,10 +23,32 @@ Ext.define('App.view.PopupPanel' ,{
                     +'<div id="hours-type-now" class="filter-lbl-zoom">Open Now</div></div>'
                 +'<div class="holder-flow-type"><span class="holder-title">Flow Rate</span><div id="flow-rate-low" class="filter-img-zoom"></div>'
                     +'<div id="flow-rate-medium" class="filter-img-zoom"></div><div id="flow-rate-hight" class="filter-img-zoom"></div></div>'
-                +'<div class="holder-payment-type"><span class="holder-title">Payment Types</span><div id="payment-any" class="filter-lbl-zoom">Any</div>'
-                    +'<div id="payment-clean" class="filter-lbl-zoom">Clean Energy Fuel Card</div><div id="payment-visa" class="filter-lbl-zoom">Visa</div>'
-                    +'<div id="payment-master" class="filter-lbl-zoom">Mastercard</div><div id="payment-amex" class="filter-lbl-zoom">Amex</div><div id="payment-discover" class="filter-lbl-zoom">Discover</div><div id="payment-voyager" class="filter-lbl-zoom">Voyager</div>'
-                    +'<div id="payment-wex" class="filter-lbl-zoom">WEX</div><div id="payment-cash" class="filter-lbl-zoom">Cash</div><div id="payment-other" class="filter-lbl-zoom">Other</div></div>',
+                +'<div id="scroll-next" style="width: 100%;height: 80px;position: absolute;cursor:pointer;bottom:5px;background-image: url(img/main-page-moreinfo-bottom-arrow.png);background-position: center center;background-repeat: no-repeat;background-size: 161px 115px;"></div>',
+            listeners: {
+                tap: {
+                    fn: function( e, node ) {
+                        Ext.getCmp('popupPanel').clickHandler(node.id);
+                    },
+                    element: 'element'
+                }
+            }
+        },{
+            cls:'info-zoom',
+            id:'filter-pay',
+            style:'background-color:#FFF;position:absolute;top:0px;left:0px;width:100%;height:100%;',
+            html:
+                '<div id="scroll-back" style="width: 100%;height: 80px;position: absolute;cursor:pointer;top:10px;background-image: url(img/main-page-moreinfo-top-arrow.png);background-position: center center;background-repeat: no-repeat;background-size: 161px 115px;"></div>'
+                +'<div class="holder-payment-type">' +
+                '<span class="holder-title">Payment Types</span>' +
+                '<div id="payment-any" class="filter-lbl-zoom">Any</div>'
+                +'<div id="payment-clean" class="filter-lbl-zoom">Clean Energy Fuel Card</div><div id="payment-visa" class="filter-lbl-zoom">Visa</div>'
+                +'<div id="payment-master" class="filter-lbl-zoom">Mastercard</div><div id="payment-amex" class="filter-lbl-zoom">Amex</div><div id="payment-discover" class="filter-lbl-zoom">Discover</div><div id="payment-voyager" class="filter-lbl-zoom">Voyager</div>'
+                +'<div id="payment-wex" class="filter-lbl-zoom">WEX</div><div id="payment-cash" class="filter-lbl-zoom">Cash</div>' +
+                '<div id="payment-other" class="filter-lbl-zoom">Other</div><div id="payment-comdata" class="filter-lbl-zoom">ComData</div><div id="payment-master-fleet" class="filter-lbl-zoom">MasterCard Fleet</div>' +
+                '<div id="payment-tch" class="filter-lbl-zoom">TCH</div><div id="payment-tcheck" class="filter-lbl-zoom">Tcheck</div><div id="payment-efs" class="filter-lbl-zoom">EFS</div>' +
+                '<div id="payment-fuelman" class="filter-lbl-zoom">Fuelman Fleetwide</div><div id="payment-legacy" class="filter-lbl-zoom">Legacy EFS</div><div id="payment-gift" class="filter-lbl-zoom">PFGiftCard</div>' +
+                '<div id="payment-speedway" class="filter-lbl-zoom">Speedway</div><div id="payment-visa-fleet" class="filter-lbl-zoom">Visa Fleet</div><div id="payment-wex-fleet" class="filter-lbl-zoom">WEX Fleetone</div>' +
+                '</div>',
             listeners: {
                 tap: {
                     fn: function( e, node ) {
@@ -56,6 +79,14 @@ Ext.define('App.view.PopupPanel' ,{
     },
 
     clickHandler: function(id) {
+        if (id=="scroll-next") {
+            Ext.getCmp('filter-pay').show();
+            return;
+        } else if (id=="scroll-back") {
+            Ext.getCmp('filter-pay').hide();
+            return;
+        }
+
         switch(id) {
             case "fuel-type-cng":
             case "fuel-type-lng":
@@ -293,8 +324,8 @@ Ext.define('App.view.ChangeInfoPanel' ,{
     },
 
     initialize: function() {
-//        this.showPopup1();
         this.hidePopup1();
+//        this.showPopup1();
     },
     update:function(){
 
@@ -302,6 +333,8 @@ Ext.define('App.view.ChangeInfoPanel' ,{
     showPopup1: function() {
         Ext.getCmp('popupPanel').show();
         Ext.getCmp('popupPanel').setStyle({'pointer-events':'all'});
+
+        Ext.getCmp('filter-pay').hide();
     },
     hidePopup1: function() {
         Ext.getCmp('popupPanel').hide();
