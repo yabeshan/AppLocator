@@ -35,7 +35,7 @@ Ext.define('App.view.PopupPanel' ,{
         },{
             cls:'info-zoom',
             id:'filter-pay',
-            style:'background-color:#FFF;position:absolute;top:0px;left:0px;width:100%;height:100%;',
+            style:'zoom:89%;background-color:#FFF;position:absolute;top:0px;left:0px;width:100%;height:100%;',
             html:
                 '<div id="scroll-back" style="width: 100%;height: 80px;position: absolute;cursor:pointer;top:10px;background-image: url(img/main-page-moreinfo-top-arrow.png);background-position: center center;background-repeat: no-repeat;background-size: 161px 115px;"></div>'
                 +'<div class="holder-payment-type">' +
