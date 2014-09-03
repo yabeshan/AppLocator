@@ -118,18 +118,30 @@ Ext.define('App.view.PopupPanel' ,{
             case "payment-wex":
             case "payment-cash":
             case "payment-other":
+
+            case "payment-comdata":
+            case "payment-master-fleet":
+            case "payment-tch":
+            case "payment-tcheck":
+            case "payment-efs":
+            case "payment-fuelman":
+            case "payment-speedway":
+            case "payment-visa-fleet":
+            case "payment-legacy":
+            case "payment-wex-fleet":
+            case "payment-gift":
                 this.changeFuelType( Ext.get(id) );
                 break;
-        }
-
-        if (id=="payment-any") {
-            this.selectAllPayment( Ext.get("payment-any").hasCls("select") );
         }
     },
 
     changeFuelType: function(cmp) {
-        if (cmp.hasCls('select')) cmp.removeCls('select');
-        else {
+        if (cmp.hasCls('select')) {
+            cmp.removeCls('select');
+            if( cmp.id.indexOf("payment")==0 ) {
+                this.changePaymentType( cmp.id, true);
+            }
+        } else {
             cmp.addCls('select');
 
             if (cmp.id=="vehicle-type-semi") {
@@ -138,6 +150,62 @@ Ext.define('App.view.PopupPanel' ,{
             } else if (cmp.id=="vehicle-type-box") {
                 Ext.get("vehicle-type-cars").addCls('select');
             }
+
+            if( cmp.id.indexOf("payment")==0 ) {
+                this.changePaymentType( cmp.id, false);
+            }
+
+        }
+    },
+
+    changePaymentType: function(id, flag) {
+        var searchFilter = Ext.getCmp('mapPanel').searchFilter;
+        searchFilter.paymentSelect = true;
+
+        if (id=="payment-any") {
+            searchFilter.paymentAny = flag;
+            if (flag) searchFilter.paymentSelect = false;
+            Ext.getCmp('popupPanel').selectAllPayment( !flag );
+        } else if (id=="payment-clean") {
+            searchFilter.paymentCleanEnergy = flag;
+        } else if (id=="payment-master") {
+            searchFilter.paymentMastercard = flag;
+        } else if (id=="payment-wex") {
+            searchFilter.paymentWEX = flag;
+        } else if (id=="payment-amex") {
+            searchFilter.paymentAmex = flag;
+        } else if (id=="payment-discover") {
+            searchFilter.paymentDiscover = flag;
+        } else if (id=="payment-voyager") {
+            searchFilter.paymentVoyager = flag;
+        } else if (id=="payment-comdata") {
+            searchFilter.paymentComdata = flag;
+        } else if (id=="payment-tch") {
+            searchFilter.paymentTCH = flag;
+        } else if (id=="payment-tcheck") {
+            searchFilter.paymentTcheck = flag;
+        } else if (id=="payment-efs") {
+            searchFilter.paymentEFS = flag;
+        } else if (id=="payment-master-fleet") {
+            searchFilter.paymentMasterFleet = flag;
+        } else if (id=="payment-fuelman") {
+            searchFilter.paymentFuelman = flag;
+        } else if (id=="payment-speedway") {
+            searchFilter.paymentSpeedway = flag;
+        } else if (id=="payment-visa-fleet") {
+            searchFilter.paymentVisaFleet = flag;
+        } else if (id=="payment-legacy") {
+            searchFilter.paymentLegacy = flag;
+        } else if (id=="payment-wex-fleet") {
+            searchFilter.paymentWexFleet = flag;
+        } else if (id=="payment-visa") {
+            searchFilter.paymentVisa = flag;
+        } else if (id=="payment-cash") {
+            searchFilter.paymentCash = flag;
+        } else if (id=="payment-gift") {
+            searchFilter.paymentGift = flag;
+        } else if (id=="payment-other") {
+            searchFilter.paymentOther = flag;
         }
     },
 
@@ -237,6 +305,18 @@ Ext.define('App.view.PopupPanel' ,{
             Ext.get("payment-wex").addCls('select');
             Ext.get("payment-cash").addCls('select');
             Ext.get("payment-other").addCls('select');
+
+            Ext.get("payment-comdata").addCls('select');
+            Ext.get("payment-master-fleet").addCls('select');
+            Ext.get("payment-tch").addCls('select');
+            Ext.get("payment-tcheck").addCls('select');
+            Ext.get("payment-efs").addCls('select');
+            Ext.get("payment-fuelman").addCls('select');
+            Ext.get("payment-speedway").addCls('select');
+            Ext.get("payment-visa-fleet").addCls('select');
+            Ext.get("payment-legacy").addCls('select');
+            Ext.get("payment-wex-fleet").addCls('select');
+            Ext.get("payment-gift").addCls('select');
         } else {
             Ext.get("payment-any").removeCls('select');
             Ext.get("payment-clean").removeCls('select');
@@ -248,6 +328,18 @@ Ext.define('App.view.PopupPanel' ,{
             Ext.get("payment-wex").removeCls('select');
             Ext.get("payment-cash").removeCls('select');
             Ext.get("payment-other").removeCls('select');
+
+            Ext.get("payment-comdata").removeCls('select');
+            Ext.get("payment-master-fleet").removeCls('select');
+            Ext.get("payment-tch").removeCls('select');
+            Ext.get("payment-tcheck").removeCls('select');
+            Ext.get("payment-efs").removeCls('select');
+            Ext.get("payment-fuelman").removeCls('select');
+            Ext.get("payment-speedway").removeCls('select');
+            Ext.get("payment-visa-fleet").removeCls('select');
+            Ext.get("payment-legacy").removeCls('select');
+            Ext.get("payment-wex-fleet").removeCls('select');
+            Ext.get("payment-gift").removeCls('select');
         }
     }
 
@@ -334,7 +426,7 @@ Ext.define('App.view.ChangeInfoPanel' ,{
         Ext.getCmp('popupPanel').show();
         Ext.getCmp('popupPanel').setStyle({'pointer-events':'all'});
 
-        Ext.getCmp('filter-pay').hide();
+//        Ext.getCmp('filter-pay').hide();
     },
     hidePopup1: function() {
         Ext.getCmp('popupPanel').hide();
