@@ -68,6 +68,8 @@ var verDB = "1399359600000";
 var urlConfig = "http://dev.cnglngstations.com/Home/GetStationsForMobile?parameters={%27Guid%27:%27bee87ce1-aa3e-4191-83e3-69135311088b%27}";
 var urlDATA = "http://dev.cnglngstations.com/Data/stations.json";
 var onDeviceReady = function() {
+    alert("start " + navigator +"___________________"+ navigator.splashscreen);
+
     if (navigator && navigator.splashscreen) {
         alert("show");
         navigator.splashscreen.show();
