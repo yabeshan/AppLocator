@@ -77,6 +77,15 @@ Ext.define('App.view.SharePanel', {
 
     },
     openFacebook: function() {
+
+        if (navigator) {
+            if (navigator.userAgent.match(/Android/i) == "Android") {
+                alert("android");
+            } else {
+                alert("other device");
+            }
+        }
+
         if (appAvailability) {
             appAvailability.check(
                 'fb://', // URI Scheme
@@ -102,7 +111,7 @@ Ext.define('App.view.SharePanel', {
         } else {
             alert("srror detect");
         }
-        
+
 //        window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
     },
     openTwitter: function() {
