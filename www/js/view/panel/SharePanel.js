@@ -25,11 +25,11 @@ Ext.define('App.view.SharePanel', {
                     var signature = '<br><br><br>Sincerely, <br><br> Clean Energy Station Locator <br> http://www.cnglngstations.com';
 
                     if (node.id=="share-facebook") {
-                        window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        Ext.getCmp('sharePanel').openFacebook();
                     } else if (node.id=="share-twitter") {
-                        window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        Ext.getCmp('sharePanel').openTwitter();
                     } else if (node.id=="share-google") {
-                        window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        Ext.getCmp('sharePanel').openGoogle();
                     } else if (node.id=="share-mail") {
 
                         var stAddress = 'Station Address';
@@ -75,6 +75,41 @@ Ext.define('App.view.SharePanel', {
             }
         }
 
+    },
+    openFacebook: function() {
+        if (appAvailability) {
+            appAvailability.check(
+                'fb://', // URI Scheme
+                function() {  // Success callback
+                    alert('ios FB is available');
+                },
+                function() {  // Error callback
+                    alert('ios FB is not available');
+                }
+            );
+
+            appAvailability.check(
+                'com.facebook.katana', // URI Scheme
+                function() {           // Success callback
+                    alert('Android FB is available');
+                },
+                function() {           // Error callback
+                    alert('Android FB is not available');
+                }
+            );
+
+            alert("appAvailability");
+        } else {
+            alert("srror detect");
+        }
+        
+//        window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+    },
+    openTwitter: function() {
+        window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
+    },
+    openGoogle: function() {
+        window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
     },
     initialize: function(me, eOpts) {
         this.hideShare();
