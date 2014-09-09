@@ -12,20 +12,29 @@
         Station Locator
     </description>
 
-    <gap:plugin name="com.phonegap.plugin.statusbar" />
-    <gap:config-file platform="ios" parent="UIStatusBarHidden">
-        <true/>
-    </gap:config-file>
-    <gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance">
-        <false/>
-    </gap:config-file>
 
-    <gap:plugin name="com.ohh2ahh.plugins.appavailability" />
+    <gap:plugin name="com.ohh2ahh.plugins.appavailability"  version="0.3.0" />
+    <gap:plugin name="com.phonegap.plugin.statusbar"        version="1.1.0" />
+    <gap:plugin name="org.apache.cordova.dialogs"           version="0.2.6" />
+    <gap:plugin name="org.apache.cordova.geolocation"       version="0.3.7" />
+    <gap:plugin name="org.apache.cordova.inappbrowser"      version="0.3.3" />
+    <gap:plugin name="org.apache.cordova.splashscreen"      version="0.2.6" />
 
-    <gap:plugin name="org.apache.cordova.splashscreen" />
-    <gap:plugin name="org.apache.cordova.geolocation" />
-    <gap:plugin name="org.apache.cordova.inappbrowser" />
-    <gap:plugin name="org.apache.cordova.dialogs" />
+
+    <!--<gap:plugin name="com.phonegap.plugin.statusbar" />-->
+    <!--<gap:config-file platform="ios" parent="UIStatusBarHidden">-->
+        <!--<true/>-->
+    <!--</gap:config-file>-->
+    <!--<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance">-->
+        <!--<false/>-->
+    <!--</gap:config-file>-->
+
+    <!--<gap:plugin name="com.ohh2ahh.plugins.appavailability" />-->
+
+    <!--<gap:plugin name="org.apache.cordova.splashscreen" />-->
+    <!--<gap:plugin name="org.apache.cordova.geolocation" />-->
+    <!--<gap:plugin name="org.apache.cordova.inappbrowser" />-->
+    <!--<gap:plugin name="org.apache.cordova.dialogs" />-->
 
     <!--gap:plugin name="org.apache.cordova.device" />
     <feature name="http://api.phonegap.com/1.0/device" /-->
