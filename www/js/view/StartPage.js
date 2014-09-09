@@ -53,6 +53,7 @@ Ext.define('App.view.StartPage' ,{
     },
 
     initialize: function() {
+        alert(111)
 //        var pixelRatio = window.devicePixelRatio || 1,
 //            windowWidth = window.innerWidth / pixelRatio,
 //            windowHeight = window.innerHeight / pixelRatio,
@@ -100,8 +101,10 @@ Ext.define('App.view.StartPage' ,{
         }
 
         setTimeout( this.hideSplash, 2000);
+        alert(222)
     },
     hideSplash: function() {
+        alert(333)
         if (navigator && navigator.splashscreen) {
             alert('hide');
             navigator.splashscreen.hide();
