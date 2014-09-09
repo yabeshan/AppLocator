@@ -102,7 +102,10 @@ Ext.define('App.view.StartPage' ,{
         setTimeout( this.hideSplash, 2000);
     },
     hideSplash: function() {
-        if (navigator && navigator.splashscreen) navigator.splashscreen.hide();
+        if (navigator && navigator.splashscreen) {
+            alert('hide');
+            navigator.splashscreen.hide();
+        }
     },
     update:function(){
 
