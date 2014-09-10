@@ -145,7 +145,7 @@ Ext.define('App.view.TripPlaner' ,{
     addPoint: function() {
         var newID = Ext.get('trip-palent-starter').dom.children.length;
         if (newID>6){
-            alert("You can not add more Destinations.");
+            viewInfoPopup("Error", "You can not add more Destinations.");
             return;
         }
         var newItem = document.createElement("div");
@@ -197,8 +197,8 @@ Ext.define('App.view.TripPlaner' ,{
         var k= 0, arr=Ext.get('trip-palent-starter').dom.children, lng=arr.length, searchFlag=false;
         for (k;k<lng;k++) {
             if( arr[k]==node.parentNode ) searchFlag = true;
-            if (searchFlag) {
-                arr[k-1].children[0].value = arr[k].children[0].value;
+            if (searchFlag && k+1<lng) {
+                arr[k].children[0].value = arr[k+1].children[0].value;
             }
         }
         (elem=arr[k-1]).parentNode.removeChild(elem);
@@ -216,15 +216,7 @@ Ext.define('App.view.TripPlaner' ,{
         var end = document.getElementById('tp-end-point-'+lastID).value;
         var waypts = [], val;
         if( start.length<3 || end.length<3 ) {
-//            alert("Please enter correct Start and Destination Points");
-
-
-            if (navigator.notification) {
-                navigator.notification.alert('Error 111', null, 'Error 222');
-            } else {
-                alert(message +"________"+ navigator +"==========="+ navigator.notification);
-            }
-
+            viewInfoPopup("Error", "Please enter correct Start and Destination Points");
             return;
         }
 
@@ -293,11 +285,7 @@ Ext.define('App.view.TripPlaner' ,{
             }
             else {
                 var message = status + '. Please enter correct Start and Destination Points';
-                if (navigator.notification) {
-                    navigator.notification.alert('Error 111', null, 'Error 111');
-                } else {
-                    alert(message +"________"+ navigator +"==========="+ navigator.notification);
-                }
+                viewInfoPopup("Error", message);
             }
             setTimeout(function(){
                 mapPanel.unmask();

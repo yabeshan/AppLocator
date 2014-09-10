@@ -492,7 +492,7 @@ input::-webkit-input-placeholder {
     border-bottom: 1px solid #666;width:320px;left:50%;margin-left: -160px;
 }
 .holder-trip-point-delete {
-    position: absolute;top: -26px;right: 34px;
+    position: absolute;top: 10px;right: 34px;
 }
 .holder-trip-point-change {
     position: absolute;top: -14px;right: -3px;

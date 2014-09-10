@@ -79,5 +79,15 @@ var onDeviceReady = function() {
 
 document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){
-//    setTimeout( onDeviceReady, 1000 );
+    if( document.URL.indexOf('file:///D:/Nick_work/') == 0) {
+        setTimeout( onDeviceReady, 1000 );
+    }
 };
+
+function viewInfoPopup(title, msg) {
+        if (navigator && navigator.notification) {
+            navigator.notification.alert(msg, null, title);
+        } else {
+            alert(title +"                    "+ msg);
+        }
+}
