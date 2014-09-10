@@ -254,8 +254,8 @@ Ext.define('App.view.MapPanel', {
     },
 
     updateDataStations: function( url) {
-        Ext.getCmp('mapPanel').updateDataStationsComplete();
-        return;
+//        Ext.getCmp('mapPanel').updateDataStationsComplete();
+//        return;
 
         Ext.getCmp('mapPanel').addSpinner();
         var store = Ext.getStore('StationStore');
