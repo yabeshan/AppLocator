@@ -82,7 +82,7 @@ Ext.define('App.view.SharePanel', {
                 appAvailability.check(
                     'com.facebook.katana', // URI Scheme
                     function() {           // Success callback
-                        window.open('com.facebook.katana://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        window.open('comfacebookkatana://', '_system');
                     },
                     function() {           // Error callback
                         window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
@@ -92,7 +92,7 @@ Ext.define('App.view.SharePanel', {
                 appAvailability.check(
                     'fb://', // URI Scheme
                     function() {  // Success callback
-                        window.open('fb://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        window.open('fb://notes', '_system');
                     },
                     function() {  // Error callback
                         window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
@@ -109,7 +109,7 @@ Ext.define('App.view.SharePanel', {
                 appAvailability.check(
                     'com.twitter.android', // URI Scheme
                     function() {           // Success callback
-                        window.open('com.twitter.android://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        window.open('comtwitterandroid://', '_system');
                     },
                     function() {           // Error callback
                         window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
@@ -119,7 +119,8 @@ Ext.define('App.view.SharePanel', {
                 appAvailability.check(
                     'twitter://', // URI Scheme
                     function() {  // Success callback
-                        window.open('twitter://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
+//                        post?message=
+                        window.open('twitter://post?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
                     },
                     function() {  // Error callback
                         window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
@@ -136,7 +137,7 @@ Ext.define('App.view.SharePanel', {
                 appAvailability.check(
                     'com.google.plus', // URI Scheme
                     function() {           // Success callback
-                        window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        window.open('comgoogleplus://', '_system');
                     },
                     function() {           // Error callback
                         window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
