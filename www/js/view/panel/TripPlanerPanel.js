@@ -216,7 +216,15 @@ Ext.define('App.view.TripPlaner' ,{
         var end = document.getElementById('tp-end-point-'+lastID).value;
         var waypts = [], val;
         if( start.length<3 || end.length<3 ) {
-            alert("Please enter correct Start and Destination Points");
+//            alert("Please enter correct Start and Destination Points");
+
+
+            var message = '. Please enter correct Start and Destination Points';
+            if (navigator.notification) {
+                navigator.notification.alert('Error 333', 'Error 222', 'Error 111');
+            } else {
+                alert(message +"________"+ navigator +"==========="+ navigator.notification);
+            }
             return;
         }
 
