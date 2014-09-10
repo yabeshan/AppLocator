@@ -43,7 +43,7 @@ Ext.define('App.view.AboutPage' ,{
                     '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;border-bottom: 1px solid #c1c0c0;width: 100%;height:65px"><img id="facebookLink" src="img/social-facebook.png" style="height:50px;padding: 10px 30px 0 40px;">'+
                     '<img id="twitterLink" src="img/social-twitter.png" style="height:50px;padding: 10px 30px 0 0;"><img id="linkedinLink" src="img/social-linkedin.png" style="height:50px;padding: 10px 30px 0 0;"><img id="googleLink" src="img/social-googleplus.png" style="height:50px;padding: 10px 0 0 0;"></div>'+
 
-                    '<div style="width: 100%;height: 80px;background-image: url(img/main-page-moreinfo-bottom-arrow.png);background-position: center center;background-repeat: no-repeat;background-size: 161px 115px;"></div>'+
+//                    '<div style="width: 100%;height: 80px;background-image: url(img/main-page-moreinfo-bottom-arrow.png);background-position: center center;background-repeat: no-repeat;background-size: 161px 115px;"></div>'+
                     '<div style="color:#30b457;font-weight: bold;font-size: 22px;padding: 20px 10px 20px 20px;">About Natural Gas</div>'+
                     '<div id="menuCNG" class="about-submenu about-submenu-open">What is CNG?</div>'+
                     '<div id="submenuCNG" style="background-color:#f8f8f8;padding: 10px 10px 30px 20px;">Compressed natural gas (CNG) is methane stored under high pressure in a gaseous form, making it lighter than air. CNG is typically used for light and medium-size natural gas vehicles (NGVs), and some heavy-duty trucks.</div>'+

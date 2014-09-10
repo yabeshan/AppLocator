@@ -79,5 +79,5 @@ var onDeviceReady = function() {
 
 document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){
-//    setTimeout( onDeviceReady, 20000 );
+//    setTimeout( onDeviceReady, 1000 );
 };

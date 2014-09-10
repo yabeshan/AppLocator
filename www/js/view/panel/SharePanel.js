@@ -104,15 +104,19 @@ Ext.define('App.view.SharePanel', {
         }
     },
     openTwitter: function() {
-        if (navigator && appAvailability) {
+        var flag = false;
+        try {
+            flag = navigator && appAvailability;
+        } catch(err) {}
+        if (flag) {
             if (navigator.userAgent.match(/Android/i) == "Android") {
                 appAvailability.check(
                     'com.twitter.android', // URI Scheme
                     function() {           // Success callback
-                        window.open('comtwitterandroid://', '_system');
+                        window.open('twitter://', '_system');
                     },
                     function() {           // Error callback
-                        window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
                     }
                 );
             } else {
@@ -120,15 +124,15 @@ Ext.define('App.view.SharePanel', {
                     'twitter://', // URI Scheme
                     function() {  // Success callback
 //                        post?message=
-                        window.open('twitter://post?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        window.open('twitter://post?message=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
                     },
                     function() {  // Error callback
-                        window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
                     }
                 );
             }
         } else {
-            window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
+            window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
         }
     },
     openGoogle: function() {

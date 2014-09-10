@@ -288,7 +288,7 @@ Ext.define('App.view.TripPlaner' ,{
                 if (navigator.notification) {
                     navigator.notification.alert(message, null, 'Error');
                 } else {
-                    alert(message);
+                    alert(message +"________"+ navigator +"==========="+ navigator.notification);
                 }
             }
             setTimeout(function(){
