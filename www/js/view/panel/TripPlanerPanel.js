@@ -286,7 +286,7 @@ Ext.define('App.view.TripPlaner' ,{
             else {
                 var message = status + '. Please enter correct Start and Destination Points';
                 if (navigator.notification) {
-                    navigator.notification.alert(message, null, 'Error');
+                    navigator.notification.alert('Error 333', 'Error 222', 'Error 111');
                 } else {
                     alert(message +"________"+ navigator +"==========="+ navigator.notification);
                 }
