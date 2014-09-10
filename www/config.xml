@@ -12,8 +12,6 @@
         Station Locator
     </description>
 
-    <preference name="phonegap-version"           value="3.4.0" />
-
 
     <gap:platform name="ios" />
     <gap:platform name="android" />
@@ -53,7 +51,7 @@
     <!--<preference name="SplashScreenDelay"          value="50000"/>-->
     <!--<preference name="AutoHideSplashScreen"       value="false" />-->
 
-
+    <preference name="phonegap-version"           value="3.1.0" />
     <preference name="orientation"                value="portrait" />        <!-- all: default means both landscape and portrait are enabled -->
     <preference name="target-device"              value="universal" />      <!-- all: possible values handset, tablet, or universal -->
     <preference name="fullscreen"                 value="true" />           <!-- all: hides the status bar at the top of the screen -->
