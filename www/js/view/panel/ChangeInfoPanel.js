@@ -210,7 +210,6 @@ Ext.define('App.view.PopupPanel' ,{
     },
 
     applyHandler: function() {
-        Ext.getCmp("tripPlaner").buildTripIconsRestore();
         var parent = Ext.getCmp('changeInfoPanel'),
             panel = Ext.getCmp('mapPanel'),
 
@@ -260,8 +259,6 @@ Ext.define('App.view.PopupPanel' ,{
     },
 
     defaultHandler: function() {
-        Ext.getCmp("tripPlaner").buildTripIconsRestore();
-
         Ext.get("fuel-type-cng").addCls('select');
         Ext.get("fuel-type-lng").addCls('select');
         Ext.get("fuel-type-disel").addCls('select');
@@ -358,7 +355,8 @@ Ext.define('App.view.ChangeInfoPanel' ,{
                 title:'',
                 html: '<div id="lngBtn" class="main-page-bottom-toolbar-select main-page-toolbar-lng"><img id="lngTop" src="img/main-page-toolbar-corner.png"></div>'
                     + '<div id="cngBtn" class="main-page-bottom-toolbar-select main-page-toolbar-cng"><img id="cngTop" src="img/main-page-toolbar-corner.png"></div>'
-                    + '<div id="dotsBtn" class="main-page-bottom-toolbar main-page-toolbar-dots"></div>',
+                    + '<div id="dotsBtn" class="main-page-bottom-toolbar main-page-toolbar-dots"></div>'
+                    + '<div id="listToTripBtn" style="position: absolute;bottom:60px;left:10px;background-color: rgba(255,255,255,.6);padding:10px;visibility:hidden;cursor: pointer">Trip Details</div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
@@ -371,6 +369,8 @@ Ext.define('App.view.ChangeInfoPanel' ,{
                             } else if (node.id=="cngBtn") {
                                 that.changeSelectFilter("cngBtn");
                                 Ext.getCmp('mapPanel').onSearchTypeStations();
+                            } else if (node.id=="listToTripBtn") {
+                                Ext.getCmp('tripPlaner').openRouteViewer();
                             }
                         },
                         element: 'element'

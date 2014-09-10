@@ -39,6 +39,7 @@ Ext.define('App.view.TripPlaner' ,{
 
                     +'<div id="tp-add" class="trip-planer-btn"><img src="img/icons-add.png">Add destination</div>'
                     +'<div id="tp-build" class="trip-planer-btn"><img id="tp-build-img" src="img/icons-trip.png"><span id="tp-build-title" style="pointer-events:none">Build Trip</span></div>'
+                    + '<div id="tp-detailes" class="trip-planer-btn"><img id="tp-build-img" src="img/icons-list-trip.png"><span id="tp-details-title" style="pointer-events:none">Trip Details</span></div>'
                     +'<div id="tp-clear" class="trip-planer-btn"><img src="img/icons-close.png">Clear Trip</div>',
                 listeners: {
                     tap: {
@@ -48,6 +49,9 @@ Ext.define('App.view.TripPlaner' ,{
                                 parent.addPoint();
                             } else if (node.id=="tp-build") {
                                 parent.buildTrip();
+                            } else if (node.id=="tp-detailes") {
+                                parent.buildTrip();
+                                parent.openRouteViewer();
                             } else if (node.id=="tp-clear") {
                                 parent.clearRoad();
                             } else if (node.id.indexOf("change-arrow")>=0) {
@@ -93,6 +97,7 @@ Ext.define('App.view.TripPlaner' ,{
     openRouteViewer: function() {
         var el = document.getElementById ('route-viewer');
         if (el) el.style.visibility = "visible" ;
+        Ext.getCmp('tripPlaner').show();
     },
 
     initSearchBoxFlag:null,
@@ -100,9 +105,6 @@ Ext.define('App.view.TripPlaner' ,{
         Ext.getCmp('tripPlaner').show();
 
         if (obj != null) {
-            Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
-            Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
-
             if (Ext.getCmp("mapPanel").userLocation != null && document.getElementById('tp-end-point-0').value.length==0) {
                 document.getElementById('tp-end-point-0').value = Ext.getCmp("mapPanel").userLocation;
             }
@@ -176,10 +178,6 @@ Ext.define('App.view.TripPlaner' ,{
         var point = document.getElementById("tp-end-point-"+newID);
         var searchBox = new google.maps.places.SearchBox( (point) );
         Ext.getCmp("mapPanel").searchBoxInputArr.push(point);
-
-        Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
-        Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
-
         return newID;
     },
 
@@ -188,9 +186,6 @@ Ext.define('App.view.TripPlaner' ,{
             oldValue = Ext.get('tp-end-point-'+index).dom.value;
         Ext.get('tp-end-point-'+index).dom.value = Ext.get('tp-end-point-'+(index-1)).dom.value;
         Ext.get('tp-end-point-'+(index-1)).dom.value = oldValue;
-
-        Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
-        Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
     },
 
     deleteItems: function(node) {
@@ -202,18 +197,22 @@ Ext.define('App.view.TripPlaner' ,{
             }
         }
         (elem=arr[k-1]).parentNode.removeChild(elem);
+    },
 
-        Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
-        Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
+    detectCurrentLocation: function(val) {
+        if( val.indexOf('urrent')>=1 && val.indexOf('ocation')>=9 && Ext.getCmp("mapPanel").userLocation != null ) {
+            return Ext.getCmp("mapPanel").userLocation;
+        }
+        return val;
     },
 
     buildTrip: function() {
         var mapPanel = Ext.getCmp("mapPanel");
         if (mapPanel.infowindow) mapPanel.infowindow.close();
 
-        var start = document.getElementById('tp-end-point-0').value;
+        var start = this.detectCurrentLocation( document.getElementById('tp-end-point-0').value );
         var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
-        var end = document.getElementById('tp-end-point-'+lastID).value;
+        var end = this.detectCurrentLocation( document.getElementById('tp-end-point-'+lastID).value );
         var waypts = [], val;
         if( start.length<3 || end.length<3 ) {
             viewInfoPopup("Error", "Please enter correct Start and Destination Points");
@@ -226,21 +225,12 @@ Ext.define('App.view.TripPlaner' ,{
             arr[k].model.set({'viewRoute':null});
         }
 
-        if ( Ext.get('tp-build-img').dom.src.indexOf("icons-trip")<0 ) {
-            this.openRouteViewer();
-//            Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
-//            Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
-            return;
-        }
-
         mapPanel.addSpinner();
-        Ext.get('tp-build-title').dom.innerHTML = "List to Trip";
-        Ext.get('tp-build-img').dom.src = "img/icons-list-trip.png";
         Ext.getCmp('tripPlaner').hide();
 
         if (lastID>1) {
             for (var k=lastID-1; k>0; k--) {
-                val = document.getElementById('tp-end-point-'+k).value;
+                val = this.detectCurrentLocation( document.getElementById('tp-end-point-'+k).value );
                 if (val.length>4) waypts.push({location:val, stopover:true});
             }
         }
@@ -276,7 +266,9 @@ Ext.define('App.view.TripPlaner' ,{
                 var hoursRoute = Math.floor( totalTime / 3600 );
                 var minsRoute = Math.ceil( (totalTime-hoursRoute*3600)/60 );
 
-                Ext.get('tp-build-title').dom.innerHTML += ' ('+ Math.ceil(totalDistanse/1610) +'mi, '+ hoursRoute +'h '+ minsRoute+'mins)';
+                Ext.get('tp-details-title').dom.innerHTML = 'Trip Details ('+ Math.ceil(totalDistanse/1610) +'mi, '+ hoursRoute +'h '+ minsRoute+'mins)';
+                Ext.get('listToTripBtn').dom.innerHTML = 'Trip Details ('+ Math.ceil(totalDistanse/1610) +'mi, '+ hoursRoute +'h '+ minsRoute+'mins)';
+                document.getElementById ('listToTripBtn').style.visibility = "visible";
                 var distanseBetweenMarkers = Math.max(1000, Math.round(totalDistanse / 100));
 
                 Ext.getCmp('tripPlaner').addRedMarkers(response.routes[0]);
@@ -410,6 +402,7 @@ Ext.define('App.view.TripPlaner' ,{
     },
 
     clearRoad: function() {
+        document.getElementById ('listToTripBtn').style.visibility = "hidden";
         var map = Ext.getCmp("mapPanel").gMap;
         var k= 0, arr = Ext.getCmp("mapPanel").markerViewArr, lng = arr.length;
         for (k; k<lng; k++) {
@@ -420,9 +413,6 @@ Ext.define('App.view.TripPlaner' ,{
         Ext.getCmp('searchPanel').directionsDisplay.setDirections({ routes: [] });
         Ext.getCmp('tripPlaner').removeRedMarkers();
 
-        Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
-        Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
-
         var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
         if (lastID>1) {
             for (var k=lastID; k>1; k--) {
@@ -431,10 +421,5 @@ Ext.define('App.view.TripPlaner' ,{
         }
         document.getElementById('tp-end-point-0').value="";
         document.getElementById('tp-end-point-1').value="";
-    },
-
-    buildTripIconsRestore: function() {
-        Ext.get('tp-build-title').dom.innerHTML = "Build Trip";
-        Ext.get('tp-build-img').dom.src = "img/icons-trip.png";
     }
 });
