@@ -103,7 +103,6 @@ Ext.define('App.view.StartPage' ,{
     },
     hideSplash: function() {
         if (navigator && navigator.splashscreen) {
-            alert('hide');
             navigator.splashscreen.hide();
         }
     },
