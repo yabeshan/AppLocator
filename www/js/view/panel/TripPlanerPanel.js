@@ -90,10 +90,10 @@ Ext.define('App.view.TripPlaner' ,{
                     tap: {
                         fn: function( e, node ) {
                             if (node.id=="mail-trip") {
-                                body += 'Trip Info <br><br>';
+                                var body = 'Trip Info <br><br>';
 
 //                                if (document.getElementById('tp-end-point-0').value.length>0 || document.getElementById('tp-end-point-1').value.length>0) {
-                                    stAddress = document.getElementById('tp-end-point-0').value;
+                                    var stAddress = document.getElementById('tp-end-point-0').value;
                                     body += '<br>Start: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
 
                                     var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
