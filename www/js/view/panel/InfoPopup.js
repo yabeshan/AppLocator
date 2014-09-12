@@ -42,14 +42,11 @@ Ext.define('App.view.InfoPopup' ,{
                     }
                 }
             },{
+//                cls: 'searchfield-stations',
                 xtype: 'textfield',
-                label: 'Name',
-                name: 'name'
-            }, {
-                xtype: 'textareafield',
-                label: 'Bio',
-                maxRows: 4,
-                name: 'bio'
+                style:'padding_top:200px',
+                value:'qqqqqqqqqqqqqqqqqqq',
+                readOnly: true
             }
         ]
     },
