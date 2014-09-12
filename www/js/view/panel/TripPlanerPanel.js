@@ -81,6 +81,38 @@ Ext.define('App.view.TripPlaner' ,{
                         element: 'element'
                     }
                 }
+            },{
+                id:'route-viewer-footer',
+                cls:'info-popup-zoom',
+                style:'position:absolute;width:100%;height:40px;padding:10px;bottom:0px;left:0px;background-color:#fff;visibility:hidden',
+                html:'<div id="mail-trip"><div style="pointer-events:none;">E-mail Trip</div></div>',
+                listeners: {
+                    tap: {
+                        fn: function( e, node ) {
+                            if (node.id=="mail-trip") {
+                                body += 'Trip Info <br><br>';
+
+//                                if (document.getElementById('tp-end-point-0').value.length>0 || document.getElementById('tp-end-point-1').value.length>0) {
+                                    stAddress = document.getElementById('tp-end-point-0').value;
+                                    body += '<br>Start: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
+
+                                    var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
+                                    if (lastID>1) {
+                                        for (var k=1; k<lastID; k++) {
+                                            stAddress = document.getElementById('tp-end-point-'+k).value;
+                                            body += '<br>Destination: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
+                                        }
+                                    }
+
+                                    stAddress = document.getElementById('tp-end-point-'+lastID).value;
+                                    body += '<br>End: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
+//                                }
+                                window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
+                            }
+                        },
+                        element: 'element'
+                    }
+                }
             }
         ]
     },
@@ -93,11 +125,17 @@ Ext.define('App.view.TripPlaner' ,{
     closeRouteViewer: function() {
         var el = document.getElementById ('route-viewer');
         if (el) el.style.visibility = "hidden" ;
+        el = document.getElementById ('route-viewer-footer');
+        if (el) el.style.visibility = "hidden" ;
+        if (Ext.get("tp-title")) Ext.get("tp-title").dom.innerHTML="Trip Planner";
     },
     openRouteViewer: function() {
         var el = document.getElementById ('route-viewer');
         if (el) el.style.visibility = "visible" ;
+        el = document.getElementById ('route-viewer-footer');
+        if (el) el.style.visibility = "visible" ;
         Ext.getCmp('tripPlaner').show();
+        if (Ext.get("tp-title")) Ext.get("tp-title").dom.innerHTML="Trip Details";
     },
 
     initSearchBoxFlag:null,

@@ -507,6 +507,9 @@ input::-webkit-input-placeholder {
     pointer-events:none;
 }
 
+#mail-trip {
+    cursor: pointer;
+}
 #stationAddressHolder {
     overflow:hidden;position:absolute;left:10px;top:25%;width:320px;color:#67686a;font-weight:bold;
     cursor: pointer;
