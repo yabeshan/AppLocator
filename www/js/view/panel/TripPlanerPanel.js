@@ -84,31 +84,29 @@ Ext.define('App.view.TripPlaner' ,{
             },{
                 id:'route-viewer-footer',
                 cls:'info-popup-zoom',
-                style:'position:absolute;width:100%;height:40px;padding:10px;bottom:0px;left:0px;background-color:#fff;visibility:hidden',
+                style:'position:absolute;width:100%;font-size:14px;height:40px;padding:13px;bottom:0px;left:0px;background-color:#fff;visibility:hidden',
                 html:'<div id="mail-trip"><div style="pointer-events:none;">E-mail Trip</div></div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
-                            if (node.id=="mail-trip") {
-                                var body = 'Trip Info <br><br>';
+                            var mapHref = 'https://www.google.com/maps/place/';
+                            var signature = '<br><br><br>Sincerely, <br><br> Clean Energy Station Locator <br> http://www.cnglngstations.com';
 
-//                                if (document.getElementById('tp-end-point-0').value.length>0 || document.getElementById('tp-end-point-1').value.length>0) {
-                                    var stAddress = document.getElementById('tp-end-point-0').value;
-                                    body += '<br>Start: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
+                            var body = 'Trip Info <br><br>';
+                            var stAddress = document.getElementById('tp-end-point-0').value;
+                            body += '<br>Start: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
 
-                                    var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
-                                    if (lastID>1) {
-                                        for (var k=1; k<lastID; k++) {
-                                            stAddress = document.getElementById('tp-end-point-'+k).value;
-                                            body += '<br>Destination: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
-                                        }
-                                    }
-
-                                    stAddress = document.getElementById('tp-end-point-'+lastID).value;
-                                    body += '<br>End: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
-//                                }
-                                window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
+                            var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
+                            if (lastID>1) {
+                                for (var k=1; k<lastID; k++) {
+                                    stAddress = document.getElementById('tp-end-point-'+k).value;
+                                    body += '<br>Destination: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
+                                }
                             }
+
+                            stAddress = document.getElementById('tp-end-point-'+lastID).value;
+                            body += '<br>End: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
+                            window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
                         },
                         element: 'element'
                     }
