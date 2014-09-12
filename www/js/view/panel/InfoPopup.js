@@ -13,9 +13,9 @@ Ext.define('App.view.InfoPopup' ,{
                     '<div class="info-popup-header"><div id="goDirect">Get Directions</div><div id="goPlanner">Add to Trip</div><div id="goShare">Share</div>' +
                     '<div id="stationStatus" style="position:absolute;left:15px;top:15px;color:#fff;font-style: italic;fony-size:30px;font-weight: normal;width:140px">Operational</div>' +
                     '<div id="flow-rate-low-info"></div><div id="flow-rate-medium-info"></div><div id="flow-rate-hight-info"></div></div>' +
-                    '<div class="info-popup-details">' +
+                    '<div class="info-popup-details selectText">' +
                     '<div id="stationName" style="overflow:hidden;height:23px;width:280px;color:#30b457"></div>' +
-                    '<div id="stationAddress" style="overflow:hidden;height:84px;position:absolute;left:10px;top:25%;width:320px;color:#67686a;font-weight:bold;"></div>' +
+                    '<div id="stationAddress" class="selectText"></div>' +
                     '</div>' +
                     '<div class="info-popup-fuel-types">Fuel Types Offered <div id="fuel-type-redeem-info"></div><div id="fuel-type-cng-info"></div>' +
                     '<div id="fuel-type-lng-info"></div><div id="fuel-type-disel-info"></div></div>' +
