@@ -517,6 +517,11 @@ input::-webkit-input-placeholder {
 }
 #stationAddress {
     overflow:hidden;height:84px;position:absolute;left:10px;top:25%;width:320px;color:#67686a;font-weight:bold;
+    /*background-color: #900;*/
+}
+#stationDetails {
+    overflow:hidden;height:56%;position:absolute;left:10px;top:25%;padding-top:35px;width:320px;color:#67686a;font-weight:bold;
+    /*background-color: #900;*/
 }
 #goDirect {
     position: absolute;top:12px;left:185px;
