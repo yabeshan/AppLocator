@@ -44,7 +44,8 @@ Ext.define('App.view.InfoPopup' ,{
             },{
                 cls:'info-popup-zoom',
                 xtype : 'selectfield',
-                html: '<div id="stationAddress" class="selectText x-selectable"></div>'
+                html: '<div id="stationAddress" class="selectText x-selectable" style="opacity: 0"></div>',
+                label: 'Pizza Size'
             }
         ]
     },
