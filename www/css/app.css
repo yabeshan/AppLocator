@@ -507,18 +507,9 @@ input::-webkit-input-placeholder {
     pointer-events:none;
 }
 
-.selectText {
-    -webkit-touch-callout: default !important;
-    -webkit-user-select: text !important;
-    -khtml-user-select: text !important;
-    -moz-user-select: text !important;
-    -ms-user-select: text !important;
-    user-select: text !important;
-    -webkit-tap-highlight-color:rgba(0,100,0,1);
-}
 #stationAddress {
     overflow:hidden;position:absolute;left:10px;top:25%;width:320px;color:#67686a;font-weight:bold;
-    /*background-color: #900;*/
+    cursor: pointer;
 }
 #stationDetails {
     overflow:hidden;height:56%;position:absolute;left:10px;top:25%;padding-top:35px;width:320px;color:#67686a;font-weight:bold;

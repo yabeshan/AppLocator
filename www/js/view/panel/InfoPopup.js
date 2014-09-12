@@ -6,9 +6,9 @@ Ext.define('App.view.InfoPopup' ,{
 
     config: {
         items:[
-            /*{
+            {
                 cls:'info-popup-zoom',
-                style:'position:absolute;width:100%;height:10px;background-color:#FFF;top:0px;left:0px;font-size:16px;font-weight:bold',
+                style:'position:absolute;width:100%;height:100%;background-color:#FFF;top:0px;left:0px;font-size:16px;font-weight:bold',
                 html:'<img id="info-close" src="img/popup-close-button.png" >' +
                     '<div class="info-popup-header"><div id="goDirect">Get Directions</div><div id="goPlanner">Add to Trip</div><div id="goShare">Share</div>' +
                     '<div id="stationStatus" style="position:absolute;left:15px;top:15px;color:#fff;font-style: italic;fony-size:30px;font-weight: normal;width:140px">Operational</div>' +
@@ -16,7 +16,7 @@ Ext.define('App.view.InfoPopup' ,{
                     '<div class="info-popup-details">' +
                     '<div id="stationName" style="overflow:hidden;height:23px;width:280px;color:#30b457"></div>' +
                     '<div id="stationDetails"></div>' +
-                    '<p id="stationAddress" class="selectText x-selectable"></p>'+
+                    '<div id="stationAddress"></div>' +
                     '</div>' +
                     '<div class="info-popup-fuel-types">Fuel Types Offered <div id="fuel-type-redeem-info"></div><div id="fuel-type-cng-info"></div>' +
                     '<div id="fuel-type-lng-info"></div><div id="fuel-type-disel-info"></div></div>' +
@@ -36,16 +36,18 @@ Ext.define('App.view.InfoPopup' ,{
                                 Ext.getCmp('infoPopup').closePopup();
                             } else if (node.id=="info-close") {
                                 Ext.getCmp('infoPopup').closePopup();
+                            } else if (node.id=="stationAddress") {
+                                if (window && window.plugins && window.plugins.copy) {
+                                    window.plugins.copy(Ext.get("stationAddress").dom.innerHTML);
+                                    viewInfoPopup("Info", "You copy address to clipboard.");
+                                }
                             }
+
                         },
                         element: 'element'
                     }
                 }
-            },*/{
-                xtype: 'textfield',
-                style:'padding_top:200px',
-                value:'qqqqqqqqqqqqqqqqqqq',
-                readOnly: true
+
             }
         ]
     },
@@ -60,7 +62,7 @@ Ext.define('App.view.InfoPopup' ,{
     openPopup: function(model) {
         if (model==null) return;
         Ext.getCmp('infoPopup').show();
-        /*
+
         this.stationName = model.get('StationName');
         this.stationAddress = model.get('StationAddress')+" "+model.get('StationCity')+", "+model.get('StationState')+" "+model.get('StationZip');
         this.stationHours = (model.get('HoursOpenIs24H')=="Yes") ? 'Open 24/7' : (model.get('HoursOpen')||"");//'M-F 8:00am - 6:00pm';
@@ -105,6 +107,7 @@ Ext.define('App.view.InfoPopup' ,{
             hours = '<font style="font-size:12px;line-height: 24px;">Hours: <font style="font-weight:normal;font-style: italic">'+this.stationHours+'</font></font><br>',
             accepts = '<font style="font-size:12px;line-height: 24px;">Accepts: <font style="font-weight:normal;font-style: italic">'+this.stationAccepts+'</font></font><br>';
 
+
         Ext.get("stationAddress").dom.innerHTML = adress;
         Ext.get("stationDetails").dom.innerHTML = hours + accepts;
 
@@ -138,7 +141,7 @@ Ext.define('App.view.InfoPopup' ,{
         else Ext.get("flow-rate-medium-info").removeCls('select');
         if ( model.get('CNG3000HighFlowNozzle')=="Yes" ) Ext.get("flow-rate-hight-info").addCls('select');
         else Ext.get("flow-rate-hight-info").removeCls('select');
-         */
+
     },
     closePopup: function() {
         Ext.getCmp('infoPopup').hide();
