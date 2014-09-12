@@ -507,9 +507,12 @@ input::-webkit-input-placeholder {
     pointer-events:none;
 }
 
-#stationAddress {
+#stationAddressHolder {
     overflow:hidden;position:absolute;left:10px;top:25%;width:320px;color:#67686a;font-weight:bold;
     cursor: pointer;
+}
+#stationAddress {
+    pointer-events:none;
 }
 #stationDetails {
     overflow:hidden;height:56%;position:absolute;left:10px;top:25%;padding-top:35px;width:320px;color:#67686a;font-weight:bold;

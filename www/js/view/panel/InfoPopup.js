@@ -16,7 +16,7 @@ Ext.define('App.view.InfoPopup' ,{
                     '<div class="info-popup-details">' +
                     '<div id="stationName" style="overflow:hidden;height:23px;width:280px;color:#30b457"></div>' +
                     '<div id="stationDetails"></div>' +
-                    '<div id="stationAddress"></div>' +
+                    '<div id="stationAddressHolder"><div id="stationAddress"></div></div>' +
                     '</div>' +
                     '<div class="info-popup-fuel-types">Fuel Types Offered <div id="fuel-type-redeem-info"></div><div id="fuel-type-cng-info"></div>' +
                     '<div id="fuel-type-lng-info"></div><div id="fuel-type-disel-info"></div></div>' +
@@ -36,13 +36,13 @@ Ext.define('App.view.InfoPopup' ,{
                                 Ext.getCmp('infoPopup').closePopup();
                             } else if (node.id=="info-close") {
                                 Ext.getCmp('infoPopup').closePopup();
-                            } else if (node.id=="stationAddress") {
+                            } else if (node.id=="stationAddressHolder") {
+                                viewInfoPopup("Info", window +"__________"+ window.plugins +"===========");
                                 if (window && window.plugins && window.plugins.copy) {
                                     window.plugins.copy(Ext.get("stationAddress").dom.innerHTML);
                                     viewInfoPopup("Info", "You copy address to clipboard.");
                                 }
                             }
-
                         },
                         element: 'element'
                     }
