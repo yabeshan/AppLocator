@@ -89,6 +89,7 @@ Ext.define('App.view.TripPlaner' ,{
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
+                            var subj = 'Email from Station Locator';
                             var mapHref = 'https://www.google.com/maps/place/';
                             var signature = '<br><br><br>Sincerely, <br><br> Clean Energy Station Locator <br> http://www.cnglngstations.com';
 
@@ -103,7 +104,6 @@ Ext.define('App.view.TripPlaner' ,{
                                     body += '<br>Destination: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
                                 }
                             }
-
                             stAddress = document.getElementById('tp-end-point-'+lastID).value;
                             body += '<br>End: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
                             window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
