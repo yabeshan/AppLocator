@@ -44,8 +44,8 @@ Ext.define('App.view.InfoPopup' ,{
             },*/{
                 xtype: 'textfield',
                 style:'padding_top:200px',
-                value:'qqqqqqqqqqqqqqqqqqq'/*,
-                readOnly: true*/
+                value:'qqqqqqqqqqqqqqqqqqq',
+                readOnly: true
             }
         ]
     },
