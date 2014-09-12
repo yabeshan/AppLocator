@@ -8,7 +8,7 @@ Ext.define('App.view.InfoPopup' ,{
         items:[
             {
                 cls:'info-popup-zoom',
-                style:'position:absolute;width:100%;height:100%;background-color:#FFF;top:0px;left:0px;font-size:16px;font-weight:bold',
+                style:'position:absolute;width:100%;height:10px;background-color:#FFF;top:0px;left:0px;font-size:16px;font-weight:bold',
                 html:'<img id="info-close" src="img/popup-close-button.png" >' +
                     '<div class="info-popup-header"><div id="goDirect">Get Directions</div><div id="goPlanner">Add to Trip</div><div id="goShare">Share</div>' +
                     '<div id="stationStatus" style="position:absolute;left:15px;top:15px;color:#fff;font-style: italic;fony-size:30px;font-weight: normal;width:140px">Operational</div>' +
@@ -50,7 +50,7 @@ Ext.define('App.view.InfoPopup' ,{
                 label: 'Bio',
                 maxRows: 4,
                 name: 'bio'
-            }]
+            }
         ]
     },
 
