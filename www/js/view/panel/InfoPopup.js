@@ -16,13 +16,12 @@ Ext.define('App.view.InfoPopup' ,{
                     '<div class="info-popup-details">' +
                     '<div id="stationName" style="overflow:hidden;height:23px;width:280px;color:#30b457"></div>' +
                     '<div id="stationDetails"></div>' +
-
+                    '<p id="stationAddress" class="selectText x-selectable"></p>'+
                     '</div>' +
                     '<div class="info-popup-fuel-types">Fuel Types Offered <div id="fuel-type-redeem-info"></div><div id="fuel-type-cng-info"></div>' +
                     '<div id="fuel-type-lng-info"></div><div id="fuel-type-disel-info"></div></div>' +
                     '<div class="info-popup-vehicle-types">Vehicle Types Accepted' +
-                    '<div id="vehicle-type-cars-info"></div><div id="vehicle-type-box-info"></div><div id="vehicle-type-semi-info"></div></div>' +
-                    '<span id="stationAddress" class="selectText x-selectable">wwwwwwwwwwwwwwwwwwwwwwwwwwww</span>',
+                    '<div id="vehicle-type-cars-info"></div><div id="vehicle-type-box-info"></div><div id="vehicle-type-semi-info"></div></div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
@@ -42,7 +41,16 @@ Ext.define('App.view.InfoPopup' ,{
                         element: 'element'
                     }
                 }
-            }
+            },{
+                xtype: 'textfield',
+                label: 'Name',
+                name: 'name'
+            }, {
+                xtype: 'textareafield',
+                label: 'Bio',
+                maxRows: 4,
+                name: 'bio'
+            }]
         ]
     },
 
@@ -101,7 +109,7 @@ Ext.define('App.view.InfoPopup' ,{
             hours = '<font style="font-size:12px;line-height: 24px;">Hours: <font style="font-weight:normal;font-style: italic">'+this.stationHours+'</font></font><br>',
             accepts = '<font style="font-size:12px;line-height: 24px;">Accepts: <font style="font-weight:normal;font-style: italic">'+this.stationAccepts+'</font></font><br>';
 
-//        Ext.get("stationAddress").dom.innerHTML = adress;
+        Ext.get("stationAddress").dom.innerHTML = adress;
         Ext.get("stationDetails").dom.innerHTML = hours + accepts;
 
         if (model.get('StationStatus')=="Under Maintenance") {
