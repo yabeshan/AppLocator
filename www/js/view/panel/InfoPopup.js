@@ -6,7 +6,7 @@ Ext.define('App.view.InfoPopup' ,{
 
     config: {
         items:[
-            {
+            /*{
                 cls:'info-popup-zoom',
                 style:'position:absolute;width:100%;height:10px;background-color:#FFF;top:0px;left:0px;font-size:16px;font-weight:bold',
                 html:'<img id="info-close" src="img/popup-close-button.png" >' +
@@ -41,12 +41,11 @@ Ext.define('App.view.InfoPopup' ,{
                         element: 'element'
                     }
                 }
-            },{
-//                cls: 'searchfield-stations',
+            },*/{
                 xtype: 'textfield',
                 style:'padding_top:200px',
-                value:'qqqqqqqqqqqqqqqqqqq',
-                readOnly: true
+                value:'qqqqqqqqqqqqqqqqqqq'/*,
+                readOnly: true*/
             }
         ]
     },
@@ -61,7 +60,7 @@ Ext.define('App.view.InfoPopup' ,{
     openPopup: function(model) {
         if (model==null) return;
         Ext.getCmp('infoPopup').show();
-
+        /*
         this.stationName = model.get('StationName');
         this.stationAddress = model.get('StationAddress')+" "+model.get('StationCity')+", "+model.get('StationState')+" "+model.get('StationZip');
         this.stationHours = (model.get('HoursOpenIs24H')=="Yes") ? 'Open 24/7' : (model.get('HoursOpen')||"");//'M-F 8:00am - 6:00pm';
@@ -139,7 +138,7 @@ Ext.define('App.view.InfoPopup' ,{
         else Ext.get("flow-rate-medium-info").removeCls('select');
         if ( model.get('CNG3000HighFlowNozzle')=="Yes" ) Ext.get("flow-rate-hight-info").addCls('select');
         else Ext.get("flow-rate-hight-info").removeCls('select');
-
+         */
     },
     closePopup: function() {
         Ext.getCmp('infoPopup').hide();
