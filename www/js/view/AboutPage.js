@@ -36,12 +36,13 @@ Ext.define('App.view.AboutPage' ,{
                     '<img src="img/about-logo.png" style="width: 250px;padding: 20px 0px 0px 20px;">'+
                     '<div style="color:#28549c;padding: 10px 10px 20px 20px;max-width: 900px">Clean Energy is the largest provider of natural gas fuel for transportation in North America, fueling over 30,000 vehicles each day at approximately 500 fueling stations throughout North America.</div>'+
                     '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:80px"><img src="img/about-icon-city.png" style="float:left;width: 80px;"><span style="position:relative;top:16px;font-size: 17px">4675 McArthur Court, Suite 800<br>Newport Beach, CA 92606</span></div>'+
-                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:62px"><img src="img/about-icon-mobile.png" style="float:left;width: 80px"><span style="position:relative;top:20px;"><a href="tel:9494371000" style="color:#5a5947;text-decoration: none">949.437.1000</a></span></div>'+
+                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:80px;"><img src="img/about-icon-mobile.png" style="float:left;width: 80px;padding-top: 10px">' +
+                        '<span style="position:relative;top:5px;line-height: 25px"><a href="tel:9494371000" style="color:#5a5947;text-decoration: none">949.437.1000</a><br><a href="tel:8668094869" style="color:#5a5947;text-decoration: none;">866.809.4869</a></span><br><span style="font-size: 15px;">(Customer Service)</span><br></div>'+
                     '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:62px"><img src="img/about-icon-web.png" style="float:left;width: 80px"><span style="position:relative;top:20px;" id="siteSpan">www.CleanEnergyFuels.com</span></div>'+
                     '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;width: 100%;height:62px"><img src="img/about-icon-mail.png" style="float:left;width: 80px"><span style="position:relative;top:20px;" id="mailSpan">Info@CleanEnergyFuels.com</span></div>'+
 
-                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;border-bottom: 1px solid #c1c0c0;width: 100%;height:65px"><img id="facebookLink" src="img/social-facebook.png" style="height:50px;padding: 10px 30px 0 40px;">'+
-                    '<img id="twitterLink" src="img/social-twitter.png" style="height:50px;padding: 10px 30px 0 0;"><img id="linkedinLink" src="img/social-linkedin.png" style="height:50px;padding: 10px 30px 0 0;"><img id="googleLink" src="img/social-googleplus.png" style="height:50px;padding: 10px 0 0 0;"></div>'+
+                    '<div style="background-color:#f8f8f8;border-top: 1px solid #c1c0c0;border-bottom: 1px solid #c1c0c0;width: 100%;height:65px"><img id="facebookLink" src="img/social-facebook.png" style="height:50px;padding: 10px 30px 0 40px;cursor: pointer">'+
+                    '<img id="twitterLink" src="img/social-twitter.png" style="height:50px;padding: 10px 30px 0 0;cursor: pointer"><img id="linkedinLink" src="img/social-linkedin.png" style="height:50px;padding: 10px 30px 0 0;cursor: pointer"><img id="googleLink" src="img/social-googleplus.png" style="height:50px;padding: 10px 0 0 0;cursor: pointer"></div>'+
 
 //                    '<div style="width: 100%;height: 80px;background-image: url(img/main-page-moreinfo-bottom-arrow.png);background-position: center center;background-repeat: no-repeat;background-size: 161px 115px;"></div>'+
                     '<div style="color:#30b457;font-weight: bold;font-size: 22px;padding: 20px 10px 20px 20px;">About Natural Gas</div>'+
@@ -56,13 +57,13 @@ Ext.define('App.view.AboutPage' ,{
                     tap: {
                         fn: function( e, node ) {
                             if (node.id=="facebookLink") {
-                                window.open("http://facebook.com/cleanenergyfuels", "_system");
+                                Ext.getCmp('AboutPage').openFacebook();
                             } else if (node.id=="twitterLink") {
-                                window.open("http://twitter.com/CE_natgas", "_system");
+                                Ext.getCmp('AboutPage').openTwitter();
                             } else if (node.id=="linkedinLink") {
-                                window.open("http://www.linkedin.com/company/350942?trk=NUS_CMPY_TWIT", "_system");
+                                Ext.getCmp('AboutPage').openLinkedin();
                             } else if (node.id=="googleLink") {
-                                window.open("http://plus.google.com/", "_system");
+                                Ext.getCmp('AboutPage').openGoogle();
                             } else if (node.id=="mailSpan") {
                                 window.open("mailto:Info@CleanEnergyFuels.com", "_system");
                             } else if (node.id=="siteSpan") {
@@ -108,7 +109,125 @@ Ext.define('App.view.AboutPage' ,{
             }
         ]
     },
+    openFacebook: function() {
+        if (navigator && appAvailability) {
+            if (navigator.userAgent.match(/Android/i) == "Android") {
+                appAvailability.check(
+                    'com.facebook.katana', // URI Scheme
+                    function() {           // Success callback
+                        window.open('comfacebookkatana://', '_system');
+                    },
+                    function() {           // Error callback
+                        window.open("http://facebook.com/cleanenergyfuels", "_system");
+                    }
+                );
+            } else {
+                appAvailability.check(
+                    'fb://', // URI Scheme
+                    function() {  // Success callback
+                        window.open('fb://cleanenergyfuels', '_system');
+                    },
+                    function() {  // Error callback
+                        window.open("http://facebook.com/cleanenergyfuels", "_system");
+                    }
+                );
+            }
+        } else {
+            window.open("http://facebook.com/cleanenergyfuels", "_system");
+        }
+    },
+    openTwitter: function() {
+        var flag = false;
+        try {
+            flag = navigator && appAvailability;
+        } catch(err) {}
+        if (flag) {
+            if (navigator.userAgent.match(/Android/i) == "Android") {
+                appAvailability.check(
+                    'com.twitter.android', // URI Scheme
+                    function() {           // Success callback
+                        window.open('twitter://', '_system');
+                    },
+                    function() {           // Error callback
+                        window.open("http://twitter.com/CE_natgas", "_system");
+                    }
+                );
+            } else {
+                appAvailability.check(
+                    'twitter://', // URI Scheme
+                    function() {  // Success callback
+//                        post?message=
+                        window.open('twitter://CE_natgas', '_system');
+                    },
+                    function() {  // Error callback
+                        window.open("http://twitter.com/CE_natgas", "_system");
+                    }
+                );
+            }
+        } else {
+            window.open("http://twitter.com/CE_natgas", "_system");
+        }
+    },
+    openGoogle: function() {
+        if (navigator && appAvailability) {
+            if (navigator.userAgent.match(/Android/i) == "Android") {
+                appAvailability.check(
+                    'com.google.plus', // URI Scheme
+                    function() {           // Success callback
+                        window.open('comgoogleplus://plus.google.com/102180446071748971556/posts', '_system');
+                    },
+                    function() {           // Error callback
+                        window.open("https://plus.google.com/102180446071748971556/posts", "_system");
+                    }
+                );
+            } else {
+                appAvailability.check(
+                    'gplus://', // URI Scheme
+                    function() {  // Success callback
+                        window.open('gplus://https://plus.google.com/102180446071748971556/posts', '_system');
+                    },
+                    function() {  // Error callback
+                        window.open("https://plus.google.com/102180446071748971556/posts", "_system");
+                    }
+                );
+            }
+        } else {
+            window.open("https://plus.google.com/102180446071748971556/posts", "_system");
+        }
+    },
 
+    openLinkedin: function() {
+        var flag = false;
+        try {
+            flag = navigator && appAvailability;
+        } catch(err) {}
+        if (flag) {
+            if (navigator.userAgent.match(/Android/i) == "Android") {
+                appAvailability.check(
+                    'com.linkedin.android', // URI Scheme
+                    function() {           // Success callback
+                        window.open('com.linkedin.android://', '_system');
+                    },
+                    function() {           // Error callback
+                        window.open("https://www.linkedin.com/company/clean-energy-fuels-corp", "_system");
+                    }
+                );
+            } else {
+                appAvailability.check(
+                    'linkedin://', // URI Scheme
+                    function() {  // Success callback
+//                        post?message=
+                        window.open('linkedin://clean-energy-fuels-corp', '_system');
+                    },
+                    function() {  // Error callback
+                        window.open("https://www.linkedin.com/company/clean-energy-fuels-corp", "_system");
+                    }
+                );
+            }
+        } else {
+            window.open("https://www.linkedin.com/company/clean-energy-fuels-corp", "_system");
+        }
+    },
     initialize: function() {
 
     },

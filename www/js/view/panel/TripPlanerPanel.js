@@ -308,7 +308,7 @@ Ext.define('App.view.TripPlaner' ,{
                 var distanseBetweenMarkers = Math.max(1000, Math.round(totalDistanse / 100));
 
                 Ext.getCmp('tripPlaner').addRedMarkers(response.routes[0]);
-                Ext.getCmp('tripPlaner').viewRadiusStations(response.routes[0]);
+//                Ext.getCmp('tripPlaner').viewRadiusStations(response.routes[0]);
 
             }
             else {

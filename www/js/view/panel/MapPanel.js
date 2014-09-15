@@ -239,7 +239,6 @@ Ext.define('App.view.MapPanel', {
             if (Ext.getCmp("mapPanel").locateMeStartFlag==null) {
                 Ext.getCmp("mapPanel").locateMe();
             }
-            setTimeout( Ext.getCmp('mapPanel').completeMap, 500);
             return;
         }
 
@@ -366,6 +365,7 @@ Ext.define('App.view.MapPanel', {
         if (that.infowindow)
             that.infowindow.close();
 
+        Ext.getCmp("mapPanel").userCoord = {'lat':37.0625, 'lon':-95.677068};
         if (navigator && navigator.geolocation) {
 
             navigator.geolocation.getCurrentPosition(function(position){
@@ -382,6 +382,7 @@ Ext.define('App.view.MapPanel', {
 //            alert("navigator.geolocation not supported");
             Ext.getCmp("mapPanel").viewInfoWindow("Error: Your browser doesn\'t support geolocation. ");
         }
+        setTimeout( Ext.getCmp('mapPanel').completeMap, 100);
     },
 
     userLocation:null,
