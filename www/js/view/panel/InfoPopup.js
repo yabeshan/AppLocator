@@ -97,9 +97,11 @@ Ext.define('App.view.InfoPopup' ,{
         this.stationAccepts += (model.get('PaymentTypesAcceptedVoyager')=="Yes") ? "Voyager, " : "" ;
         this.stationAccepts += (model.get('PaymentTypesAcceptedWrightExpress')=="Yes") ? "WEX, " : "" ;
         this.stationAccepts += (model.get('PaymentTypesAcceptedWEXFleetone')=="Yes") ? "WEX Fleetone, " : "" ;
-        this.stationAccepts += (model.get('PaymentTypesAcceptedTranStar')=="Yes") ? "TranStar, " : "" ;
-        this.stationAccepts += (model.get('PaymentTypesAcceptedNaturalFuels')=="Yes") ? "NaturalFuels, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedTranStar')=="Yes") ? "Other" : "";//"TranStar, " : "" ;
+        this.stationAccepts += (model.get('PaymentTypesAcceptedNaturalFuels')=="Yes") ? "Other" : "";//"NaturalFuels, " : "" ;
 
+        if ( this.stationAccepts.lastIndexOf(",")==(this.stationAccepts.length-2) ) this.stationAccepts = this.stationAccepts.substr(0, this.stationAccepts.length-2);
+        else if ( this.stationAccepts.indexOf("OtherOther")>=0 ) this.stationAccepts = this.stationAccepts.substr(0, this.stationAccepts.length-5);
 
         Ext.get("stationName").dom.innerHTML = this.stationName;
         var adress = ' '+ this.stationAddress,
