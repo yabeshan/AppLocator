@@ -114,10 +114,13 @@ Ext.define('App.view.InfoPopup' ,{
 
         if (model.get('StationStatus')=="Under Maintenance") {
             Ext.get("stationStatus").dom.innerHTML = "Under Maintenance";
+            Ext.get("stationStatus").setStyle({'top':'11px'});
         } else if (model.get('StationStatus')=="Coming Soon") {
-            Ext.get("stationStatus").dom.innerHTML = "Coming Soon";
+            Ext.get("stationStatus").dom.innerHTML = "Coming<br>Soon";
+            Ext.get("stationStatus").setStyle({'top':'11px'});
         } else {
             Ext.get("stationStatus").dom.innerHTML = "Operational";
+            Ext.get("stationStatus").setStyle({'top':'26px'});
         }
 
         if ( model.get('StationFuelTypeCNG')=="Yes" ) Ext.get("fuel-type-cng-info").addCls('select');

@@ -574,7 +574,6 @@ input::-webkit-input-placeholder {
 }
 
 #stationStatus {
-    position:absolute;left:15px;top:11px;color:#fff;font-style: italic;
-    font-size:25px;font-weight: bold;
-    width:140px;text-align: center;zoom: 1;
+    position:absolute;left:13px;width:160px;top:11px;color:#fff;font-style: italic;
+    font-size:25px;font-weight: bold;text-align: center;
 }

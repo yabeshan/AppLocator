@@ -438,6 +438,7 @@ Ext.define('App.view.TripPlaner' ,{
     },
 
     clearRoad: function() {
+        Ext.get('tp-details-title').dom.innerHTML = 'Trip Details';
         document.getElementById ('listToTripBtn').style.visibility = "hidden";
         var map = Ext.getCmp("mapPanel").gMap;
         var k= 0, arr = Ext.getCmp("mapPanel").markerViewArr, lng = arr.length;
