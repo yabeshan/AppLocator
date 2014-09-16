@@ -1,37 +1,5 @@
 
 
-/*
-
-
-var initflag = false;
-var onDeviceReady = function() {
-    if (initflag) return;
-
-    initflag = true;
-    alert("init");
-
-
-    Ext.application({
-        launch: function() {
-            Ext.create('Ext.Panel', {
-                items: [
-                    {html:'<div style="position: absolute;width: 100px;height: 100px; top: 100px; left: 100px; background-color: #900">11111111111111111111111111111111111111111111111111111111111111111111111111111111111</div>'}
-                ]
-            });
-
-        }
-    });
-};
-
-document.addEventListener('deviceready', onDeviceReady, false);
-window.onload=function(){
-    setTimeout( onDeviceReady, 3000 );
-};
-
-
- */
-
-
 var appInit = function() {
     if (initflag==true) return;
 
@@ -68,10 +36,13 @@ var appInit = function() {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 ) {
             if(xmlhttp.status == 200){
-                alert("_______"+ xmlhttp.responseText);
+                var json = JSON.parse(xmlhttp.responseText);
+                alert(json +"_______"+ Ext.getCmp('mapPanel') );
             }
         }
     }
+
+//    Ext.getCmp('mapPanel').updateDataStations( urlDATA );
 
     function getUpdateStatus() {
         xmlhttp.open("GET", urlConfig, true);

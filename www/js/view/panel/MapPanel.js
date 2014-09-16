@@ -256,10 +256,8 @@ Ext.define('App.view.MapPanel', {
             callback: function(records, operation, success) {
                 if (success) {
                     console.log('complete upload data');
-//                    alert("complete");
                 } else {
                     console.log('error upload data');
-//                    alert("error");
                 }
                 Ext.getCmp('mapPanel').updateDataStationsComplete();
             }
@@ -268,7 +266,6 @@ Ext.define('App.view.MapPanel', {
 
     updateDataStationsComplete: function() {
         var that = Ext.getCmp('mapPanel');
-//        Ext.getStore('StationStore').loadData();
         if (that.markerArr.length>0) {
             that.removeAllMarkers();
         }
