@@ -18,13 +18,13 @@ Ext.define('App.view.SearchPanel', {
                         itemId: 'searchBox',
                         id:'pac-input',
                         listeners: {
-                        tap: {
-                            fn: function( e, node ) {
-                                alert("tap");
-                            },
-                            element: 'element'
+                            paste: {
+                                fn: function( e, node ) {
+                                    alert("paste");
+                                },
+                                element: 'element'
+                            }
                         }
-                    }
                     },{
                         style:'cursor:pointer;',
                         html:'<img id="searchBtn" src="img/main-page-toolbar-search-btn.png" style="width:44px;height:52px;">',
