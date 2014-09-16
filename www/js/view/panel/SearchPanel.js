@@ -16,7 +16,15 @@ Ext.define('App.view.SearchPanel', {
                         xtype: 'searchfield',
                         placeHolder: 'search by address, city or zip',
                         itemId: 'searchBox',
-                        id:'pac-input'
+                        id:'pac-input',
+                        listeners: {
+                        tap: {
+                            fn: function( e, node ) {
+                                alert("tap");
+                            },
+                            element: 'element'
+                        }
+                    }
                     },{
                         style:'cursor:pointer;',
                         html:'<img id="searchBtn" src="img/main-page-toolbar-search-btn.png" style="width:44px;height:52px;">',
