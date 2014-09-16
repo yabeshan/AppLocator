@@ -77,6 +77,19 @@ var onDeviceReady = function() {
     window.onload = function(){};
 };
 
+
+Ext.Ajax.request({
+    url: urlConfig,
+    callback: function(response) {
+        alert(response.responseText);
+    },
+    failure: function(response) {
+        alert("Curses, something terrible happened");
+    }
+
+});
+
+
 document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){
     if( document.URL.indexOf('file:///D:/Nick_work/') == 0) {
