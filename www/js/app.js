@@ -59,8 +59,26 @@ var appInit = function() {
                 ]
             });
         }
-
     });
+
+
+    var xmlhttp;
+    if (window.XMLHttpRequest) xmlhttp = new XMLHttpRequest();
+    else xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    xmlhttp.onreadystatechange = function() {
+        if (xmlhttp.readyState == 4 ) {
+            if(xmlhttp.status == 200){
+                alert("_______"+ xmlhttp.responseText);
+            }
+        }
+    }
+
+    function getUpdateStatus() {
+        xmlhttp.open("GET", urlConfig, true);
+        xmlhttp.send();
+    }
+    setInterval(getUpdateStatus,600000);
+    getUpdateStatus();
 };
 
 var initflag = false;
@@ -77,34 +95,6 @@ var onDeviceReady = function() {
     window.onload = function(){};
 };
 
-
-var xmlhttp;
-
-if (window.XMLHttpRequest) {
-    // code for IE7+, Firefox, Chrome, Opera, Safari
-    xmlhttp = new XMLHttpRequest();
-} else {
-    // code for IE6, IE5
-    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-}
-
-xmlhttp.onreadystatechange = function() {
-    if (xmlhttp.readyState == 4 ) {
-        if(xmlhttp.status == 200){
-            alert("_______"+ xmlhttp.responseText);
-//            document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
-        }
-        else if(xmlhttp.status == 400) {
-            alert('There was an error 400')
-        }
-        else {
-            alert('something else other than 200 was returned')
-        }
-    }
-}
-
-xmlhttp.open("GET", urlConfig, true);
-xmlhttp.send();
 
 
 document.addEventListener('deviceready', onDeviceReady, false);
