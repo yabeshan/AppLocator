@@ -37,12 +37,23 @@ var appInit = function() {
         if (xmlhttp.readyState == 4 ) {
             if(xmlhttp.status == 200){
                 var json = JSON.parse(xmlhttp.responseText);
-                alert(json.UtcDateTime +"_______"+ json.Url +"_______"+ (Ext.getCmp('mapPanel').updateDataStations != null) );
+                if (json.UtcDateTime) {
+                    var lng = json.UtcDateTime.length,
+                        ver = json.UtcDateTime.substr(6,lng-2);
+                    verDB_new = Number( ver );
+                }
+                if (json.Url) {
+                    urlDATA = json.Url + "?"+Date.now();
+                }
+
+                if (verDB_new != verDB && (Ext.getCmp('mapPanel') != null) && (Ext.getCmp('mapPanel').updateDataStations != null) ) {
+                    Ext.getCmp('mapPanel').updateDataStations( urlDATA );
+                }
+
+                alert(json.UtcDateTime +"_______"+ verDB_new +"____________");
             }
         }
     }
-
-//    Ext.getCmp('mapPanel').updateDataStations( urlDATA );
 
     function getUpdateStatus() {
         xmlhttp.open("GET", urlConfig, true);
@@ -53,7 +64,8 @@ var appInit = function() {
 };
 
 var initflag = false;
-var verDB = "1399359600000";
+var verDB = 1399359600000;
+var verDB_new = 0;
 var urlConfig = "http://dev.cnglngstations.com/Home/GetStationsForMobile?parameters={%27Guid%27:%27bee87ce1-aa3e-4191-83e3-69135311088b%27}";
 var urlDATA = "http://dev.cnglngstations.com/Data/stations.json";
 var onDeviceReady = function() {

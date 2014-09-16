@@ -256,7 +256,7 @@ Ext.define('App.view.MapPanel', {
             callback: function(records, operation, success) {
                 if (success) {
                     console.log('complete upload data');
-                    alert("update DB " + verDB);
+                    alert("update DB " + verDB +"   "+ verDB_new);
                 } else {
                     console.log('error upload data');
                 }
