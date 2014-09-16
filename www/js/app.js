@@ -41,18 +41,14 @@ var appInit = function() {
                     var lng = json.UtcDateTime.length-2,
                         ver = json.UtcDateTime.substr(6, 13);
                     verDB_new = Number( ver );
-
-                    alert(json.UtcDateTime +"_______"+ verDB_new +"____________");
                 }
                 if (json.Url) {
                     urlDATA = json.Url + "?"+Date.now();
                 }
 
                 if (verDB_new != verDB && (Ext.getCmp('mapPanel') != null) && (Ext.getCmp('mapPanel').updateDataStations != null) ) {
-                    Ext.getCmp('mapPanel').updateDataStations( urlDATA );
+//                    Ext.getCmp('mapPanel').updateDataStations( urlDATA );
                 }
-
-
             }
         }
     }
