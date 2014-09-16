@@ -173,39 +173,39 @@
 }
 
 #flow-rate-low-info {
-    position: absolute;width:55px;height:47px;top:120px;left:18px;zoom:0.84;
-    background: url('../img/icons-flow-rate.png') no-repeat 0px 0px;
+    position: absolute;width:55px;height:47px;top:125px;left:18px;zoom:0.84;
+    background: url('../img/icons-flow-rate.png') no-repeat 0px 0px;opacity: 0;
 }
 #flow-rate-low {
     position: absolute;width:55px;height:47px;top:40px;margin-left:0%;cursor: pointer;
     background: url('../img/icons-flow-rate.png') no-repeat 0px 0px;
 }
 #flow-rate-low.select, #flow-rate-low-info.select {
-    background: url('../img/icons-flow-rate.png') no-repeat 0px -47px;
+    background: url('../img/icons-flow-rate.png') no-repeat 0px -47px;opacity: 1;
 }
 
 #flow-rate-medium-info {
-    position: absolute;width:55px;height:47px;top:120px;left: 88px;zoom:0.84;
-    background: url('../img/icons-flow-rate.png') no-repeat -60px 0px;
+    position: absolute;width:55px;height:47px;top:125px;left: 88px;zoom:0.84;
+    background: url('../img/icons-flow-rate.png') no-repeat -60px 0px;opacity: 0;
 }
 #flow-rate-medium {
     position: absolute;width:55px;height:47px;top:40px;margin-left:35%;cursor: pointer;
     background: url('../img/icons-flow-rate.png') no-repeat -60px 0px;
 }
 #flow-rate-medium.select, #flow-rate-medium-info.select {
-    background: url('../img/icons-flow-rate.png') no-repeat -60px -47px;
+    background: url('../img/icons-flow-rate.png') no-repeat -60px -47px;opacity: 1;
 }
 
 #flow-rate-hight-info {
-    position: absolute;width:55px;height:47px;top:120px;left:158px;zoom:0.84;
-    background: url('../img/icons-flow-rate.png') no-repeat -120px 0px;
+    position: absolute;width:55px;height:47px;top:125px;left:158px;zoom:0.84;
+    background: url('../img/icons-flow-rate.png') no-repeat -120px 0px;opacity: 0;
 }
 #flow-rate-hight {
     position: absolute;width:55px;height:47px;top:40px;margin-left:70%;cursor: pointer;
     background: url('../img/icons-flow-rate.png') no-repeat -120px 0px;
 }
 #flow-rate-hight.select, #flow-rate-hight-info.select {
-    background: url('../img/icons-flow-rate.png') no-repeat -120px -47px;
+    background: url('../img/icons-flow-rate.png') no-repeat -120px -47px;opacity: 1;
 }
 
 /*************************************** Payment Types ***************************************/

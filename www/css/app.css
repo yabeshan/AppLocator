@@ -463,16 +463,19 @@ input::-webkit-input-placeholder {
     background-repeat: no-repeat;
     background-size: 338px 154px;
 }
+.info-popup-flow-rate {
+    position:absolute;top:80px;left:20px;color: #67686a;
+}
 .info-popup-details {
-    position:absolute;width:338px;top:35%;height: 30%;left:50%;margin-left: -164px;padding: 10px;
+    position:absolute;width:338px;top:175px;bottom: 60%;left:50%;margin-left: -164px;padding: 10px;
     border-top: 1px solid #95979b;
 }
 .info-popup-fuel-types {
-    position:absolute;width:338px;top:60%;height: 20%;left:50%;margin-left: -164px;
+    position:absolute;width:338px;bottom:160px;left:50%;margin-left: -164px;
     border-top: 1px solid #95979b;padding: 10px;color: #67686a;
 }
 .info-popup-vehicle-types {
-    position:absolute;width:338px;top:80%;height: 20%;left:50%;margin-left: -164px;
+    position:absolute;width:338px;bottom:60px;left:50%;margin-left: -164px;
     padding: 10px;color: #67686a;
 }
 
@@ -511,15 +514,15 @@ input::-webkit-input-placeholder {
     cursor: pointer;
 }
 #stationAddressHolder {
-    overflow:hidden;position:absolute;left:10px;top:25%;width:320px;color:#67686a;font-weight:bold;
-    cursor: pointer;
+    overflow:hidden;position:absolute;left:10px;top:35px;width:320px;color:#67686a;font-weight:bold;
+    cursor: pointer;background-color: rgba(200,0,0,.3);
 }
 #stationAddress {
     pointer-events:none;
 }
 #stationDetails {
-    overflow:hidden;height:56%;position:absolute;left:10px;top:25%;padding-top:35px;width:320px;color:#67686a;font-weight:bold;
-    /*background-color: #900;*/
+    position:absolute;left:10px;top:75px;width:320px;color:#67686a;font-weight:bold;
+    background-color: rgba(200,2000,0,.3);
 }
 #goDirect {
     position: absolute;top:12px;left:185px;
@@ -571,7 +574,7 @@ input::-webkit-input-placeholder {
 }
 
 #stationStatus {
-    position:absolute;left:15px;top:15px;color:#fff;font-style: italic;
+    position:absolute;left:15px;top:11px;color:#fff;font-style: italic;
     font-size:25px;font-weight: bold;
     width:140px;text-align: center;zoom: 1;
 }
