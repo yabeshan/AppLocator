@@ -244,7 +244,12 @@ Ext.define('App.view.MapPanel', {
 
         that.unmask();
         that.addSearchPanelInteractive();
-        that.updateDataStations( urlDATA );
+
+        if (verDB!=verDB_new) {
+            that.updateDataStations( urlDATA );
+        } else {
+            that.updateDataStationsComplete();
+        }
     },
 
     updateDataStations: function( url) {
@@ -257,6 +262,8 @@ Ext.define('App.view.MapPanel', {
                 if (success) {
                     console.log('complete upload data');
                     alert("update DB " + verDB +"   "+ verDB_new);
+                    verDB=verDB_new;
+                    Ext.get("verdb").dom.innerHTML = verDB;
                 } else {
                     console.log('error upload data');
                 }
