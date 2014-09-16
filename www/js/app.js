@@ -40,7 +40,7 @@ var appInit = function() {
                 if (json.UtcDateTime) {
                     var lng = json.UtcDateTime.length-2,
                         ver = json.UtcDateTime.substr(6, 13);
-                    verDB_new = ver;//Number( ver );
+                    verDB_new = Number( ver );
 
                     alert(json.UtcDateTime +"_______"+ verDB_new +"____________");
                 }
