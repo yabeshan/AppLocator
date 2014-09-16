@@ -38,8 +38,8 @@ var appInit = function() {
             if(xmlhttp.status == 200){
                 var json = JSON.parse(xmlhttp.responseText);
                 if (json.UtcDateTime) {
-                    var lng = json.UtcDateTime.length,
-                        ver = json.UtcDateTime.substr(6, lng-4);
+                    var lng = json.UtcDateTime.length-2,
+                        ver = json.UtcDateTime.substr(6, lng);
                     verDB_new = ver;//Number( ver );
                 }
                 if (json.Url) {
