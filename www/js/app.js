@@ -47,7 +47,7 @@ var appInit = function() {
                 }
 
                 if (verDB_new != verDB && (Ext.getCmp('mapPanel') != null) && (Ext.getCmp('mapPanel').updateDataStations != null) ) {
-//                    Ext.getCmp('mapPanel').updateDataStations( urlDATA );
+                    Ext.getCmp('mapPanel').updateDataStations( urlDATA );
                 }
             }
         }
@@ -62,7 +62,7 @@ var appInit = function() {
 };
 
 var initflag = false;
-var verDB = 1399359600000;
+var verDB = 1410831004423;
 var verDB_new = 0;
 var urlConfig = "http://dev.cnglngstations.com/Home/GetStationsForMobile?parameters={%27Guid%27:%27bee87ce1-aa3e-4191-83e3-69135311088b%27}";
 var urlDATA = "http://dev.cnglngstations.com/Data/stations.json";
