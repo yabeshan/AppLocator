@@ -39,8 +39,10 @@ var appInit = function() {
                 var json = JSON.parse(xmlhttp.responseText);
                 if (json.UtcDateTime) {
                     var lng = json.UtcDateTime.length-2,
-                        ver = json.UtcDateTime.substr(6, lng);
+                        ver = json.UtcDateTime.substr(6, 13);
                     verDB_new = ver;//Number( ver );
+
+                    alert(json.UtcDateTime +"_______"+ verDB_new +"____________");
                 }
                 if (json.Url) {
                     urlDATA = json.Url + "?"+Date.now();
@@ -50,7 +52,7 @@ var appInit = function() {
                     Ext.getCmp('mapPanel').updateDataStations( urlDATA );
                 }
 
-                alert(json.UtcDateTime +"_______"+ verDB_new +"____________");
+
             }
         }
     }
