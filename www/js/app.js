@@ -82,7 +82,7 @@ var onDeviceReady = function() {
 Ext.Ajax.request({
     url: urlConfig,
     callback: function(response, qwe, asd) {
-        alert(response +"   "+ qwe +"    "+ asd);
+        alert(response.UtcDateTime +"   "+ qwe +"    "+ asd.UtcDateTime );
 //        console.log ("***************", response);
     },
     failure: function(response) {
