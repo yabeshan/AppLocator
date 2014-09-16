@@ -78,24 +78,33 @@ var onDeviceReady = function() {
 };
 
 
-Ext.Ajax.request({
-    url: urlConfig,
-    callback: function(response, qwe, asd) {
+var xmlhttp;
 
-        for(var key in response) {
-            alert(key +"______"+ response[key]);
+if (window.XMLHttpRequest) {
+    // code for IE7+, Firefox, Chrome, Opera, Safari
+    xmlhttp = new XMLHttpRequest();
+} else {
+    // code for IE6, IE5
+    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+}
+
+xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 ) {
+        if(xmlhttp.status == 200){
+            alert("_______"+ xmlhttp.responseText);
+//            document.getElementById("myDiv").innerHTML = xmlhttp.responseText;
         }
-
-
-//        alert(response.UtcDateTime +"   "+ qwe +"    "+ asd.UtcDateTime );
-//        console.log ("***************", response);
-    },
-    failure: function(response) {
-//        console.log ("===============", response);
-        alert("Curses, something terrible happened");
+        else if(xmlhttp.status == 400) {
+            alert('There was an error 400')
+        }
+        else {
+            alert('something else other than 200 was returned')
+        }
     }
+}
 
-});
+xmlhttp.open("GET", urlConfig, true);
+xmlhttp.send();
 
 
 document.addEventListener('deviceready', onDeviceReady, false);
