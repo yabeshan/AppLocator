@@ -16,7 +16,7 @@ Ext.define('App.view.PopupPanel' ,{
                     +'<div id="fuel-type-lng" class="select filter-img-zoom"></div><div id="fuel-type-redeem" class="select filter-img-zoom"></div>'
                     +'<div id="fuel-type-disel" class="select filter-img-zoom"></div></div>'
                 +'<div class="holder-vehicle-type"><span class="holder-title">Vehicle Type</span><div id="vehicle-type-cars" class="filter-img-zoom"></div>'
-                    +'<div id="vehicle-type-box" class="filter-img-zoom"></div><div id="vehicle-type-semi" class="filter-img-zoom"></div></div>'
+                    +'<div id="vehicle-type-box" class="filter-img-zoom"></div><div id="vehicle-type-tractor" class="filter-img-zoom"></div><div id="vehicle-type-semi" class="filter-img-zoom"></div></div>'
                 +'<div class="holder-station-status"><span class="holder-title">Station Status</span><div id="station-operational" class="select filter-lbl-zoom">Operational</div>'
                     +'<div id="station-under" class="select filter-lbl-zoom">Under Maintenance</div><div id="station-coming" class="filter-lbl-zoom">Coming Soon</div></div>'
                 +'<div class="holder-hours-type"><span class="holder-title">Hours of Operation</span><div id="hours-type-24" class="filter-lbl-zoom">24/7</div>'
@@ -95,6 +95,7 @@ Ext.define('App.view.PopupPanel' ,{
 
             case "vehicle-type-cars":
             case "vehicle-type-box":
+            case "vehicle-type-tractor":
             case "vehicle-type-semi":
 
             case "station-operational":
@@ -145,6 +146,10 @@ Ext.define('App.view.PopupPanel' ,{
             cmp.addCls('select');
 
             if (cmp.id=="vehicle-type-semi") {
+                Ext.get("vehicle-type-tractor").addCls('select');
+                Ext.get("vehicle-type-box").addCls('select');
+                Ext.get("vehicle-type-cars").addCls('select');
+            } else if (cmp.id=="vehicle-type-tractor") {
                 Ext.get("vehicle-type-box").addCls('select');
                 Ext.get("vehicle-type-cars").addCls('select');
             } else if (cmp.id=="vehicle-type-box") {
@@ -234,6 +239,7 @@ Ext.define('App.view.PopupPanel' ,{
 
         panel.searchFilter.VehicleTypesCarsAndVans = Ext.get("vehicle-type-cars").hasCls('select');
         panel.searchFilter.VehicleTypesBoxTrucks = Ext.get("vehicle-type-box").hasCls('select');
+        panel.searchFilter.VehicleTypesTractor = Ext.get("vehicle-type-tractor").hasCls('select');
         panel.searchFilter.VehicleTypesSemiTrucks = Ext.get("vehicle-type-semi").hasCls('select');
 
         panel.searchFilter.HoursOpenIs24H = Ext.get("hours-type-24").hasCls('select');
@@ -266,6 +272,7 @@ Ext.define('App.view.PopupPanel' ,{
 
         Ext.get("vehicle-type-cars").removeCls('select');
         Ext.get("vehicle-type-box").removeCls('select');
+        Ext.get("vehicle-type-tractor").removeCls('select');
         Ext.get("vehicle-type-semi").removeCls('select');
 
         Ext.get("station-operational").addCls('select');

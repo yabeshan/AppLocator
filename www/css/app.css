@@ -569,3 +569,9 @@ input::-webkit-input-placeholder {
     background-repeat: no-repeat;
     background-size: 43px 35px;
 }
+
+#stationStatus {
+    position:absolute;left:15px;top:15px;color:#fff;font-style: italic;
+    font-size:25px;font-weight: bold;
+    width:140px;text-align: center;zoom: 1;
+}

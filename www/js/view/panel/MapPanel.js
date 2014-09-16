@@ -492,6 +492,7 @@ Ext.define('App.view.MapPanel', {
 
             'VehicleTypesCarsAndVans'   :false,
             'VehicleTypesBoxTrucks'     :false,
+            'VehicleTypesTractor'    :false,
             'VehicleTypesSemiTrucks'    :false,
 
             'HoursOpenIs24H'        :false,

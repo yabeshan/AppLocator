@@ -9,7 +9,7 @@
 }
 
 #fuel-type-cng-info {
-    position:absolute;top:40px;left:27%;width:60px;height:47px;
+    position: absolute;top:40px;left:10px;width:60px;height:47px;
     background:  url('../img/icons-fuel-type.png') no-repeat -60px 0px;
 }
 #fuel-type-cng {
@@ -21,7 +21,7 @@
 }
 
 #fuel-type-lng-info {
-    position: absolute;top:40px;left:50%;width:60px;height:47px;
+    position:absolute;top:40px;left:27%;width:60px;height:47px;
     background:  url('../img/icons-fuel-type.png') no-repeat 0px 0px;
 }
 #fuel-type-lng {
@@ -30,6 +30,18 @@
 }
 #fuel-type-lng.select, #fuel-type-lng-info.select {
     background:  url('../img/icons-fuel-type.png') no-repeat 0px -48px;
+}
+
+#fuel-type-redeem-info {
+    position: absolute;top:40px;left:50%;width:60px;height:47px;
+    background:  url('../img/icons-fuel-type.png') no-repeat -180px 0px;
+}
+#fuel-type-redeem {
+    position: absolute;width:60px;height:47px;top:31px;margin-left:50%;cursor: pointer;
+    background:  url('../img/icons-fuel-type.png') no-repeat -180px 0px;
+}
+#fuel-type-redeem.select, #fuel-type-redeem-info.select {
+    background:  url('../img/icons-fuel-type.png') no-repeat -180px -48px;
 }
 
 #fuel-type-disel-info {
@@ -44,17 +56,6 @@
     background:  url('../img/icons-fuel-type.png') no-repeat -120px -51px;
 }
 
-#fuel-type-redeem-info {
-    position: absolute;top:40px;left:10px;width:60px;height:47px;
-    background:  url('../img/icons-fuel-type.png') no-repeat -180px 0px;
-}
-#fuel-type-redeem {
-    position: absolute;width:60px;height:47px;top:31px;margin-left:50%;cursor: pointer;
-    background:  url('../img/icons-fuel-type.png') no-repeat -180px 0px;
-}
-#fuel-type-redeem.select, #fuel-type-redeem-info.select {
-    background:  url('../img/icons-fuel-type.png') no-repeat -180px -48px;
-}
 
 
 /*************************************** Vehicle Type ****************************************/
@@ -86,16 +87,29 @@
     background: url('../img/icons-vehicle-type.png') no-repeat -81px 0px;
 }
 
+#vehicle-type-tractor-info{
+    position: absolute;top:0px;left:57%;width:152px;height:47px;zoom: .9;
+    background: url('../img/icons-vehicle-type.png') no-repeat -335px -48px;
+}
+#vehicle-type-tractor{
+    position: absolute;width:152px;height:47px;top:3px;margin-left:57%;cursor: pointer;
+    background: url('../img/icons-vehicle-type.png') no-repeat -335px -48px;
+}
+#vehicle-type-tractor.select, #vehicle-type-tractor-info.select {
+    background: url('../img/icons-vehicle-type.png') no-repeat -335px 0px;
+}
+
+
 #vehicle-type-semi-info{
     position: absolute;top:50px;left:55%;width:152px;height:47px;zoom: .9;
-    background: url('../img/icons-vehicle-type.png') no-repeat -183px -48px;
+    background: url('../img/icons-vehicle-type.png') no-repeat -190px -48px;
 }
 #vehicle-type-semi{
-    position: absolute;width:152px;height:47px;top:31px;margin-left:55%;cursor: pointer;
-    background: url('../img/icons-vehicle-type.png') no-repeat -183px -48px;
+    position: absolute;width:152px;height:47px;top:55px;margin-left:55%;cursor: pointer;
+    background: url('../img/icons-vehicle-type.png') no-repeat -190px -48px;
 }
 #vehicle-type-semi.select, #vehicle-type-semi-info.select {
-    background: url('../img/icons-vehicle-type.png') no-repeat -181px 0px;
+    background: url('../img/icons-vehicle-type.png') no-repeat -188px 0px;
 }
 
 /*************************************** Station Status **********************************/

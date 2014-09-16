@@ -57,13 +57,13 @@ Ext.define('App.view.AboutPage' ,{
                     tap: {
                         fn: function( e, node ) {
                             if (node.id=="facebookLink") {
-                                Ext.getCmp('AboutPage').openFacebook();
+                                window.open("http://facebook.com/cleanenergyfuels", "_system");
                             } else if (node.id=="twitterLink") {
-                                Ext.getCmp('AboutPage').openTwitter();
+                                window.open("http://twitter.com/CE_natgas", "_system");
                             } else if (node.id=="linkedinLink") {
-                                Ext.getCmp('AboutPage').openLinkedin();
+                                window.open("https://www.linkedin.com/company/clean-energy-fuels-corp", "_system");
                             } else if (node.id=="googleLink") {
-                                Ext.getCmp('AboutPage').openGoogle();
+                                window.open("https://plus.google.com/102180446071748971556/posts", "_system");
                             } else if (node.id=="mailSpan") {
                                 window.open("mailto:Info@CleanEnergyFuels.com", "_system");
                             } else if (node.id=="siteSpan") {
@@ -109,125 +109,7 @@ Ext.define('App.view.AboutPage' ,{
             }
         ]
     },
-    openFacebook: function() {
-        if (navigator && appAvailability) {
-            if (navigator.userAgent.match(/Android/i) == "Android") {
-                appAvailability.check(
-                    'com.facebook.katana', // URI Scheme
-                    function() {           // Success callback
-                        window.open('comfacebookkatana://', '_system');
-                    },
-                    function() {           // Error callback
-                        window.open("http://facebook.com/cleanenergyfuels", "_system");
-                    }
-                );
-            } else {
-                appAvailability.check(
-                    'fb://', // URI Scheme
-                    function() {  // Success callback
-                        window.open('fb://cleanenergyfuels', '_system');
-                    },
-                    function() {  // Error callback
-                        window.open("http://facebook.com/cleanenergyfuels", "_system");
-                    }
-                );
-            }
-        } else {
-            window.open("http://facebook.com/cleanenergyfuels", "_system");
-        }
-    },
-    openTwitter: function() {
-        var flag = false;
-        try {
-            flag = navigator && appAvailability;
-        } catch(err) {}
-        if (flag) {
-            if (navigator.userAgent.match(/Android/i) == "Android") {
-                appAvailability.check(
-                    'com.twitter.android', // URI Scheme
-                    function() {           // Success callback
-                        window.open('twitter://', '_system');
-                    },
-                    function() {           // Error callback
-                        window.open("http://twitter.com/CE_natgas", "_system");
-                    }
-                );
-            } else {
-                appAvailability.check(
-                    'twitter://', // URI Scheme
-                    function() {  // Success callback
-//                        post?message=
-                        window.open('twitter://CE_natgas', '_system');
-                    },
-                    function() {  // Error callback
-                        window.open("http://twitter.com/CE_natgas", "_system");
-                    }
-                );
-            }
-        } else {
-            window.open("http://twitter.com/CE_natgas", "_system");
-        }
-    },
-    openGoogle: function() {
-        if (navigator && appAvailability) {
-            if (navigator.userAgent.match(/Android/i) == "Android") {
-                appAvailability.check(
-                    'com.google.plus', // URI Scheme
-                    function() {           // Success callback
-                        window.open('comgoogleplus://plus.google.com/102180446071748971556/posts', '_system');
-                    },
-                    function() {           // Error callback
-                        window.open("https://plus.google.com/102180446071748971556/posts", "_system");
-                    }
-                );
-            } else {
-                appAvailability.check(
-                    'gplus://', // URI Scheme
-                    function() {  // Success callback
-                        window.open('gplus://https://plus.google.com/102180446071748971556/posts', '_system');
-                    },
-                    function() {  // Error callback
-                        window.open("https://plus.google.com/102180446071748971556/posts", "_system");
-                    }
-                );
-            }
-        } else {
-            window.open("https://plus.google.com/102180446071748971556/posts", "_system");
-        }
-    },
 
-    openLinkedin: function() {
-        var flag = false;
-        try {
-            flag = navigator && appAvailability;
-        } catch(err) {}
-        if (flag) {
-            if (navigator.userAgent.match(/Android/i) == "Android") {
-                appAvailability.check(
-                    'com.linkedin.android', // URI Scheme
-                    function() {           // Success callback
-                        window.open('com.linkedin.android://', '_system');
-                    },
-                    function() {           // Error callback
-                        window.open("https://www.linkedin.com/company/clean-energy-fuels-corp", "_system");
-                    }
-                );
-            } else {
-                appAvailability.check(
-                    'linkedin://', // URI Scheme
-                    function() {  // Success callback
-//                        post?message=
-                        window.open('linkedin://clean-energy-fuels-corp', '_system');
-                    },
-                    function() {  // Error callback
-                        window.open("https://www.linkedin.com/company/clean-energy-fuels-corp", "_system");
-                    }
-                );
-            }
-        } else {
-            window.open("https://www.linkedin.com/company/clean-energy-fuels-corp", "_system");
-        }
-    },
     initialize: function() {
 
     },
