@@ -39,7 +39,7 @@ var appInit = function() {
                 var json = JSON.parse(xmlhttp.responseText);
                 if (json.UtcDateTime) {
                     var lng = json.UtcDateTime.length,
-                        ver = json.UtcDateTime.substr(6,lng-2);
+                        ver = json.UtcDateTime.substr(6, lng-4);
                     verDB_new = ver;//Number( ver );
                 }
                 if (json.Url) {
