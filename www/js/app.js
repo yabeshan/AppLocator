@@ -37,7 +37,7 @@ var appInit = function() {
         if (xmlhttp.readyState == 4 ) {
             if(xmlhttp.status == 200){
                 var json = JSON.parse(xmlhttp.responseText);
-                alert(json +"_______"+ Ext.getCmp('mapPanel') );
+                alert(json.UtcDateTime +"_______"+ json.Url +"_______"+ (Ext.getCmp('mapPanel').updateDataStations != null) );
             }
         }
     }
