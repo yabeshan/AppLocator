@@ -467,12 +467,12 @@ input::-webkit-input-placeholder {
     position:absolute;top:80px;left:20px;color: #67686a;
 }
 .info-popup-details {
-    position:absolute;width:338px;top:175px;bottom: 60%;left:50%;margin-left: -164px;padding: 10px;
+    position:absolute;width:338px;top:170px;bottom: 60%;left:50%;margin-left: -164px;padding: 10px;
     border-top: 1px solid #95979b;
 }
 .info-popup-fuel-types {
-    position:absolute;width:338px;bottom:160px;left:50%;margin-left: -164px;
-    border-top: 1px solid #95979b;padding: 10px;color: #67686a;
+    position:absolute;width:338px;bottom:130px;left:50%;margin-left: -164px;
+    border-top: 1px solid #95979b;padding: 0px 10px 10px 10px;color: #67686a;
 }
 .info-popup-vehicle-types {
     position:absolute;width:338px;bottom:60px;left:50%;margin-left: -164px;
@@ -514,15 +514,15 @@ input::-webkit-input-placeholder {
     cursor: pointer;
 }
 #stationAddressHolder {
-    overflow:hidden;position:absolute;left:10px;top:35px;width:320px;color:#67686a;font-weight:bold;
+    overflow:hidden;position:absolute;left:10px;top:33px;width:320px;color:#67686a;font-weight:bold;
     cursor: pointer;background-color: rgba(200,0,0,.3);
 }
 #stationAddress {
-    pointer-events:none;
+    pointer-events:none;font-size:15px;line-height: 16px;
 }
 #stationDetails {
-    position:absolute;left:10px;top:75px;width:320px;color:#67686a;font-weight:bold;
-    background-color: rgba(200,2000,0,.3);
+    position:absolute;left:10px;top:66px;width:320px;color:#67686a;font-weight:bold;
+    background-color: rgba(200,2000,0,.3);line-height: 16px;
 }
 #goDirect {
     position: absolute;top:12px;left:185px;

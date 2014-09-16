@@ -102,9 +102,9 @@ Ext.define('App.view.InfoPopup' ,{
 
 
         Ext.get("stationName").dom.innerHTML = this.stationName;
-        var adress = '<font style="font-size:15px;line-height: 20px;">'+ this.stationAddress +'</font><br>',
-            hours = '<font style="font-size:12px;line-height: 24px;">Hours: <font style="font-weight:normal;font-style: italic">'+this.stationHours+'</font></font><br>',
-            accepts = '<font style="font-size:12px;line-height: 24px;">Accepts: <font style="font-weight:normal;font-style: italic">'+this.stationAccepts+'</font></font><br>';
+        var adress = ' '+ this.stationAddress,
+            hours = '<font style="font-size:12px;">Hours: <font style="font-weight:normal;font-style: italic">'+this.stationHours+'</font></font><br/>',
+            accepts = '<font style="font-size:12px;">Accepts: <font style="font-weight:normal;font-style: italic">'+this.stationAccepts+'</font></font>';
 
 
         Ext.get("stationAddress").dom.innerHTML = adress;

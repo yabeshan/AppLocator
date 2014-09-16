@@ -9,7 +9,7 @@
 }
 
 #fuel-type-cng-info {
-    position: absolute;top:40px;left:10px;width:60px;height:47px;
+    position: absolute;top:23px;left:10px;width:60px;height:47px;
     background:  url('../img/icons-fuel-type.png') no-repeat -60px 0px;
 }
 #fuel-type-cng {
@@ -21,7 +21,7 @@
 }
 
 #fuel-type-lng-info {
-    position:absolute;top:40px;left:27%;width:60px;height:47px;
+    position:absolute;top:23px;left:27%;width:60px;height:47px;
     background:  url('../img/icons-fuel-type.png') no-repeat 0px 0px;
 }
 #fuel-type-lng {
@@ -33,7 +33,7 @@
 }
 
 #fuel-type-redeem-info {
-    position: absolute;top:40px;left:50%;width:60px;height:47px;
+    position: absolute;top:23px;left:50%;width:60px;height:47px;
     background:  url('../img/icons-fuel-type.png') no-repeat -180px 0px;
 }
 #fuel-type-redeem {
@@ -45,7 +45,7 @@
 }
 
 #fuel-type-disel-info {
-    position: absolute;top:40px;left:75%;width:60px;height:47px;display: none;
+    position: absolute;top:23px;left:75%;width:60px;height:47px;display: none;
     background:  url('../img/icons-fuel-type.png') no-repeat -120px 0px;
 }
 #fuel-type-disel {
