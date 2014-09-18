@@ -66,6 +66,7 @@ var verDB = 1410831004423;
 var verDB_new = 0;
 var urlConfig = "http://dev.cnglngstations.com/Home/GetStationsForMobile?parameters={%27Guid%27:%27bee87ce1-aa3e-4191-83e3-69135311088b%27}";
 var urlDATA = "http://dev.cnglngstations.com/Data/stations.json";
+var networkStatus = false;
 var onDeviceReady = function() {
     if (navigator && navigator.splashscreen) {
         navigator.splashscreen.show();
@@ -77,29 +78,13 @@ var onDeviceReady = function() {
 
     document.addEventListener("offline", onOffline, false);
     document.addEventListener("online", onLine, false);
-
     checkConnection();
 };
 
 function checkConnection() {
     if (navigator && navigator.connection && navigator.connection.type) {
-        alert("on");
-    } else {
-        alert("problem");
+        alert(navigator.connection.type);
     }
-    var networkState = navigator.connection.type;
-
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.CELL]     = 'Cell generic connection';
-    states[Connection.NONE]     = 'No network connection';
-
-    alert('Connection type: ' + states[networkState]);
 }
 
 function onLine() {
