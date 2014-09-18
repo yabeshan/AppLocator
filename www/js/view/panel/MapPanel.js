@@ -156,9 +156,9 @@ Ext.define('App.view.MapPanel', {
     },
 
     startGeocoderPosition: function(result) {
-        return;
         if (result==null) {
             result = document.getElementById('pac-input').getElementsByTagName('input')[0].value;
+            alert(111);
         }
 
         var mapPanel = Ext.getCmp("mapPanel");
@@ -413,7 +413,7 @@ Ext.define('App.view.MapPanel', {
 
     searchBoxInputArr:[],
     addSearchPanelInteractive: function() {
-        return;
+        alert(222);
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         this.searchBox = new google.maps.places.SearchBox( (input) );
         this.searchBoxInputArr.push(input);
