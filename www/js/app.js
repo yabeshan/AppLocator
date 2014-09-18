@@ -83,7 +83,7 @@ var onDeviceReady = function() {
 
 function checkConnection() {
     if (navigator && navigator.connection && navigator.connection.type) {
-        networkStatus = (navigator.connection.type==none) ? false : true;
+        networkStatus = (navigator.connection.type=="none") ? false : true;
         alert("checkConnection  " + networkStatus +"     "+ navigator.connection.type);
     } else if( document && document.URL && document.URL.indexOf('file:///D:/Nick_work/') == 0) {
         networkStatus = true;
