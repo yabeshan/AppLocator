@@ -141,7 +141,7 @@ Ext.define('App.view.MapPanel', {
                             obj = e.target.parentNode;
                             item = obj.innerHTML;
                         }
-
+                        clearTimeout( Ext.getCmp('mapPanel').searchBoxInputUpd );
                         if( item.indexOf('pac-matched">') < 80 ) {
                             Ext.getCmp('mapPanel').addResultClickHandler( obj.parentNode.innerHTML, input );
                         } else {
@@ -412,6 +412,7 @@ Ext.define('App.view.MapPanel', {
 
     searchBoxInputArr:[],
     searchBoxInputTxt:"",
+    searchBoxInputUpd:null,
     addSearchPanelInteractive: function() {
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
 
@@ -420,9 +421,9 @@ Ext.define('App.view.MapPanel', {
             if (Ext.getCmp('mapPanel').searchBoxInputTxt.length + 1 <  input.value.length) {
                 Ext.getCmp('mapPanel').searchBoxInputTxt = input.value;
                 var txt = input.value;
-                setInterval(function(){
+                Ext.getCmp('mapPanel').searchBoxInputUpd = setInterval(function(){
                     document.getElementById('pac-input').getElementsByTagName('input')[0].value = txt;
-                },300);
+                },500);
             }
         });
 
