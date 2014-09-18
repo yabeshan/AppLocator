@@ -411,12 +411,17 @@ Ext.define('App.view.MapPanel', {
     },
 
     searchBoxInputArr:[],
+    searchBoxInputTxt:"",
     addSearchPanelInteractive: function() {
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
 
         input.addEventListener('input', function()
         {
-            alert('input changed to: '+ input.value);
+//            if (Ext.getCmp('mapPanel')searchBoxInputTxt.length + 1 < input.value.length ) {
+//
+//            }
+            alert('input changed to: '+ input.value, Ext.getCmp('mapPanel')searchBoxInputTxt.length , input.value.length);
+//            Ext.getCmp('mapPanel')searchBoxInputTxt = input.value;
         });
 
         this.searchBox = new google.maps.places.SearchBox( (input) );
