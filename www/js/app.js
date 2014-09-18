@@ -82,6 +82,11 @@ var onDeviceReady = function() {
 };
 
 function checkConnection() {
+    if (navigator && navigator.connection && navigator.connection.type) {
+        alert("on");
+    } else {
+        alert("problem");
+    }
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -101,7 +106,7 @@ function onLine() {
     alert("online");
 }
 
-function onLine() {
+function onOffline() {
     alert("off    line");
 }
 
