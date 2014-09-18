@@ -163,10 +163,10 @@ Ext.define('App.view.TripPlaner' ,{
         if (that.initSearchBoxFlag==null) {
             that.initSearchBoxFlag = true;
             var start = document.getElementById('tp-end-point-0');
-            Ext.getCmp('mapPanel').addSearchPanelInteractive( start );
+            Ext.getCmp('mapPanel').addSearchPanelInteractive( start, 'tp-end-point-0' );
 
             var end = document.getElementById('tp-end-point-1');
-            Ext.getCmp('mapPanel').addSearchPanelInteractive( end );
+            Ext.getCmp('mapPanel').addSearchPanelInteractive( end, 'tp-end-point-1' );
 
             if (that.directionsService==null)
                 that.directionsService = new google.maps.DirectionsService();
@@ -210,7 +210,7 @@ Ext.define('App.view.TripPlaner' ,{
         Ext.get('trip-palent-starter').appendChild(newItem);
 
         var point = document.getElementById("tp-end-point-"+newID);
-        Ext.getCmp('mapPanel').addSearchPanelInteractive( point );
+        Ext.getCmp('mapPanel').addSearchPanelInteractive( point, ("tp-end-point-"+newID) );
         return newID;
     },
 
