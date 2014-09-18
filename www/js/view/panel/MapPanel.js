@@ -421,9 +421,8 @@ Ext.define('App.view.MapPanel', {
                 Ext.getCmp('mapPanel').searchBoxInputTxt = input.value;
                 var txt = input.value;
                 setInterval(function(){
-                    document.getElementById('pac-input').getElementsByTagName('input')[0].value = "1111" + txt;
+                    document.getElementById('pac-input').getElementsByTagName('input')[0].value = txt;
                 },300);
-                alert("222");
             }
         });
 
