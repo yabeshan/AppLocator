@@ -413,13 +413,13 @@ Ext.define('App.view.MapPanel', {
     },
 
     searchBoxInputArr:[],
-    searchBoxInputTxt:"",
+    searchBoxInputTxtArr:[],
     searchBoxInputUpd:null,
     addSearchPanelInteractive: function( input ) {
+        Ext.getCmp('mapPanel').searchBoxInputTxtArr[input] = {'txt':'1111'};
         input.addEventListener('input', function()
         {
-            if (Ext.getCmp('mapPanel').searchBoxInputTxt.length + 5 <  input.value.length) {
-//                console.log ( Ext.getCmp('mapPanel').searchBoxInputTxt.length ,"________",  input.value.length );
+            if ( Ext.getCmp('mapPanel').searchBoxInputTxtArr[input].txt.length + 5 <  input.value.length) {
                 var txt = input.value;
                 Ext.getCmp('mapPanel').searchBoxInputUpd = setInterval(function(){
                     document.getElementById('pac-input').getElementsByTagName('input')[0].value = txt;
@@ -427,7 +427,7 @@ Ext.define('App.view.MapPanel', {
             } else {
                 clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
             }
-            Ext.getCmp('mapPanel').searchBoxInputTxt = input.value;
+            Ext.getCmp('mapPanel').searchBoxInputTxtArr[input].txt = input.value;
         });
 
         this.searchBox = new google.maps.places.SearchBox( (input) );
