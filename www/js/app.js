@@ -83,16 +83,24 @@ var onDeviceReady = function() {
 
 function checkConnection() {
     if (navigator && navigator.connection && navigator.connection.type) {
-        alert(navigator.connection.type);
+        networkStatus = (navigator.connection.type==none) ? false : true;
     }
 }
 
 function onLine() {
-    alert("online");
+    networkStatus = true;
 }
 
 function onOffline() {
-    alert("off    line");
+    networkStatus = false;
+    viewInfoPopup("Error", "Please check your internet connection or try again later");
+    if (App && App.app) {
+        App.app.dispatch({
+            controller:'PageController',
+            action:'goPage',
+            args:[{nextPage:0, direction:'right'}]
+        });
+    }
 }
 
 document.addEventListener('deviceready', onDeviceReady, false);

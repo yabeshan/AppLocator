@@ -78,6 +78,10 @@ Ext.define('App.view.StartPage' ,{
             Ext.get( btnArr[k] )
                 .setStyle({'height':btnHeight})
                 .on('tap', function(b, e){
+                    if (networkStatus==false) {
+                        onOffline();
+                        return;
+                    }
                     var nextPageID = 1;
                     switch(this.id) {
                         case 'planner-btn':
