@@ -13,24 +13,7 @@ Ext.define('App.view.SearchPanel', {
                 items: [
                     {
                         cls: 'searchfield-stations',
-                        xtype: 'searchfield',
-                        placeHolder: 'search by address, city or zip',
-                        itemId: 'searchBox',
-                        id:'pac-input',
-                        listeners: {
-                            paste: {
-                                fn: function( e, node ) {
-                                    alert("paste");
-                                },
-                                element: 'element'
-                            },
-                            updatedata: {
-                                fn: function( e, node ) {
-                                    alert("updatedata");
-                                },
-                                element: 'element'
-                            }
-                        }
+                        xtype: 'searchfield'
                     },{
                         style:'cursor:pointer;',
                         html:'<img id="searchBtn" src="img/main-page-toolbar-search-btn.png" style="width:44px;height:52px;">',
