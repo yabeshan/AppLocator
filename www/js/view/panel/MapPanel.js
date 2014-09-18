@@ -224,7 +224,9 @@ Ext.define('App.view.MapPanel', {
         }
 
         that.unmask();
-        that.addSearchPanelInteractive();
+        var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
+        that.addSearchPanelInteractive( input );
+        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
 
         if (verDB!=verDB_new) {
             that.updateDataStations( urlDATA );
@@ -413,9 +415,7 @@ Ext.define('App.view.MapPanel', {
     searchBoxInputArr:[],
     searchBoxInputTxt:"",
     searchBoxInputUpd:null,
-    addSearchPanelInteractive: function() {
-        var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
-
+    addSearchPanelInteractive: function( input ) {
         input.addEventListener('input', function()
         {
             if (Ext.getCmp('mapPanel').searchBoxInputTxt.length + 5 <  input.value.length) {
@@ -432,7 +432,6 @@ Ext.define('App.view.MapPanel', {
 
         this.searchBox = new google.maps.places.SearchBox( (input) );
         this.searchBoxInputArr.push(input);
-        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
     },
 
     changeTraffic: function() {

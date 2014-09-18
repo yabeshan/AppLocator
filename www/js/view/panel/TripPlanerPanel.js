@@ -163,12 +163,10 @@ Ext.define('App.view.TripPlaner' ,{
         if (that.initSearchBoxFlag==null) {
             that.initSearchBoxFlag = true;
             var start = document.getElementById('tp-end-point-0');
-            var searchBox = new google.maps.places.SearchBox( (start) );
-            Ext.getCmp("mapPanel").searchBoxInputArr.push(start);
+            Ext.getCmp('mapPanel').addSearchPanelInteractive( start );
 
             var end = document.getElementById('tp-end-point-1');
-            var searchBox = new google.maps.places.SearchBox( (end) );
-            Ext.getCmp("mapPanel").searchBoxInputArr.push(end);
+            Ext.getCmp('mapPanel').addSearchPanelInteractive( end );
 
             if (that.directionsService==null)
                 that.directionsService = new google.maps.DirectionsService();
@@ -212,8 +210,7 @@ Ext.define('App.view.TripPlaner' ,{
         Ext.get('trip-palent-starter').appendChild(newItem);
 
         var point = document.getElementById("tp-end-point-"+newID);
-        var searchBox = new google.maps.places.SearchBox( (point) );
-        Ext.getCmp("mapPanel").searchBoxInputArr.push(point);
+        Ext.getCmp('mapPanel').addSearchPanelInteractive( point );
         return newID;
     },
 
