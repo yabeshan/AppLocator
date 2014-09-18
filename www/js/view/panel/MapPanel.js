@@ -413,55 +413,15 @@ Ext.define('App.view.MapPanel', {
     searchBoxInputArr:[],
     addSearchPanelInteractive: function() {
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
-        this.autocomplete = new google.maps.places.Autocomplete(input);
-        this.autocomplete.bindTo('bounds', Ext.getCmp("mapPanel").gMap );
-        google.maps.event.addListener(this.autocomplete, 'place_changed',
-            function()
-            {
-                alert(111);
-//                var place = MainApp.app.eventMap.autocomplete.getPlace();
-//                if (place.geometry.viewport)
-//                {
-//                    MainApp.app.eventMap.map.getMap().fitBounds(place.geometry.viewport);
-//                }
-//                else
-//                {
-//                    MainApp.app.eventMap.map.getMap().setCenter(place.geometry.location);
-//                    MainApp.app.eventMap.map.getMap().setZoom(17);
-//                }
-//
-//                MainApp.app.eventMap.lat = place.geometry.location.Ya;
-//                MainApp.app.eventMap.lon = place.geometry.location.Za;
-//
-//                MainApp.app.newEventForm.screen.setValues(
-//                    {
-//                        location : place.name
-//                    });
-            });
 
+        input.addEventListener('input', function()
+        {
+            alert('input changed to: '+ input.value);
+        });
 
 //        this.searchBox = new google.maps.places.SearchBox( (input) );
 //        this.searchBoxInputArr.push(input);
 //        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
-
-//        google.maps.event.addListener( this.searchBox, 'places_changed', function() {
-//
-//            that = Ext.getCmp("mapPanel");
-//            that.autoDirection = true;
-//            var places = that.searchBox.getPlaces();
-//            var options = {
-//                map: that.gMap,
-//                position: places[0].geometry.location,
-//                content: places[0].name
-//            };
-//
-//            if (that.infowindow)
-//                that.infowindow.close();
-//
-//            that.infowindow = new google.maps.InfoWindow(options);
-//            that.gMap.setCenter(places[0].geometry.location);
-//            that.gMap.setZoom(14);
-//        });
     },
 
     changeTraffic: function() {
