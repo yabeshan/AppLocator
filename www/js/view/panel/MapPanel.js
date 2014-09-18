@@ -206,7 +206,7 @@ Ext.define('App.view.MapPanel', {
         */
         content = content.replace('</span><span>', ', ');
         var result = content.replace(/<[^>]+>/g,'');
-        
+
         input.value = result;
         if (input.type=='search') Ext.getCmp("mapPanel").startGeocoderPosition(result);
         else Ext.getCmp('tripPlaner').openPopup({'type':'change'});

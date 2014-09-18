@@ -23,6 +23,12 @@ Ext.define('App.view.SearchPanel', {
                                     alert("paste");
                                 },
                                 element: 'element'
+                            },
+                            updatedata: {
+                                fn: function( e, node ) {
+                                    alert("updatedata");
+                                },
+                                element: 'element'
                             }
                         }
                     },{
