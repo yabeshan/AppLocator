@@ -422,7 +422,7 @@ Ext.define('App.view.MapPanel', {
             if ( Ext.getCmp('mapPanel').searchBoxInputTxtArr[input].txt.length + 5 <  input.value.length) {
                 var txt = input.value;
                 Ext.getCmp('mapPanel').searchBoxInputUpd = setInterval(function(){
-                    document.getElementById('pac-input').getElementsByTagName('input')[0].value = txt;
+                    input.value = txt;
                 },500);
             } else {
                 clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
