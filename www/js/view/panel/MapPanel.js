@@ -420,8 +420,11 @@ Ext.define('App.view.MapPanel', {
 //            if (Ext.getCmp('mapPanel')searchBoxInputTxt.length + 1 < input.value.length ) {
 //
 //            }
-            alert('input changed to: '+ input.value, Ext.getCmp('mapPanel')searchBoxInputTxt.length , input.value.length);
-//            Ext.getCmp('mapPanel')searchBoxInputTxt = input.value;
+//            var oldTxt = ,
+//                newTxt = ;
+
+            alert('input changed to: '+ input.value +"__________"+ Ext.getCmp('mapPanel').searchBoxInputTxt.length +"------"+  input.value.length);
+//            Ext.getCmp('mapPanel').searchBoxInputTxt = input.value;
         });
 
         this.searchBox = new google.maps.places.SearchBox( (input) );
