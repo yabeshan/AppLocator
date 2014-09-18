@@ -419,9 +419,9 @@ Ext.define('App.view.MapPanel', {
             alert('input changed to: '+ input.value);
         });
 
-//        this.searchBox = new google.maps.places.SearchBox( (input) );
-//        this.searchBoxInputArr.push(input);
-//        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
+        this.searchBox = new google.maps.places.SearchBox( (input) );
+        this.searchBoxInputArr.push(input);
+        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
     },
 
     changeTraffic: function() {
