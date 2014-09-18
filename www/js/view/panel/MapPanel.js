@@ -415,10 +415,10 @@ Ext.define('App.view.MapPanel', {
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         this.searchBox = new google.maps.places.SearchBox( (input) );
         this.searchBoxInputArr.push(input);
-//        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
+        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
 
-//        google.maps.event.addListener( this.searchBox, 'places_changed', function() {
-//
+        google.maps.event.addListener( this.searchBox, 'places_changed', function() {
+alert("change");
 //            that = Ext.getCmp("mapPanel");
 //            that.autoDirection = true;
 //            var places = that.searchBox.getPlaces();
@@ -434,7 +434,7 @@ Ext.define('App.view.MapPanel', {
 //            that.infowindow = new google.maps.InfoWindow(options);
 //            that.gMap.setCenter(places[0].geometry.location);
 //            that.gMap.setZoom(14);
-//        });
+        });
     },
 
     changeTraffic: function() {
