@@ -74,9 +74,18 @@ var onDeviceReady = function() {
     appInit();
     initflag = true;
     window.onload = function(){};
+
+    document.addEventListener("offline", onOffline, false);
+    document.addEventListener("online", onLine, false);
 };
 
+function onLine() {
+    alert("online");
+}
 
+function onLine() {
+    alert("off    line");
+}
 
 document.addEventListener('deviceready', onDeviceReady, false);
 window.onload=function(){

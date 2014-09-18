@@ -4,7 +4,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.cyberiansoft.stationlocator"
-        version   = "0.2.5">
+        version   = "0.2.501">
 
     <name>Station Locator</name>
 
@@ -18,7 +18,7 @@
     <gap:plugin name="org.apache.cordova.dialogs"           version="0.2.6" />
     <gap:plugin name="org.apache.cordova.geolocation"       version="0.3.7" />
     <gap:plugin name="org.apache.cordova.inappbrowser"      version="0.3.3" />
-
+    <gap:plugin name="org.apache.cordova.network-information" version="0.2.7" />
 
     <gap:plugin name="org.apache.cordova.splashscreen" />
     <!--<gap:plugin name="org.apache.cordova.splashscreen"      version="0.2.7" />-->
