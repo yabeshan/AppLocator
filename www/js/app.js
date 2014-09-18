@@ -84,6 +84,8 @@ var onDeviceReady = function() {
 function checkConnection() {
     if (navigator && navigator.connection && navigator.connection.type) {
         networkStatus = (navigator.connection.type==none) ? false : true;
+    } else if( document.URL.indexOf('file:///D:/Nick_work/') == 0) {
+        networkStatus = true;
     }
 }
 
@@ -101,6 +103,7 @@ function onOffline() {
             args:[{nextPage:0, direction:'right'}]
         });
     }
+    checkConnection();
 }
 
 document.addEventListener('deviceready', onDeviceReady, false);
