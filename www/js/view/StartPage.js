@@ -78,6 +78,7 @@ Ext.define('App.view.StartPage' ,{
             Ext.get( btnArr[k] )
                 .setStyle({'height':btnHeight})
                 .on('tap', function(b, e){
+                    alert( networkStatus );
                     if (networkStatus==false) {
                         onOffline();
                         return;

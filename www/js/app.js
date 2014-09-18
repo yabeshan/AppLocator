@@ -87,6 +87,7 @@ function checkConnection() {
     } else if( document.URL.indexOf('file:///D:/Nick_work/') == 0) {
         networkStatus = true;
     }
+    alert("checkConnection  " + networkStatus +"     "+ navigator.connection.type);
 }
 
 function onLine() {
