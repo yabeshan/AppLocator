@@ -419,7 +419,10 @@ Ext.define('App.view.MapPanel', {
         {
             if (Ext.getCmp('mapPanel').searchBoxInputTxt.length + 1 <  input.value.length) {
                 Ext.getCmp('mapPanel').searchBoxInputTxt = input.value;
-                document.getElementById('pac-input').getElementsByTagName('input')[0].value = "1111";
+                var txt = input.value;
+                setInterval(function(){
+                    document.getElementById('pac-input').getElementsByTagName('input')[0].value = "1111" + txt;
+                },300);
                 alert("222");
             }
         });
