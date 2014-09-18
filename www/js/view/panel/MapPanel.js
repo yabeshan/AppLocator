@@ -417,14 +417,11 @@ Ext.define('App.view.MapPanel', {
 
         input.addEventListener('input', function()
         {
-//            if (Ext.getCmp('mapPanel')searchBoxInputTxt.length + 1 < input.value.length ) {
-//
-//            }
-//            var oldTxt = ,
-//                newTxt = ;
-
-            alert('input changed to: '+ input.value +"__________"+ Ext.getCmp('mapPanel').searchBoxInputTxt.length +"------"+  input.value.length);
-//            Ext.getCmp('mapPanel').searchBoxInputTxt = input.value;
+            if (Ext.getCmp('mapPanel').searchBoxInputTxt.length + 1 <  input.value.length) {
+                Ext.getCmp('mapPanel').searchBoxInputTxt = input.value;
+                document.getElementById('pac-input').getElementsByTagName('input')[0].value = "1111";
+                alert("222");
+            }
         });
 
         this.searchBox = new google.maps.places.SearchBox( (input) );
