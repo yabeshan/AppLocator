@@ -141,6 +141,7 @@ Ext.define('App.view.MapPanel', {
                             obj = e.target.parentNode;
                             item = obj.innerHTML;
                         }
+
                         if( item.indexOf('pac-matched">') < 80 ) {
                             Ext.getCmp('mapPanel').addResultClickHandler( obj.parentNode.innerHTML, input );
                         } else {
@@ -151,26 +152,6 @@ Ext.define('App.view.MapPanel', {
 
             }
             that.countObj = obj1.length;
-
-
-            /*
-             var el = Ext.get(obj1[0]);
-            el.on({
-                tap : function(e, t) {
-                    var obj = e.target;
-                    var item = obj.innerHTML;
-                    if( item.indexOf('pac-matched">') < 0 ) {
-                        obj = e.target.parentNode;
-                        item = obj.innerHTML;
-                    }
-                    if( item.indexOf('pac-matched">') < 80 ) {
-                        Ext.getCmp('mapPanel').addResultClickHandler( obj.parentNode.innerHTML );
-                    } else {
-                        Ext.getCmp('mapPanel').addResultClickHandler( item );
-                    }
-                }
-            });
-             */
         }
     },
 
@@ -215,17 +196,17 @@ Ext.define('App.view.MapPanel', {
         that = Ext.getCmp("mapPanel");
         if (that.autoDirection) return;
 
+        /*
         var start = content.indexOf('pac-matched">')+13,
             end = content.length- 7,
             center = String(content.slice(start, end)),
             arr = center.split("</span>"),
             country = (arr[2]) ? arr[2].replace('<span>', ',  ') : "" ,
             result = arr[0]+arr[1]+country;
-
-//        var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
-//        input.value = result;
-//        Ext.getCmp("mapPanel").startGeocoderPosition(result);
-
+        */
+        content = content.replace('</span><span>', ', ');
+        var result = content.replace(/<[^>]+>/g,'');
+        
         input.value = result;
         if (input.type=='search') Ext.getCmp("mapPanel").startGeocoderPosition(result);
         else Ext.getCmp('tripPlaner').openPopup({'type':'change'});
