@@ -215,6 +215,7 @@ Ext.define('App.view.TripPlaner' ,{
     },
 
     swipeItems: function(id) {
+        clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
         var index = id.slice(13,id.length),
             oldValue = Ext.get('tp-end-point-'+index).dom.value;
         Ext.get('tp-end-point-'+index).dom.value = Ext.get('tp-end-point-'+(index-1)).dom.value;
@@ -313,6 +314,8 @@ Ext.define('App.view.TripPlaner' ,{
                 viewInfoPopup("Error", message);
             }
             setTimeout(function(){
+                var cz = Ext.getCmp("mapPanel").gMap.getZoom()-1;
+                Ext.getCmp("mapPanel").gMap.setZoom( cz )
                 mapPanel.unmask();
             },500);
         });
