@@ -77,7 +77,8 @@ Ext.define('App.view.MapPanel', {
 
         Ext.getCmp("mapPanel").gMap.setCenter( new google.maps.LatLng ( lat, lon ) );
 
-        if (mapZoom<2) mapZoom=2;
+        if (mapZoom<=2) mapZoom=2;
+        else mapZoom--;
         Ext.getCmp("mapPanel").gMap.setZoom( mapZoom );
     },
 
