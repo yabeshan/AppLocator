@@ -1,6 +1,7 @@
 
 
 var appInit = function() {
+    console.log ("appInit");
     if (initflag==true) return;
 
     Ext.application({
