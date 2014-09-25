@@ -12,16 +12,7 @@ Ext.define('App.view.InfoPopup' ,{
                 html:'<img id="info-close" src="img/popup-close-button.png" >' +
                     '<div class="info-popup-header"><div id="goDirect">Get Directions</div><div id="goPlanner">Add to Trip</div><div id="goShare">Share</div>' +
                     '<div id="stationStatus">Operational</div>' +
-                    '<div class="info-popup-flow-rate">Flow Rate</div><div id="flow-rate-low-info"></div><div id="flow-rate-medium-info"></div><div id="flow-rate-hight-info"></div></div>' +
-                    '<div class="info-popup-details">' +
-                    '<div id="stationName" style="overflow:hidden;height:23px;width:280px;color:#30b457"></div>' +
-                    '<div id="stationDetails"></div>' +
-                    '<div id="stationAddressHolder"><div id="stationAddress"></div></div>' +
-                    '</div>' +
-                    '<div class="info-popup-fuel-types">Fuel Types Offered <div id="fuel-type-cng-info"></div>' +
-                    '<div id="fuel-type-lng-info"></div><div id="fuel-type-redeem-info"></div><div id="fuel-type-disel-info"></div></div>' +
-                    '<div class="info-popup-vehicle-types">Vehicle Types Accepted' +
-                    '<div id="vehicle-type-cars-info"></div><div id="vehicle-type-box-info"></div><div id="vehicle-type-tractor-info"></div><div id="vehicle-type-semi-info"></div></div>',
+                    '<div class="info-popup-flow-rate">Flow Rate</div><div id="flow-rate-low-info"></div><div id="flow-rate-medium-info"></div><div id="flow-rate-hight-info"></div></div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
@@ -36,7 +27,30 @@ Ext.define('App.view.InfoPopup' ,{
                                 Ext.getCmp('infoPopup').closePopup();
                             } else if (node.id=="info-close") {
                                 Ext.getCmp('infoPopup').closePopup();
-                            } else if (node.id=="stationAddressHolder") {
+                            }
+                        },
+                        element: 'element'
+                    }
+                }
+
+            },{
+                cls:'info-popup-zoom',
+                style:'position:absolute;width:100%;bottom:10px;top:170px;left:0px;font-size:16px;font-weight:bold',
+                scrollable: {
+                    direction: 'vertical'
+                },
+                html:'<div class="info-popup-details">' +
+                    '<div id="stationName"></div>' +
+                    '<div id="stationAddressHolder"><div id="stationAddress"></div></div>' +
+                    '<div id="stationDetails"></div></div>' +
+                    '<div class="info-popup-fuel-types"><div style="padding-left: 10px">Fuel Types Offered</div><div id="fuel-type-cng-info"></div>' +
+                    '<div id="fuel-type-lng-info"></div><div id="fuel-type-redeem-info"></div><div id="fuel-type-disel-info"></div></div>' +
+                    '<div class="info-popup-vehicle-types"><div style="clear: both">Vehicle Types Accepted</div>' +
+                    '<div id="vehicle-type-cars-info"></div><div id="vehicle-type-box-info"></div><div id="vehicle-type-tractor-info"></div><div id="vehicle-type-semi-info"></div></div>',
+                listeners: {
+                    tap: {
+                        fn: function( e, node ) {
+                            if (node.id=="stationAddressHolder") {
                                 if (window && window.plugins && window.plugins.clipboard) {
                                     window.plugins.clipboard.copy(Ext.get("stationAddress").dom.innerText);
                                     viewInfoPopup("Info", "You copy address to clipboard.");
@@ -46,7 +60,6 @@ Ext.define('App.view.InfoPopup' ,{
                         element: 'element'
                     }
                 }
-
             }
         ]
     },
@@ -144,13 +157,19 @@ Ext.define('App.view.InfoPopup' ,{
         if ( model.get('VehicleTypesSemiTrucks')=="Yes" ) Ext.get("vehicle-type-semi-info").addCls('select');
         else Ext.get("vehicle-type-semi-info").removeCls('select');
 
-        if ( model.get('CNG3000PSI')=="Yes" ) Ext.get("flow-rate-low-info").addCls('select');
-        else Ext.get("flow-rate-low-info").removeCls('select');
-        if ( model.get('CNG3000StandardNozzle')=="Yes" ) Ext.get("flow-rate-medium-info").addCls('select');
-        else Ext.get("flow-rate-medium-info").removeCls('select');
-        if ( model.get('CNG3000HighFlowNozzle')=="Yes" ) Ext.get("flow-rate-hight-info").addCls('select');
-        else Ext.get("flow-rate-hight-info").removeCls('select');
-
+        if ( model.get('CNG3000HighFlowNozzle')=="Yes" ) {
+            Ext.get("flow-rate-low-info").removeCls('select');
+            Ext.get("flow-rate-medium-info").removeCls('select');
+            Ext.get("flow-rate-hight-info").addCls('select');
+        } else if ( model.get('CNG3000StandardNozzle')=="Yes" ) {
+            Ext.get("flow-rate-low-info").removeCls('select');
+            Ext.get("flow-rate-medium-info").addCls('select');
+            Ext.get("flow-rate-hight-info").removeCls('select');
+        } else if ( model.get('CNG3000PSI')=="Yes" ) {
+            Ext.get("flow-rate-low-info").addCls('select');
+            Ext.get("flow-rate-medium-info").removeCls('select');
+            Ext.get("flow-rate-hight-info").removeCls('select');
+        }
     },
     closePopup: function() {
         Ext.getCmp('infoPopup').hide();
