@@ -352,7 +352,7 @@ body {
         zoom: 200%;
     }
     .info-popup-zoom {
-        zoom: 180%;
+        zoom: 120%;
     }
     .filter-img-zoom {
         zoom:160%;
@@ -369,7 +369,7 @@ body {
         zoom: 200%;
     }
     .info-popup-zoom {
-        zoom: 200%;
+        zoom: 150%;
     }
     .filter-img-zoom {
         zoom:160%;
@@ -474,10 +474,10 @@ input::-webkit-input-placeholder {
     color:#30b457;
 }
 #stationDetails {
-    position:relative;color:#67686a;font-weight:bold;
+    position:relative;color:#67686a;font-weight: 700;
 }
 #stationAddressHolder {
-    position:relative;color:#67686a;font-weight:bold;padding: 10px 0px 10px 0px;
+    position:relative;color:#67686a;font-weight: 700;padding: 10px 0px 10px 0px;
     cursor: pointer;
 }
 #stationAddress {
