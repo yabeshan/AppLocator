@@ -40,7 +40,7 @@ Ext.define('App.view.PopupPanel' ,{
                 '<div id="scroll-back" style="width: 100%;height: 80px;position: absolute;cursor:pointer;top:10px;background-image: url(img/main-page-moreinfo-top-arrow.png);background-position: center center;background-repeat: no-repeat;background-size: 161px 115px;"></div>'
                 +'<div class="holder-payment-type">' +
                 '<span class="holder-title">Payment Types</span>' +
-                '<div id="payment-any" class="filter-lbl-zoom">Any</div>'
+                '<div id="payment-any" class="filter-lbl-zoom">All</div>'
                 +'<div id="payment-clean" class="filter-lbl-zoom">Clean Energy Fuel Card</div><div id="payment-visa" class="filter-lbl-zoom">Visa</div>'
                 +'<div id="payment-master" class="filter-lbl-zoom">Mastercard</div><div id="payment-amex" class="filter-lbl-zoom">Amex</div><div id="payment-discover" class="filter-lbl-zoom">Discover</div><div id="payment-voyager" class="filter-lbl-zoom">Voyager</div>'
                 +'<div id="payment-wex" class="filter-lbl-zoom">WEX</div><div id="payment-cash" class="filter-lbl-zoom">Cash</div>' +
