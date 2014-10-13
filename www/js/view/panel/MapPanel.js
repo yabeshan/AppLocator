@@ -563,60 +563,7 @@ Ext.define('App.view.MapPanel', {
                     ( this.searchFilter.FlowRateMedium && marker.model.get('CNG3000StandardNozzle')=="Yes" ) ||
                     ( this.searchFilter.FlowRateHigh && marker.model.get('CNG3000HighFlowNozzle')=="Yes" );
 
-            if  ( !this.searchFilter.paymentSelect || this.searchFilter.paymentAny ) payFlag =  true;
-            else {
-                payFlag =  false;
-                if (this.searchFilter.paymentCleanEnergy && marker.model.get('PaymentTypesAcceptedCleanEnergyFuelCard')=="Yes") {
-                    payFlag = true;
-//                    console.log ( marker.model.get('StationName') );
-                } else if (this.searchFilter.paymentMastercard && marker.model.get('PaymentTypesAcceptedMasterCard')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentWEX && marker.model.get('PaymentTypesAcceptedWrightExpress')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentAmex && marker.model.get('PaymentTypesAcceptedAmex')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentDiscover && marker.model.get('PaymentTypesAcceptedDiscover')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentVoyager && marker.model.get('PaymentTypesAcceptedVoyager')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentComdata && marker.model.get('PaymentTypesAcceptedComData')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentTCH && marker.model.get('PaymentTypesAcceptedTCH')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentTcheck && marker.model.get('PaymentTypesAcceptedTcheck')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentEFS && marker.model.get('PaymentTypesAcceptedEFS')=="Yes") {
-                    payFlag = true;
-
-                } else if (this.searchFilter.paymentMasterFleet && marker.model.get('PaymentTypesAcceptedMasterCardFleet')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentFuelman && marker.model.get('PaymentTypesAcceptedFuelmanFleetwide')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentSpeedway && marker.model.get('PaymentTypesAcceptedSpeedway')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentVisaFleet && marker.model.get('PaymentTypesAcceptedVisaFleet')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentLegacy && marker.model.get('PaymentTypesAcceptedLegacyEFS')=="Yes") {
-                    payFlag = true;
-
-                } else if (this.searchFilter.paymentWexFleet && marker.model.get('PaymentTypesAcceptedWEXFleetone')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentVisa && marker.model.get('PaymentTypesAcceptedVisa')=="Yes") {
-                    payFlag = true;
-//                } else if (this.searchFilter.paymentCash && marker.model.get('')=="Yes") {
-//                    payFlag = true;
-                } else if (this.searchFilter.paymentGift && marker.model.get('PaymentTypesAcceptedPFGiftCard')=="Yes") {
-                    payFlag = true;
-                } else if (this.searchFilter.paymentOther && (marker.model.get('PaymentTypesAcceptedTranStar')=="Yes" || marker.model.get('PaymentTypesAcceptedNaturalFuels')=="Yes")) {
-                    payFlag = true;
-
-                    /*
-                } else if (this.searchFilter. && marker.model.get('')=="Yes") {
-                     payFlag = true;
-                    */
-                }
-
-            }
+            payFlag = this.getPayFlag(marker);
 
             if (typeFlag && statusFlag && carsFlag && hoursFlag && flowFlag && payFlag) {
                 marker.setMap(this.gMap);
@@ -627,6 +574,54 @@ Ext.define('App.view.MapPanel', {
         };
 
 //        alert(this.markerViewArr.length);
+    },
+    getPayFlag: function(marker) {
+
+        if (!this.searchFilter.paymentSelect || this.searchFilter.paymentAny ) return true;
+        if (this.searchFilter.paymentCleanEnergy &&
+            marker.model.get('PaymentTypesAcceptedCleanEnergyFuelCard')=="Yes") return true;
+        if (this.searchFilter.paymentMastercard &&
+            marker.model.get('PaymentTypesAcceptedMasterCard')=="Yes") return true;
+        if (this.searchFilter.paymentWEX &&
+            marker.model.get('PaymentTypesAcceptedWrightExpress')=="Yes") return true;
+        if (this.searchFilter.paymentAmex &&
+            marker.model.get('PaymentTypesAcceptedAmex')=="Yes") return true;
+
+        if (this.searchFilter.paymentDiscover &&
+            marker.model.get('PaymentTypesAcceptedDiscover')=="Yes") return true;
+        if (this.searchFilter.paymentVoyager &&
+            marker.model.get('PaymentTypesAcceptedVoyager')=="Yes") return true;
+        if (this.searchFilter.paymentComdata &&
+            marker.model.get('PaymentTypesAcceptedComData')=="Yes") return true;
+        if (this.searchFilter.paymentTCH &&
+            marker.model.get('PaymentTypesAcceptedTCH')=="Yes") return true;
+        if (this.searchFilter.paymentTcheck &&
+            marker.model.get('PaymentTypesAcceptedTcheck')=="Yes") return true;
+
+        if (this.searchFilter.paymentEFS &&
+            marker.model.get('PaymentTypesAcceptedEFS')=="Yes") return true;
+        if (this.searchFilter.paymentMasterFleet &&
+            marker.model.get('PaymentTypesAcceptedMasterCardFleet')=="Yes") return true;
+        if (this.searchFilter.paymentFuelman &&
+            marker.model.get('PaymentTypesAcceptedFuelmanFleetwide')=="Yes") return true;
+        if (this.searchFilter.paymentSpeedway &&
+            marker.model.get('PaymentTypesAcceptedSpeedway')=="Yes") return true;
+        if (this.searchFilter.paymentVisaFleet &&
+            marker.model.get('PaymentTypesAcceptedVisaFleet')=="Yes") return true;
+
+        if (this.searchFilter.paymentLegacy &&
+            marker.model.get('PaymentTypesAcceptedLegacyEFS')=="Yes") return true;
+        if (this.searchFilter.paymentWexFleet &&
+            marker.model.get('PaymentTypesAcceptedWEXFleetone')=="Yes") return true;
+        if (this.searchFilter.paymentVisa &&
+            marker.model.get('PaymentTypesAcceptedVisa')=="Yes") return true;
+        if (this.searchFilter.paymentGift &&
+            marker.model.get('PaymentTypesAcceptedPFGiftCard')=="Yes") return true;
+        if (this.searchFilter.paymentOther &&
+           ( marker.model.get('PaymentTypesAcceptedTranStar')=="Yes" ||
+             marker.model.get('PaymentTypesAcceptedNaturalFuels')=="Yes")) return true;
+
+        return false;
     }
 
 });

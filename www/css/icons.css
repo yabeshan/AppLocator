@@ -168,8 +168,8 @@
 }
 
 #flow-rate-low-info {
-    position: absolute;width:55px;height:47px;top:115px;left:130px;zoom:0.84;
-    background: url('../img/icons-flow-rate.png') no-repeat 0px 0px;opacity: 0;
+    position: absolute;width:55px;height:47px;top:115px;left:130px;zoom:0.84;text-align: center;
+    background: url('../img/icons-flow-rate.png') no-repeat 0px 0px;opacity: 0;color: #6cb25e;padding-top:34px;
 }
 #flow-rate-low {
     float: left;width:55px;height:47px;cursor: pointer;margin: 10px 20px 10px 20px;padding-top:33px;
@@ -180,8 +180,8 @@
 }
 
 #flow-rate-medium-info {
-    position: absolute;width:55px;height:47px;top:115px;left: 130px;zoom:0.84;
-    background: url('../img/icons-flow-rate.png') no-repeat -60px 0px;opacity: 0;
+    position: absolute;width:55px;height:47px;top:115px;left: 130px;zoom:0.84;text-align: center;
+    background: url('../img/icons-flow-rate.png') no-repeat -60px 0px;opacity: 0;color: #6cb25e;padding-top:34px;
 }
 #flow-rate-medium {
     float: left;width:55px;height:47px;cursor: pointer;margin: 10px 20px 10px 20px;padding-top:33px;
@@ -192,8 +192,8 @@
 }
 
 #flow-rate-hight-info {
-    position: absolute;width:55px;height:47px;top:115px;left:130px;zoom:0.84;
-    background: url('../img/icons-flow-rate.png') no-repeat -120px 0px;opacity: 0;
+    position: absolute;width:55px;height:47px;top:115px;left:130px;zoom:0.84;text-align: center;
+    background: url('../img/icons-flow-rate.png') no-repeat -120px 0px;opacity: 0;color: #6cb25e;padding-top:34px;
 }
 #flow-rate-hight {
     float: left;width:55px;height:47px;cursor: pointer;margin: 10px 20px 10px 20px;padding-top:33px;

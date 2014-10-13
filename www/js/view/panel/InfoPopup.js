@@ -12,7 +12,7 @@ Ext.define('App.view.InfoPopup' ,{
                 html:'<img id="info-close" src="img/popup-close-button.png" >' +
                     '<div class="info-popup-header"><div id="goDirect">Get Directions</div><div id="goPlanner">Add to Trip</div><div id="goShare">Share</div>' +
                     '<div id="stationStatus">Operational</div>' +
-                    '<div class="info-popup-flow-rate">Flow Rate</div><div id="flow-rate-low-info"></div><div id="flow-rate-medium-info"></div><div id="flow-rate-hight-info"></div></div>',
+                    '<div class="info-popup-flow-rate">Flow Rate</div><div id="flow-rate-low-info">Standard</div><div id="flow-rate-medium-info">Quick</div><div id="flow-rate-hight-info">Rapid</div></div>',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
