@@ -54,7 +54,7 @@ Ext.define('App.view.PopupPanel' ,{
 
     config: {
         layout:'fit',
-        style:'position:absolute;background-color:rgba(255,255,255,.5);width:100%;height:100%;padding: 5px 0px 5px 0px',
+        style:'position:absolute;background-color:rgba(255,255,255,.5);width:100%;height:100%;',
         items:[{
             cls:'info-zoom',
             scrollable: {
