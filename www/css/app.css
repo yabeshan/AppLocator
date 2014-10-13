@@ -355,10 +355,10 @@ body {
         zoom: 120%;
     }
     .filter-img-zoom {
-        zoom:160%;
+        zoom:100%;
     }
     .filter-lbl-zoom {
-        zoom:100%;
+        zoom:70%;
     }
     .main-page-changeinfo-panel {
         bottom:72px;
@@ -372,10 +372,10 @@ body {
         zoom: 150%;
     }
     .filter-img-zoom {
-        zoom:160%;
+        zoom:100%;
     }
     .filter-lbl-zoom {
-        zoom:100%;
+        zoom:70%;
     }
     #stationAddress {
         font-size: 300%;
