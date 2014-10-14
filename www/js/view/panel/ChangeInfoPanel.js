@@ -175,7 +175,7 @@ Ext.define('App.view.PopupPanel' ,{
 
         if (id=="payment-any") {
             searchFilter.paymentAny = flag;
-            Ext.getCmp('popupPanel').selectAllPayment( !flag );
+            Ext.getCmp('popupPanel').selectAllPayment( flag );
         } else if (id=="payment-clean") {
             searchFilter.paymentCleanEnergy = flag;
         } else if (id=="payment-master") {
