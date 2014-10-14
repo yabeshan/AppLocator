@@ -31,16 +31,28 @@ var flowRatePanel =
     +'<div id="flow-rate-hight">Rapid</div></div>';
 
 var paymentTypePanel =
-    '<div class="holder-payment-type"><div class="holder-title">Payment Types</div>' +
-    '<div id="payment-any" class="filter-lbl-zoom">All</div>'
-    +'<div id="payment-clean" class="filter-lbl-zoom">Clean Energy Fuel Card</div><div id="payment-visa" class="filter-lbl-zoom">Visa</div>'
-    +'<div id="payment-master" class="filter-lbl-zoom">Mastercard</div><div id="payment-amex" class="filter-lbl-zoom">Amex</div><div id="payment-discover" class="filter-lbl-zoom">Discover</div><div id="payment-voyager" class="filter-lbl-zoom">Voyager</div>'
-    +'<div id="payment-wex" class="filter-lbl-zoom">WEX</div><div id="payment-cash" class="filter-lbl-zoom">Cash</div>' +
-    '<div id="payment-other" class="filter-lbl-zoom">Other</div><div id="payment-comdata" class="filter-lbl-zoom">ComData</div><div id="payment-master-fleet" class="filter-lbl-zoom">MasterCard Fleet</div>' +
-    '<div id="payment-tch" class="filter-lbl-zoom">TCH</div><div id="payment-tcheck" class="filter-lbl-zoom">Tcheck</div><div id="payment-efs" class="filter-lbl-zoom">EFS</div>' +
-    '<div id="payment-fuelman" class="filter-lbl-zoom">Fuelman Fleetwide</div><div id="payment-legacy" class="filter-lbl-zoom">Legacy EFS</div><div id="payment-gift" class="filter-lbl-zoom">PFGiftCard</div>' +
-    '<div id="payment-speedway" class="filter-lbl-zoom">Speedway</div><div id="payment-visa-fleet" class="filter-lbl-zoom">Visa Fleet</div><div id="payment-wex-fleet" class="filter-lbl-zoom">WEX Fleetone</div>' +
-    '</div>';
+    '<div class="holder-payment-type"><div class="holder-title">Payment Types</div>'
+    +'<div id="payment-any" class="filter-lbl-zoom">All</div>'
+    +'<div id="payment-clean" class="filter-lbl-zoom">Clean Energy Fuel Card</div>'
+    +'<div id="payment-visa" class="filter-lbl-zoom">Visa</div>'
+    +'<div id="payment-master" class="filter-lbl-zoom">Mastercard</div>'
+    +'<div id="payment-amex" class="filter-lbl-zoom">Amex</div>'
+    +'<div id="payment-discover" class="filter-lbl-zoom">Discover</div>'
+    +'<div id="payment-voyager" class="filter-lbl-zoom">Voyager</div>'
+    +'<div id="payment-wex" class="filter-lbl-zoom">WEX</div>'
+    +'<div id="payment-cash" class="filter-lbl-zoom">Cash</div>'
+    +'<div id="payment-other" class="filter-lbl-zoom">Other</div>'
+    +'<div id="payment-comdata" class="filter-lbl-zoom">ComData</div>'
+    +'<div id="payment-master-fleet" class="filter-lbl-zoom">MasterCard Fleet</div>'
+    +'<div id="payment-tch" class="filter-lbl-zoom">TCH</div>'
+    +'<div id="payment-tcheck" class="filter-lbl-zoom">Tcheck</div>'
+    +'<div id="payment-efs" class="filter-lbl-zoom">EFS</div>'
+    +'<div id="payment-fuelman" class="filter-lbl-zoom">Fuelman Fleetwide</div>'
+    +'<div id="payment-legacy" class="filter-lbl-zoom">Legacy EFS</div>'
+    +'<div id="payment-gift" class="filter-lbl-zoom">PFGiftCard</div>'
+    +'<div id="payment-speedway" class="filter-lbl-zoom">Speedway</div>'
+    +'<div id="payment-visa-fleet" class="filter-lbl-zoom">Visa Fleet</div>'
+    +'<div id="payment-wex-fleet" class="filter-lbl-zoom">WEX Fleetone</div></div>';
 
 var checkPanel =
     '<div style="background-color: #f1f2f2;height: 36px;width:240;">'
@@ -135,7 +147,7 @@ Ext.define('App.view.PopupPanel' ,{
         if (cmp.hasCls('select')) {
             cmp.removeCls('select');
             if( cmp.id.indexOf("payment")==0 ) {
-                this.changePaymentType( cmp.id, true);
+                this.changePaymentType( cmp.id, false);
             }
         } else {
             cmp.addCls('select');
@@ -152,7 +164,7 @@ Ext.define('App.view.PopupPanel' ,{
             }
 
             if( cmp.id.indexOf("payment")==0 ) {
-                this.changePaymentType( cmp.id, false);
+                this.changePaymentType( cmp.id, true);
             }
 
         }
@@ -160,11 +172,9 @@ Ext.define('App.view.PopupPanel' ,{
 
     changePaymentType: function(id, flag) {
         var searchFilter = Ext.getCmp('mapPanel').searchFilter;
-        searchFilter.paymentSelect = true;
 
         if (id=="payment-any") {
             searchFilter.paymentAny = flag;
-            if (flag) searchFilter.paymentSelect = false;
             Ext.getCmp('popupPanel').selectAllPayment( !flag );
         } else if (id=="payment-clean") {
             searchFilter.paymentCleanEnergy = flag;

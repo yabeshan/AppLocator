@@ -576,8 +576,32 @@ Ext.define('App.view.MapPanel', {
 //        alert(this.markerViewArr.length);
     },
     getPayFlag: function(marker) {
+        if (this.searchFilter.paymentAny ) return true;
 
-        if (!this.searchFilter.paymentSelect || this.searchFilter.paymentAny ) return true;
+        this.searchFilter.paymentSelect = (
+            !this.searchFilter.paymentCleanEnergy &&
+            !this.searchFilter.paymentMastercard &&
+            !this.searchFilter.paymentWEX &&
+            !this.searchFilter.paymentAmex &&
+            !this.searchFilter.paymentDiscover &&
+            !this.searchFilter.paymentVoyager &&
+            !this.searchFilter.paymentComdata &&
+            !this.searchFilter.paymentTCH &&
+            !this.searchFilter.paymentTcheck &&
+            !this.searchFilter.paymentEFS &&
+            !this.searchFilter.paymentMasterFleet &&
+            !this.searchFilter.paymentFuelman &&
+            !this.searchFilter.paymentSpeedway &&
+            !this.searchFilter.paymentVisaFleet &&
+            !this.searchFilter.paymentLegacy &&
+            !this.searchFilter.paymentWexFleet &&
+            !this.searchFilter.paymentVisa &&
+            !this.searchFilter.paymentGift &&
+            !this.searchFilter.paymentOther
+        );
+        if (this.searchFilter.paymentSelect) return true;
+
+
         if (this.searchFilter.paymentCleanEnergy &&
             marker.model.get('PaymentTypesAcceptedCleanEnergyFuelCard')=="Yes") return true;
         if (this.searchFilter.paymentMastercard &&
@@ -615,6 +639,7 @@ Ext.define('App.view.MapPanel', {
             marker.model.get('PaymentTypesAcceptedWEXFleetone')=="Yes") return true;
         if (this.searchFilter.paymentVisa &&
             marker.model.get('PaymentTypesAcceptedVisa')=="Yes") return true;
+
         if (this.searchFilter.paymentGift &&
             marker.model.get('PaymentTypesAcceptedPFGiftCard')=="Yes") return true;
         if (this.searchFilter.paymentOther &&
