@@ -232,7 +232,7 @@ Ext.define('App.view.MapPanel', {
         if (verDB!=verDB_new) {
             that.updateDataStations( urlDATA );
         } else {
-            that.updateDataStationsComplete();
+            that.updateDataStationsComplete(false);
         }
     },
 
@@ -250,20 +250,22 @@ Ext.define('App.view.MapPanel', {
                 } else {
                     console.log('error upload data');
                 }
-                Ext.getCmp('mapPanel').updateDataStationsComplete();
+                Ext.getCmp('mapPanel').updateDataStationsComplete(true);
             }
         });
     },
 
-    updateDataStationsComplete: function() {
+    updateDataStationsComplete: function( updateFlag ) {
         var that = Ext.getCmp('mapPanel');
-        if (that.markerArr.length>0) {
+
+        if (updateFlag && that.markerArr.length>0) {
             that.removeAllMarkers();
         }
-
-        Ext.getStore('StationStore').each(function(record,id){
-            that.addMarker( record, false );
-        });
+        if (that.markerArr.length==0) {
+            Ext.getStore('StationStore').each(function(record,id){
+                that.addMarker( record, false );
+            });
+        }
         that.searchFilter = that.searchFilterDefault();
 
         that.onSearchTypeStations();

@@ -16,7 +16,17 @@ Ext.define('App.view.SearchPanel', {
                         xtype: 'searchfield',
                         placeHolder: 'search by address, city or zip',
                         itemId: 'searchBox',
-                        id:'pac-input'
+                        id:'pac-input',
+                        listeners: {
+                            onClearTap: function() {
+                                alert("onClearTap")
+//                                Ext.form.Text.prototype.onClearTap.call(this);
+                                // put your code here
+                            },
+                            onClearIconTap: function() {
+                                alert("onClearIconTap");
+                            }
+                        }
                     },{
                         style:'cursor:pointer;',
                         html:'<img id="searchBtn" src="img/main-page-toolbar-search-btn.png" style="width:44px;height:52px;">',
@@ -54,6 +64,9 @@ Ext.define('App.view.SearchPanel', {
     },
     initialize: function(me, eOpts) {
         this.hideSearchResult();
+        Ext.get('pac-input').on('clearicontap', function() {
+            alert('clearicontap');
+        }, this);
     },
     showSearchResult: function() {
 //        Ext.getCmp('searchList').setStyle('width:100%;height:300px');
