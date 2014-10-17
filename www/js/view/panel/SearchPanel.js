@@ -69,9 +69,7 @@ Ext.define('App.view.SearchPanel', {
         Ext.getCmp('searchList').setStyle('width:0px;height:0px');
     },
     clearicontapHandler: function() {
-
-        var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
-        alert( document.getElementById('pac-input').getElementsByTagName('input')[0].value +"____________" + document.getElementById('pac-input').getElementsByTagName('input')[1].value );
         clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
+        document.getElementById('pac-input').getElementsByTagName('input')[0].value = "";
     }
 });
