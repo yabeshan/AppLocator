@@ -18,13 +18,9 @@ Ext.define('App.view.SearchPanel', {
                         itemId: 'searchBox',
                         id:'pac-input',
                         listeners: {
-                            onClearTap: function() {
-                                alert("onClearTap")
-//                                Ext.form.Text.prototype.onClearTap.call(this);
-                                // put your code here
-                            },
-                            onClearIconTap: function() {
-                                alert("onClearIconTap");
+                            clearicontap: function() {
+                                alert("clearicontap");
+                                clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
                             }
                         }
                     },{
@@ -64,9 +60,6 @@ Ext.define('App.view.SearchPanel', {
     },
     initialize: function(me, eOpts) {
         this.hideSearchResult();
-        Ext.get('pac-input').on('clearicontap', function() {
-            alert('clearicontap');
-        }, this);
     },
     showSearchResult: function() {
 //        Ext.getCmp('searchList').setStyle('width:100%;height:300px');

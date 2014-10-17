@@ -260,15 +260,13 @@ Ext.define('App.view.MapPanel', {
 
         if (updateFlag && that.markerArr.length>0) {
             that.removeAllMarkers();
-            alert("remove");
         }
         if (that.markerArr.length==0) {
-            alert("create");
             Ext.getStore('StationStore').each(function(record,id){
                 that.addMarker( record, false );
             });
+            that.searchFilter = that.searchFilterDefault();
         }
-        that.searchFilter = that.searchFilterDefault();
 
         that.onSearchTypeStations();
         that.nearStationForPoint( that.userCoord.lat, that.userCoord.lon );
