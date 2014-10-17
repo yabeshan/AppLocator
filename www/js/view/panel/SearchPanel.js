@@ -19,6 +19,7 @@ Ext.define('App.view.SearchPanel', {
                         id:'pac-input',
                         listeners: {
                             clearicontap: function() {
+                                alert( clearInterval +"    "+ Ext.getCmp('mapPanel').searchBoxInputUpd );
                                 clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
                             }
                         }
