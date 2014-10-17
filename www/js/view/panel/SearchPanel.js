@@ -21,9 +21,6 @@ Ext.define('App.view.SearchPanel', {
                         listeners: {
                             clearicontap: function() {
                                 Ext.getCmp('searchPanel').clearicontapHandler();
-                            },
-                            blur: function() {
-                                Ext.getCmp('searchPanel').blurHandler();
                             }
                         }
                     },{
@@ -74,9 +71,8 @@ Ext.define('App.view.SearchPanel', {
     },
     clearicontapHandler: function() {
         clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
-        document.getElementById('pac-input').getElementsByTagName('input')[0].value = "";
-    },
-    blurHandler: function() {
-        clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
+        setInterval(function(){
+            document.getElementById('pac-input').getElementsByTagName('input')[0].value = "";
+        },100);
     }
 });
