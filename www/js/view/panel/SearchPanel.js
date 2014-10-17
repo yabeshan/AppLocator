@@ -70,9 +70,6 @@ Ext.define('App.view.SearchPanel', {
         Ext.getCmp('searchList').setStyle('width:0px;height:0px');
     },
     clearicontapHandler: function() {
-        clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
-        setInterval(function(){
-            document.getElementById('pac-input').getElementsByTagName('input')[0].value = "";
-        },100);
+        Ext.getCmp('mapPanel').searchBoxClearFlag = true;
     }
 });

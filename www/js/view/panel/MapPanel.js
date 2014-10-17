@@ -415,6 +415,7 @@ Ext.define('App.view.MapPanel', {
         this.infowindow = new google.maps.InfoWindow(options);
     },
 
+    searchBoxClearFlag:false,
     searchBoxInputArr:[],
     searchBoxInputTxtArr:[],
     searchBoxInputUpd:null,
@@ -427,7 +428,9 @@ Ext.define('App.view.MapPanel', {
             if ( item.txt.length + 5 <  item.input.value.length) {
                 var txt = item.input.value;
                 Ext.getCmp('mapPanel').searchBoxInputUpd = setInterval(function(){
-                    item.input.value = txt;
+                    if (Ext.getCmp('mapPanel').searchBoxClearFlag) item.input.value = "";
+                    else item.input.value = txt;
+                    Ext.getCmp('mapPanel').searchBoxClearFlag = false;
                 },500);
             } else {
                 clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
