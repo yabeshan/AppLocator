@@ -260,8 +260,10 @@ Ext.define('App.view.MapPanel', {
 
         if (updateFlag && that.markerArr.length>0) {
             that.removeAllMarkers();
+            alert("remove");
         }
         if (that.markerArr.length==0) {
+            alert("create");
             Ext.getStore('StationStore').each(function(record,id){
                 that.addMarker( record, false );
             });
