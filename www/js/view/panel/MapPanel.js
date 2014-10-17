@@ -124,7 +124,6 @@ Ext.define('App.view.MapPanel', {
     countObj:0,
     addSearchItemHandlers: function() {
         var obj1 = document.getElementsByClassName("pac-container");
-        var obj2 = document.getElementsByClassName("pac-item");
         var that = Ext.getCmp('mapPanel');
 
         if (obj1[that.countObj] && that.countObj != obj1.length) {
@@ -227,7 +226,7 @@ Ext.define('App.view.MapPanel', {
         that.unmask();
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         that.addSearchPanelInteractive( input, 'pac-input' );
-        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
+//        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
 
         if (verDB!=verDB_new) {
             that.updateDataStations( urlDATA );
@@ -422,7 +421,7 @@ Ext.define('App.view.MapPanel', {
     addSearchPanelInteractive: function( input, id ) {
         Ext.getCmp('mapPanel').searchBoxInputTxtArr[id] = {'txt':'', 'input':input};
         var item = Ext.getCmp('mapPanel').searchBoxInputTxtArr[id];
-alert(111)
+
 //        input.addEventListener('paste', function( e ) {
 //            console.log("paste", e);
 //        });
