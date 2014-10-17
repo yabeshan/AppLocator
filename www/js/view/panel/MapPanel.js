@@ -422,9 +422,9 @@ Ext.define('App.view.MapPanel', {
         Ext.getCmp('mapPanel').searchBoxInputTxtArr[id] = {'txt':'', 'input':input};
         var item = Ext.getCmp('mapPanel').searchBoxInputTxtArr[id];
 
-        input.addEventListener('input', function()
+        input.addEventListener('paste', function(e)
         {
-            alert("paste");
+            e.preventDefaults();
         });
 //        input.addEventListener('input', function()
 //        {
@@ -439,8 +439,8 @@ Ext.define('App.view.MapPanel', {
 //            item.txt = item.input.value;
 //        });
 
-//        this.searchBox = new google.maps.places.SearchBox( input );
-//        this.searchBoxInputArr.push(input);
+        this.searchBox = new google.maps.places.SearchBox( input );
+        this.searchBoxInputArr.push(input);
     },
 
     changeTraffic: function() {
