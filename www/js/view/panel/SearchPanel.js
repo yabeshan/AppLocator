@@ -19,8 +19,7 @@ Ext.define('App.view.SearchPanel', {
                         id:'pac-input',
                         listeners: {
                             clearicontap: function() {
-                                alert( clearInterval +"    "+ Ext.getCmp('mapPanel').searchBoxInputUpd );
-                                clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
+                                this.clearicontapHandler();
                             }
                         }
                     },{
@@ -68,6 +67,9 @@ Ext.define('App.view.SearchPanel', {
     hideSearchResult: function() {
         Ext.getCmp('searchList').hide();
         Ext.getCmp('searchList').setStyle('width:0px;height:0px');
+    },
+    clearicontapHandler: function() {
+        alert( clearInterval +"    "+ Ext.getCmp('mapPanel').searchBoxInputUpd );
+        clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
     }
-
 });
