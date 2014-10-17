@@ -439,8 +439,8 @@ Ext.define('App.view.MapPanel', {
 //            item.txt = item.input.value;
 //        });
 
-        this.searchBox = new google.maps.places.SearchBox( input );
-        this.searchBoxInputArr.push(input);
+//        this.searchBox = new google.maps.places.SearchBox( input );
+//        this.searchBoxInputArr.push(input);
     },
 
     changeTraffic: function() {
