@@ -17,7 +17,6 @@ Ext.define('App.view.SearchPanel', {
                         placeHolder: 'search by address, city or zip',
                         itemId: 'searchBox',
                         id:'pac-input',
-                        style:'opacity:.3',
                         listeners: {
                             clearicontap: function() {
                                 Ext.getCmp('searchPanel').clearicontapHandler();

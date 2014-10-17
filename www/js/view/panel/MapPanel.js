@@ -423,23 +423,23 @@ Ext.define('App.view.MapPanel', {
         Ext.getCmp('mapPanel').searchBoxInputTxtArr[id] = {'txt':'', 'input':input};
         var item = Ext.getCmp('mapPanel').searchBoxInputTxtArr[id];
 
-        input.addEventListener('input', function()
-        {
-            if ( item.txt.length + 5 <  item.input.value.length) {
-                var txt = item.input.value;
-                Ext.getCmp('mapPanel').searchBoxInputUpd = setInterval(function(){
-                    if (Ext.getCmp('mapPanel').searchBoxClearFlag) item.input.value = "";
-                    else item.input.value = txt;
-                    Ext.getCmp('mapPanel').searchBoxClearFlag = false;
-                },500);
-            } else {
-                clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
-            }
-
-            if (Ext.getCmp('mapPanel').searchBoxClearFlag) item.txt = "";
-            else item.txt = item.input.value;
-
-        });
+//        input.addEventListener('input', function()
+//        {
+//            if ( item.txt.length + 5 <  item.input.value.length) {
+//                var txt = item.input.value;
+//                Ext.getCmp('mapPanel').searchBoxInputUpd = setInterval(function(){
+//                    if (Ext.getCmp('mapPanel').searchBoxClearFlag) item.input.value = "";
+//                    else item.input.value = txt;
+//                    Ext.getCmp('mapPanel').searchBoxClearFlag = false;
+//                },500);
+//            } else {
+//                clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
+//            }
+//
+//            if (Ext.getCmp('mapPanel').searchBoxClearFlag) item.txt = "";
+//            else item.txt = item.input.value;
+//
+//        });
 
         this.searchBox = new google.maps.places.SearchBox( input );
         this.searchBoxInputArr.push(input);
