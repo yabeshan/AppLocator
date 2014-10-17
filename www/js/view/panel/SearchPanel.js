@@ -19,7 +19,7 @@ Ext.define('App.view.SearchPanel', {
                         id:'pac-input',
                         listeners: {
                             clearicontap: function() {
-                                this.clearicontapHandler();
+                                Ext.getCmp('searchPanel').clearicontapHandler();
                             }
                         }
                     },{
