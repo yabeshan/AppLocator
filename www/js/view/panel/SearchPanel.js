@@ -71,7 +71,7 @@ Ext.define('App.view.SearchPanel', {
     clearicontapHandler: function() {
 
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
-        alert( input.value +"____________" );
+        alert( document.getElementById('pac-input').getElementsByTagName('input')[0].value +"____________" + document.getElementById('pac-input').getElementsByTagName('input')[1].value );
         clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
     }
 });
