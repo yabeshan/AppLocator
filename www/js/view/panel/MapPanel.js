@@ -435,7 +435,10 @@ Ext.define('App.view.MapPanel', {
             } else {
                 clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
             }
-            item.txt = item.input.value;
+
+            if (Ext.getCmp('mapPanel').searchBoxClearFlag) item.txt = "";
+            else item.txt = item.input.value;
+
         });
 
         this.searchBox = new google.maps.places.SearchBox( input );
