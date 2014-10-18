@@ -448,11 +448,15 @@ Ext.define('App.view.MapPanel', {
         this.searchBox = new google.maps.places.SearchBox( input );
         this.searchBoxInputArr.push(input);
 
+
+        this.searchBox.setPlaces("qqqqqqqqqqqqqqqqqqqqqqqqq");
+
         google.maps.event.addListener(this.searchBox, 'places_changed', function() {
             alert(222)
         });
+
         google.maps.event.addListener(Ext.getCmp("mapPanel").gMap, 'bounds_changed', function() {
-            alert(111)
+//            alert(111)
         });
     },
 
