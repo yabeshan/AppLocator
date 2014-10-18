@@ -69,6 +69,10 @@ Ext.define('App.view.SearchPanel', {
         Ext.getCmp('searchList').setStyle('width:0px;height:0px');
     },
     clearicontapHandler: function() {
-        Ext.getCmp('mapPanel').searchBoxClearFlag = true;
+        alert( ""+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
+        setInterval(function() {
+            alert( ""+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
+        },2000);
+//        Ext.getCmp('mapPanel').searchBoxClearFlag = true;
     }
 });
