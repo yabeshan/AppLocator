@@ -18,11 +18,11 @@ Ext.define('App.view.SearchPanel', {
                         itemId: 'searchBox',
                         id:'pac-input',
                         listeners: {
-                            clearicontap: function() {
-                                Ext.getCmp('searchPanel').clearicontapHandler();
-                            },
                             blur: function( e ) {
-                                Ext.getCmp('searchPanel').blurHandler( e );
+                                var val = e.getValue();
+                                setTimeout(function() {
+                                    document.getElementById('pac-input').getElementsByTagName('input')[0].value = val;
+                                },10);
                             }
                         }
                     },{
@@ -70,15 +70,5 @@ Ext.define('App.view.SearchPanel', {
     hideSearchResult: function() {
         Ext.getCmp('searchList').hide();
         Ext.getCmp('searchList').setStyle('width:0px;height:0px');
-    },
-    clearicontapHandler: function() {
-        document.getElementById('pac-input').getElementsByTagName('input')[0].value = "";
-//        Ext.getCmp('mapPanel').searchBoxClearFlag = true;
-    },
-    blurHandler: function( e ) {
-        var val = e.getValue();
-        setTimeout(function() {
-            document.getElementById('pac-input').getElementsByTagName('input')[0].value = val;
-        },10);
     }
 });
