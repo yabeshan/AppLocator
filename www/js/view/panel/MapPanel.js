@@ -423,11 +423,11 @@ Ext.define('App.view.MapPanel', {
         var item = Ext.getCmp('mapPanel').searchBoxInputTxtArr[id];
 
         input.addEventListener('paste', function( e ) {
-            alert( "paste "+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
+//            alert( "paste "+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
         });
         input.addEventListener('input', function( e )
         {
-            alert( "input "+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
+//            alert( "input "+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
 
 //            console.log ("input", e);
 //            if ( item.txt.length + 5 <  item.input.value.length) {
@@ -448,11 +448,8 @@ Ext.define('App.view.MapPanel', {
         this.searchBox = new google.maps.places.SearchBox( input );
         this.searchBoxInputArr.push(input);
 
-        var autocomplete = new google.maps.places.Autocomplete(
-            input,
-            { types: ['geocode'] });
-        google.maps.event.addListener(autocomplete, 'place_changed', function() {
-            alert(111);
+        google.maps.event.addListener(this.searchBox, 'places_changed', function() {
+            alert(222)
         });
     },
 
