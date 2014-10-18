@@ -21,7 +21,7 @@ Ext.define('App.view.SearchPanel', {
                             clearicontap: function() {
                                 Ext.getCmp('searchPanel').clearicontapHandler();
                             },
-                            blur: function() {
+                            blur: function( e ) {
                                 Ext.getCmp('searchPanel').blurHandler( e );
                             }
                         }
@@ -76,10 +76,10 @@ Ext.define('App.view.SearchPanel', {
 //        Ext.getCmp('mapPanel').searchBoxClearFlag = true;
     },
     blurHandler: function( e ) {
-        e.preventDefaults();
+        var val = e.getValue();
 //        alert( ""+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
         setTimeout(function() {
-            alert( ""+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
+            alert( val +"________"+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
         },100);
     }
 });
