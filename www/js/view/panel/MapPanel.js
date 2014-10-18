@@ -447,6 +447,13 @@ Ext.define('App.view.MapPanel', {
 
         this.searchBox = new google.maps.places.SearchBox( input );
         this.searchBoxInputArr.push(input);
+
+        var autocomplete = new google.maps.places.Autocomplete(
+            input,
+            { types: ['geocode'] });
+        google.maps.event.addListener(autocomplete, 'place_changed', function() {
+            alert(111);
+        });
     },
 
     changeTraffic: function() {
