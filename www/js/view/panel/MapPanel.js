@@ -120,7 +120,6 @@ Ext.define('App.view.MapPanel', {
     },
 
     searchBox:null,
-    autocomplete:null,
     autoDirection:false,
     countObj:0,
     addSearchItemHandlers: function() {
@@ -445,7 +444,6 @@ Ext.define('App.view.MapPanel', {
 //            else item.txt = item.input.value;
 //        });
 
-//        this.autocomplete = new google.maps.places.Autocomplete( input );
         this.searchBox = new google.maps.places.SearchBox( input );
         this.searchBoxInputArr.push(input);
     },

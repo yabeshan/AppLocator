@@ -72,15 +72,13 @@ Ext.define('App.view.SearchPanel', {
         Ext.getCmp('searchList').setStyle('width:0px;height:0px');
     },
     clearicontapHandler: function() {
-        Ext.getCmp('mapPanel').autocomplete.clear();
         document.getElementById('pac-input').getElementsByTagName('input')[0].value = "";
 //        Ext.getCmp('mapPanel').searchBoxClearFlag = true;
     },
     blurHandler: function( e ) {
         var val = e.getValue();
-//        alert( ""+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
         setTimeout(function() {
-//            alert( val +"________"+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
+            document.getElementById('pac-input').getElementsByTagName('input')[0].value = val;
         },100);
     }
 });
