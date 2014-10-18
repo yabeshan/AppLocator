@@ -225,7 +225,7 @@ Ext.define('App.view.MapPanel', {
 
         that.unmask();
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
-        that.addSearchPanelInteractive( input, 'pac-input' );
+//        that.addSearchPanelInteractive( input, 'pac-input' );
 //        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
 
         if (verDB!=verDB_new) {
@@ -443,8 +443,8 @@ Ext.define('App.view.MapPanel', {
 //            else item.txt = item.input.value;
 //        });
 
-        this.searchBox = new google.maps.places.SearchBox( input );
-        this.searchBoxInputArr.push(input);
+//        this.searchBox = new google.maps.places.SearchBox( input );
+//        this.searchBoxInputArr.push(input);
     },
 
     changeTraffic: function() {
