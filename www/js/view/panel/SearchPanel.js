@@ -79,7 +79,7 @@ Ext.define('App.view.SearchPanel', {
         var val = e.getValue();
 //        alert( ""+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
         setTimeout(function() {
-            alert( val +"________"+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
+//            alert( val +"________"+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
         },100);
     }
 });

@@ -227,7 +227,7 @@ Ext.define('App.view.MapPanel', {
         that.unmask();
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
         that.addSearchPanelInteractive( input, 'pac-input' );
-//        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
+        setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
 
         if (verDB!=verDB_new) {
             that.updateDataStations( urlDATA );
