@@ -451,6 +451,9 @@ Ext.define('App.view.MapPanel', {
         google.maps.event.addListener(this.searchBox, 'places_changed', function() {
             alert(222)
         });
+        google.maps.event.addListener(Ext.getCmp("mapPanel").gMap, 'bounds_changed', function() {
+            alert(111)
+        });
     },
 
     changeTraffic: function() {
