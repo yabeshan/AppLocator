@@ -72,7 +72,7 @@ Ext.define('App.view.SearchPanel', {
         Ext.getCmp('searchList').setStyle('width:0px;height:0px');
     },
     clearicontapHandler: function() {
-
+        Ext.getCmp('mapPanel').autocomplete.clear();
 //        Ext.getCmp('mapPanel').searchBoxClearFlag = true;
     },
     blurHandler: function( e ) {
