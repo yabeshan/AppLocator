@@ -22,7 +22,7 @@ Ext.define('App.view.SearchPanel', {
                                 var val = e.getValue();
                                 setTimeout(function() {
                                     document.getElementById('pac-input').getElementsByTagName('input')[0].value = val;
-                                },10);
+                                },50);
                             }
                         }
                     },{
