@@ -20,6 +20,9 @@ Ext.define('App.view.SearchPanel', {
                         listeners: {
                             clearicontap: function() {
                                 Ext.getCmp('searchPanel').clearicontapHandler();
+                            },
+                            blur: function() {
+                                Ext.getCmp('searchPanel').blurHandler();
                             }
                         }
                     },{
@@ -69,10 +72,13 @@ Ext.define('App.view.SearchPanel', {
         Ext.getCmp('searchList').setStyle('width:0px;height:0px');
     },
     clearicontapHandler: function() {
-//        alert( ""+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
-//        setTimeout(function() {
-//            alert( ""+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
-//        },10000);
+
 //        Ext.getCmp('mapPanel').searchBoxClearFlag = true;
+    },
+    blurHandler: function() {
+        alert( ""+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
+        setTimeout(function() {
+            alert( ""+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
+        },3000);
     }
 });

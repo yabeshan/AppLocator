@@ -422,13 +422,12 @@ Ext.define('App.view.MapPanel', {
         Ext.getCmp('mapPanel').searchBoxInputTxtArr[id] = {'txt':'', 'input':input};
         var item = Ext.getCmp('mapPanel').searchBoxInputTxtArr[id];
 
-        input.addEventListener('paste', function( e ) {
+//        input.addEventListener('paste', function( e ) {
 //            alert( "paste "+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
-        });
-        input.addEventListener('input', function( e )
-        {
+//        });
+//        input.addEventListener('input', function( e )
+//        {
 //            alert( "input "+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
-
 //            console.log ("input", e);
 //            if ( item.txt.length + 5 <  item.input.value.length) {
 //                var txt = item.input.value;
@@ -443,21 +442,10 @@ Ext.define('App.view.MapPanel', {
 //
 //            if (Ext.getCmp('mapPanel').searchBoxClearFlag) item.txt = "";
 //            else item.txt = item.input.value;
-        });
+//        });
 
         this.searchBox = new google.maps.places.SearchBox( input );
         this.searchBoxInputArr.push(input);
-
-
-        this.searchBox.setPlaces("qqqqqqqqqqqqqqqqqqqqqqqqq");
-
-        google.maps.event.addListener(this.searchBox, 'places_changed', function() {
-            alert(222)
-        });
-
-        google.maps.event.addListener(Ext.getCmp("mapPanel").gMap, 'bounds_changed', function() {
-//            alert(111)
-        });
     },
 
     changeTraffic: function() {
