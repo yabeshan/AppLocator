@@ -226,7 +226,7 @@ Ext.define('App.view.MapPanel', {
 
         that.unmask();
         var input = document.getElementById('pac-input').getElementsByTagName('input')[0];
-        that.addSearchPanelInteractive( input, 'pac-input' );
+        that.addSearchPanelInteractive( input, 'pac-input', true );
         setInterval( Ext.getCmp('mapPanel').addSearchItemHandlers, 1000);
 
         if (verDB!=verDB_new) {
@@ -418,22 +418,24 @@ Ext.define('App.view.MapPanel', {
     searchBoxInputArr:[],
     searchBoxInputTxtArr:[],
     searchBoxInputUpd:null,
-    addSearchPanelInteractive: function( input, id ) {
+    addSearchPanelInteractive: function( input, id, disabledFlag ) {
         Ext.getCmp('mapPanel').searchBoxInputTxtArr[id] = {'txt':'', 'input':input};
         var item = Ext.getCmp('mapPanel').searchBoxInputTxtArr[id];
 
-        input.addEventListener('input', function( e )
-        {
-            if ( item.txt.length + 5 <  item.input.value.length) {
-                var txt = item.input.value;
-                Ext.getCmp('mapPanel').searchBoxInputUpd = setInterval(function(){
-                    item.input.value = txt;
-                },500);
-            } else {
-                clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
-            }
-            item.txt = item.input.value;
-        });
+        if (!disabledFlag) {
+            input.addEventListener('input', function( e )
+            {
+                if ( item.txt.length + 5 <  item.input.value.length) {
+                    var txt = item.input.value;
+                    Ext.getCmp('mapPanel').searchBoxInputUpd = setInterval(function(){
+                        item.input.value = txt;
+                    },500);
+                } else {
+                    clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
+                }
+                item.txt = item.input.value;
+            });
+        }
 
         this.searchBox = new google.maps.places.SearchBox( input );
         this.searchBoxInputArr.push(input);
