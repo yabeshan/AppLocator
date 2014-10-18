@@ -415,7 +415,6 @@ Ext.define('App.view.MapPanel', {
         this.infowindow = new google.maps.InfoWindow(options);
     },
 
-    searchBoxClearFlag:false,
     searchBoxInputArr:[],
     searchBoxInputTxtArr:[],
     searchBoxInputUpd:null,
@@ -423,27 +422,18 @@ Ext.define('App.view.MapPanel', {
         Ext.getCmp('mapPanel').searchBoxInputTxtArr[id] = {'txt':'', 'input':input};
         var item = Ext.getCmp('mapPanel').searchBoxInputTxtArr[id];
 
-//        input.addEventListener('paste', function( e ) {
-//            alert( "paste "+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
-//        });
-//        input.addEventListener('input', function( e )
-//        {
-//            alert( "input "+ document.getElementById('pac-input').getElementsByTagName('input')[0].value );
-//            console.log ("input", e);
-//            if ( item.txt.length + 5 <  item.input.value.length) {
-//                var txt = item.input.value;
-//                Ext.getCmp('mapPanel').searchBoxInputUpd = setInterval(function(){
-//                    if (Ext.getCmp('mapPanel').searchBoxClearFlag) item.input.value = "";
-//                    else item.input.value = txt;
-//                    Ext.getCmp('mapPanel').searchBoxClearFlag = false;
-//                },500);
-//            } else {
-//                clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
-//            }
-//
-//            if (Ext.getCmp('mapPanel').searchBoxClearFlag) item.txt = "";
-//            else item.txt = item.input.value;
-//        });
+        input.addEventListener('input', function( e )
+        {
+            if ( item.txt.length + 5 <  item.input.value.length) {
+                var txt = item.input.value;
+                Ext.getCmp('mapPanel').searchBoxInputUpd = setInterval(function(){
+                    item.input.value = txt;
+                },500);
+            } else {
+                clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
+            }
+            item.txt = item.input.value;
+        });
 
         this.searchBox = new google.maps.places.SearchBox( input );
         this.searchBoxInputArr.push(input);
