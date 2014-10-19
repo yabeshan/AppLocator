@@ -220,6 +220,7 @@ Ext.define('App.view.TripPlaner' ,{
             oldValue = Ext.get('tp-end-point-'+index).dom.value;
         Ext.get('tp-end-point-'+index).dom.value = Ext.get('tp-end-point-'+(index-1)).dom.value;
         Ext.get('tp-end-point-'+(index-1)).dom.value = oldValue;
+        clearInterval( Ext.getCmp('mapPanel').searchBoxInputUpd );
     },
 
     deleteItems: function(node) {
