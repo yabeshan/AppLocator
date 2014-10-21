@@ -587,6 +587,7 @@ Ext.define('App.view.MapPanel', {
             !this.searchFilter.paymentMastercard &&
             !this.searchFilter.paymentWEX &&
             !this.searchFilter.paymentAmex &&
+            !this.searchFilter.paymentCash &&
             !this.searchFilter.paymentDiscover &&
             !this.searchFilter.paymentVoyager &&
             !this.searchFilter.paymentComdata &&
