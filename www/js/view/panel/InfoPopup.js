@@ -53,7 +53,7 @@ Ext.define('App.view.InfoPopup' ,{
                             if (node.id=="stationAddressHolder") {
                                 if (window && window.plugins && window.plugins.clipboard) {
                                     window.plugins.clipboard.copy(Ext.get("stationAddress").dom.innerText);
-                                    viewInfoPopup("Info", "You copy address to clipboard.");
+                                    viewInfoPopup(" ", "The address has been copied.");
                                 }
                             }
                         },
