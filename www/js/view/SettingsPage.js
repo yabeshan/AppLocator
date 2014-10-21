@@ -17,7 +17,7 @@ Ext.define('App.view.SettingsPage' ,{
                     +'<div class="page"><br><br>'
 //                    +'<p style="padding-left: 20%;text-align: left">Version database: xx-xx-xx<br>Last update: yy-yy-yy<br><br><button style="width: 200px; height: 80px">Update now</button></p>'
 //                    +'<p style="padding-left: 20%;text-align: left">Checking for update...</p>'
-                    +'<p style="width: 100%;text-align: center">Your software is up to date (v 0.2.61)</p><br><br>'
+                    +'<p style="width: 100%;text-align: center">Your software is up to date (v 0.2.62)</p><br><br>'
                     +'<div id="updateData" style="height: 50px;background-color: #30b457; width: 200px;padding: 10px;cursor: pointer;position:relative;left:50%;margin-left:-100px;color:#FFF">Update DB<br><span id="verdb"></span></div>'
                     +'</div>',
                 listeners: {

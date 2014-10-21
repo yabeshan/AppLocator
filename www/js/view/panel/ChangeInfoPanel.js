@@ -32,27 +32,25 @@ var flowRatePanel =
 
 var paymentTypePanel =
     '<div class="holder-payment-type"><div class="holder-title">Payment Types</div>'
-    +'<div id="payment-any" class="filter-lbl-zoom">All</div>'
-    +'<div id="payment-clean" class="filter-lbl-zoom">Clean Energy Fuel Card</div>'
-    +'<div id="payment-visa" class="filter-lbl-zoom">Visa</div>'
-    +'<div id="payment-master" class="filter-lbl-zoom">Mastercard</div>'
-    +'<div id="payment-amex" class="filter-lbl-zoom">Amex</div>'
-    +'<div id="payment-discover" class="filter-lbl-zoom">Discover</div>'
-    +'<div id="payment-voyager" class="filter-lbl-zoom">Voyager</div>'
-    +'<div id="payment-wex" class="filter-lbl-zoom">WEX</div>'
-    +'<div id="payment-cash" class="filter-lbl-zoom">Cash</div>'
-    +'<div id="payment-other" class="filter-lbl-zoom">Other</div>'
-    +'<div id="payment-comdata" class="filter-lbl-zoom">ComData</div>'
-    +'<div id="payment-master-fleet" class="filter-lbl-zoom">MasterCard Fleet</div>'
-    +'<div id="payment-tch" class="filter-lbl-zoom">TCH</div>'
-    +'<div id="payment-tcheck" class="filter-lbl-zoom">Tcheck</div>'
-    +'<div id="payment-efs" class="filter-lbl-zoom">EFS</div>'
-    +'<div id="payment-fuelman" class="filter-lbl-zoom">Fuelman Fleetwide</div>'
-    +'<div id="payment-legacy" class="filter-lbl-zoom">Legacy EFS</div>'
-    +'<div id="payment-gift" class="filter-lbl-zoom">PFGiftCard</div>'
-    +'<div id="payment-speedway" class="filter-lbl-zoom">Speedway</div>'
-    +'<div id="payment-visa-fleet" class="filter-lbl-zoom">Visa Fleet</div>'
-    +'<div id="payment-wex-fleet" class="filter-lbl-zoom">WEX Fleetone</div></div>';
+        +'<div id="payment-any" class="filter-lbl-zoom">All</div>'
+        +'<div id="payment-amex" class="filter-lbl-zoom">Amex</div>'
+        +'<div id="payment-clean" class="filter-lbl-zoom">Clean Energy Fuel Card</div>'
+        +'<div id="payment-comdata" class="filter-lbl-zoom">Comdata</div>'
+        +'<div id="payment-discover" class="filter-lbl-zoom">Discover</div>'
+        +'<div id="payment-efs" class="filter-lbl-zoom">EFS</div>'
+        +'<div id="payment-fuelman" class="filter-lbl-zoom">Fuelman Fleetwide</div>'
+        +'<div id="payment-legacy" class="filter-lbl-zoom">Legacy EFS</div>'
+        +'<div id="payment-master" class="filter-lbl-zoom">Mastercard</div>'
+        +'<div id="payment-master-fleet" class="filter-lbl-zoom">MasterCard Fleet</div>'
+        +'<div id="payment-gift" class="filter-lbl-zoom">PFGiftCard</div>'
+        +'<div id="payment-speedway" class="filter-lbl-zoom">Speedway</div>'
+        +'<div id="payment-tch" class="filter-lbl-zoom">TCH</div>'
+        +'<div id="payment-tcheck" class="filter-lbl-zoom">Tcheck</div>'
+        +'<div id="payment-voyager" class="filter-lbl-zoom">Voyager</div>'
+        +'<div id="payment-visa" class="filter-lbl-zoom">Visa</div>'
+        +'<div id="payment-visa-fleet" class="filter-lbl-zoom">Visa Fleet</div>'
+        +'<div id="payment-wex" class="filter-lbl-zoom">WEX</div>'
+        +'<div id="payment-wex-fleet" class="filter-lbl-zoom">WEX Fleetone</div></div>';
 
 var checkPanel =
     '<div style="background-color: #f1f2f2;height: 36px;width:240;">'
@@ -124,8 +122,6 @@ Ext.define('App.view.PopupPanel' ,{
             case "payment-discover":
             case "payment-voyager":
             case "payment-wex":
-            case "payment-cash":
-            case "payment-other":
 
             case "payment-comdata":
             case "payment-master-fleet":
@@ -210,12 +206,8 @@ Ext.define('App.view.PopupPanel' ,{
             searchFilter.paymentWexFleet = flag;
         } else if (id=="payment-visa") {
             searchFilter.paymentVisa = flag;
-        } else if (id=="payment-cash") {
-            searchFilter.paymentCash = flag;
         } else if (id=="payment-gift") {
             searchFilter.paymentGift = flag;
-        } else if (id=="payment-other") {
-            searchFilter.paymentOther = flag;
         }
     },
 
@@ -259,9 +251,7 @@ Ext.define('App.view.PopupPanel' ,{
         panel.searchFilter.paymentWEX = Ext.get("payment-wex").hasCls('select');
         panel.searchFilter.paymentCleanEnergy = Ext.get("payment-clean").hasCls('select');
         panel.searchFilter.paymentAmex = Ext.get("payment-amex").hasCls('select');
-        panel.searchFilter.paymentCash = Ext.get("payment-cash").hasCls('select');
         panel.searchFilter.paymentDiscover = Ext.get("payment-discover").hasCls('select');
-        panel.searchFilter.paymentOther = Ext.get("payment-other").hasCls('select');
         panel.searchFilter.paymentVisa = Ext.get("payment-visa").hasCls('select');
         panel.searchFilter.paymentVoyager = Ext.get("payment-voyager").hasCls('select');
 
@@ -312,8 +302,6 @@ Ext.define('App.view.PopupPanel' ,{
             Ext.get("payment-discover").addCls('select');
             Ext.get("payment-voyager").addCls('select');
             Ext.get("payment-wex").addCls('select');
-            Ext.get("payment-cash").addCls('select');
-            Ext.get("payment-other").addCls('select');
 
             Ext.get("payment-comdata").addCls('select');
             Ext.get("payment-master-fleet").addCls('select');
@@ -335,8 +323,6 @@ Ext.define('App.view.PopupPanel' ,{
             Ext.get("payment-discover").removeCls('select');
             Ext.get("payment-voyager").removeCls('select');
             Ext.get("payment-wex").removeCls('select');
-            Ext.get("payment-cash").removeCls('select');
-            Ext.get("payment-other").removeCls('select');
 
             Ext.get("payment-comdata").removeCls('select');
             Ext.get("payment-master-fleet").removeCls('select');
