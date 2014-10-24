@@ -9,7 +9,8 @@ Ext.define('App.view.AboutPage' ,{
         items:[
             {
                 xtype:'toolbar',
-                style:'background:#30b457',
+//                style:'background:#30b457',
+                style:'background:#900',
                 title:'About'
             },{
                 html:'<img id="backBtn" src="img/icons_button-back.png" style="position:absolute;z-index:90000; top:0px; left:0px;height:47px;cursor:pointer">',

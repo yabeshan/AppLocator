@@ -53,7 +53,7 @@ body {
 /**************************************************************** PAGE *********************************************/
 .page {
     position:absolute;height:100%;width:100%;text-align: center;
-    zoom:100%;
+    /*zoom:100%;*/
 }
 
 .start-page-background {
@@ -72,22 +72,22 @@ body {
     margin-left: -540px;
 }
 .start-page-zoom {
-    zoom:100%;
+    /*zoom:100%;*/
 }
 
 @media screen and (min-width:300px) {
     .start-page-zoom {
-        zoom:29%;
+        /*zoom:29%;*/
     }
 }
 @media screen and (min-width:700px) {
     .start-page-zoom {
-        zoom:56%;
+        /*zoom:56%;*/
     }
 }
 @media screen and (min-width:1000px) {
     .start-page-zoom {
-        zoom:80%;
+        /*zoom:80%;*/
     }
 }
 
@@ -306,21 +306,21 @@ body {
 }
 
 .menu-zoom {
-    zoom:90%;
+    /*zoom:90%;*/
 }
 @media screen and (min-width:300px) {
     .menu-zoom {
-        zoom: 29%;
+        /*zoom: 29%;*/
     }
 }
 @media screen and (min-width:450px) {
     .menu-zoom {
-        zoom: 45%;
+        /*zoom: 45%;*/
     }
 }
 @media screen and (min-width:1000px) {
     .menu-zoom {
-        zoom: 52%;
+        /*zoom: 52%;*/
     }
 }
 
@@ -333,32 +333,32 @@ body {
 
 
 .info-zoom {
-    zoom:100%;
+    /*zoom:100%;*/
 }
 .info-popup-zoom {
-    zoom:100%;
+    /*zoom:100%;*/
 }
 .filter-img-zoom {
-    zoom:100%;
+    /*zoom:100%;*/
 }
 .filter-lbl-zoom {
-    zoom:70%;
+    /*zoom:70%;*/
 }
 #stationAddress {
     font-size: 70%;
 }
 @media screen and (min-width:500px) and (-webkit-min-device-pixel-ratio: 2.0) {
     .info-zoom {
-        zoom: 200%;
+        /*zoom: 200%;*/
     }
     .info-popup-zoom {
-        zoom: 120%;
+        /*zoom: 120%;*/
     }
     .filter-img-zoom {
-        zoom:100%;
+        /*zoom:100%;*/
     }
     .filter-lbl-zoom {
-        zoom:60%;
+        /*zoom:60%;*/
     }
     .main-page-changeinfo-panel {
         bottom:72px;
@@ -366,16 +366,16 @@ body {
 }
 @media screen and (min-width:700px) and (min-height:1000px) {
     .info-zoom {
-        zoom: 200%;
+        /*zoom: 200%;*/
     }
     .info-popup-zoom {
-        zoom: 150%;
+        /*zoom: 150%;*/
     }
     .filter-img-zoom {
-        zoom:100%;
+        /*zoom:100%;*/
     }
     .filter-lbl-zoom {
-        zoom:60%;
+        /*zoom:60%;*/
     }
     #stationAddress {
         font-size: 300%;
