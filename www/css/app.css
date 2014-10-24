@@ -347,9 +347,6 @@ body {
 #stationAddress {
     font-size: 70%;
 }
-#backBtn {
-    zoom:100% !important;
-}
 @media screen and (min-width:500px) and (-webkit-min-device-pixel-ratio: 2.0) {
     .info-zoom {
         zoom: 200%;
@@ -365,9 +362,6 @@ body {
     }
     .main-page-changeinfo-panel {
         bottom:72px;
-    }
-    #backBtn {
-        left:150px !important;top:-10px !important;
     }
 }
 @media screen and (min-width:700px) and (min-height:1000px) {
@@ -391,9 +385,6 @@ body {
     }
     .main-page-changeinfo-panel {
         bottom:72px;
-    }
-    #backBtn {
-        left:450px !important;
     }
 }
 

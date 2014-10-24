@@ -13,7 +13,7 @@ Ext.define('App.view.AboutPage' ,{
                 style:'background:#900',
                 title:'About'
             },{
-                html:'<img id="backBtn" src="img/icons_button-back.png" style="position:absolute;z-index:90000; top:0px; left:0px;height:47px;cursor:pointer">',
+                html:'<img id="backBtn" src="img/icons_button-back.png" style="position:absolute;z-index:90000; top:0px; left:0px;height:45px;cursor:pointer">',
                 listeners: {
                     tap: {
                         fn: function( e, node ) {
