@@ -348,7 +348,7 @@ body {
     font-size: 70%;
 }
 #backBtn {
-    left:50px !important;zoom:100% !important;
+    zoom:100% !important;
 }
 @media screen and (min-width:500px) and (-webkit-min-device-pixel-ratio: 2.0) {
     .info-zoom {
@@ -367,7 +367,7 @@ body {
         bottom:72px;
     }
     #backBtn {
-        left:150px !important;zoom:100% !important;
+        left:150px !important;top:-10px !important;
     }
 }
 @media screen and (min-width:700px) and (min-height:1000px) {
@@ -393,7 +393,7 @@ body {
         bottom:72px;
     }
     #backBtn {
-        left:250px !important;zoom:100% !important;
+        left:450px !important;
     }
 }
 
