@@ -146,12 +146,24 @@ Ext.define('App.view.TripPlaner' ,{
 //            }
 
             if (obj.type=="get") {
-                var message = 'Your current trip will be cleared';
-                viewInfoPopup(" ", message, function(key) {
-                    alert("key");
-                }, 'OK,Cancel');
+                var flag1 = (document.getElementById('tp-end-point-0').value.length>0),
+                    flag2 = (document.getElementById('tp-end-point-1').value.length>0),
+                    flag3 = false;
 
-                return;
+                if (flag1 || flag2 || flag3) {
+                    var message = 'Your current trip will be cleared';
+                    viewInfoPopup(" ", message, function(key) {
+                        if (key==2) {
+                            alert("return");
+                            return;
+                        }
+                    }, 'OK,Cancel');
+                }
+
+
+                alert("clear");
+                Ext.getCmp('tripPlaner').clearRoad();
+                document.getElementById('tp-end-point-0').value = Ext.getCmp("mapPanel").userLocation;
                 document.getElementById('tp-end-point-1').value = obj.point;
             }
 
