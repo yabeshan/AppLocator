@@ -147,7 +147,10 @@ Ext.define('App.view.TripPlaner' ,{
 
             if (obj.type=="get") {
                 var message = 'Your current trip will be cleared';
-                viewInfoPopup(" ", message);
+                viewInfoPopup(" ", message, function(key) {
+                    alert("key");
+                }, 'OK,Cancel');
+
                 return;
                 document.getElementById('tp-end-point-1').value = obj.point;
             }

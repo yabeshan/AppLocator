@@ -114,11 +114,13 @@ window.onload=function(){
     }
 };
 
-function viewInfoPopup(title, msg) {
+function viewInfoPopup(title, msg, callback, buttons) {
         if (navigator && navigator.notification) {
-            navigator.notification.confirm(msg, function(a,b,c,d,e){
-                console.log ("++++++++++++++++++++++++++++++++++++++++++++++++++++++", a,b,c,d,e );
-            }, title, 'OK,Cancel');
+            if (callback!=null && buttons!=null) {
+                navigator.notification.confirm(msg, callback, title, buttons);
+            } else {
+                navigator.notification.alert(msg, null, title);
+            }
         } else {
             alert(title +"                    "+ msg);
         }
