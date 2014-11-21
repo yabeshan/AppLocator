@@ -17,8 +17,18 @@ Ext.define('App.view.InfoPopup' ,{
                     tap: {
                         fn: function( e, node ) {
                             if (node.id=="goDirect") {
-                                Ext.getCmp('tripPlaner').openPopup({'type':'get', 'point':Ext.getCmp('infoPopup').stationAddress });
+                                var flag1 = (document.getElementById('tp-end-point-0').value.length>0),
+                                    flag2 = (document.getElementById('tp-end-point-1').value.length>0),
+                                    flag3 = (document.getElementById('item-end-point-1') != null );
                                 Ext.getCmp('infoPopup').closePopup();
+                                if ( flag1 || flag2 || flag3 ) {
+                                    var message = 'Your current trip will be cleared';
+                                    viewInfoPopup(" ", message, function(key) {
+                                        if (key==1) {
+                                            Ext.getCmp('tripPlaner').openPopup({'type':'get', 'point':Ext.getCmp('infoPopup').stationAddress });
+                                        }
+                                    }, 'OK,Cancel');
+                                }
                             } else if (node.id=="goPlanner") {
                                 Ext.getCmp('tripPlaner').openPopup({'type':'add', 'point':Ext.getCmp('infoPopup').stationAddress });
                                 Ext.getCmp('infoPopup').closePopup();
