@@ -28,6 +28,8 @@ Ext.define('App.view.InfoPopup' ,{
                                             Ext.getCmp('tripPlaner').openPopup({'type':'get', 'point':Ext.getCmp('infoPopup').stationAddress });
                                         }
                                     }, 'OK,Cancel');
+                                } else {
+                                    Ext.getCmp('tripPlaner').openPopup({'type':'get', 'point':Ext.getCmp('infoPopup').stationAddress });
                                 }
                             } else if (node.id=="goPlanner") {
                                 Ext.getCmp('tripPlaner').openPopup({'type':'add', 'point':Ext.getCmp('infoPopup').stationAddress });
