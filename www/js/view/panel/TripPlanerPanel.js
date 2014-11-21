@@ -141,11 +141,14 @@ Ext.define('App.view.TripPlaner' ,{
         Ext.getCmp('tripPlaner').show();
 
         if (obj != null) {
-            if (Ext.getCmp("mapPanel").userLocation != null && document.getElementById('tp-end-point-0').value.length==0) {
-                document.getElementById('tp-end-point-0').value = Ext.getCmp("mapPanel").userLocation;
-            }
+//            if (Ext.getCmp("mapPanel").userLocation != null && document.getElementById('tp-end-point-0').value.length==0) {
+//                document.getElementById('tp-end-point-0').value = Ext.getCmp("mapPanel").userLocation;
+//            }
 
             if (obj.type=="get") {
+                var message = 'Your current trip will be cleared';
+                viewInfoPopup("Error", message);
+                return;
                 document.getElementById('tp-end-point-1').value = obj.point;
             }
 
