@@ -116,9 +116,9 @@ window.onload=function(){
 
 function viewInfoPopup(title, msg) {
         if (navigator && navigator.notification) {
-            navigator.notification.alert(msg, function(a,b,c,d,e){
+            navigator.notification.confirm(msg, function(a,b,c,d,e){
                 console.log ("++++++++++++++++++++++++++++++++++++++++++++++++++++++", a,b,c,d,e );
-            }, title, ['OK', 'Cancel']);
+            }, title, 'OK,Cancel');
         } else {
             alert(title +"                    "+ msg);
         }
