@@ -456,7 +456,8 @@ Ext.define('App.view.TripPlaner' ,{
             arr[k].model.set({'viewRoute':null});
         }
 
-        Ext.getCmp('searchPanel').directionsDisplay.setDirections({ routes: [] });
+        if (Ext.getCmp('searchPanel').directionsDisplay.setDirections)
+            Ext.getCmp('searchPanel').directionsDisplay.setDirections({ routes: [] });
         Ext.getCmp('tripPlaner').removeRedMarkers();
 
         var lastID = Ext.get('trip-palent-starter').dom.children.length-1;
