@@ -77,15 +77,27 @@ Ext.define('App.view.SharePanel', {
 
     },
     openFacebook: function() {
+
         if (navigator && appAvailability) {
             if (navigator.userAgent.match(/Android/i) == "Android") {
                 appAvailability.check(
                     'com.facebook.katana', // URI Scheme
                     function() {           // Success callback
-                        window.open('comfacebookkatana://', '_system');
+//                        window.open('comfacebookkatana://', '_system');
+                        console.log("facebook succses");
                     },
                     function() {           // Error callback
-                        window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+//                        window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        console.log("facebook error");
+                    }
+                );
+                appAvailability.check(
+                    'fb://', // URI Scheme
+                    function() {           // Success callback
+                        console.log("facebook succses");
+                    },
+                    function() {           // Error callback
+                        console.log("facebook error");
                     }
                 );
             } else {
