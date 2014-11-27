@@ -79,6 +79,18 @@ Ext.define('App.view.SharePanel', {
     openFacebook: function() {
 
         if (navigator && appAvailability) {
+            var uri = (navigator.userAgent.match(/Android/i) == "Android") ? 'com.facebook.katana' : 'fb://' ;
+            appAvailability.check(
+                uri, // URI Scheme
+                function() {           // Success callback
+                    window.open('fb://note/%@123', '_system');
+                },
+                function() {           // Error callback
+                    window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                }
+            );
+
+            /*
             if (navigator.userAgent.match(/Android/i) == "Android") {
                 appAvailability.check(
                     'com.facebook.katana', // URI Scheme
@@ -109,25 +121,22 @@ Ext.define('App.view.SharePanel', {
                     }
                 );
             }
+            */
         } else {
             window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
         }
     },
     openTwitter: function() {
-        var flag = false;
-        try {
-            flag = navigator && appAvailability;
-        } catch(err) {}
-        if (flag) {
+//        var flag = false;
+//        try {
+//            flag = navigator && appAvailability;
+//        } catch(err) {}
+        if (navigator && appAvailability) {
             if (navigator.userAgent.match(/Android/i) == "Android") {
                 appAvailability.check(
                     'com.twitter.android', // URI Scheme
                     function() {           // Success callback
-//                        window.open('twitter://', '_system');
-                        window.open('comtwitterandroid://', '_system');
-
-
-                        console.log("tw succses");
+                        window.open('twitter://post?message=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
                     },
                     function() {           // Error callback
                         window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
@@ -154,10 +163,9 @@ Ext.define('App.view.SharePanel', {
         if (navigator && appAvailability) {
             if (navigator.userAgent.match(/Android/i) == "Android") {
                 appAvailability.check(
-                    'com.google.plus', // URI Scheme
+                    'com.google.android.apps.plus', // URI Scheme
                     function() {           // Success callback
-//                        window.open('comgoogleplus://', '_system');
-                        window.open('com.google.plus://', '_system');
+                        window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
                         console.log("google succses");
                     },
                     function() {           // Error callback
