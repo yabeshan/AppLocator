@@ -129,8 +129,8 @@ Ext.define('App.view.SharePanel', {
                     'com.google.android.apps.plus', // URI Scheme
                     function() {           // Success callback
 //                        window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                        window.open('comgoogleandroidappsplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-//                        window.open('com.google.android.apps.plus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+//                        window.open('comgoogleandroidappsplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        window.open('com.google.android.apps.plus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
 
                         console.log("google succses");
                     },
