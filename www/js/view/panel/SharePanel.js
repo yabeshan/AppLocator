@@ -96,6 +96,17 @@ Ext.define('App.view.SharePanel', {
         }
     },
     openTwitter: function() {
+        window.plugins.socialsharing.shareViaEmail(
+            'Message<br>qwe<a href="http://ya.ru">link</a>', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
+            'Subject',
+            ['yabeshan@ya.ru'], // CC: must be null or an array
+            null, // BCC: must be null or an array
+            ['https://www.google.nl/images/srpr/logo4w.png','www/localimage.png'], // FILES: can be null, a string, or an array
+            onSuccess, // called when sharing worked, but also when the user cancelled sharing via email (I've found no way to detect the difference)
+            onError // called when sh*t hits the fan
+        );
+        return;
+
         window.plugins.socialsharing.shareViaTwitter('Message via Twitter');
         return;
 
@@ -128,6 +139,10 @@ Ext.define('App.view.SharePanel', {
         }
     },
     openGoogle: function() {
+        alert( window.plugins.socialsharing.shareVia );
+        window.plugins.socialsharing.shareVia('com.google.android.apps.plus', 'Message via Bogus App', null, null, null, function(){console.log('share ok')}, function(msg) {alert('error: ' + msg)})
+        return;
+
         if (navigator && appAvailability) {
             if (navigator.userAgent.match(/Android/i) == "Android") {
                 appAvailability.check(
