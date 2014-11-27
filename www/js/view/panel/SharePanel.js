@@ -83,54 +83,17 @@ Ext.define('App.view.SharePanel', {
             appAvailability.check(
                 uri, // URI Scheme
                 function() {           // Success callback
-                    window.open('fb://note/%@123', '_system');
+                    window.open('fb://messaging/compose?Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
                 },
                 function() {           // Error callback
                     window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
                 }
             );
-
-            /*
-            if (navigator.userAgent.match(/Android/i) == "Android") {
-                appAvailability.check(
-                    'com.facebook.katana', // URI Scheme
-                    function() {           // Success callback
-
-//com.ohh2ahh.plugins.appavailability   	0.3.1
-//                        window.open('comfacebookkatana://', '_system');
-//                        window.open('com.facebook.katana://', '_system');
-//                        window.open('com.facebook://', '_system');
-//                        window.open('comfacebook://', '_system');
-
-//                        window.open('facebook://', '_system');
-//                        window.open('fb://', '_system');
-                    },
-                    function() {           // Error callback
-                        window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                        console.log("facebook1 error");
-                    }
-                );
-            } else {
-                appAvailability.check(
-                    'fb://', // URI Scheme
-                    function() {  // Success callback
-                        window.open('fb://notes', '_system');
-                    },
-                    function() {  // Error callback
-                        window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                    }
-                );
-            }
-            */
         } else {
             window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
         }
     },
     openTwitter: function() {
-//        var flag = false;
-//        try {
-//            flag = navigator && appAvailability;
-//        } catch(err) {}
         if (navigator && appAvailability) {
             if (navigator.userAgent.match(/Android/i) == "Android") {
                 appAvailability.check(
@@ -165,7 +128,10 @@ Ext.define('App.view.SharePanel', {
                 appAvailability.check(
                     'com.google.android.apps.plus', // URI Scheme
                     function() {           // Success callback
-                        window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+//                        window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        window.open('comgoogleandroidappsplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+//                        window.open('com.google.android.apps.plus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+
                         console.log("google succses");
                     },
                     function() {           // Error callback
