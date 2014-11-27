@@ -83,8 +83,15 @@ Ext.define('App.view.SharePanel', {
                 appAvailability.check(
                     'com.facebook.katana', // URI Scheme
                     function() {           // Success callback
+
+//com.ohh2ahh.plugins.appavailability   	0.3.1
 //                        window.open('comfacebookkatana://', '_system');
-                        window.open('com.facebook.katana://', '_system');
+//                        window.open('com.facebook.katana://', '_system');
+                        window.open('com.facebook://', '_system');
+//                        window.open('comfacebook://', '_system');
+//                        window.open('facebook://', '_system');
+//                        window.open('fb://', '_system');
+
                         console.log("facebook1 succses");
                     },
                     function() {           // Error callback
