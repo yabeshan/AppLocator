@@ -87,8 +87,8 @@ Ext.define('App.view.SharePanel', {
 //com.ohh2ahh.plugins.appavailability   	0.3.1
 //                        window.open('comfacebookkatana://', '_system');
 //                        window.open('com.facebook.katana://', '_system');
-                        window.open('com.facebook://', '_system');
-//                        window.open('comfacebook://', '_system');
+//                        window.open('com.facebook://', '_system');
+                        window.open('comfacebook://', '_system');
 //                        window.open('facebook://', '_system');
 //                        window.open('fb://', '_system');
 
