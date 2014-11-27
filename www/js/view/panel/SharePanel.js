@@ -84,20 +84,12 @@ Ext.define('App.view.SharePanel', {
                     'com.facebook.katana', // URI Scheme
                     function() {           // Success callback
 //                        window.open('comfacebookkatana://', '_system');
-                        console.log("facebook succses");
+                        window.open('com.facebook.katana://', '_system');
+                        console.log("facebook1 succses");
                     },
                     function() {           // Error callback
-//                        window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                        console.log("facebook error");
-                    }
-                );
-                appAvailability.check(
-                    'fb://', // URI Scheme
-                    function() {           // Success callback
-                        console.log("facebook succses");
-                    },
-                    function() {           // Error callback
-                        console.log("facebook error");
+                        window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        console.log("facebook1 error");
                     }
                 );
             } else {
