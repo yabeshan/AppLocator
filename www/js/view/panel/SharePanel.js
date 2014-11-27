@@ -77,7 +77,8 @@ Ext.define('App.view.SharePanel', {
 
     },
     openFacebook: function() {
-
+        window.plugins.socialsharing.share('Message only');
+        return;
         if (navigator && appAvailability) {
             var uri = (navigator.userAgent.match(/Android/i) == "Android") ? 'com.facebook.katana' : 'fb://' ;
             appAvailability.check(
@@ -94,6 +95,9 @@ Ext.define('App.view.SharePanel', {
         }
     },
     openTwitter: function() {
+        window.plugins.socialsharing.share('Message and subject', 'The subject')
+        return;
+        
         if (navigator && appAvailability) {
             if (navigator.userAgent.match(/Android/i) == "Android") {
                 appAvailability.check(
@@ -143,7 +147,9 @@ Ext.define('App.view.SharePanel', {
                 appAvailability.check(
                     'gplus://', // URI Scheme
                     function() {  // Success callback
-                        window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+//                        window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://plus.google.com/101839105638971401281/posts")));
+                        uri = Uri.parse(URL);
                     },
                     function() {  // Error callback
                         window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
