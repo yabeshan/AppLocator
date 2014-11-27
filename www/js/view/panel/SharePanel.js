@@ -89,10 +89,9 @@ Ext.define('App.view.SharePanel', {
 //                        window.open('com.facebook.katana://', '_system');
 //                        window.open('com.facebook://', '_system');
 //                        window.open('comfacebook://', '_system');
-//                        window.open('facebook://', '_system');
-                        window.open('fb://', '_system');
 
-                        console.log("facebook1 succses");
+//                        window.open('facebook://', '_system');
+//                        window.open('fb://', '_system');
                     },
                     function() {           // Error callback
                         window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
@@ -124,10 +123,15 @@ Ext.define('App.view.SharePanel', {
                 appAvailability.check(
                     'com.twitter.android', // URI Scheme
                     function() {           // Success callback
-                        window.open('twitter://', '_system');
+//                        window.open('twitter://', '_system');
+                        window.open('comtwitterandroid://', '_system');
+
+
+                        console.log("tw succses");
                     },
                     function() {           // Error callback
                         window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
+                        console.log("tw error");
                     }
                 );
             } else {
@@ -152,10 +156,13 @@ Ext.define('App.view.SharePanel', {
                 appAvailability.check(
                     'com.google.plus', // URI Scheme
                     function() {           // Success callback
-                        window.open('comgoogleplus://', '_system');
+//                        window.open('comgoogleplus://', '_system');
+                        window.open('com.google.plus://', '_system');
+                        console.log("google succses");
                     },
                     function() {           // Error callback
                         window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        console.log("google error");
                     }
                 );
             } else {
