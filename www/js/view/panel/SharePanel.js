@@ -78,6 +78,15 @@ Ext.define('App.view.SharePanel', {
     },
 
     openFacebook: function() {
+        window.plugins.socialsharing.shareVia(
+            'com.facebook.katana',
+            'Clean Energy Station Locator http://cnglngstations.com/', null, null, 'http://cnglngstations.com/',
+            function(){/* Success callback */},
+            function(msg) {
+                window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+            })
+        return;
+
         if (navigator && appAvailability) {
             var uri = (navigator.userAgent.match(/Android/i) == "Android") ? 'com.facebook.katana' : 'fb://' ;
             appAvailability.check(
@@ -119,7 +128,7 @@ Ext.define('App.view.SharePanel', {
                         try {
                             window.plugins.socialsharing.shareVia(
                                 'com.google.android.apps.plus',
-                                'Message via Bogus App', null, null, null,
+                                'Clean Energy Station Locator http://cnglngstations.com/', null, null, 'http://cnglngstations.com/',
                                 function(){/* Success callback */},
                                 function(msg) {
                                     window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
