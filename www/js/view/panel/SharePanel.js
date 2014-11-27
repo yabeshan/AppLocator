@@ -76,10 +76,8 @@ Ext.define('App.view.SharePanel', {
         }
 
     },
-    openFacebook: function() {
-        window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})
-        return;
 
+    openFacebook: function() {
         if (navigator && appAvailability) {
             var uri = (navigator.userAgent.match(/Android/i) == "Android") ? 'com.facebook.katana' : 'fb://' ;
             appAvailability.check(
@@ -95,76 +93,51 @@ Ext.define('App.view.SharePanel', {
             window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
         }
     },
+
     openTwitter: function() {
-        window.plugins.socialsharing.shareViaEmail(
-            'Message<br>qwe<a href="http://ya.ru">link</a>', // can contain HTML tags, but support on Android is rather limited:  http://stackoverflow.com/questions/15136480/how-to-send-html-content-with-image-through-android-default-email-client
-            'Subject',
-            ['yabeshan@ya.ru'], // CC: must be null or an array
-            null, // BCC: must be null or an array
-            ['https://www.google.nl/images/srpr/logo4w.png','www/localimage.png'], // FILES: can be null, a string, or an array
-            onSuccess, // called when sharing worked, but also when the user cancelled sharing via email (I've found no way to detect the difference)
-            onError // called when sh*t hits the fan
-        );
-        return;
-
-        window.plugins.socialsharing.shareViaTwitter('Message via Twitter');
-        return;
-
         if (navigator && appAvailability) {
-            if (navigator.userAgent.match(/Android/i) == "Android") {
-                appAvailability.check(
-                    'com.twitter.android', // URI Scheme
-                    function() {           // Success callback
-                        window.open('twitter://post?message=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
-                    },
-                    function() {           // Error callback
-                        window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
-                        console.log("tw error");
-                    }
-                );
-            } else {
-                appAvailability.check(
-                    'twitter://', // URI Scheme
-                    function() {  // Success callback
-//                        post?message=
-                        window.open('twitter://post?message=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
-                    },
-                    function() {  // Error callback
-                        window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
-                    }
-                );
-            }
+            var uri = (navigator.userAgent.match(/Android/i) == "Android") ? 'com.twitter.android' : 'twitter://' ;
+            appAvailability.check(
+                uri, // URI Scheme
+                function() {           // Success callback
+                    window.open('twitter://post?message=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
+                },
+                function() {           // Error callback
+                    window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
+                }
+            );
         } else {
             window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
         }
     },
     openGoogle: function() {
-        alert( window.plugins.socialsharing.shareVia );
-        window.plugins.socialsharing.shareVia('com.google.android.apps.plus', 'Message via Bogus App', null, null, null, function(){console.log('share ok')}, function(msg) {alert('error: ' + msg)})
-        return;
-
         if (navigator && appAvailability) {
             if (navigator.userAgent.match(/Android/i) == "Android") {
                 appAvailability.check(
                     'com.google.android.apps.plus', // URI Scheme
                     function() {           // Success callback
-//                        window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-//                        window.open('comgoogleandroidappsplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                        window.open('com.google.android.apps.plus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-
-                        console.log("google succses");
+                        try {
+                            window.plugins.socialsharing.shareVia(
+                                'com.google.android.apps.plus',
+                                'Message via Bogus App', null, null, null,
+                                function(){/* Success callback */},
+                                function(msg) {
+                                    window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                                })
+                        }
+                        catch(err) {
+                            window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        }
                     },
                     function() {           // Error callback
                         window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                        console.log("google error");
                     }
                 );
             } else {
                 appAvailability.check(
                     'gplus://', // URI Scheme
                     function() {  // Success callback
-//                        window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                        startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://plus.google.com/101839105638971401281/posts")));
+                        window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
                         uri = Uri.parse(URL);
                     },
                     function() {  // Error callback
