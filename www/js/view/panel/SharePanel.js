@@ -77,8 +77,9 @@ Ext.define('App.view.SharePanel', {
 
     },
     openFacebook: function() {
-        window.plugins.socialsharing.share('Message only');
+        window.plugins.socialsharing.shareViaFacebook('Message via Facebook', null /* img */, null /* url */, function() {console.log('share ok')}, function(errormsg){alert(errormsg)})
         return;
+
         if (navigator && appAvailability) {
             var uri = (navigator.userAgent.match(/Android/i) == "Android") ? 'com.facebook.katana' : 'fb://' ;
             appAvailability.check(
@@ -95,9 +96,9 @@ Ext.define('App.view.SharePanel', {
         }
     },
     openTwitter: function() {
-        window.plugins.socialsharing.share('Message and subject', 'The subject')
+        window.plugins.socialsharing.shareViaTwitter('Message via Twitter');
         return;
-        
+
         if (navigator && appAvailability) {
             if (navigator.userAgent.match(/Android/i) == "Android") {
                 appAvailability.check(
