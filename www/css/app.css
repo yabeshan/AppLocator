@@ -349,10 +349,10 @@ body {
 }
 @media screen and (min-width:500px) and (-webkit-min-device-pixel-ratio: 2.0) {
     .info-zoom {
-        zoom: 200%;
+        /*zoom: 200%;*/
     }
     .info-popup-zoom {
-        zoom: 120%;
+        /*zoom: 120%;*/
     }
     .filter-img-zoom {
         zoom:100%;
@@ -366,10 +366,10 @@ body {
 }
 @media screen and (min-width:700px) and (min-height:1000px) {
     .info-zoom {
-        zoom: 200%;
+        /*zoom: 200%;*/
     }
     .info-popup-zoom {
-        zoom: 150%;
+        /*zoom: 150%;*/
     }
     .filter-img-zoom {
         zoom:100%;
