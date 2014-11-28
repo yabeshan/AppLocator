@@ -126,3 +126,8 @@ function viewInfoPopup(title, msg, callback, buttons) {
         }
 }
 
+function sendMail( subject, body, to, cc, bcc, attachments ) {
+
+    alert( window.plugins.EmailComposer.showEmailComposerWithCallback );
+
+};

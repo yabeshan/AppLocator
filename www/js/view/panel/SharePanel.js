@@ -68,16 +68,16 @@ Ext.define('App.view.SharePanel', {
                         body += '<br>';
 
 
-                        console.log( window.plugins );
-                        console.log( window.plugins.EmailComposer );
-                        console.log( window.plugins.EmailComposer.showEmailComposerWithCallback );
+                        this.sendMail( subj, (body+signature) );
+                        
+                        window.plugins.EmailComposer.showEmailComposerWithCallback(
+                            null,
+                            "Look at this photo",
+                            "Take <br/>a look<br> at <b>this<b/>:",
+                            ["example@email.com", "johndoe@email.org"],
+                            [],[],true,[]);
 
 
-
-
-                        window.plugins.EmailComposer.showEmailComposerWithCallback(null,"Look at this photo","Take a look at <b>this<b/>:",["example@email.com", "johndoe@email.org"],[],[],true,["_complete_path/image.jpg", "_other_complete_path/file.zip"]);
-
-//                        this.sendMail( subj, (body+signature) );
 //                        window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
                     }
                     Ext.getCmp('sharePanel').hideShare();
@@ -87,25 +87,6 @@ Ext.define('App.view.SharePanel', {
         }
 
     },
-
-//    sendMail: function( subject, body, to, cc, bcc, attachments ) {
-//        if (cordova && cordova.plugin && cordova.plugin.email && cordova.plugin.email.open) {
-//            cordova.plugin.email.open({
-//                to:          to         || [], // email addresses for TO field
-//                cc:          cc         || [], // email addresses for CC field
-//                bcc:         bcc        || [], // email addresses for BCC field
-//                attachments:            [],    // file paths or base64 data streams
-//                subject:     subject    || "", // subject of the email
-//                body:        body       || "", // email body (for HTML, set isHtml to true)
-//                isHtml:                 true,  // indicats if the body is HTML or plain text
-//            }, callback, scope);
-//            alert(111);
-//        } else {
-////            window.open('mailto:?subject='+ subject +'&body='+ body, '_system');
-//            alert(222);
-//        }
-//
-//    },
 
     openFacebook: function() {
         if (window && window.plugins && window.plugins.socialsharing && window.plugins.socialsharing.shareVia) {
