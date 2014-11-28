@@ -128,9 +128,9 @@ function viewInfoPopup(title, msg, callback, buttons) {
 
 function sendMail( subject, body, to, cc, bcc, attachments ) {
     console.log (cordova);
-    console.log (cordova.plugin);
-    console.log (cordova.plugin.email);
-    console.log (cordova.plugin.email.open);
+//    console.log (cordova.plugin);
+    console.log (cordova.email);
+    console.log (cordova.email.open);
 
 
 
