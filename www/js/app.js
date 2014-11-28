@@ -126,31 +126,3 @@ function viewInfoPopup(title, msg, callback, buttons) {
         }
 }
 
-function sendMail( subject, body, to, cc, bcc, attachments ) {
-    console.log (cordova);
-//    console.log (cordova.plugin);
-    console.log (cordova.email);
-    console.log (cordova.email.open);
-
-
-
-    if (cordova && cordova.plugin && cordova.plugin.email && cordova.plugin.email.open) {
-        cordova.plugins.email.open({
-            to:          to         || [], // email addresses for TO field
-            cc:          cc         || [], // email addresses for CC field
-            bcc:         bcc        || [], // email addresses for BCC field
-            attachments:            [],    // file paths or base64 data streams
-            subject:     subject    || "", // subject of the email
-            body:        body       || "", // email body (for HTML, set isHtml to true)
-            isHtml:                 true,  // indicats if the body is HTML or plain text
-        }, callback, scope);
-        alert(111);
-    } else {
-        window.open('mailto:?subject='+ subject +'&body='+ body, '_system');
-        alert(222);
-    }
-
-
-
-
-}

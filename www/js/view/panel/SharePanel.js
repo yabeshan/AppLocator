@@ -67,13 +67,32 @@ Ext.define('App.view.SharePanel', {
                         body += '<br>Accepts: ' + stAccepts;
                         body += '<br>';
 
-                        sendMail( subj, (body+signature) );
+                        this.sendMail( subj, (body+signature) );
 //                        window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
                     }
                     Ext.getCmp('sharePanel').hideShare();
                 },
                 element: 'element'
             }
+        }
+
+    },
+
+    sendMail: function( subject, body, to, cc, bcc, attachments ) {
+        if (cordova && cordova.plugins && cordova.plugins.email && cordova.plugins.email.open) {
+            cordova.plugins.email.open({
+                to:          to         || [], // email addresses for TO field
+                cc:          cc         || [], // email addresses for CC field
+                bcc:         bcc        || [], // email addresses for BCC field
+                attachments:            [],    // file paths or base64 data streams
+                subject:     subject    || "", // subject of the email
+                body:        body       || "", // email body (for HTML, set isHtml to true)
+                isHtml:                 true,  // indicats if the body is HTML or plain text
+            }, callback, scope);
+            alert(111);
+        } else {
+            window.open('mailto:?subject='+ subject +'&body='+ body, '_system');
+            alert(222);
         }
 
     },
