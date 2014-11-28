@@ -127,7 +127,13 @@ function viewInfoPopup(title, msg, callback, buttons) {
 }
 
 function sendMail( subject, body, to, cc, bcc, attachments ) {
-
-    alert( window.plugins.EmailComposer.showEmailComposerWithCallback );
-
+    if ( window && window.plugins && window.plugins.EmailComposer && window.plugins.EmailComposer.showEmailComposerWithCallback) {
+        window.plugins.EmailComposer.showEmailComposerWithCallback(
+            null,
+            subject,
+            body,
+            [to],[cc],[bcc],true,[]);
+    } else {
+        window.open('mailto:?subject='+ subject +'&body='+ body, '_system');
+    }
 };

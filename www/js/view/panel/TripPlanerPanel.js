@@ -106,7 +106,7 @@ Ext.define('App.view.TripPlaner' ,{
                             }
                             stAddress = document.getElementById('tp-end-point-'+lastID).value;
                             body += '<br>End: ' + '<a href="' + mapHref + stAddress + '">' + stAddress + '</a>';
-                            window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
+                            sendMail( subj, body+signature );
                         },
                         element: 'element'
                     }
