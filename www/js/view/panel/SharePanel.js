@@ -67,7 +67,8 @@ Ext.define('App.view.SharePanel', {
                         body += '<br>Accepts: ' + stAccepts;
                         body += '<br>';
 
-                        window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
+                        sendMail( subj, (body+signature) );
+//                        window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
                     }
                     Ext.getCmp('sharePanel').hideShare();
                 },
@@ -129,12 +130,9 @@ Ext.define('App.view.SharePanel', {
                 appAvailability.check(
                     'gplus://', // URI Scheme
                     function() {  // Success callback
-                        alert(111);
                         window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                        alert(222);
                     },
                     function() {  // Error callback
-                        alert(333);
                         window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
                     }
                 );
