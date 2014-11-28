@@ -109,24 +109,39 @@ Ext.define('App.view.SharePanel', {
     },
 
     openGoogle: function() {
-        window.plugins.socialsharing.share('Message only')
-        return;
-
-        if (window && window.plugins && window.plugins.socialsharing && window.plugins.socialsharing.shareVia) {
-            window.plugins.socialsharing.shareVia(
-                ( (navigator.userAgent.match(/Android/i) == "Android") ? 'com.google.android.apps.plus' : 'com.apple.social.gplus'),
-                // message // subject // photo // link
-                'Clean Energy Station Locator ', null,
-                ( (navigator.userAgent.match(/Android/i) == "Android") ? null : 'http://cnglngstations.com/Images/logo_colored.png'),
-                'http://cnglngstations.com/',
-                function(){/* Success callback */},
-                function(msg) {
-                    window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                })
+        if (navigator.userAgent.match(/Android/i) == "Android") {
+            if (window && window.plugins && window.plugins.socialsharing && window.plugins.socialsharing.shareVia) {
+                window.plugins.socialsharing.shareVia(
+                    'com.google.android.apps.plus',
+                    // message // subject // photo // link
+                    'Clean Energy Station Locator ', null,
+                    ( (navigator.userAgent.match(/Android/i) == "Android") ? null : 'http://cnglngstations.com/Images/logo_colored.png'),
+                    'http://cnglngstations.com/',
+                    function(){/* Success callback */},
+                    function(msg) {
+                        window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                    })
+            } else {
+                window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+            }
         } else {
-            window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+            if (navigator && appAvailability) {
+                appAvailability.check(
+                    'gplus://', // URI Scheme
+                    function() {  // Success callback
+                        window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                        uri = Uri.parse(URL);
+                    },
+                    function() {  // Error callback
+                        window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                    }
+                );
+            } else {
+                window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+            }
         }
     },
+    
     initialize: function(me, eOpts) {
         this.hideShare();
     },
