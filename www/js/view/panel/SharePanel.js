@@ -79,8 +79,8 @@ Ext.define('App.view.SharePanel', {
     },
 
     sendMail: function( subject, body, to, cc, bcc, attachments ) {
-        if (cordova && cordova.plugins && cordova.plugins.email && cordova.plugins.email.open) {
-            cordova.plugins.email.open({
+        if (cordova && cordova.plugin && cordova.plugin.email && cordova.plugin.email.open) {
+            cordova.plugin.email.open({
                 to:          to         || [], // email addresses for TO field
                 cc:          cc         || [], // email addresses for CC field
                 bcc:         bcc        || [], // email addresses for BCC field
@@ -91,7 +91,7 @@ Ext.define('App.view.SharePanel', {
             }, callback, scope);
             alert(111);
         } else {
-            window.open('mailto:?subject='+ subject +'&body='+ body, '_system');
+//            window.open('mailto:?subject='+ subject +'&body='+ body, '_system');
             alert(222);
         }
 
