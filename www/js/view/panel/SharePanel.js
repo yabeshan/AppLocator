@@ -78,82 +78,42 @@ Ext.define('App.view.SharePanel', {
     },
 
     openFacebook: function() {
-        window.plugins.socialsharing.shareVia(
-            'com.facebook.katana',
-            'Clean Energy Station Locator http://cnglngstations.com/', null, null, 'http://cnglngstations.com/',
-            function(){/* Success callback */},
-            function(msg) {
-                window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-            })
-        return;
-
-        if (navigator && appAvailability) {
-            var uri = (navigator.userAgent.match(/Android/i) == "Android") ? 'com.facebook.katana' : 'fb://' ;
-            appAvailability.check(
-                uri, // URI Scheme
-                function() {           // Success callback
-                    window.open('fb://messaging/compose?Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                },
-                function() {           // Error callback
+        if (window && window.plugins && window.plugins.socialsharing && window.plugins.socialsharing.shareVia) {
+            window.plugins.socialsharing.shareVia(
+                ( (navigator.userAgent.match(/Android/i) == "Android") ? 'com.facebook.katana' : 'com.apple.social.facebook'),
+                'Clean Energy ', 'Station Locator ', 'http://cnglngstations.com/Images/logo_colored.png', 'http://cnglngstations.com/',
+                function(){/* Success callback */},
+                function(msg) {
                     window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                }
-            );
+                })
         } else {
             window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
         }
     },
 
     openTwitter: function() {
-        if (navigator && appAvailability) {
-            var uri = (navigator.userAgent.match(/Android/i) == "Android") ? 'com.twitter.android' : 'twitter://' ;
-            appAvailability.check(
-                uri, // URI Scheme
-                function() {           // Success callback
-                    window.open('twitter://post?message=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
-                },
-                function() {           // Error callback
+        if (window && window.plugins && window.plugins.socialsharing && window.plugins.socialsharing.shareVia) {
+            window.plugins.socialsharing.shareVia(
+                ( (navigator.userAgent.match(/Android/i) == "Android") ? 'com.twitter.android' : 'com.apple.social.twitter'),
+                'Clean Energy  @CE_Natgas', 'Station Locator  ', 'http://cnglngstations.com/Images/logo_colored.png', 'http://cnglngstations.com/',
+                function(){/* Success callback */},
+                function(msg) {
                     window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
-                }
-            );
+                })
         } else {
             window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
         }
     },
+
     openGoogle: function() {
-        if (navigator && appAvailability) {
-            if (navigator.userAgent.match(/Android/i) == "Android") {
-                appAvailability.check(
-                    'com.google.android.apps.plus', // URI Scheme
-                    function() {           // Success callback
-                        try {
-                            window.plugins.socialsharing.shareVia(
-                                'com.google.android.apps.plus',
-                                'Clean Energy Station Locator http://cnglngstations.com/', null, null, 'http://cnglngstations.com/',
-                                function(){/* Success callback */},
-                                function(msg) {
-                                    window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                                })
-                        }
-                        catch(err) {
-                            window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                        }
-                    },
-                    function() {           // Error callback
-                        window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                    }
-                );
-            } else {
-                appAvailability.check(
-                    'gplus://', // URI Scheme
-                    function() {  // Success callback
-                        window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                        uri = Uri.parse(URL);
-                    },
-                    function() {  // Error callback
-                        window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                    }
-                );
-            }
+        if (window && window.plugins && window.plugins.socialsharing && window.plugins.socialsharing.shareVia) {
+            window.plugins.socialsharing.shareVia(
+                ( (navigator.userAgent.match(/Android/i) == "Android") ? 'com.google.android.apps.plus' : 'com.apple.social.gplus'),
+                'Clean Energy ', 'Station Locator ', 'http://cnglngstations.com/Images/logo_colored.png', 'http://cnglngstations.com/',
+                function(){/* Success callback */},
+                function(msg) {
+                    window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
+                })
         } else {
             window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
         }
