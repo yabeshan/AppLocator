@@ -109,6 +109,9 @@ Ext.define('App.view.SharePanel', {
     },
 
     openGoogle: function() {
+        window.plugins.socialsharing.share('Message only')
+        return;
+
         if (window && window.plugins && window.plugins.socialsharing && window.plugins.socialsharing.shareVia) {
             window.plugins.socialsharing.shareVia(
                 ( (navigator.userAgent.match(/Android/i) == "Android") ? 'com.google.android.apps.plus' : 'com.apple.social.gplus'),
