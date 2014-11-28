@@ -130,7 +130,6 @@ Ext.define('App.view.SharePanel', {
                     'gplus://', // URI Scheme
                     function() {  // Success callback
                         window.open('gplus://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
-                        uri = Uri.parse(URL);
                     },
                     function() {  // Error callback
                         window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
@@ -141,7 +140,7 @@ Ext.define('App.view.SharePanel', {
             }
         }
     },
-    
+
     initialize: function(me, eOpts) {
         this.hideShare();
     },
