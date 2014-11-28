@@ -81,7 +81,10 @@ Ext.define('App.view.SharePanel', {
         if (window && window.plugins && window.plugins.socialsharing && window.plugins.socialsharing.shareVia) {
             window.plugins.socialsharing.shareVia(
                 ( (navigator.userAgent.match(/Android/i) == "Android") ? 'com.facebook.katana' : 'com.apple.social.facebook'),
-                'Clean Energy ', 'Station Locator ', 'http://cnglngstations.com/Images/logo_colored.png', 'http://cnglngstations.com/',
+                // message // subject // photo // link
+                'Clean Energy Station Locator ', null,
+                ( (navigator.userAgent.match(/Android/i) == "Android") ? null : 'http://cnglngstations.com/Images/logo_colored.png'),
+                'http://cnglngstations.com/',
                 function(){/* Success callback */},
                 function(msg) {
                     window.open('http://www.facebook.com/sharer.php?u=http%3A%2F%2Fcnglngstations.com%2F', '_system');
@@ -95,7 +98,7 @@ Ext.define('App.view.SharePanel', {
         if (window && window.plugins && window.plugins.socialsharing && window.plugins.socialsharing.shareVia) {
             window.plugins.socialsharing.shareVia(
                 ( (navigator.userAgent.match(/Android/i) == "Android") ? 'com.twitter.android' : 'com.apple.social.twitter'),
-                'Clean Energy  @CE_Natgas', 'Station Locator  ', 'http://cnglngstations.com/Images/logo_colored.png', 'http://cnglngstations.com/',
+                'Clean Energy Station Locator @CE_Natgas', null, null, 'http://cnglngstations.com/',
                 function(){/* Success callback */},
                 function(msg) {
                     window.open('http://twitter.com/home?status=Clean%20Energy%20Station%20Locator%20http%3A%2F%2Fcnglngstations.com%2F @CE_Natgas', '_system');
@@ -109,7 +112,10 @@ Ext.define('App.view.SharePanel', {
         if (window && window.plugins && window.plugins.socialsharing && window.plugins.socialsharing.shareVia) {
             window.plugins.socialsharing.shareVia(
                 ( (navigator.userAgent.match(/Android/i) == "Android") ? 'com.google.android.apps.plus' : 'com.apple.social.gplus'),
-                'Clean Energy ', 'Station Locator ', 'http://cnglngstations.com/Images/logo_colored.png', 'http://cnglngstations.com/',
+                // message // subject // photo // link
+                'Clean Energy Station Locator ', null,
+                ( (navigator.userAgent.match(/Android/i) == "Android") ? null : 'http://cnglngstations.com/Images/logo_colored.png'),
+                'http://cnglngstations.com/',
                 function(){/* Success callback */},
                 function(msg) {
                     window.open('https://plus.google.com/share?url=http%3A%2F%2Fcnglngstations.com%2F', '_system');
