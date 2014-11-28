@@ -68,8 +68,7 @@ Ext.define('App.view.SharePanel', {
                         body += '<br>';
 
 
-                        this.sendMail( subj, (body+signature) );
-                        
+
                         window.plugins.EmailComposer.showEmailComposerWithCallback(
                             null,
                             "Look at this photo",
@@ -77,6 +76,7 @@ Ext.define('App.view.SharePanel', {
                             ["example@email.com", "johndoe@email.org"],
                             [],[],true,[]);
 
+                        sendMail( subj, (body+signature) );
 
 //                        window.open('mailto:?subject='+subj+'&body='+body+signature, '_system');
                     }
