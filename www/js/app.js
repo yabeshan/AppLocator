@@ -128,13 +128,13 @@ function viewInfoPopup(title, msg, callback, buttons) {
 
 function sendMail( subject, body, to, cc, bcc, attachments ) {
     console.log (cordova);
-    console.log (cordova.plugins);
-    console.log (cordova.plugins.email);
-    console.log (cordova.plugins.email.open);
+    console.log (cordova.plugin);
+    console.log (cordova.plugin.email);
+    console.log (cordova.plugin.email.open);
 
 
 
-    if (cordova && cordova.plugins && cordova.plugins.email && cordova.plugins.email.open) {
+    if (cordova && cordova.plugin && cordova.plugin.email && cordova.plugin.email.open) {
         cordova.plugins.email.open({
             to:          to         || [], // email addresses for TO field
             cc:          cc         || [], // email addresses for CC field
