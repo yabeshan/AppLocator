@@ -132,7 +132,7 @@ function sendMail( subject, body, to, cc, bcc, attachments ) {
             null,
             subject,
             body,
-            [to],[cc],[bcc],true,[]);
+            null,null,null,true,[]);
     } else {
         window.open('mailto:?subject='+ subject +'&body='+ body, '_system');
     }
