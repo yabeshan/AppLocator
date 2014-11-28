@@ -360,7 +360,7 @@ Ext.define('App.view.MapPanel', {
 //                alert("Getting the error"+error.code + "\nerror mesg :" +error.message);
                 Ext.getCmp("mapPanel").viewInfoWindow("Error: The Geolocation service failed. ");
                 if (tapFlag) {
-                    viewInfoPopup("", "Station Locator needs access to your location. Please turn on location access.");
+                    viewInfoPopup("  ", "Station Locator needs access to your location. Please turn on location access.");
                 }
             }, { timeout: 12000 });
         } else{
